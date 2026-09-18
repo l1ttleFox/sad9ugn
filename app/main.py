@@ -7,7 +7,10 @@ import json
 import pandas as pd
 import streamlit as st
 
-from app.services import (available_scenarios, chart_thresholds, constraint_catalog, default_plan,
+from app.services import (available_scenarios, chart_thresholds, clear_result_cache,
+                           constraint_catalog, default_plan, engine_available, final_plan_files,
+                           list_saved_plans, load_plan_from_catalog, save_plan_to_catalog,
+                           export_core_archive, geo_effect, run_geo_scenario,
                       export_csv_zip, get_run_result, load_plan_json,
                       save_plan_json, source_catalog, storage_catalog, validate_plan,
                       overview_summary, scenario_comparison, scenario_deltas, violation_count)
@@ -37,7 +40,7 @@ def metric(label: str, value: float, unit: str, fmt: str = ",.1f") -> None:
 
 def overview(result: dict) -> None:
     st.header("Обзор")
-    st.caption(f"Сценарий: {SCENARIO_LABELS[result['scenario_id']]} · расчёт: {result['meta']['engine_version']} · все числа синтетические")
+    st.caption(f"Сценарий: {SCENARIO_LABELS.get(result['scenario_id'], result['scenario_id'])} · расчёт: {result['meta']['engine_version']} · все числа синтетические")
     years = result["yearly_balance"]
     summary = overview_summary(result)
     cols = st.columns(4)
@@ -96,7 +99,8 @@ def graphs(result: dict, base: dict, stress: dict) -> None:
 
 def plan_page(plan: dict) -> None:
     st.header("План и контракты")
-    st.info("Изменения решений сохраняются в плане. В волне 1 пересчёт показывает синтетический мок: числа не реагируют на решения.")
+    if not engine_available():
+        st.info("Демо-режим: ядро WP1 ещё не опубликовано; изменения решений не меняют синтетические показатели.")
     plan["plan_id"] = st.text_input("Идентификатор плана", value=plan["plan_id"])
     decisions = plan["decisions"]
     sources = source_catalog()
@@ -231,21 +235,58 @@ def constraints(result: dict) -> None:
 
 def scenarios(result: dict, base: dict, stress: dict) -> None:
     st.header("Сценарии")
-    st.write(f"Выбран: **{SCENARIO_LABELS[result['scenario_id']]}**. Переключатель находится слева.")
+    st.write(f"Выбран: **{SCENARIO_LABELS.get(result['scenario_id'], result['scenario_id'])}**. Переключатель находится слева.")
     if st.button("Пересчитать"):
         errors = validate_plan(st.session_state.plan)
         if errors:
             st.error("\n".join(errors))
         else:
-            st.session_state.recalculated = True
-            st.success("Мок обновлён. Решения плана не меняют синтетические показатели.")
+            clear_result_cache()
+            st.success("Расчёт обновлён." if engine_available() else "Демо-мок обновлён; решения плана не меняют синтетические показатели.")
+            st.rerun()
     st.subheader("BASE и MANDATORY_STRESS на общей базе")
     table(scenario_comparison(base, stress))
+    st.subheader("Геополитический исследовательский сценарий")
+    st.caption("Событие меняет только переменную цену выбранного канала в указанные годы; вероятность не задаётся.")
+    with st.form("geo_form"):
+        event_label = st.text_input("Название события")
+        source_id = st.selectbox("Затронутый канал", [row["source_id"] for row in source_catalog()])
+        multiplier = st.number_input("Коэффициент переменной цены", min_value=0.0, value=1.25)
+        first_year = st.number_input("Первый год", min_value=2035, max_value=2040, value=2038)
+        last_year = st.number_input("Последний год", min_value=2035, max_value=2040, value=2039)
+        submitted = st.form_submit_button("Рассчитать эффект события", disabled=not engine_available())
+    if submitted:
+        try:
+            st.session_state.geo_result = run_geo_scenario(st.session_state.plan, event_label,
+                source_id, multiplier, int(first_year), int(last_year))
+            st.session_state.geo_plan_snapshot = json.dumps(st.session_state.plan, sort_keys=True, ensure_ascii=False)
+        except ValueError as exc:
+            st.error(str(exc))
+    if ("geo_result" in st.session_state and
+            st.session_state.geo_plan_snapshot != json.dumps(st.session_state.plan, sort_keys=True, ensure_ascii=False)):
+        del st.session_state.geo_result
+        del st.session_state.geo_plan_snapshot
+    if "geo_result" in st.session_state:
+        st.write("Эффект относительно контрольного BASE")
+        effect = geo_effect(base, st.session_state.geo_result)
+        table([{"Показатель": "Расходы, млн у.е.", "BASE": effect["base_cost_mln"],
+                "Событие": effect["geo_cost_mln"]},
+               {"Показатель": "Поставки, т", "BASE": effect["base_delivered_t"],
+                "Событие": effect["geo_delivered_t"]},
+               {"Показатель": "Дефицит, т", "BASE": effect["base_shortage_t"],
+                "Событие": effect["geo_shortage_t"]}])
+        if st.button("Восстановить контрольные цены"):
+            del st.session_state.geo_result
+            del st.session_state.geo_plan_snapshot
+            st.rerun()
+    if not engine_available():
+        st.info("Расчёт геополитического сценария станет доступен после публикации ядра WP1.")
 
 
 def risks(result: dict) -> None:
     st.header("Риски")
-    st.warning("Реестр ниже — синтетическая заглушка. Вероятности не оценены.")
+    if result["meta"]["engine_version"] == "MOCK":
+        st.warning("Реестр ниже — синтетическая заглушка. Вероятности не оценены.")
     table(result.get("risk_register", []), {"risk_id": "Риск", "scenario_id": "Сценарий",
         "consequence_t": "Последствие, т", "consequence_mln": "Последствие, млн у.е.",
         "consequence_sl": "Изменение SL, доля", "probability_basis_ru": "Основание вероятности"})
@@ -260,6 +301,27 @@ def persistence(result: dict, plan: dict) -> None:
                            mime="application/json")
     except ValueError as exc:
         st.error(str(exc))
+    st.subheader("Каталог сохранённых планов")
+    save_name = st.text_input("Сохранить как", value=plan["plan_id"])
+    if st.button("Сохранить в каталог"):
+        try:
+            filename = save_plan_to_catalog(plan, save_name)
+            st.success(f"План сохранён: {filename}")
+        except (ValueError, OSError) as exc:
+            st.error(str(exc))
+    saved = list_saved_plans()
+    if saved:
+        choice = st.selectbox("Открыть из каталога", saved,
+                              format_func=lambda item: f"{item['plan_id']} · {item['scenario_id']} · {item['file']}")
+        if st.button("Открыть выбранный план"):
+            try:
+                st.session_state.plan = load_plan_from_catalog(choice["file"])
+                st.session_state.loaded_scenario_id = st.session_state.plan["scenario_id"]
+                st.rerun()
+            except (ValueError, OSError) as exc:
+                st.error(str(exc))
+    else:
+        st.info("В каталоге results/plans/ пока нет сохранённых планов.")
     uploaded = st.file_uploader("Открыть сохранённый план JSON", type="json")
     if uploaded is not None and st.button("Загрузить план"):
         try:
@@ -269,8 +331,18 @@ def persistence(result: dict, plan: dict) -> None:
             st.rerun()
         except ValueError as exc:
             st.error(str(exc))
-    st.download_button("Выгрузить результат CSV (ZIP)", export_csv_zip(result),
-        file_name=f"{result['scenario_id']}_{result['plan_id']}_MOCK.zip", mime="application/zip")
+    try:
+        csv_payload = (export_core_archive(result["scenario_id"], plan, "csv")
+                       if engine_available() else export_csv_zip(result))
+        st.download_button("Выгрузить результат CSV (ZIP)", csv_payload,
+            file_name=f"{result['scenario_id']}_{result['plan_id']}_{result['meta']['engine_version']}.zip",
+            mime="application/zip")
+        if engine_available():
+            xlsx_payload = export_core_archive(result["scenario_id"], plan, "xlsx")
+            st.download_button("Выгрузить результат XLSX (ZIP)", xlsx_payload,
+                file_name=f"{result['scenario_id']}_{result['plan_id']}_XLSX.zip", mime="application/zip")
+    except (ValueError, ImportError) as exc:
+        st.error(str(exc))
 
 
 if "scenario_id" not in st.session_state:
@@ -287,8 +359,22 @@ if "contracts" not in st.session_state:
 st.sidebar.title("Топливный космоконтур 2035")
 page = st.sidebar.radio("Раздел", PAGES)
 scenario_id = st.sidebar.selectbox("Сценарий", available_scenarios(),
-    format_func=lambda value: SCENARIO_LABELS[value], key="scenario_id")
-st.sidebar.warning("🧪 ДЕМО: синтетические данные, не результаты стратегии")
+    format_func=lambda value: SCENARIO_LABELS.get(value, f"Исследовательский: {value}"), key="scenario_id")
+if engine_available():
+    st.sidebar.success("Расчётное ядро доступно")
+else:
+    st.sidebar.warning("🧪 ДЕМО: синтетические данные, не результаты стратегии")
+finals = final_plan_files()
+if finals:
+    st.sidebar.caption("Готовые планы")
+    for item in finals:
+        if st.sidebar.button(f"Загрузить {item['plan_id']}", key=f"final_{item['file']}"):
+            try:
+                st.session_state.plan = load_plan_from_catalog(item["file"])
+                st.session_state.loaded_scenario_id = st.session_state.plan["scenario_id"]
+                st.rerun()
+            except (ValueError, OSError) as exc:
+                st.sidebar.error(str(exc))
 plan = st.session_state.plan
 plan["scenario_id"] = scenario_id
 try:
@@ -296,10 +382,17 @@ try:
     base = get_run_result("BASE", plan)
     stress = get_run_result("MANDATORY_STRESS", plan)
 except ValueError as exc:
-    st.error(f"План требует исправления: {exc}")
-    result = get_run_result(scenario_id, default_plan(scenario_id))
+    st.error(f"План или расчёт требует исправления: {exc}")
+    if page == "План и контракты":
+        plan_page(plan)
+        st.stop()
+    if engine_available():
+        st.stop()
+    result = get_run_result("BASE", default_plan("BASE"))
     base = get_run_result("BASE", default_plan("BASE"))
     stress = get_run_result("MANDATORY_STRESS", default_plan("MANDATORY_STRESS"))
+
+st.caption(f"Сценарий: {SCENARIO_LABELS.get(scenario_id, scenario_id)} · период: 2035–2040 · версия: {result['meta']['engine_version']}")
 
 if page == "Обзор":
     overview(result)

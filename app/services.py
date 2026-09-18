@@ -3,6 +3,11 @@
 from __future__ import annotations
 
 import csv
+import hashlib
+import importlib
+import tempfile
+from dataclasses import asdict, is_dataclass
+from functools import lru_cache
 import io
 import json
 import re
@@ -14,13 +19,15 @@ from app.mock_data import MOCK_DIR, SCENARIOS, build_mock
 
 
 ROOT = Path(__file__).resolve().parents[1]
-USE_ENGINE = False  # Волна 2: включить после согласования API и типов ядра.
+USE_ENGINE = True  # При наличии опубликованного src/engine используется ядро; иначе демо-моки.
 EXPORT_TABLES = ("yearly_balance", "source_schedule", "inventory_trace",
                  "financial_breakdown", "constraint_checks", "risk_register")
 
 
 def available_scenarios() -> tuple[str, ...]:
-    return SCENARIOS
+    team = tuple(p.stem for p in (ROOT / "configs" / "team").glob("TEAM_*.yaml"))
+    base = ("BASE", "MANDATORY_STRESS") if engine_available() else SCENARIOS
+    return base + tuple(x for x in team if x not in base)
 
 
 def source_catalog() -> list[dict]:
@@ -62,7 +69,7 @@ def validate_plan(plan: dict) -> list[str]:
     capacities = {r["source_id"]: float(r["capacity_t_per_year"]) for r in source_catalog()}
     if not str(plan.get("plan_id", "")).strip():
         errors.append("Параметр plan_id: укажите идентификатор плана.")
-    if plan.get("scenario_id") not in SCENARIOS:
+    if plan.get("scenario_id") not in available_scenarios():
         errors.append("Параметр scenario_id: неизвестный сценарий.")
     decisions = plan.get("decisions", {})
     for index, order in enumerate(decisions.get("supply_orders", []), 1):
@@ -109,36 +116,163 @@ def validate_plan(plan: dict) -> list[str]:
     return errors
 
 
+def engine_available() -> bool:
+    return USE_ENGINE and (ROOT / "src" / "engine").is_dir()
+
+
+def _scenario_path(scenario_id: str) -> Path:
+    if scenario_id == "BASE":
+        return ROOT / "configs" / "base.yaml"
+    if scenario_id == "MANDATORY_STRESS":
+        return ROOT / "configs" / "mandatory_stress.yaml"
+    return ROOT / "configs" / "team" / f"{scenario_id}.yaml"
+
+
+@lru_cache(maxsize=1)
+def _load_case_cached():
+    engine = importlib.import_module("src.engine")
+    return engine.load_case(str(ROOT / "data"))
+
+
+@lru_cache(maxsize=64)
+def _run_core_cached(scenario_id: str, plan_json: str):
+    engine = importlib.import_module("src.engine")
+    scenario = engine.load_scenario(str(_scenario_path(scenario_id)))
+    with tempfile.TemporaryDirectory() as folder:
+        path = Path(folder) / "plan.json"
+        path.write_text(plan_json, encoding="utf-8")
+        core_plan = engine.load_plan(str(path))
+        return engine.run_plan(_load_case_cached(), core_plan, scenario)
+
+
+def _result_dict(result) -> dict:
+    if isinstance(result, dict):
+        return deepcopy(result)
+    if is_dataclass(result):
+        return asdict(result)
+    if hasattr(result, "model_dump"):
+        return result.model_dump(mode="json")
+    if hasattr(result, "to_dict"):
+        return result.to_dict()
+    raise TypeError("Ядро вернуло неизвестный тип RunResult.")
+
+
 def get_run_result(scenario_id: str, plan: dict) -> dict:
-    """Получить RunResult. Пока всегда мок; переключение на ядро только здесь."""
-    if scenario_id not in SCENARIOS:
+    """Возвращает RunResult; при отсутствии ядра сохраняет демо-режим."""
+    if scenario_id not in available_scenarios():
         raise ValueError(f"Сценарий {scenario_id} недоступен.")
-    errors = validate_plan({**plan, "scenario_id": scenario_id})
+    prepared = {**plan, "scenario_id": scenario_id}
+    errors = validate_plan(prepared)
     if errors:
         raise ValueError("\n".join(errors))
-    if USE_ENGINE:
+    if engine_available():
         try:
-            from src.engine import load_case, load_scenario, run_plan
-            from src.engine import load_plan as engine_load_plan
-
-            case = load_case(str(ROOT / "data"))
-            scenario = load_scenario(str(ROOT / "configs" / f"{scenario_id}.yaml"))
-            # Тип Plan ядра создаётся через опубликованный loader в волне 2.
-            # Временный JSON — только адаптер внутри services.
-            import tempfile
-
-            with tempfile.TemporaryDirectory() as folder:
-                path = Path(folder) / "plan.json"
-                path.write_text(json.dumps(plan, ensure_ascii=False), encoding="utf-8")
-                result = run_plan(case, engine_load_plan(str(path)), scenario)
-            return result if isinstance(result, dict) else vars(result)
-        except (ImportError, AttributeError, FileNotFoundError, TypeError):
-            pass
+            result = _run_core_cached(scenario_id, json.dumps(prepared, ensure_ascii=False, sort_keys=True))
+            return _result_dict(result)
+        except Exception as exc:
+            raise ValueError(f"Расчёт сценария {scenario_id}: {exc}") from exc
+    if scenario_id not in SCENARIOS:
+        raise ValueError(f"Сценарий {scenario_id} ожидает ядро WP1; сейчас доступен только демо-режим.")
     path = MOCK_DIR / f"{scenario_id}.json"
     result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else build_mock(scenario_id)
     result = deepcopy(result)
     result["plan_id"] = plan["plan_id"]
     return result
+
+
+def run_geo_scenario(plan: dict, event_label: str, source_id: str,
+                     multiplier: float, first_year: int, last_year: int) -> dict:
+    """Исследовательский ценовой шок; CASE_INPUT-файлы не изменяются."""
+    if not engine_available():
+        raise ValueError("Геополитический сценарий ожидает расчётное ядро WP1.")
+    if not event_label.strip():
+        raise ValueError("Событие: укажите event_label.")
+    sources = {row["source_id"]: row["name"] for row in source_catalog()}
+    if source_id not in sources:
+        raise ValueError(f"Геополитический сценарий: канал {source_id} не существует.")
+    if multiplier < 0:
+        raise ValueError("Коэффициент цены должен быть неотрицательным.")
+    if not 2035 <= first_year <= last_year <= 2040:
+        raise ValueError("Период события должен находиться внутри 2035–2040.")
+    errors = validate_plan({**plan, "scenario_id": "BASE"})
+    if errors:
+        raise ValueError("\n".join(errors))
+    years_yaml = "\n".join(f"    {year}: {multiplier}" for year in range(first_year, last_year + 1))
+    content = ("scenario_id: TEAM_GEO\nlabel_ru: " + json.dumps(event_label, ensure_ascii=False) +
+               "\nstatus: TEAM_ASSUMPTION\ndemand_multiplier:\n  default: 1.0\n" +
+               "variable_price_multiplier:\n  " + sources[source_id] + ":\n" + years_yaml +
+               "\nactual_delivery_share:\n  default: 1.0\nloss_ceiling:\n  enabled: false\n" +
+               "notes:\n  - 'Исследовательский ценовой шок; вероятность не задана.'\n")
+    engine = importlib.import_module("src.engine")
+    with tempfile.TemporaryDirectory() as folder:
+        scenario_path = Path(folder) / "TEAM_GEO.yaml"
+        scenario_path.write_text(content, encoding="utf-8")
+        plan_path = Path(folder) / "plan.json"
+        plan_path.write_text(json.dumps({**plan, "scenario_id": "TEAM_GEO"}, ensure_ascii=False), encoding="utf-8")
+        try:
+            scenario = engine.load_scenario(str(scenario_path))
+            core_plan = engine.load_plan(str(plan_path))
+            result = engine.run_plan(_load_case_cached(), core_plan, scenario)
+            return _result_dict(result)
+        except Exception as exc:
+            raise ValueError(f"Геополитический сценарий {first_year}–{last_year}: {exc}") from exc
+
+
+def geo_effect(base: dict, geo: dict) -> dict:
+    return {"base_cost_mln": sum(x["total_mln"] for x in base["financial_breakdown"]),
+            "geo_cost_mln": sum(x["total_mln"] for x in geo["financial_breakdown"]),
+            "base_delivered_t": sum(x["delivered_t"] for x in base["yearly_balance"]),
+            "geo_delivered_t": sum(x["delivered_t"] for x in geo["yearly_balance"]),
+            "base_shortage_t": sum(x["shortage_t"] for x in base["yearly_balance"]),
+            "geo_shortage_t": sum(x["shortage_t"] for x in geo["yearly_balance"])}
+
+
+def clear_result_cache() -> None:
+    _run_core_cached.cache_clear()
+
+
+def list_saved_plans() -> list[dict]:
+    directory = ROOT / "results" / "plans"
+    if not directory.exists():
+        return []
+    found = []
+    for path in sorted(directory.glob("*.json")):
+        try:
+            plan = load_plan_json(path.read_bytes())
+            found.append({"file": path.name, "plan_id": plan["plan_id"],
+                          "scenario_id": plan["scenario_id"]})
+        except ValueError:
+            continue
+    return found
+
+
+def save_plan_to_catalog(plan: dict, name: str) -> str:
+    if not name.strip():
+        raise ValueError("Имя сохранения: укажите название плана.")
+    prepared = deepcopy(plan)
+    prepared["plan_id"] = name.strip()
+    payload = save_plan_json(prepared)
+    directory = ROOT / "results" / "plans"
+    directory.mkdir(parents=True, exist_ok=True)
+    safe_stem = re.sub(r"[^A-Za-z0-9_-]", "_", name.strip()).strip("_")[:48] or "plan"
+    digest = hashlib.sha256(name.strip().encode("utf-8")).hexdigest()[:8]
+    path = directory / f"{safe_stem}_{digest}.json"
+    path.write_bytes(payload)
+    return path.name
+
+
+def load_plan_from_catalog(filename: str) -> dict:
+    directory = (ROOT / "results" / "plans").resolve()
+    path = (directory / filename).resolve()
+    if path.parent != directory or path.suffix.lower() != ".json":
+        raise ValueError("Имя плана: недопустимый путь к файлу.")
+    if not path.exists():
+        raise ValueError(f"Файл плана {filename} не найден.")
+    return load_plan_json(path.read_bytes())
+
+
+def final_plan_files() -> list[dict]:
+    return [item for item in list_saved_plans() if "FINAL" in item["plan_id"].upper()]
 
 
 def save_plan_json(plan: dict) -> bytes:
@@ -159,6 +293,42 @@ def load_plan_json(payload: bytes) -> dict:
     if errors:
         raise ValueError("\n".join(errors))
     return plan
+
+
+def export_core_archive(scenario_id: str, plan: dict, fmt: str = "csv") -> bytes:
+    """Экспорт того же кэшированного RunResult через API ядра."""
+    if not engine_available():
+        raise ValueError("Экспорт ядра недоступен: src/engine ещё не опубликован.")
+    if fmt not in ("csv", "xlsx"):
+        raise ValueError(f"Формат экспорта {fmt} не поддерживается.")
+    engine = importlib.import_module("src.engine")
+    prepared = {**plan, "scenario_id": scenario_id}
+    core_result = _run_core_cached(scenario_id, json.dumps(prepared, ensure_ascii=False, sort_keys=True))
+    with tempfile.TemporaryDirectory() as folder:
+        try:
+            paths = engine.export_results(core_result, folder, fmt=fmt)
+        except Exception as exc:
+            raise ValueError(f"Выгрузка сценария {scenario_id}: {exc}") from exc
+        if not paths:
+            raise ValueError(f"Выгрузка сценария {scenario_id}: ядро не создало файлов.")
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
+            for name in paths:
+                path = Path(name)
+                if not path.is_absolute():
+                    path = Path(folder) / path
+                if not path.exists():
+                    raise ValueError(f"Выгрузка сценария {scenario_id}: файл {path.name} не найден.")
+                archive.write(path, arcname=path.name)
+            result = _result_dict(core_result)
+            envelope_meta = {"scenario_id": scenario_id, "plan_id": result["plan_id"],
+                             "periods": [row["year"] for row in result["yearly_balance"]],
+                             "units": {"volume": "т", "capacity": "т/год",
+                                       "money": "млн у.е. (цены 2035)", "service_level": "доля"},
+                             "assumptions_reference": result["meta"]["assumptions_reference"],
+                             "meta": result["meta"]}
+            archive.writestr("export_meta.json", json.dumps(envelope_meta, ensure_ascii=False, indent=2))
+        return output.getvalue()
 
 
 def export_csv_zip(result: dict) -> bytes:
