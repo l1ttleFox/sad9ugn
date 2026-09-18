@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sad9ugn/contracts/plan_format.json",
+  "title": "ParticipantPlan (расширенная, v1.0)",
+  "description": "Формат плана команды. Расширение plan.schema.json организатора: конкретизированы структуры решений. Все ключи на английском (машиночитаемые), значения-строки допускается русский. Единицы: объёмы — тонны/год или тонны/месяц как указано, деньги — млн у.е., периоды — YYYY или YYYY-MM.",
+  "type": "object",
+  "required": ["plan_id", "scenario_id", "decisions", "assumptions"],
+  "properties": {
+    "plan_id": {"type": "string", "minLength": 1},
+    "scenario_id": {"type": "string", "minLength": 1, "description": "BASE | MANDATORY_STRESS | TEAM_* (исследовательский)"},
+    "version": {"type": "string"},
+    "decisions": {
+      "type": "object",
+      "required": ["supply_orders", "capacity_reservations", "investments", "inventory_policy"],
+      "properties": {
+        "supply_orders": {
+          "type": "array",
+          "description": "Заказы на отбор по каналам и периодам. ordered_volume — решение об отборе (не равно delivered и не равно reserved).",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "period", "ordered_volume_t"],
+            "properties": {
+              "source_id": {"type": "string", "enum": ["A", "B", "C", "D", "E"]},
+              "period": {"type": "string", "pattern": "^20(3[5-9]|4[0-9])(-([01][0-9]))?$", "description": "YYYY (годовой заказ, распределяется равномерно по месяцам) или YYYY-MM (месячный заказ)"},
+              "ordered_volume_t": {"type": "number", "minimum": 0}
+            }
+          }
+        },
+        "capacity_reservations": {
+          "type": "array",
+          "description": "Резервируемая мощность по каналам и годам. reserved_capacity_t_per_year <= capacity источника.",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "year", "reserved_capacity_t_per_year"],
+            "properties": {
+              "source_id": {"type": "string", "enum": ["A", "B", "C", "D", "E"]},
+              "year": {"type": "integer", "minimum": 2035},
+              "reserved_capacity_t_per_year": {"type": "number", "minimum": 0},
+              "start_month": {"type": "integer", "minimum": 1, "maximum": 12, "default": 1, "description": "месяц начала резервирования внутри года (для неполного года — prorata)"}
+            }
+          }
+        },
+        "investments": {
+          "type": "array",
+          "description": "Инвестиционные действия с явными датами платежей. payment_date определяет попадание в CAPEX-лимиты (through_2037 / through_2040).",
+          "items": {
+            "type": "object",
+            "required": ["investment_id", "action", "payment_date"],
+            "properties": {
+              "investment_id": {"type": "string", "enum": ["EARTH_NEW", "LUNAR_ISRU", "ZBO"]},
+              "action": {"type": "string", "enum": ["buy_option", "exercise_option", "fund_capex", "none"], "description": "EARTH_NEW: buy_option (90) и exercise_option (270) — раздельные платежи; LUNAR_ISRU/ZBO: fund_capex"},
+              "payment_date": {"type": "string", "pattern": "^20(3[5-9]|4[0-9])-[01][0-9]$", "description": "YYYY-MM — момент платежа (допустимы и даты до 2035 в подготовительном периоде, см. units_and_conventions.md)"}
+            }
+          }
+        },
+        "inventory_policy": {
+          "type": "object",
+          "required": ["initial_inventory_t", "initial_inventory_source"],
+          "properties": {
+            "initial_inventory_t": {"type": "number", "minimum": 0, "description": "запас на 01.01.2035"},
+            "initial_inventory_source": {
+              "type": "object",
+              "required": ["source_id", "order_period", "delivery_period", "volume_t", "paid_in"],
+              "description": "Как сформирован начальный запас: предстартовый заказ подготовительного периода (не бесплатно, не дублируется в балансе 2035)",
+              "properties": {
+                "source_id": {"type": "string"},
+                "order_period": {"type": "string", "description": "например 2034-09"},
+                "delivery_period": {"type": "string", "description": "например 2035-01"},
+                "volume_t": {"type": "number"},
+                "paid_in": {"type": "string", "description": "год, в который включены расходы (по правилам кейса — 2035)"}
+              }
+            },
+            "reserve_mode": {"type": "string", "enum": ["physical", "contractual_emergency"], "default": "physical", "description": "способ выполнения требования 45 дней"},
+            "target_month_end_inventory_t": {"type": "number", "minimum": 0, "description": "целевой оперативный запас (не заменяет проверку 45 дней)"}
+          }
+        },
+        "emergency_contract": {
+          "type": ["object", "null"],
+          "description": "Если reserve_mode=contractual_emergency: параметры контракта, доказывающие эквивалентность 45-дневному резерву",
+          "properties": {
+            "reserved_capacity_t_per_year": {"type": "number"},
+            "activation_lead_days": {"type": "number", "description": "42 (6 недель) — CASE_INPUT"},
+            "coverage_volume_t": {"type": "number", "description": "объём, покрывающий спрос за период ожидания"},
+            "notes_ru": {"type": "string"}
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Реестр TEAM_ASSUMPTION этого плана. Каждое допущение: имя, значение, единица, обоснование, область действия.",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "unit", "rationale_ru"],
+        "properties": {
+          "id": {"type": "string"},
+          "value": {},
+          "unit": {"type": "string"},
+          "rationale_ru": {"type": "string"},
+          "scope": {"type": "string"}
+        }
+      }
+    }
+  }
+}

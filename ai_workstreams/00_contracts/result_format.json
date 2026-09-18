@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sad9ugn/contracts/result_format.json",
+  "title": "RunResult (контракт результата расчёта, v1.0)",
+  "description": "Единый конверт результата run_plan(). UI (WP4) строится ПРОТИВ ЭТОЙ СХЕМЫ — сначала на синтетических моках, затем на реальных данных. Экспорт (export_results) сериализует эти же структуры в CSV/XLSX по export.schema.json организатора. Единицы: тонны (т), млн у.е., доли 0..1, периоды YYYY / YYYY-MM.",
+  "type": "object",
+  "required": ["scenario_id", "plan_id", "monthly_balance", "yearly_balance", "source_schedule", "inventory_trace", "financial_breakdown", "constraint_checks", "meta"],
+  "properties": {
+    "scenario_id": {"type": "string"},
+    "plan_id": {"type": "string"},
+
+    "monthly_balance": {
+      "type": "array",
+      "description": "Помесячный материальный баланс — основа всех агрегатов",
+      "items": {
+        "type": "object",
+        "required": ["period", "i_start_t", "delivered_t", "throughput_t", "losses_t", "served_total_t", "served_critical_t", "demand_total_t", "demand_critical_t", "shortage_t", "i_end_t", "storage_mode", "storage_capacity_t"],
+        "properties": {
+          "period": {"type": "string", "pattern": "^20(3[5-9]|4[0-9])-(0[1-9]|1[0-2])$"},
+          "i_start_t": {"type": "number"},
+          "delivered_t": {"type": "number", "description": "фактическое поступление (с учётом actual_delivery_share сценария; БЕЗ умножения на reliability в BASE)"},
+          "throughput_t": {"type": "number", "description": "валовое поступление = delivered_t (база начисления потерь)"},
+          "losses_t": {"type": "number", "description": "throughput * loss_rate действующего режима; начислены ОДИН раз"},
+          "served_total_t": {"type": "number"},
+          "served_critical_t": {"type": "number", "description": "входит в served_total_t (не прибавляется)"},
+          "demand_total_t": {"type": "number"},
+          "demand_critical_t": {"type": "number"},
+          "shortage_t": {"type": "number", "description": "max(0, demand - served); отдельно, НИКОГДА не отрицательный inventory"},
+          "i_end_t": {"type": "number", "minimum": 0},
+          "storage_mode": {"type": "string", "enum": ["BASE", "ZBO"]},
+          "storage_capacity_t": {"type": "number"}
+        }
+      }
+    },
+
+    "yearly_balance": {
+      "type": "array",
+      "description": "Годовая агрегация monthly_balance (суммы) + годовые показатели сервиса",
+      "items": {
+        "type": "object",
+        "required": ["year", "demand_total_t", "demand_critical_t", "delivered_t", "losses_t", "served_total_t", "served_critical_t", "shortage_t", "sl_total", "sl_critical", "i_start_t", "i_end_t", "reserve_required_t", "reserve_actual_start_t", "reserve_ok"],
+        "properties": {
+          "year": {"type": "integer"},
+          "sl_total": {"type": "number", "description": "served_total / demand_total, доля"},
+          "sl_critical": {"type": "number"},
+          "reserve_required_t": {"type": "number", "description": "D_y * 45 / 365 для данного сценария и года"},
+          "reserve_actual_start_t": {"type": "number", "description": "физический запас на начало года"},
+          "reserve_ok": {"type": "boolean"}
+        }
+      }
+    },
+
+    "source_schedule": {
+      "type": "array",
+      "description": "Помесячно по каждому каналу: reserved / ordered / delivered / оплачено",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "period", "reserved_capacity_t_per_year", "ordered_volume_t", "planned_delivery_t", "actual_delivery_t", "lead_time_applied"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "period": {"type": "string"},
+          "reserved_capacity_t_per_year": {"type": "number"},
+          "ordered_volume_t": {"type": "number", "description": "заказ, размещённый в этом месяце"},
+          "planned_delivery_t": {"type": "number", "description": "плановая поставка (прибыла в этом месяце по lead time)"},
+          "actual_delivery_t": {"type": "number", "description": "фактическая с учётом сценария (в BASE = planned)"},
+          "lead_time_applied": {"type": "string", "description": "например '12 month', '6 week', '18-24 month (policy: 24)' — раскрытая конвенция"}
+        }
+      }
+    },
+
+    "inventory_trace": {
+      "type": "array",
+      "description": "Дублирует monthly_balance в минимальном составе для графиков (период, запас, порог резерва, ёмкость)",
+      "items": {
+        "type": "object",
+        "required": ["period", "inventory_t", "reserve_threshold_t", "capacity_t"],
+        "properties": {
+          "period": {"type": "string"},
+          "inventory_t": {"type": "number"},
+          "reserve_threshold_t": {"type": "number"},
+          "capacity_t": {"type": "number"}
+        }
+      }
+    },
+
+    "financial_breakdown": {
+      "type": "array",
+      "description": "По годам: все компоненты стоимости. Годовые суммы и накопленный итог.",
+      "items": {
+        "type": "object",
+        "required": ["year", "capex_mln", "capex_cumulative_mln", "procurement_mln", "reservation_mln", "take_or_pay_extra_mln", "holding_mln", "fixed_opex_mln", "total_mln", "discounted_mln", "cost_per_served_t_mln"],
+        "properties": {
+          "year": {"type": "integer"},
+          "capex_mln": {"type": "number"},
+          "capex_cumulative_mln": {"type": "number", "description": "для проверок лимитов 1800/2800"},
+          "procurement_mln": {"type": "number", "description": "price * max(Q_order, TOP_share * Q_reserved_period)"},
+          "reservation_mln": {"type": "number", "description": "rate * annual_reserved * period_fraction"},
+          "take_or_pay_extra_mln": {"type": "number", "description": "СПРАВОЧНО: переплата TOP сверх фактического отбора (не отдельный платёж, уже внутри procurement)"},
+          "holding_mln": {"type": "number", "description": "0.72 * средний физический запас (time-weighted)"},
+          "fixed_opex_mln": {"type": "number", "description": "ZBO +12/год, ISRU +70/год после ввода, прората"},
+          "total_mln": {"type": "number"},
+          "discounted_mln": {"type": "number", "description": "PV_t = CF_t / (1+r)^(t-t0), r=0.10, t0=2035 — TEAM_ASSUMPTION"},
+          "cost_per_served_t_mln": {"type": "number", "description": "стоимость тонны фактически обслуженного спроса"}
+        }
+      }
+    },
+
+    "constraint_checks": {
+      "type": "array",
+      "description": "Полный реестр проверок: и пройденных, и нарушенных (жюри требует видеть нарушения с годом, величиной, причиной)",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "period", "passed", "actual", "limit", "message_ru"],
+        "properties": {
+          "rule_id": {"type": "string", "description": "из constraints.csv: BASE_CRITICAL_SERVICE, CAPEX_2037, RESERVE_45D, ... или внутренние: STORAGE_OVERFLOW, CAPACITY_EXCEEDED, LEAD_TIME_VIOLATION, EMERGENCY_BASE_STREAK, LOSS_CEILING"},
+          "period": {"type": "string"},
+          "passed": {"type": "boolean"},
+          "actual": {"type": "number"},
+          "limit": {"type": "number"},
+          "excess": {"type": "number"},
+          "message_ru": {"type": "string", "description": "человекочитаемое сообщение: что, где, насколько нарушено"}
+        }
+      }
+    },
+
+    "risk_register": {
+      "type": "array",
+      "description": "Заполняется WP3 (evaluate_risks): рассчитанные последствия каждого риска реестра",
+      "items": {
+        "type": "object",
+        "required": ["risk_id", "scenario_id"],
+        "properties": {
+          "risk_id": {"type": "string"},
+          "scenario_id": {"type": "string", "description": "TEAM_* сценарий, через который риск рассчитан"},
+          "consequence_t": {"type": "number"},
+          "consequence_mln": {"type": "number"},
+          "consequence_sl": {"type": "number"},
+          "probability_basis_ru": {"type": "string"}
+        }
+      }
+    },
+
+    "meta": {
+      "type": "object",
+      "required": ["engine_version", "contract_version", "timestep", "discount_rate", "discount_t0", "assumptions_reference", "generated_at"],
+      "properties": {
+        "engine_version": {"type": "string"},
+        "contract_version": {"type": "string", "const": "1.0"},
+        "timestep": {"type": "string", "const": "monthly"},
+        "discount_rate": {"type": "number", "const": 0.10},
+        "discount_t0": {"type": "integer", "const": 2035},
+        "assumptions_reference": {"type": "string", "description": "путь к реестру TEAM_ASSUMPTION"},
+        "generated_at": {"type": "string"},
+        "random_seed": {"type": ["integer", "null"]}
+      }
+    }
+  }
+}
