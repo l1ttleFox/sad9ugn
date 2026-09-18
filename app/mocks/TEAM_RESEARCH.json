@@ -1,0 +1,5183 @@
+{
+  "scenario_id": "TEAM_RESEARCH",
+  "plan_id": "MOCK-PLAN-01",
+  "monthly_balance": [
+    {
+      "period": "2035-01",
+      "i_start_t": 37.0,
+      "delivered_t": 9.176,
+      "throughput_t": 9.176,
+      "losses_t": 0.312,
+      "served_total_t": 9.243,
+      "served_critical_t": 6.378,
+      "demand_total_t": 9.243,
+      "demand_critical_t": 6.378,
+      "shortage_t": 0.0,
+      "i_end_t": 36.621,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-02",
+      "i_start_t": 36.621,
+      "delivered_t": 9.308,
+      "throughput_t": 9.308,
+      "losses_t": 0.316,
+      "served_total_t": 9.385,
+      "served_critical_t": 6.476,
+      "demand_total_t": 9.385,
+      "demand_critical_t": 6.476,
+      "shortage_t": 0.0,
+      "i_end_t": 36.228,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-03",
+      "i_start_t": 36.228,
+      "delivered_t": 9.44,
+      "throughput_t": 9.44,
+      "losses_t": 0.321,
+      "served_total_t": 9.527,
+      "served_critical_t": 6.574,
+      "demand_total_t": 9.527,
+      "demand_critical_t": 6.574,
+      "shortage_t": 0.0,
+      "i_end_t": 35.82,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-04",
+      "i_start_t": 35.82,
+      "delivered_t": 9.044,
+      "throughput_t": 9.044,
+      "losses_t": 0.307,
+      "served_total_t": 9.101,
+      "served_critical_t": 6.28,
+      "demand_total_t": 9.101,
+      "demand_critical_t": 6.28,
+      "shortage_t": 0.0,
+      "i_end_t": 35.456,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-05",
+      "i_start_t": 35.456,
+      "delivered_t": 9.176,
+      "throughput_t": 9.176,
+      "losses_t": 0.312,
+      "served_total_t": 9.243,
+      "served_critical_t": 6.378,
+      "demand_total_t": 9.243,
+      "demand_critical_t": 6.378,
+      "shortage_t": 0.0,
+      "i_end_t": 35.077,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-06",
+      "i_start_t": 35.077,
+      "delivered_t": 9.308,
+      "throughput_t": 9.308,
+      "losses_t": 0.316,
+      "served_total_t": 9.385,
+      "served_critical_t": 6.476,
+      "demand_total_t": 9.385,
+      "demand_critical_t": 6.476,
+      "shortage_t": 0.0,
+      "i_end_t": 34.684,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-07",
+      "i_start_t": 34.684,
+      "delivered_t": 9.44,
+      "throughput_t": 9.44,
+      "losses_t": 0.321,
+      "served_total_t": 9.527,
+      "served_critical_t": 6.574,
+      "demand_total_t": 9.527,
+      "demand_critical_t": 6.574,
+      "shortage_t": 0.0,
+      "i_end_t": 34.276,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-08",
+      "i_start_t": 34.276,
+      "delivered_t": 9.044,
+      "throughput_t": 9.044,
+      "losses_t": 0.307,
+      "served_total_t": 9.101,
+      "served_critical_t": 6.28,
+      "demand_total_t": 9.101,
+      "demand_critical_t": 6.28,
+      "shortage_t": 0.0,
+      "i_end_t": 33.912,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-09",
+      "i_start_t": 33.912,
+      "delivered_t": 9.176,
+      "throughput_t": 9.176,
+      "losses_t": 0.312,
+      "served_total_t": 9.243,
+      "served_critical_t": 6.378,
+      "demand_total_t": 9.243,
+      "demand_critical_t": 6.378,
+      "shortage_t": 0.0,
+      "i_end_t": 33.533,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-10",
+      "i_start_t": 33.533,
+      "delivered_t": 9.308,
+      "throughput_t": 9.308,
+      "losses_t": 0.316,
+      "served_total_t": 9.385,
+      "served_critical_t": 6.476,
+      "demand_total_t": 9.385,
+      "demand_critical_t": 6.476,
+      "shortage_t": 0.0,
+      "i_end_t": 33.14,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-11",
+      "i_start_t": 33.14,
+      "delivered_t": 9.44,
+      "throughput_t": 9.44,
+      "losses_t": 0.321,
+      "served_total_t": 9.527,
+      "served_critical_t": 6.574,
+      "demand_total_t": 9.527,
+      "demand_critical_t": 6.574,
+      "shortage_t": 0.0,
+      "i_end_t": 32.732,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2035-12",
+      "i_start_t": 32.732,
+      "delivered_t": 9.044,
+      "throughput_t": 9.044,
+      "losses_t": 0.307,
+      "served_total_t": 9.101,
+      "served_critical_t": 6.28,
+      "demand_total_t": 9.101,
+      "demand_critical_t": 6.28,
+      "shortage_t": 0.0,
+      "i_end_t": 32.368,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-01",
+      "i_start_t": 32.368,
+      "delivered_t": 13.708,
+      "throughput_t": 13.708,
+      "losses_t": 0.466,
+      "served_total_t": 14.116,
+      "served_critical_t": 9.74,
+      "demand_total_t": 14.116,
+      "demand_critical_t": 9.74,
+      "shortage_t": 0.0,
+      "i_end_t": 31.494,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-02",
+      "i_start_t": 31.494,
+      "delivered_t": 13.839,
+      "throughput_t": 13.839,
+      "losses_t": 0.471,
+      "served_total_t": 14.257,
+      "served_critical_t": 9.837,
+      "demand_total_t": 14.257,
+      "demand_critical_t": 9.837,
+      "shortage_t": 0.0,
+      "i_end_t": 30.605,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-03",
+      "i_start_t": 30.605,
+      "delivered_t": 13.971,
+      "throughput_t": 13.971,
+      "losses_t": 0.475,
+      "served_total_t": 14.399,
+      "served_critical_t": 9.935,
+      "demand_total_t": 14.399,
+      "demand_critical_t": 9.935,
+      "shortage_t": 0.0,
+      "i_end_t": 29.702,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-04",
+      "i_start_t": 29.702,
+      "delivered_t": 13.575,
+      "throughput_t": 13.575,
+      "losses_t": 0.462,
+      "served_total_t": 13.974,
+      "served_critical_t": 9.642,
+      "demand_total_t": 13.974,
+      "demand_critical_t": 9.642,
+      "shortage_t": 0.0,
+      "i_end_t": 28.841,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-05",
+      "i_start_t": 28.841,
+      "delivered_t": 13.708,
+      "throughput_t": 13.708,
+      "losses_t": 0.466,
+      "served_total_t": 14.116,
+      "served_critical_t": 9.74,
+      "demand_total_t": 14.116,
+      "demand_critical_t": 9.74,
+      "shortage_t": 0.0,
+      "i_end_t": 27.967,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-06",
+      "i_start_t": 27.967,
+      "delivered_t": 13.839,
+      "throughput_t": 13.839,
+      "losses_t": 0.471,
+      "served_total_t": 14.257,
+      "served_critical_t": 9.837,
+      "demand_total_t": 14.257,
+      "demand_critical_t": 9.837,
+      "shortage_t": 0.0,
+      "i_end_t": 27.078,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-07",
+      "i_start_t": 27.078,
+      "delivered_t": 13.971,
+      "throughput_t": 13.971,
+      "losses_t": 0.475,
+      "served_total_t": 14.399,
+      "served_critical_t": 9.935,
+      "demand_total_t": 14.399,
+      "demand_critical_t": 9.935,
+      "shortage_t": 0.0,
+      "i_end_t": 26.175,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-08",
+      "i_start_t": 26.175,
+      "delivered_t": 13.575,
+      "throughput_t": 13.575,
+      "losses_t": 0.462,
+      "served_total_t": 13.974,
+      "served_critical_t": 9.642,
+      "demand_total_t": 13.974,
+      "demand_critical_t": 9.642,
+      "shortage_t": 0.0,
+      "i_end_t": 25.314,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-09",
+      "i_start_t": 25.314,
+      "delivered_t": 13.708,
+      "throughput_t": 13.708,
+      "losses_t": 0.466,
+      "served_total_t": 14.116,
+      "served_critical_t": 9.74,
+      "demand_total_t": 14.116,
+      "demand_critical_t": 9.74,
+      "shortage_t": 0.0,
+      "i_end_t": 24.44,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-10",
+      "i_start_t": 24.44,
+      "delivered_t": 13.839,
+      "throughput_t": 13.839,
+      "losses_t": 0.471,
+      "served_total_t": 14.257,
+      "served_critical_t": 9.837,
+      "demand_total_t": 14.257,
+      "demand_critical_t": 9.837,
+      "shortage_t": 0.0,
+      "i_end_t": 23.551,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-11",
+      "i_start_t": 23.551,
+      "delivered_t": 13.971,
+      "throughput_t": 13.971,
+      "losses_t": 0.475,
+      "served_total_t": 14.399,
+      "served_critical_t": 9.935,
+      "demand_total_t": 14.399,
+      "demand_critical_t": 9.935,
+      "shortage_t": 0.0,
+      "i_end_t": 22.648,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2036-12",
+      "i_start_t": 22.648,
+      "delivered_t": 13.575,
+      "throughput_t": 13.575,
+      "losses_t": 0.462,
+      "served_total_t": 13.974,
+      "served_critical_t": 9.642,
+      "demand_total_t": 13.974,
+      "demand_critical_t": 9.642,
+      "shortage_t": 0.0,
+      "i_end_t": 21.787,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-01",
+      "i_start_t": 21.787,
+      "delivered_t": 18.239,
+      "throughput_t": 18.239,
+      "losses_t": 0.62,
+      "served_total_t": 18.988,
+      "served_critical_t": 13.102,
+      "demand_total_t": 18.988,
+      "demand_critical_t": 13.102,
+      "shortage_t": 0.0,
+      "i_end_t": 20.418,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-02",
+      "i_start_t": 20.418,
+      "delivered_t": 18.371,
+      "throughput_t": 18.371,
+      "losses_t": 0.625,
+      "served_total_t": 19.13,
+      "served_critical_t": 13.2,
+      "demand_total_t": 19.13,
+      "demand_critical_t": 13.2,
+      "shortage_t": 0.0,
+      "i_end_t": 19.034,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-03",
+      "i_start_t": 19.034,
+      "delivered_t": 18.502,
+      "throughput_t": 18.502,
+      "losses_t": 0.629,
+      "served_total_t": 19.271,
+      "served_critical_t": 13.297,
+      "demand_total_t": 19.271,
+      "demand_critical_t": 13.297,
+      "shortage_t": 0.0,
+      "i_end_t": 17.636,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-04",
+      "i_start_t": 17.636,
+      "delivered_t": 18.107,
+      "throughput_t": 18.107,
+      "losses_t": 0.616,
+      "served_total_t": 18.846,
+      "served_critical_t": 13.004,
+      "demand_total_t": 18.846,
+      "demand_critical_t": 13.004,
+      "shortage_t": 0.0,
+      "i_end_t": 16.281,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-05",
+      "i_start_t": 16.281,
+      "delivered_t": 18.239,
+      "throughput_t": 18.239,
+      "losses_t": 0.62,
+      "served_total_t": 18.988,
+      "served_critical_t": 13.102,
+      "demand_total_t": 18.988,
+      "demand_critical_t": 13.102,
+      "shortage_t": 0.0,
+      "i_end_t": 14.912,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-06",
+      "i_start_t": 14.912,
+      "delivered_t": 18.371,
+      "throughput_t": 18.371,
+      "losses_t": 0.625,
+      "served_total_t": 19.13,
+      "served_critical_t": 13.2,
+      "demand_total_t": 19.13,
+      "demand_critical_t": 13.2,
+      "shortage_t": 0.0,
+      "i_end_t": 13.528,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-07",
+      "i_start_t": 13.528,
+      "delivered_t": 18.502,
+      "throughput_t": 18.502,
+      "losses_t": 0.629,
+      "served_total_t": 19.271,
+      "served_critical_t": 13.297,
+      "demand_total_t": 19.271,
+      "demand_critical_t": 13.297,
+      "shortage_t": 0.0,
+      "i_end_t": 12.13,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-08",
+      "i_start_t": 12.13,
+      "delivered_t": 18.107,
+      "throughput_t": 18.107,
+      "losses_t": 0.616,
+      "served_total_t": 18.846,
+      "served_critical_t": 13.004,
+      "demand_total_t": 18.846,
+      "demand_critical_t": 13.004,
+      "shortage_t": 0.0,
+      "i_end_t": 10.775,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-09",
+      "i_start_t": 10.775,
+      "delivered_t": 18.239,
+      "throughput_t": 18.239,
+      "losses_t": 0.62,
+      "served_total_t": 18.988,
+      "served_critical_t": 13.102,
+      "demand_total_t": 18.988,
+      "demand_critical_t": 13.102,
+      "shortage_t": 0.0,
+      "i_end_t": 9.406,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-10",
+      "i_start_t": 9.406,
+      "delivered_t": 18.371,
+      "throughput_t": 18.371,
+      "losses_t": 0.625,
+      "served_total_t": 19.13,
+      "served_critical_t": 13.2,
+      "demand_total_t": 19.13,
+      "demand_critical_t": 13.2,
+      "shortage_t": 0.0,
+      "i_end_t": 8.022,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-11",
+      "i_start_t": 8.022,
+      "delivered_t": 18.502,
+      "throughput_t": 18.502,
+      "losses_t": 0.629,
+      "served_total_t": 19.271,
+      "served_critical_t": 13.297,
+      "demand_total_t": 19.271,
+      "demand_critical_t": 13.297,
+      "shortage_t": 0.0,
+      "i_end_t": 6.624,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2037-12",
+      "i_start_t": 6.624,
+      "delivered_t": 18.107,
+      "throughput_t": 18.107,
+      "losses_t": 0.616,
+      "served_total_t": 18.846,
+      "served_critical_t": 13.004,
+      "demand_total_t": 18.846,
+      "demand_critical_t": 13.004,
+      "shortage_t": 0.0,
+      "i_end_t": 5.269,
+      "storage_mode": "BASE",
+      "storage_capacity_t": 73.0
+    },
+    {
+      "period": "2038-01",
+      "i_start_t": 5.269,
+      "delivered_t": 22.77,
+      "throughput_t": 22.77,
+      "losses_t": 0.296,
+      "served_total_t": 23.86,
+      "served_critical_t": 16.463,
+      "demand_total_t": 23.86,
+      "demand_critical_t": 16.463,
+      "shortage_t": 0.0,
+      "i_end_t": 3.883,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-02",
+      "i_start_t": 3.883,
+      "delivered_t": 22.902,
+      "throughput_t": 22.902,
+      "losses_t": 0.298,
+      "served_total_t": 24.002,
+      "served_critical_t": 16.561,
+      "demand_total_t": 24.002,
+      "demand_critical_t": 16.561,
+      "shortage_t": 0.0,
+      "i_end_t": 2.485,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-03",
+      "i_start_t": 2.485,
+      "delivered_t": 23.033,
+      "throughput_t": 23.033,
+      "losses_t": 0.299,
+      "served_total_t": 23.219,
+      "served_critical_t": 16.659,
+      "demand_total_t": 24.143,
+      "demand_critical_t": 16.659,
+      "shortage_t": 0.924,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-04",
+      "i_start_t": 2.0,
+      "delivered_t": 22.638,
+      "throughput_t": 22.638,
+      "losses_t": 0.294,
+      "served_total_t": 22.344,
+      "served_critical_t": 16.365,
+      "demand_total_t": 23.718,
+      "demand_critical_t": 16.365,
+      "shortage_t": 1.374,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-05",
+      "i_start_t": 2.0,
+      "delivered_t": 22.77,
+      "throughput_t": 22.77,
+      "losses_t": 0.296,
+      "served_total_t": 22.474,
+      "served_critical_t": 16.463,
+      "demand_total_t": 23.86,
+      "demand_critical_t": 16.463,
+      "shortage_t": 1.386,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-06",
+      "i_start_t": 2.0,
+      "delivered_t": 22.902,
+      "throughput_t": 22.902,
+      "losses_t": 0.298,
+      "served_total_t": 22.604,
+      "served_critical_t": 16.561,
+      "demand_total_t": 24.002,
+      "demand_critical_t": 16.561,
+      "shortage_t": 1.398,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-07",
+      "i_start_t": 2.0,
+      "delivered_t": 23.033,
+      "throughput_t": 23.033,
+      "losses_t": 0.299,
+      "served_total_t": 22.734,
+      "served_critical_t": 16.659,
+      "demand_total_t": 24.143,
+      "demand_critical_t": 16.659,
+      "shortage_t": 1.409,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-08",
+      "i_start_t": 2.0,
+      "delivered_t": 22.638,
+      "throughput_t": 22.638,
+      "losses_t": 0.294,
+      "served_total_t": 22.344,
+      "served_critical_t": 16.365,
+      "demand_total_t": 23.718,
+      "demand_critical_t": 16.365,
+      "shortage_t": 1.374,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-09",
+      "i_start_t": 2.0,
+      "delivered_t": 22.77,
+      "throughput_t": 22.77,
+      "losses_t": 0.296,
+      "served_total_t": 22.474,
+      "served_critical_t": 16.463,
+      "demand_total_t": 23.86,
+      "demand_critical_t": 16.463,
+      "shortage_t": 1.386,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-10",
+      "i_start_t": 2.0,
+      "delivered_t": 22.902,
+      "throughput_t": 22.902,
+      "losses_t": 0.298,
+      "served_total_t": 22.604,
+      "served_critical_t": 16.561,
+      "demand_total_t": 24.002,
+      "demand_critical_t": 16.561,
+      "shortage_t": 1.398,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-11",
+      "i_start_t": 2.0,
+      "delivered_t": 23.033,
+      "throughput_t": 23.033,
+      "losses_t": 0.299,
+      "served_total_t": 22.734,
+      "served_critical_t": 16.659,
+      "demand_total_t": 24.143,
+      "demand_critical_t": 16.659,
+      "shortage_t": 1.409,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2038-12",
+      "i_start_t": 2.0,
+      "delivered_t": 22.638,
+      "throughput_t": 22.638,
+      "losses_t": 0.294,
+      "served_total_t": 22.344,
+      "served_critical_t": 16.365,
+      "demand_total_t": 23.718,
+      "demand_critical_t": 16.365,
+      "shortage_t": 1.374,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-01",
+      "i_start_t": 2.0,
+      "delivered_t": 27.3,
+      "throughput_t": 27.3,
+      "losses_t": 0.355,
+      "served_total_t": 26.945,
+      "served_critical_t": 19.825,
+      "demand_total_t": 28.732,
+      "demand_critical_t": 19.825,
+      "shortage_t": 1.787,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-02",
+      "i_start_t": 2.0,
+      "delivered_t": 27.433,
+      "throughput_t": 27.433,
+      "losses_t": 0.357,
+      "served_total_t": 27.076,
+      "served_critical_t": 19.923,
+      "demand_total_t": 28.874,
+      "demand_critical_t": 19.923,
+      "shortage_t": 1.798,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-03",
+      "i_start_t": 2.0,
+      "delivered_t": 27.565,
+      "throughput_t": 27.565,
+      "losses_t": 0.358,
+      "served_total_t": 27.207,
+      "served_critical_t": 20.021,
+      "demand_total_t": 29.016,
+      "demand_critical_t": 20.021,
+      "shortage_t": 1.809,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-04",
+      "i_start_t": 2.0,
+      "delivered_t": 27.17,
+      "throughput_t": 27.17,
+      "losses_t": 0.353,
+      "served_total_t": 26.817,
+      "served_critical_t": 19.728,
+      "demand_total_t": 28.591,
+      "demand_critical_t": 19.728,
+      "shortage_t": 1.774,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-05",
+      "i_start_t": 2.0,
+      "delivered_t": 27.3,
+      "throughput_t": 27.3,
+      "losses_t": 0.355,
+      "served_total_t": 26.945,
+      "served_critical_t": 19.825,
+      "demand_total_t": 28.732,
+      "demand_critical_t": 19.825,
+      "shortage_t": 1.787,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-06",
+      "i_start_t": 2.0,
+      "delivered_t": 27.433,
+      "throughput_t": 27.433,
+      "losses_t": 0.357,
+      "served_total_t": 27.076,
+      "served_critical_t": 19.923,
+      "demand_total_t": 28.874,
+      "demand_critical_t": 19.923,
+      "shortage_t": 1.798,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-07",
+      "i_start_t": 2.0,
+      "delivered_t": 27.565,
+      "throughput_t": 27.565,
+      "losses_t": 0.358,
+      "served_total_t": 27.207,
+      "served_critical_t": 20.021,
+      "demand_total_t": 29.016,
+      "demand_critical_t": 20.021,
+      "shortage_t": 1.809,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-08",
+      "i_start_t": 2.0,
+      "delivered_t": 27.17,
+      "throughput_t": 27.17,
+      "losses_t": 0.353,
+      "served_total_t": 26.817,
+      "served_critical_t": 19.728,
+      "demand_total_t": 28.591,
+      "demand_critical_t": 19.728,
+      "shortage_t": 1.774,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-09",
+      "i_start_t": 2.0,
+      "delivered_t": 27.3,
+      "throughput_t": 27.3,
+      "losses_t": 0.355,
+      "served_total_t": 26.945,
+      "served_critical_t": 19.825,
+      "demand_total_t": 28.732,
+      "demand_critical_t": 19.825,
+      "shortage_t": 1.787,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-10",
+      "i_start_t": 2.0,
+      "delivered_t": 27.433,
+      "throughput_t": 27.433,
+      "losses_t": 0.357,
+      "served_total_t": 27.076,
+      "served_critical_t": 19.923,
+      "demand_total_t": 28.874,
+      "demand_critical_t": 19.923,
+      "shortage_t": 1.798,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-11",
+      "i_start_t": 2.0,
+      "delivered_t": 27.565,
+      "throughput_t": 27.565,
+      "losses_t": 0.358,
+      "served_total_t": 27.207,
+      "served_critical_t": 20.021,
+      "demand_total_t": 29.016,
+      "demand_critical_t": 20.021,
+      "shortage_t": 1.809,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2039-12",
+      "i_start_t": 2.0,
+      "delivered_t": 27.17,
+      "throughput_t": 27.17,
+      "losses_t": 0.353,
+      "served_total_t": 26.817,
+      "served_critical_t": 19.728,
+      "demand_total_t": 28.591,
+      "demand_critical_t": 19.728,
+      "shortage_t": 1.774,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-01",
+      "i_start_t": 2.0,
+      "delivered_t": 31.833,
+      "throughput_t": 31.833,
+      "losses_t": 0.414,
+      "served_total_t": 31.419,
+      "served_critical_t": 23.187,
+      "demand_total_t": 33.605,
+      "demand_critical_t": 23.187,
+      "shortage_t": 2.186,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-02",
+      "i_start_t": 2.0,
+      "delivered_t": 31.964,
+      "throughput_t": 31.964,
+      "losses_t": 0.416,
+      "served_total_t": 31.548,
+      "served_critical_t": 23.285,
+      "demand_total_t": 33.746,
+      "demand_critical_t": 23.285,
+      "shortage_t": 2.198,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-03",
+      "i_start_t": 2.0,
+      "delivered_t": 32.096,
+      "throughput_t": 32.096,
+      "losses_t": 0.417,
+      "served_total_t": 31.679,
+      "served_critical_t": 23.383,
+      "demand_total_t": 33.888,
+      "demand_critical_t": 23.383,
+      "shortage_t": 2.209,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-04",
+      "i_start_t": 2.0,
+      "delivered_t": 31.701,
+      "throughput_t": 31.701,
+      "losses_t": 0.412,
+      "served_total_t": 31.289,
+      "served_critical_t": 23.089,
+      "demand_total_t": 33.463,
+      "demand_critical_t": 23.089,
+      "shortage_t": 2.174,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-05",
+      "i_start_t": 2.0,
+      "delivered_t": 31.833,
+      "throughput_t": 31.833,
+      "losses_t": 0.414,
+      "served_total_t": 31.419,
+      "served_critical_t": 23.187,
+      "demand_total_t": 33.605,
+      "demand_critical_t": 23.187,
+      "shortage_t": 2.186,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-06",
+      "i_start_t": 2.0,
+      "delivered_t": 31.964,
+      "throughput_t": 31.964,
+      "losses_t": 0.416,
+      "served_total_t": 31.548,
+      "served_critical_t": 23.285,
+      "demand_total_t": 33.746,
+      "demand_critical_t": 23.285,
+      "shortage_t": 2.198,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-07",
+      "i_start_t": 2.0,
+      "delivered_t": 32.096,
+      "throughput_t": 32.096,
+      "losses_t": 0.417,
+      "served_total_t": 31.679,
+      "served_critical_t": 23.383,
+      "demand_total_t": 33.888,
+      "demand_critical_t": 23.383,
+      "shortage_t": 2.209,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-08",
+      "i_start_t": 2.0,
+      "delivered_t": 31.701,
+      "throughput_t": 31.701,
+      "losses_t": 0.412,
+      "served_total_t": 31.289,
+      "served_critical_t": 23.089,
+      "demand_total_t": 33.463,
+      "demand_critical_t": 23.089,
+      "shortage_t": 2.174,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-09",
+      "i_start_t": 2.0,
+      "delivered_t": 31.833,
+      "throughput_t": 31.833,
+      "losses_t": 0.414,
+      "served_total_t": 31.419,
+      "served_critical_t": 23.187,
+      "demand_total_t": 33.605,
+      "demand_critical_t": 23.187,
+      "shortage_t": 2.186,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-10",
+      "i_start_t": 2.0,
+      "delivered_t": 31.964,
+      "throughput_t": 31.964,
+      "losses_t": 0.416,
+      "served_total_t": 31.548,
+      "served_critical_t": 23.285,
+      "demand_total_t": 33.746,
+      "demand_critical_t": 23.285,
+      "shortage_t": 2.198,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-11",
+      "i_start_t": 2.0,
+      "delivered_t": 32.096,
+      "throughput_t": 32.096,
+      "losses_t": 0.417,
+      "served_total_t": 31.679,
+      "served_critical_t": 23.383,
+      "demand_total_t": 33.888,
+      "demand_critical_t": 23.383,
+      "shortage_t": 2.209,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    },
+    {
+      "period": "2040-12",
+      "i_start_t": 2.0,
+      "delivered_t": 31.701,
+      "throughput_t": 31.701,
+      "losses_t": 0.412,
+      "served_total_t": 31.289,
+      "served_critical_t": 23.089,
+      "demand_total_t": 33.463,
+      "demand_critical_t": 23.089,
+      "shortage_t": 2.174,
+      "i_end_t": 2.0,
+      "storage_mode": "ZBO",
+      "storage_capacity_t": 123.0
+    }
+  ],
+  "yearly_balance": [
+    {
+      "year": 2035,
+      "demand_total_t": 111.768,
+      "demand_critical_t": 77.124,
+      "delivered_t": 110.904,
+      "losses_t": 3.768,
+      "served_total_t": 111.768,
+      "served_critical_t": 77.124,
+      "shortage_t": 0.0,
+      "sl_total": 1.0,
+      "sl_critical": 1.0,
+      "i_start_t": 37.0,
+      "i_end_t": 32.368,
+      "reserve_required_t": 13.78,
+      "reserve_actual_start_t": 37.0,
+      "reserve_ok": true
+    },
+    {
+      "year": 2036,
+      "demand_total_t": 170.238,
+      "demand_critical_t": 117.462,
+      "delivered_t": 165.279,
+      "losses_t": 5.622,
+      "served_total_t": 170.238,
+      "served_critical_t": 117.462,
+      "shortage_t": 0.0,
+      "sl_total": 1.0,
+      "sl_critical": 1.0,
+      "i_start_t": 32.368,
+      "i_end_t": 21.787,
+      "reserve_required_t": 20.988,
+      "reserve_actual_start_t": 32.368,
+      "reserve_ok": true
+    },
+    {
+      "year": 2037,
+      "demand_total_t": 228.705,
+      "demand_critical_t": 157.809,
+      "delivered_t": 219.657,
+      "losses_t": 7.47,
+      "served_total_t": 228.705,
+      "served_critical_t": 157.809,
+      "shortage_t": 0.0,
+      "sl_total": 1.0,
+      "sl_critical": 1.0,
+      "i_start_t": 21.787,
+      "i_end_t": 5.269,
+      "reserve_required_t": 28.197,
+      "reserve_actual_start_t": 21.787,
+      "reserve_ok": false
+    },
+    {
+      "year": 2038,
+      "demand_total_t": 287.169,
+      "demand_critical_t": 198.144,
+      "delivered_t": 274.029,
+      "losses_t": 3.561,
+      "served_total_t": 273.737,
+      "served_critical_t": 198.144,
+      "shortage_t": 13.432,
+      "sl_total": 0.95323,
+      "sl_critical": 1.0,
+      "i_start_t": 5.269,
+      "i_end_t": 2.0,
+      "reserve_required_t": 35.404,
+      "reserve_actual_start_t": 5.269,
+      "reserve_ok": false
+    },
+    {
+      "year": 2039,
+      "demand_total_t": 345.639,
+      "demand_critical_t": 238.491,
+      "delivered_t": 328.404,
+      "losses_t": 4.269,
+      "served_total_t": 324.135,
+      "served_critical_t": 238.491,
+      "shortage_t": 21.504,
+      "sl_total": 0.93778,
+      "sl_critical": 1.0,
+      "i_start_t": 2.0,
+      "i_end_t": 2.0,
+      "reserve_required_t": 42.613,
+      "reserve_actual_start_t": 2.0,
+      "reserve_ok": false
+    },
+    {
+      "year": 2040,
+      "demand_total_t": 404.106,
+      "demand_critical_t": 278.832,
+      "delivered_t": 382.782,
+      "losses_t": 4.977,
+      "served_total_t": 377.805,
+      "served_critical_t": 278.832,
+      "shortage_t": 26.301,
+      "sl_total": 0.93492,
+      "sl_critical": 1.0,
+      "i_start_t": 2.0,
+      "i_end_t": 2.0,
+      "reserve_required_t": 49.821,
+      "reserve_actual_start_t": 2.0,
+      "reserve_ok": false
+    }
+  ],
+  "source_schedule": [
+    {
+      "source_id": "A",
+      "period": "2035-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.612,
+      "planned_delivery_t": 3.612,
+      "actual_delivery_t": 3.395,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.245,
+      "planned_delivery_t": 2.245,
+      "actual_delivery_t": 2.11,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.855,
+      "planned_delivery_t": 1.855,
+      "actual_delivery_t": 1.743,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.367,
+      "planned_delivery_t": 1.367,
+      "actual_delivery_t": 1.285,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.683,
+      "planned_delivery_t": 0.683,
+      "actual_delivery_t": 0.642,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.664,
+      "planned_delivery_t": 3.664,
+      "actual_delivery_t": 3.444,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.277,
+      "planned_delivery_t": 2.277,
+      "actual_delivery_t": 2.141,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.881,
+      "planned_delivery_t": 1.881,
+      "actual_delivery_t": 1.769,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.386,
+      "planned_delivery_t": 1.386,
+      "actual_delivery_t": 1.303,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.693,
+      "planned_delivery_t": 0.693,
+      "actual_delivery_t": 0.652,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.716,
+      "planned_delivery_t": 3.716,
+      "actual_delivery_t": 3.493,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.31,
+      "planned_delivery_t": 2.31,
+      "actual_delivery_t": 2.171,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.908,
+      "planned_delivery_t": 1.908,
+      "actual_delivery_t": 1.794,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.406,
+      "planned_delivery_t": 1.406,
+      "actual_delivery_t": 1.322,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.703,
+      "planned_delivery_t": 0.703,
+      "actual_delivery_t": 0.661,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.56,
+      "planned_delivery_t": 3.56,
+      "actual_delivery_t": 3.346,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.213,
+      "planned_delivery_t": 2.213,
+      "actual_delivery_t": 2.08,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.828,
+      "planned_delivery_t": 1.828,
+      "actual_delivery_t": 1.718,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.347,
+      "planned_delivery_t": 1.347,
+      "actual_delivery_t": 1.266,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.673,
+      "planned_delivery_t": 0.673,
+      "actual_delivery_t": 0.633,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.612,
+      "planned_delivery_t": 3.612,
+      "actual_delivery_t": 3.395,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.245,
+      "planned_delivery_t": 2.245,
+      "actual_delivery_t": 2.11,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.855,
+      "planned_delivery_t": 1.855,
+      "actual_delivery_t": 1.743,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.367,
+      "planned_delivery_t": 1.367,
+      "actual_delivery_t": 1.285,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.683,
+      "planned_delivery_t": 0.683,
+      "actual_delivery_t": 0.642,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.664,
+      "planned_delivery_t": 3.664,
+      "actual_delivery_t": 3.444,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.277,
+      "planned_delivery_t": 2.277,
+      "actual_delivery_t": 2.141,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.881,
+      "planned_delivery_t": 1.881,
+      "actual_delivery_t": 1.769,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.386,
+      "planned_delivery_t": 1.386,
+      "actual_delivery_t": 1.303,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.693,
+      "planned_delivery_t": 0.693,
+      "actual_delivery_t": 0.652,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.716,
+      "planned_delivery_t": 3.716,
+      "actual_delivery_t": 3.493,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.31,
+      "planned_delivery_t": 2.31,
+      "actual_delivery_t": 2.171,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.908,
+      "planned_delivery_t": 1.908,
+      "actual_delivery_t": 1.794,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.406,
+      "planned_delivery_t": 1.406,
+      "actual_delivery_t": 1.322,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.703,
+      "planned_delivery_t": 0.703,
+      "actual_delivery_t": 0.661,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.56,
+      "planned_delivery_t": 3.56,
+      "actual_delivery_t": 3.346,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.213,
+      "planned_delivery_t": 2.213,
+      "actual_delivery_t": 2.08,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.828,
+      "planned_delivery_t": 1.828,
+      "actual_delivery_t": 1.718,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.347,
+      "planned_delivery_t": 1.347,
+      "actual_delivery_t": 1.266,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.673,
+      "planned_delivery_t": 0.673,
+      "actual_delivery_t": 0.633,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.612,
+      "planned_delivery_t": 3.612,
+      "actual_delivery_t": 3.395,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.245,
+      "planned_delivery_t": 2.245,
+      "actual_delivery_t": 2.11,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.855,
+      "planned_delivery_t": 1.855,
+      "actual_delivery_t": 1.743,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.367,
+      "planned_delivery_t": 1.367,
+      "actual_delivery_t": 1.285,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.683,
+      "planned_delivery_t": 0.683,
+      "actual_delivery_t": 0.642,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.664,
+      "planned_delivery_t": 3.664,
+      "actual_delivery_t": 3.444,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.277,
+      "planned_delivery_t": 2.277,
+      "actual_delivery_t": 2.141,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.881,
+      "planned_delivery_t": 1.881,
+      "actual_delivery_t": 1.769,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.386,
+      "planned_delivery_t": 1.386,
+      "actual_delivery_t": 1.303,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.693,
+      "planned_delivery_t": 0.693,
+      "actual_delivery_t": 0.652,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.716,
+      "planned_delivery_t": 3.716,
+      "actual_delivery_t": 3.493,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.31,
+      "planned_delivery_t": 2.31,
+      "actual_delivery_t": 2.171,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.908,
+      "planned_delivery_t": 1.908,
+      "actual_delivery_t": 1.794,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.406,
+      "planned_delivery_t": 1.406,
+      "actual_delivery_t": 1.322,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.703,
+      "planned_delivery_t": 0.703,
+      "actual_delivery_t": 0.661,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2035-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 3.56,
+      "planned_delivery_t": 3.56,
+      "actual_delivery_t": 3.346,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2035-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 2.213,
+      "planned_delivery_t": 2.213,
+      "actual_delivery_t": 2.08,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2035-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 1.828,
+      "planned_delivery_t": 1.828,
+      "actual_delivery_t": 1.718,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2035-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 1.347,
+      "planned_delivery_t": 1.347,
+      "actual_delivery_t": 1.266,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2035-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 0.673,
+      "planned_delivery_t": 0.673,
+      "actual_delivery_t": 0.633,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.396,
+      "planned_delivery_t": 5.396,
+      "actual_delivery_t": 5.072,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.354,
+      "planned_delivery_t": 3.354,
+      "actual_delivery_t": 3.153,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.771,
+      "planned_delivery_t": 2.771,
+      "actual_delivery_t": 2.605,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.042,
+      "planned_delivery_t": 2.042,
+      "actual_delivery_t": 1.919,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.021,
+      "planned_delivery_t": 1.021,
+      "actual_delivery_t": 0.96,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.447,
+      "planned_delivery_t": 5.447,
+      "actual_delivery_t": 5.12,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.386,
+      "planned_delivery_t": 3.386,
+      "actual_delivery_t": 3.183,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.797,
+      "planned_delivery_t": 2.797,
+      "actual_delivery_t": 2.629,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.061,
+      "planned_delivery_t": 2.061,
+      "actual_delivery_t": 1.937,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.031,
+      "planned_delivery_t": 1.031,
+      "actual_delivery_t": 0.969,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.499,
+      "planned_delivery_t": 5.499,
+      "actual_delivery_t": 5.169,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.418,
+      "planned_delivery_t": 3.418,
+      "actual_delivery_t": 3.213,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.824,
+      "planned_delivery_t": 2.824,
+      "actual_delivery_t": 2.654,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.081,
+      "planned_delivery_t": 2.081,
+      "actual_delivery_t": 1.956,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.04,
+      "planned_delivery_t": 1.04,
+      "actual_delivery_t": 0.978,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.344,
+      "planned_delivery_t": 5.344,
+      "actual_delivery_t": 5.023,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.322,
+      "planned_delivery_t": 3.322,
+      "actual_delivery_t": 3.122,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.744,
+      "planned_delivery_t": 2.744,
+      "actual_delivery_t": 2.579,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.022,
+      "planned_delivery_t": 2.022,
+      "actual_delivery_t": 1.901,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.011,
+      "planned_delivery_t": 1.011,
+      "actual_delivery_t": 0.95,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.396,
+      "planned_delivery_t": 5.396,
+      "actual_delivery_t": 5.072,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.354,
+      "planned_delivery_t": 3.354,
+      "actual_delivery_t": 3.153,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.771,
+      "planned_delivery_t": 2.771,
+      "actual_delivery_t": 2.605,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.042,
+      "planned_delivery_t": 2.042,
+      "actual_delivery_t": 1.919,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.021,
+      "planned_delivery_t": 1.021,
+      "actual_delivery_t": 0.96,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.447,
+      "planned_delivery_t": 5.447,
+      "actual_delivery_t": 5.12,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.386,
+      "planned_delivery_t": 3.386,
+      "actual_delivery_t": 3.183,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.797,
+      "planned_delivery_t": 2.797,
+      "actual_delivery_t": 2.629,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.061,
+      "planned_delivery_t": 2.061,
+      "actual_delivery_t": 1.937,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.031,
+      "planned_delivery_t": 1.031,
+      "actual_delivery_t": 0.969,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.499,
+      "planned_delivery_t": 5.499,
+      "actual_delivery_t": 5.169,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.418,
+      "planned_delivery_t": 3.418,
+      "actual_delivery_t": 3.213,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.824,
+      "planned_delivery_t": 2.824,
+      "actual_delivery_t": 2.654,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.081,
+      "planned_delivery_t": 2.081,
+      "actual_delivery_t": 1.956,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.04,
+      "planned_delivery_t": 1.04,
+      "actual_delivery_t": 0.978,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.344,
+      "planned_delivery_t": 5.344,
+      "actual_delivery_t": 5.023,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.322,
+      "planned_delivery_t": 3.322,
+      "actual_delivery_t": 3.122,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.744,
+      "planned_delivery_t": 2.744,
+      "actual_delivery_t": 2.579,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.022,
+      "planned_delivery_t": 2.022,
+      "actual_delivery_t": 1.901,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.011,
+      "planned_delivery_t": 1.011,
+      "actual_delivery_t": 0.95,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.396,
+      "planned_delivery_t": 5.396,
+      "actual_delivery_t": 5.072,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.354,
+      "planned_delivery_t": 3.354,
+      "actual_delivery_t": 3.153,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.771,
+      "planned_delivery_t": 2.771,
+      "actual_delivery_t": 2.605,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.042,
+      "planned_delivery_t": 2.042,
+      "actual_delivery_t": 1.919,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.021,
+      "planned_delivery_t": 1.021,
+      "actual_delivery_t": 0.96,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.447,
+      "planned_delivery_t": 5.447,
+      "actual_delivery_t": 5.12,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.386,
+      "planned_delivery_t": 3.386,
+      "actual_delivery_t": 3.183,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.797,
+      "planned_delivery_t": 2.797,
+      "actual_delivery_t": 2.629,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.061,
+      "planned_delivery_t": 2.061,
+      "actual_delivery_t": 1.937,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.031,
+      "planned_delivery_t": 1.031,
+      "actual_delivery_t": 0.969,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.499,
+      "planned_delivery_t": 5.499,
+      "actual_delivery_t": 5.169,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.418,
+      "planned_delivery_t": 3.418,
+      "actual_delivery_t": 3.213,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.824,
+      "planned_delivery_t": 2.824,
+      "actual_delivery_t": 2.654,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.081,
+      "planned_delivery_t": 2.081,
+      "actual_delivery_t": 1.956,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.04,
+      "planned_delivery_t": 1.04,
+      "actual_delivery_t": 0.978,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2036-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 5.344,
+      "planned_delivery_t": 5.344,
+      "actual_delivery_t": 5.023,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2036-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 3.322,
+      "planned_delivery_t": 3.322,
+      "actual_delivery_t": 3.122,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2036-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 2.744,
+      "planned_delivery_t": 2.744,
+      "actual_delivery_t": 2.579,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2036-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.022,
+      "planned_delivery_t": 2.022,
+      "actual_delivery_t": 1.901,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2036-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.011,
+      "planned_delivery_t": 1.011,
+      "actual_delivery_t": 0.95,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.179,
+      "planned_delivery_t": 7.179,
+      "actual_delivery_t": 6.748,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.463,
+      "planned_delivery_t": 4.463,
+      "actual_delivery_t": 4.195,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.687,
+      "planned_delivery_t": 3.687,
+      "actual_delivery_t": 3.465,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.716,
+      "planned_delivery_t": 2.716,
+      "actual_delivery_t": 2.553,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.358,
+      "planned_delivery_t": 1.358,
+      "actual_delivery_t": 1.277,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.231,
+      "planned_delivery_t": 7.231,
+      "actual_delivery_t": 6.797,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.495,
+      "planned_delivery_t": 4.495,
+      "actual_delivery_t": 4.225,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.713,
+      "planned_delivery_t": 3.713,
+      "actual_delivery_t": 3.49,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.736,
+      "planned_delivery_t": 2.736,
+      "actual_delivery_t": 2.572,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.368,
+      "planned_delivery_t": 1.368,
+      "actual_delivery_t": 1.286,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.283,
+      "planned_delivery_t": 7.283,
+      "actual_delivery_t": 6.846,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.527,
+      "planned_delivery_t": 4.527,
+      "actual_delivery_t": 4.255,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.74,
+      "planned_delivery_t": 3.74,
+      "actual_delivery_t": 3.515,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.756,
+      "planned_delivery_t": 2.756,
+      "actual_delivery_t": 2.59,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.378,
+      "planned_delivery_t": 1.378,
+      "actual_delivery_t": 1.295,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.127,
+      "planned_delivery_t": 7.127,
+      "actual_delivery_t": 6.7,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.43,
+      "planned_delivery_t": 4.43,
+      "actual_delivery_t": 4.165,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.66,
+      "planned_delivery_t": 3.66,
+      "actual_delivery_t": 3.44,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.697,
+      "planned_delivery_t": 2.697,
+      "actual_delivery_t": 2.535,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.348,
+      "planned_delivery_t": 1.348,
+      "actual_delivery_t": 1.267,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.179,
+      "planned_delivery_t": 7.179,
+      "actual_delivery_t": 6.748,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.463,
+      "planned_delivery_t": 4.463,
+      "actual_delivery_t": 4.195,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.687,
+      "planned_delivery_t": 3.687,
+      "actual_delivery_t": 3.465,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.716,
+      "planned_delivery_t": 2.716,
+      "actual_delivery_t": 2.553,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.358,
+      "planned_delivery_t": 1.358,
+      "actual_delivery_t": 1.277,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.231,
+      "planned_delivery_t": 7.231,
+      "actual_delivery_t": 6.797,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.495,
+      "planned_delivery_t": 4.495,
+      "actual_delivery_t": 4.225,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.713,
+      "planned_delivery_t": 3.713,
+      "actual_delivery_t": 3.49,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.736,
+      "planned_delivery_t": 2.736,
+      "actual_delivery_t": 2.572,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.368,
+      "planned_delivery_t": 1.368,
+      "actual_delivery_t": 1.286,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.283,
+      "planned_delivery_t": 7.283,
+      "actual_delivery_t": 6.846,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.527,
+      "planned_delivery_t": 4.527,
+      "actual_delivery_t": 4.255,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.74,
+      "planned_delivery_t": 3.74,
+      "actual_delivery_t": 3.515,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.756,
+      "planned_delivery_t": 2.756,
+      "actual_delivery_t": 2.59,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.378,
+      "planned_delivery_t": 1.378,
+      "actual_delivery_t": 1.295,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.127,
+      "planned_delivery_t": 7.127,
+      "actual_delivery_t": 6.7,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.43,
+      "planned_delivery_t": 4.43,
+      "actual_delivery_t": 4.165,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.66,
+      "planned_delivery_t": 3.66,
+      "actual_delivery_t": 3.44,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.697,
+      "planned_delivery_t": 2.697,
+      "actual_delivery_t": 2.535,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.348,
+      "planned_delivery_t": 1.348,
+      "actual_delivery_t": 1.267,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.179,
+      "planned_delivery_t": 7.179,
+      "actual_delivery_t": 6.748,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.463,
+      "planned_delivery_t": 4.463,
+      "actual_delivery_t": 4.195,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.687,
+      "planned_delivery_t": 3.687,
+      "actual_delivery_t": 3.465,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.716,
+      "planned_delivery_t": 2.716,
+      "actual_delivery_t": 2.553,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.358,
+      "planned_delivery_t": 1.358,
+      "actual_delivery_t": 1.277,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.231,
+      "planned_delivery_t": 7.231,
+      "actual_delivery_t": 6.797,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.495,
+      "planned_delivery_t": 4.495,
+      "actual_delivery_t": 4.225,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.713,
+      "planned_delivery_t": 3.713,
+      "actual_delivery_t": 3.49,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.736,
+      "planned_delivery_t": 2.736,
+      "actual_delivery_t": 2.572,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.368,
+      "planned_delivery_t": 1.368,
+      "actual_delivery_t": 1.286,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.283,
+      "planned_delivery_t": 7.283,
+      "actual_delivery_t": 6.846,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.527,
+      "planned_delivery_t": 4.527,
+      "actual_delivery_t": 4.255,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.74,
+      "planned_delivery_t": 3.74,
+      "actual_delivery_t": 3.515,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.756,
+      "planned_delivery_t": 2.756,
+      "actual_delivery_t": 2.59,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.378,
+      "planned_delivery_t": 1.378,
+      "actual_delivery_t": 1.295,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2037-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 7.127,
+      "planned_delivery_t": 7.127,
+      "actual_delivery_t": 6.7,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2037-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 4.43,
+      "planned_delivery_t": 4.43,
+      "actual_delivery_t": 4.165,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2037-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 3.66,
+      "planned_delivery_t": 3.66,
+      "actual_delivery_t": 3.44,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2037-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 2.697,
+      "planned_delivery_t": 2.697,
+      "actual_delivery_t": 2.535,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2037-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.348,
+      "planned_delivery_t": 1.348,
+      "actual_delivery_t": 1.267,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.963,
+      "planned_delivery_t": 8.963,
+      "actual_delivery_t": 8.425,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.571,
+      "planned_delivery_t": 5.571,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.602,
+      "planned_delivery_t": 4.602,
+      "actual_delivery_t": 4.326,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.391,
+      "planned_delivery_t": 3.391,
+      "actual_delivery_t": 3.188,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.696,
+      "planned_delivery_t": 1.696,
+      "actual_delivery_t": 1.594,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.015,
+      "planned_delivery_t": 9.015,
+      "actual_delivery_t": 8.474,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.604,
+      "planned_delivery_t": 5.604,
+      "actual_delivery_t": 5.267,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.629,
+      "planned_delivery_t": 4.629,
+      "actual_delivery_t": 4.351,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.411,
+      "planned_delivery_t": 3.411,
+      "actual_delivery_t": 3.206,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.705,
+      "planned_delivery_t": 1.705,
+      "actual_delivery_t": 1.603,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.066,
+      "planned_delivery_t": 9.066,
+      "actual_delivery_t": 8.522,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.636,
+      "planned_delivery_t": 5.636,
+      "actual_delivery_t": 5.298,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.656,
+      "planned_delivery_t": 4.656,
+      "actual_delivery_t": 4.376,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.43,
+      "planned_delivery_t": 3.43,
+      "actual_delivery_t": 3.225,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.715,
+      "planned_delivery_t": 1.715,
+      "actual_delivery_t": 1.612,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.911,
+      "planned_delivery_t": 8.911,
+      "actual_delivery_t": 8.376,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.539,
+      "planned_delivery_t": 5.539,
+      "actual_delivery_t": 5.207,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.576,
+      "planned_delivery_t": 4.576,
+      "actual_delivery_t": 4.301,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.372,
+      "planned_delivery_t": 3.372,
+      "actual_delivery_t": 3.169,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.686,
+      "planned_delivery_t": 1.686,
+      "actual_delivery_t": 1.585,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.963,
+      "planned_delivery_t": 8.963,
+      "actual_delivery_t": 8.425,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.571,
+      "planned_delivery_t": 5.571,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.602,
+      "planned_delivery_t": 4.602,
+      "actual_delivery_t": 4.326,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.391,
+      "planned_delivery_t": 3.391,
+      "actual_delivery_t": 3.188,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.696,
+      "planned_delivery_t": 1.696,
+      "actual_delivery_t": 1.594,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.015,
+      "planned_delivery_t": 9.015,
+      "actual_delivery_t": 8.474,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.604,
+      "planned_delivery_t": 5.604,
+      "actual_delivery_t": 5.267,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.629,
+      "planned_delivery_t": 4.629,
+      "actual_delivery_t": 4.351,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.411,
+      "planned_delivery_t": 3.411,
+      "actual_delivery_t": 3.206,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.705,
+      "planned_delivery_t": 1.705,
+      "actual_delivery_t": 1.603,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.066,
+      "planned_delivery_t": 9.066,
+      "actual_delivery_t": 8.522,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.636,
+      "planned_delivery_t": 5.636,
+      "actual_delivery_t": 5.298,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.656,
+      "planned_delivery_t": 4.656,
+      "actual_delivery_t": 4.376,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.43,
+      "planned_delivery_t": 3.43,
+      "actual_delivery_t": 3.225,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.715,
+      "planned_delivery_t": 1.715,
+      "actual_delivery_t": 1.612,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.911,
+      "planned_delivery_t": 8.911,
+      "actual_delivery_t": 8.376,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.539,
+      "planned_delivery_t": 5.539,
+      "actual_delivery_t": 5.207,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.576,
+      "planned_delivery_t": 4.576,
+      "actual_delivery_t": 4.301,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.372,
+      "planned_delivery_t": 3.372,
+      "actual_delivery_t": 3.169,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.686,
+      "planned_delivery_t": 1.686,
+      "actual_delivery_t": 1.585,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.963,
+      "planned_delivery_t": 8.963,
+      "actual_delivery_t": 8.425,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.571,
+      "planned_delivery_t": 5.571,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.602,
+      "planned_delivery_t": 4.602,
+      "actual_delivery_t": 4.326,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.391,
+      "planned_delivery_t": 3.391,
+      "actual_delivery_t": 3.188,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.696,
+      "planned_delivery_t": 1.696,
+      "actual_delivery_t": 1.594,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.015,
+      "planned_delivery_t": 9.015,
+      "actual_delivery_t": 8.474,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.604,
+      "planned_delivery_t": 5.604,
+      "actual_delivery_t": 5.267,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.629,
+      "planned_delivery_t": 4.629,
+      "actual_delivery_t": 4.351,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.411,
+      "planned_delivery_t": 3.411,
+      "actual_delivery_t": 3.206,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.705,
+      "planned_delivery_t": 1.705,
+      "actual_delivery_t": 1.603,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 9.066,
+      "planned_delivery_t": 9.066,
+      "actual_delivery_t": 8.522,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.636,
+      "planned_delivery_t": 5.636,
+      "actual_delivery_t": 5.298,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.656,
+      "planned_delivery_t": 4.656,
+      "actual_delivery_t": 4.376,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.43,
+      "planned_delivery_t": 3.43,
+      "actual_delivery_t": 3.225,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.715,
+      "planned_delivery_t": 1.715,
+      "actual_delivery_t": 1.612,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2038-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 8.911,
+      "planned_delivery_t": 8.911,
+      "actual_delivery_t": 8.376,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2038-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 5.539,
+      "planned_delivery_t": 5.539,
+      "actual_delivery_t": 5.207,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2038-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 4.576,
+      "planned_delivery_t": 4.576,
+      "actual_delivery_t": 4.301,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2038-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 3.372,
+      "planned_delivery_t": 3.372,
+      "actual_delivery_t": 3.169,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2038-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 1.686,
+      "planned_delivery_t": 1.686,
+      "actual_delivery_t": 1.585,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.746,
+      "planned_delivery_t": 10.746,
+      "actual_delivery_t": 10.101,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.68,
+      "planned_delivery_t": 6.68,
+      "actual_delivery_t": 6.279,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.518,
+      "planned_delivery_t": 5.518,
+      "actual_delivery_t": 5.187,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.066,
+      "planned_delivery_t": 4.066,
+      "actual_delivery_t": 3.822,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.033,
+      "planned_delivery_t": 2.033,
+      "actual_delivery_t": 1.911,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.798,
+      "planned_delivery_t": 10.798,
+      "actual_delivery_t": 10.15,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.712,
+      "planned_delivery_t": 6.712,
+      "actual_delivery_t": 6.31,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.545,
+      "planned_delivery_t": 5.545,
+      "actual_delivery_t": 5.212,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.086,
+      "planned_delivery_t": 4.086,
+      "actual_delivery_t": 3.841,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.043,
+      "planned_delivery_t": 2.043,
+      "actual_delivery_t": 1.92,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.85,
+      "planned_delivery_t": 10.85,
+      "actual_delivery_t": 10.199,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.745,
+      "planned_delivery_t": 6.745,
+      "actual_delivery_t": 6.34,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.572,
+      "planned_delivery_t": 5.572,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.105,
+      "planned_delivery_t": 4.105,
+      "actual_delivery_t": 3.859,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.053,
+      "planned_delivery_t": 2.053,
+      "actual_delivery_t": 1.93,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.694,
+      "planned_delivery_t": 10.694,
+      "actual_delivery_t": 10.053,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.648,
+      "planned_delivery_t": 6.648,
+      "actual_delivery_t": 6.249,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.492,
+      "planned_delivery_t": 5.492,
+      "actual_delivery_t": 5.162,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.047,
+      "planned_delivery_t": 4.047,
+      "actual_delivery_t": 3.804,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.023,
+      "planned_delivery_t": 2.023,
+      "actual_delivery_t": 1.902,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.746,
+      "planned_delivery_t": 10.746,
+      "actual_delivery_t": 10.101,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.68,
+      "planned_delivery_t": 6.68,
+      "actual_delivery_t": 6.279,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.518,
+      "planned_delivery_t": 5.518,
+      "actual_delivery_t": 5.187,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.066,
+      "planned_delivery_t": 4.066,
+      "actual_delivery_t": 3.822,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.033,
+      "planned_delivery_t": 2.033,
+      "actual_delivery_t": 1.911,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.798,
+      "planned_delivery_t": 10.798,
+      "actual_delivery_t": 10.15,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.712,
+      "planned_delivery_t": 6.712,
+      "actual_delivery_t": 6.31,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.545,
+      "planned_delivery_t": 5.545,
+      "actual_delivery_t": 5.212,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.086,
+      "planned_delivery_t": 4.086,
+      "actual_delivery_t": 3.841,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.043,
+      "planned_delivery_t": 2.043,
+      "actual_delivery_t": 1.92,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.85,
+      "planned_delivery_t": 10.85,
+      "actual_delivery_t": 10.199,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.745,
+      "planned_delivery_t": 6.745,
+      "actual_delivery_t": 6.34,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.572,
+      "planned_delivery_t": 5.572,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.105,
+      "planned_delivery_t": 4.105,
+      "actual_delivery_t": 3.859,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.053,
+      "planned_delivery_t": 2.053,
+      "actual_delivery_t": 1.93,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.694,
+      "planned_delivery_t": 10.694,
+      "actual_delivery_t": 10.053,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.648,
+      "planned_delivery_t": 6.648,
+      "actual_delivery_t": 6.249,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.492,
+      "planned_delivery_t": 5.492,
+      "actual_delivery_t": 5.162,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.047,
+      "planned_delivery_t": 4.047,
+      "actual_delivery_t": 3.804,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.023,
+      "planned_delivery_t": 2.023,
+      "actual_delivery_t": 1.902,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.746,
+      "planned_delivery_t": 10.746,
+      "actual_delivery_t": 10.101,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.68,
+      "planned_delivery_t": 6.68,
+      "actual_delivery_t": 6.279,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.518,
+      "planned_delivery_t": 5.518,
+      "actual_delivery_t": 5.187,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.066,
+      "planned_delivery_t": 4.066,
+      "actual_delivery_t": 3.822,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.033,
+      "planned_delivery_t": 2.033,
+      "actual_delivery_t": 1.911,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.798,
+      "planned_delivery_t": 10.798,
+      "actual_delivery_t": 10.15,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.712,
+      "planned_delivery_t": 6.712,
+      "actual_delivery_t": 6.31,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.545,
+      "planned_delivery_t": 5.545,
+      "actual_delivery_t": 5.212,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.086,
+      "planned_delivery_t": 4.086,
+      "actual_delivery_t": 3.841,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.043,
+      "planned_delivery_t": 2.043,
+      "actual_delivery_t": 1.92,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.85,
+      "planned_delivery_t": 10.85,
+      "actual_delivery_t": 10.199,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.745,
+      "planned_delivery_t": 6.745,
+      "actual_delivery_t": 6.34,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.572,
+      "planned_delivery_t": 5.572,
+      "actual_delivery_t": 5.237,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.105,
+      "planned_delivery_t": 4.105,
+      "actual_delivery_t": 3.859,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.053,
+      "planned_delivery_t": 2.053,
+      "actual_delivery_t": 1.93,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2039-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 10.694,
+      "planned_delivery_t": 10.694,
+      "actual_delivery_t": 10.053,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2039-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 6.648,
+      "planned_delivery_t": 6.648,
+      "actual_delivery_t": 6.249,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2039-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 5.492,
+      "planned_delivery_t": 5.492,
+      "actual_delivery_t": 5.162,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2039-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.047,
+      "planned_delivery_t": 4.047,
+      "actual_delivery_t": 3.804,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2039-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.023,
+      "planned_delivery_t": 2.023,
+      "actual_delivery_t": 1.902,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-01",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.53,
+      "planned_delivery_t": 12.53,
+      "actual_delivery_t": 11.778,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-01",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.789,
+      "planned_delivery_t": 7.789,
+      "actual_delivery_t": 7.322,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-01",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.434,
+      "planned_delivery_t": 6.434,
+      "actual_delivery_t": 6.048,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-01",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.741,
+      "planned_delivery_t": 4.741,
+      "actual_delivery_t": 4.457,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-01",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.371,
+      "planned_delivery_t": 2.371,
+      "actual_delivery_t": 2.228,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-02",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.581,
+      "planned_delivery_t": 12.581,
+      "actual_delivery_t": 11.827,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-02",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.821,
+      "planned_delivery_t": 7.821,
+      "actual_delivery_t": 7.352,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-02",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.461,
+      "planned_delivery_t": 6.461,
+      "actual_delivery_t": 6.073,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-02",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.761,
+      "planned_delivery_t": 4.761,
+      "actual_delivery_t": 4.475,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-02",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.38,
+      "planned_delivery_t": 2.38,
+      "actual_delivery_t": 2.237,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-03",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.634,
+      "planned_delivery_t": 12.634,
+      "actual_delivery_t": 11.876,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-03",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.853,
+      "planned_delivery_t": 7.853,
+      "actual_delivery_t": 7.382,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-03",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.488,
+      "planned_delivery_t": 6.488,
+      "actual_delivery_t": 6.098,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-03",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.78,
+      "planned_delivery_t": 4.78,
+      "actual_delivery_t": 4.493,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-03",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.39,
+      "planned_delivery_t": 2.39,
+      "actual_delivery_t": 2.247,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-04",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.478,
+      "planned_delivery_t": 12.478,
+      "actual_delivery_t": 11.729,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-04",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.757,
+      "planned_delivery_t": 7.757,
+      "actual_delivery_t": 7.291,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-04",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.408,
+      "planned_delivery_t": 6.408,
+      "actual_delivery_t": 6.023,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-04",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.721,
+      "planned_delivery_t": 4.721,
+      "actual_delivery_t": 4.438,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-04",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.361,
+      "planned_delivery_t": 2.361,
+      "actual_delivery_t": 2.219,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-05",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.53,
+      "planned_delivery_t": 12.53,
+      "actual_delivery_t": 11.778,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-05",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.789,
+      "planned_delivery_t": 7.789,
+      "actual_delivery_t": 7.322,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-05",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.434,
+      "planned_delivery_t": 6.434,
+      "actual_delivery_t": 6.048,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-05",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.741,
+      "planned_delivery_t": 4.741,
+      "actual_delivery_t": 4.457,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-05",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.371,
+      "planned_delivery_t": 2.371,
+      "actual_delivery_t": 2.228,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-06",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.581,
+      "planned_delivery_t": 12.581,
+      "actual_delivery_t": 11.827,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-06",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.821,
+      "planned_delivery_t": 7.821,
+      "actual_delivery_t": 7.352,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-06",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.461,
+      "planned_delivery_t": 6.461,
+      "actual_delivery_t": 6.073,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-06",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.761,
+      "planned_delivery_t": 4.761,
+      "actual_delivery_t": 4.475,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-06",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.38,
+      "planned_delivery_t": 2.38,
+      "actual_delivery_t": 2.237,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-07",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.634,
+      "planned_delivery_t": 12.634,
+      "actual_delivery_t": 11.876,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-07",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.853,
+      "planned_delivery_t": 7.853,
+      "actual_delivery_t": 7.382,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-07",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.488,
+      "planned_delivery_t": 6.488,
+      "actual_delivery_t": 6.098,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-07",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.78,
+      "planned_delivery_t": 4.78,
+      "actual_delivery_t": 4.493,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-07",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.39,
+      "planned_delivery_t": 2.39,
+      "actual_delivery_t": 2.247,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-08",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.478,
+      "planned_delivery_t": 12.478,
+      "actual_delivery_t": 11.729,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-08",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.757,
+      "planned_delivery_t": 7.757,
+      "actual_delivery_t": 7.291,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-08",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.408,
+      "planned_delivery_t": 6.408,
+      "actual_delivery_t": 6.023,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-08",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.721,
+      "planned_delivery_t": 4.721,
+      "actual_delivery_t": 4.438,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-08",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.361,
+      "planned_delivery_t": 2.361,
+      "actual_delivery_t": 2.219,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-09",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.53,
+      "planned_delivery_t": 12.53,
+      "actual_delivery_t": 11.778,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-09",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.789,
+      "planned_delivery_t": 7.789,
+      "actual_delivery_t": 7.322,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-09",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.434,
+      "planned_delivery_t": 6.434,
+      "actual_delivery_t": 6.048,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-09",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.741,
+      "planned_delivery_t": 4.741,
+      "actual_delivery_t": 4.457,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-09",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.371,
+      "planned_delivery_t": 2.371,
+      "actual_delivery_t": 2.228,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-10",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.581,
+      "planned_delivery_t": 12.581,
+      "actual_delivery_t": 11.827,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-10",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.821,
+      "planned_delivery_t": 7.821,
+      "actual_delivery_t": 7.352,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-10",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.461,
+      "planned_delivery_t": 6.461,
+      "actual_delivery_t": 6.073,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-10",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.761,
+      "planned_delivery_t": 4.761,
+      "actual_delivery_t": 4.475,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-10",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.38,
+      "planned_delivery_t": 2.38,
+      "actual_delivery_t": 2.237,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-11",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.634,
+      "planned_delivery_t": 12.634,
+      "actual_delivery_t": 11.876,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-11",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.853,
+      "planned_delivery_t": 7.853,
+      "actual_delivery_t": 7.382,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-11",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.488,
+      "planned_delivery_t": 6.488,
+      "actual_delivery_t": 6.098,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-11",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.78,
+      "planned_delivery_t": 4.78,
+      "actual_delivery_t": 4.493,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-11",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.39,
+      "planned_delivery_t": 2.39,
+      "actual_delivery_t": 2.247,
+      "lead_time_applied": "6 week"
+    },
+    {
+      "source_id": "A",
+      "period": "2040-12",
+      "reserved_capacity_t_per_year": 61.0,
+      "ordered_volume_t": 12.478,
+      "planned_delivery_t": 12.478,
+      "actual_delivery_t": 11.729,
+      "lead_time_applied": "12 month"
+    },
+    {
+      "source_id": "B",
+      "period": "2040-12",
+      "reserved_capacity_t_per_year": 43.0,
+      "ordered_volume_t": 7.757,
+      "planned_delivery_t": 7.757,
+      "actual_delivery_t": 7.291,
+      "lead_time_applied": "4 month"
+    },
+    {
+      "source_id": "C",
+      "period": "2040-12",
+      "reserved_capacity_t_per_year": 37.0,
+      "ordered_volume_t": 6.408,
+      "planned_delivery_t": 6.408,
+      "actual_delivery_t": 6.023,
+      "lead_time_applied": "24 month"
+    },
+    {
+      "source_id": "D",
+      "period": "2040-12",
+      "reserved_capacity_t_per_year": 29.0,
+      "ordered_volume_t": 4.721,
+      "planned_delivery_t": 4.721,
+      "actual_delivery_t": 4.438,
+      "lead_time_applied": "2 month"
+    },
+    {
+      "source_id": "E",
+      "period": "2040-12",
+      "reserved_capacity_t_per_year": 17.0,
+      "ordered_volume_t": 2.361,
+      "planned_delivery_t": 2.361,
+      "actual_delivery_t": 2.219,
+      "lead_time_applied": "6 week"
+    }
+  ],
+  "inventory_trace": [
+    {
+      "period": "2035-01",
+      "inventory_t": 36.621,
+      "reserve_threshold_t": 13.675,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-02",
+      "inventory_t": 36.228,
+      "reserve_threshold_t": 13.885,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-03",
+      "inventory_t": 35.82,
+      "reserve_threshold_t": 14.095,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-04",
+      "inventory_t": 35.456,
+      "reserve_threshold_t": 13.464,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-05",
+      "inventory_t": 35.077,
+      "reserve_threshold_t": 13.675,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-06",
+      "inventory_t": 34.684,
+      "reserve_threshold_t": 13.885,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-07",
+      "inventory_t": 34.276,
+      "reserve_threshold_t": 14.095,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-08",
+      "inventory_t": 33.912,
+      "reserve_threshold_t": 13.464,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-09",
+      "inventory_t": 33.533,
+      "reserve_threshold_t": 13.675,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-10",
+      "inventory_t": 33.14,
+      "reserve_threshold_t": 13.885,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-11",
+      "inventory_t": 32.732,
+      "reserve_threshold_t": 14.095,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2035-12",
+      "inventory_t": 32.368,
+      "reserve_threshold_t": 13.464,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-01",
+      "inventory_t": 31.494,
+      "reserve_threshold_t": 20.884,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-02",
+      "inventory_t": 30.605,
+      "reserve_threshold_t": 21.093,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-03",
+      "inventory_t": 29.702,
+      "reserve_threshold_t": 21.303,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-04",
+      "inventory_t": 28.841,
+      "reserve_threshold_t": 20.674,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-05",
+      "inventory_t": 27.967,
+      "reserve_threshold_t": 20.884,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-06",
+      "inventory_t": 27.078,
+      "reserve_threshold_t": 21.093,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-07",
+      "inventory_t": 26.175,
+      "reserve_threshold_t": 21.303,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-08",
+      "inventory_t": 25.314,
+      "reserve_threshold_t": 20.674,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-09",
+      "inventory_t": 24.44,
+      "reserve_threshold_t": 20.884,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-10",
+      "inventory_t": 23.551,
+      "reserve_threshold_t": 21.093,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-11",
+      "inventory_t": 22.648,
+      "reserve_threshold_t": 21.303,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2036-12",
+      "inventory_t": 21.787,
+      "reserve_threshold_t": 20.674,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-01",
+      "inventory_t": 20.418,
+      "reserve_threshold_t": 28.092,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-02",
+      "inventory_t": 19.034,
+      "reserve_threshold_t": 28.302,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-03",
+      "inventory_t": 17.636,
+      "reserve_threshold_t": 28.511,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-04",
+      "inventory_t": 16.281,
+      "reserve_threshold_t": 27.882,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-05",
+      "inventory_t": 14.912,
+      "reserve_threshold_t": 28.092,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-06",
+      "inventory_t": 13.528,
+      "reserve_threshold_t": 28.302,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-07",
+      "inventory_t": 12.13,
+      "reserve_threshold_t": 28.511,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-08",
+      "inventory_t": 10.775,
+      "reserve_threshold_t": 27.882,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-09",
+      "inventory_t": 9.406,
+      "reserve_threshold_t": 28.092,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-10",
+      "inventory_t": 8.022,
+      "reserve_threshold_t": 28.302,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-11",
+      "inventory_t": 6.624,
+      "reserve_threshold_t": 28.511,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2037-12",
+      "inventory_t": 5.269,
+      "reserve_threshold_t": 27.882,
+      "capacity_t": 73.0
+    },
+    {
+      "period": "2038-01",
+      "inventory_t": 3.883,
+      "reserve_threshold_t": 35.3,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-02",
+      "inventory_t": 2.485,
+      "reserve_threshold_t": 35.51,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-03",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-04",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.09,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-05",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.3,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-06",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.51,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-07",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-08",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.09,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-09",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.3,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-10",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.51,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-11",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2038-12",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 35.09,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-01",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.508,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-02",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-03",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.928,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-04",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.299,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-05",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.508,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-06",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-07",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.928,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-08",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.299,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-09",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.508,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-10",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.718,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-11",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.928,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2039-12",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 42.299,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-01",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.717,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-02",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.926,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-03",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 50.136,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-04",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.507,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-05",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.717,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-06",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.926,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-07",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 50.136,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-08",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.507,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-09",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.717,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-10",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.926,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-11",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 50.136,
+      "capacity_t": 123.0
+    },
+    {
+      "period": "2040-12",
+      "inventory_t": 2.0,
+      "reserve_threshold_t": 49.507,
+      "capacity_t": 123.0
+    }
+  ],
+  "financial_breakdown": [
+    {
+      "year": 2035,
+      "capex_mln": 0.0,
+      "capex_cumulative_mln": 0.0,
+      "procurement_mln": 729.079,
+      "reservation_mln": 32.0,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 23.585,
+      "fixed_opex_mln": 0.0,
+      "total_mln": 784.664,
+      "discounted_mln": 784.664,
+      "cost_per_served_t_mln": 7.0205
+    },
+    {
+      "year": 2036,
+      "capex_mln": 0.0,
+      "capex_cumulative_mln": 0.0,
+      "procurement_mln": 1086.532,
+      "reservation_mln": 33.7,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 18.413,
+      "fixed_opex_mln": 0.0,
+      "total_mln": 1138.645,
+      "discounted_mln": 1035.132,
+      "cost_per_served_t_mln": 6.6885
+    },
+    {
+      "year": 2037,
+      "capex_mln": 347.0,
+      "capex_cumulative_mln": 347.0,
+      "procurement_mln": 1443.965,
+      "reservation_mln": 35.4,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 9.199,
+      "fixed_opex_mln": 0.0,
+      "total_mln": 1835.564,
+      "discounted_mln": 1516.995,
+      "cost_per_served_t_mln": 8.0259
+    },
+    {
+      "year": 2038,
+      "capex_mln": 193.0,
+      "capex_cumulative_mln": 540.0,
+      "procurement_mln": 1801.447,
+      "reservation_mln": 37.1,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 2.471,
+      "fixed_opex_mln": 13.0,
+      "total_mln": 2047.018,
+      "discounted_mln": 1537.955,
+      "cost_per_served_t_mln": 7.478
+    },
+    {
+      "year": 2039,
+      "capex_mln": 0.0,
+      "capex_cumulative_mln": 540.0,
+      "procurement_mln": 2158.928,
+      "reservation_mln": 38.8,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 1.36,
+      "fixed_opex_mln": 13.0,
+      "total_mln": 2212.088,
+      "discounted_mln": 1510.886,
+      "cost_per_served_t_mln": 6.8246
+    },
+    {
+      "year": 2040,
+      "capex_mln": 0.0,
+      "capex_cumulative_mln": 540.0,
+      "procurement_mln": 2516.382,
+      "reservation_mln": 40.5,
+      "take_or_pay_extra_mln": 0.0,
+      "holding_mln": 1.36,
+      "fixed_opex_mln": 13.0,
+      "total_mln": 2571.242,
+      "discounted_mln": 1596.539,
+      "cost_per_served_t_mln": 6.8057
+    }
+  ],
+  "constraint_checks": [
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2035",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.97,
+      "excess": 0.0,
+      "message_ru": "BASE_TOTAL_SERVICE: 2035, факт 1.000 доля, порог 0.970 доля; условие выполнено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2035",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2035, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2035",
+      "passed": true,
+      "actual": 37.0,
+      "limit": 13.78,
+      "excess": 0.0,
+      "message_ru": "RESERVE_45D: 2035, факт 37.000 т, порог 13.780 т; условие выполнено"
+    },
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2036",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.97,
+      "excess": 0.0,
+      "message_ru": "BASE_TOTAL_SERVICE: 2036, факт 1.000 доля, порог 0.970 доля; условие выполнено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2036",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2036, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2036",
+      "passed": true,
+      "actual": 32.368,
+      "limit": 20.988,
+      "excess": 0.0,
+      "message_ru": "RESERVE_45D: 2036, факт 32.368 т, порог 20.988 т; условие выполнено"
+    },
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2037",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.97,
+      "excess": 0.0,
+      "message_ru": "BASE_TOTAL_SERVICE: 2037, факт 1.000 доля, порог 0.970 доля; условие выполнено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2037",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2037, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2037",
+      "passed": false,
+      "actual": 21.787,
+      "limit": 28.197,
+      "excess": 6.41,
+      "message_ru": "RESERVE_45D: 2037, факт 21.787 т, порог 28.197 т; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2038",
+      "passed": false,
+      "actual": 0.95323,
+      "limit": 0.97,
+      "excess": 0.01677,
+      "message_ru": "BASE_TOTAL_SERVICE: 2038, факт 0.953 доля, порог 0.970 доля; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2038",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2038, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2038",
+      "passed": false,
+      "actual": 5.269,
+      "limit": 35.404,
+      "excess": 30.135,
+      "message_ru": "RESERVE_45D: 2038, факт 5.269 т, порог 35.404 т; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2039",
+      "passed": false,
+      "actual": 0.93778,
+      "limit": 0.97,
+      "excess": 0.03222,
+      "message_ru": "BASE_TOTAL_SERVICE: 2039, факт 0.938 доля, порог 0.970 доля; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2039",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2039, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2039",
+      "passed": false,
+      "actual": 2.0,
+      "limit": 42.613,
+      "excess": 40.613,
+      "message_ru": "RESERVE_45D: 2039, факт 2.000 т, порог 42.613 т; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_TOTAL_SERVICE",
+      "period": "2040",
+      "passed": false,
+      "actual": 0.93492,
+      "limit": 0.97,
+      "excess": 0.03508,
+      "message_ru": "BASE_TOTAL_SERVICE: 2040, факт 0.935 доля, порог 0.970 доля; условие нарушено"
+    },
+    {
+      "rule_id": "BASE_CRITICAL_SERVICE",
+      "period": "2040",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 0.99,
+      "excess": 0.0,
+      "message_ru": "BASE_CRITICAL_SERVICE: 2040, факт 1.000 доля, порог 0.990 доля; условие выполнено"
+    },
+    {
+      "rule_id": "RESERVE_45D",
+      "period": "2040",
+      "passed": false,
+      "actual": 2.0,
+      "limit": 49.821,
+      "excess": 47.821,
+      "message_ru": "RESERVE_45D: 2040, факт 2.000 т, порог 49.821 т; условие нарушено"
+    },
+    {
+      "rule_id": "CAPACITY_EXCEEDED",
+      "period": "2038-06",
+      "passed": false,
+      "actual": 84.7,
+      "limit": 80.0,
+      "excess": 4.7,
+      "message_ru": "Синтетический пример: в 2038-06 заказ аварийного канала превышает мощность на 4,7 т."
+    },
+    {
+      "rule_id": "LEAD_TIME_VIOLATION",
+      "period": "2037-04",
+      "passed": false,
+      "actual": 3.0,
+      "limit": 4.0,
+      "excess": 1.0,
+      "message_ru": "Синтетический пример: заказ канала B в 2037-04 размещён на месяц позднее допустимого срока."
+    },
+    {
+      "rule_id": "CAPEX_2037",
+      "period": "2037",
+      "passed": true,
+      "actual": 347.0,
+      "limit": 1800.0,
+      "excess": 0.0,
+      "message_ru": "Синтетический CAPEX до 2037 года находится в пределах лимита."
+    },
+    {
+      "rule_id": "CAPEX_2040",
+      "period": "2040",
+      "passed": true,
+      "actual": 540.0,
+      "limit": 2800.0,
+      "excess": 0.0,
+      "message_ru": "Синтетический CAPEX до 2040 года находится в пределах лимита."
+    },
+    {
+      "rule_id": "EMERGENCY_BASE_STREAK",
+      "period": "2035–2040",
+      "passed": true,
+      "actual": 1.0,
+      "limit": 2.0,
+      "excess": 0.0,
+      "message_ru": "Синтетический пример: аварийный канал не используется как базовый более двух лет подряд."
+    }
+  ],
+  "risk_register": [
+    {
+      "risk_id": "MOCK-R1",
+      "scenario_id": "TEAM_RESEARCH",
+      "consequence_t": 12.426,
+      "consequence_mln": 80.878,
+      "consequence_sl": 0.02507,
+      "probability_basis_ru": "Синтетический риск; вероятность не оценена."
+    },
+    {
+      "risk_id": "MOCK-R2",
+      "scenario_id": "TEAM_RESEARCH",
+      "consequence_t": 6.867,
+      "consequence_mln": 43.164,
+      "consequence_sl": 0.01199,
+      "probability_basis_ru": "Синтетический риск; вероятность не оценена."
+    }
+  ],
+  "meta": {
+    "engine_version": "MOCK",
+    "contract_version": "1.0",
+    "timestep": "monthly",
+    "discount_rate": 0.1,
+    "discount_t0": 2035,
+    "assumptions_reference": "ai_workstreams/00_contracts/units_and_conventions.md",
+    "generated_at": "2026-09-19T00:00:00+00:00",
+    "random_seed": null
+  }
+}
