@@ -10,6 +10,7 @@ from dataclasses import asdict, is_dataclass
 from functools import lru_cache
 import io
 import json
+import math
 import re
 import zipfile
 from copy import deepcopy
@@ -80,7 +81,7 @@ def validate_plan(plan: dict) -> list[str]:
             errors.append(f"Заказ {index}, период {period}: канал source_id={source} отсутствует в CASE_INPUT.")
         if not re.fullmatch(r"20(3[5-9]|4[0-9])(?:-(?:0[1-9]|1[0-2]))?", period):
             errors.append(f"Заказ {index}: период {period} должен быть YYYY или YYYY-MM.")
-        if not isinstance(volume, (int, float)) or volume < 0:
+        if not isinstance(volume, (int, float)) or not math.isfinite(volume) or volume < 0:
             errors.append(f"Заказ {index}, период {period}: ordered_volume_t должен быть неотрицательным числом.")
     for index, reservation in enumerate(decisions.get("capacity_reservations", []), 1):
         source = reservation.get("source_id")
@@ -90,7 +91,7 @@ def validate_plan(plan: dict) -> list[str]:
             errors.append(f"Резервирование {index}, год {year}: канал source_id={source} отсутствует в CASE_INPUT.")
         if not isinstance(year, int) or not 2035 <= year <= 2040:
             errors.append(f"Резервирование {index}: год {year} вне горизонта 2035–2040.")
-        if not isinstance(value, (int, float)) or value < 0:
+        if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
             errors.append(f"Резервирование {index}, год {year}: reserved_capacity_t_per_year должен быть неотрицательным числом.")
         elif source in capacities and value > capacities[source]:
             errors.append(f"Резервирование {index}, год {year}: reserved_capacity_t_per_year={value:g} т/год "
@@ -106,7 +107,7 @@ def validate_plan(plan: dict) -> list[str]:
     policy = decisions.get("inventory_policy", {})
     for key in ("initial_inventory_t", "target_month_end_inventory_t"):
         value = policy.get(key, 0)
-        if not isinstance(value, (int, float)) or value < 0:
+        if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
             errors.append(f"Политика запаса: {key} должен быть неотрицательным числом.")
     source = policy.get("initial_inventory_source", {})
     if source.get("source_id") not in capacities:
@@ -117,7 +118,15 @@ def validate_plan(plan: dict) -> list[str]:
 
 
 def engine_available() -> bool:
-    return USE_ENGINE and (ROOT / "src" / "engine").is_dir()
+    """Включать единый реальный результат только после завершения публичного API WP1."""
+    engine_dir = ROOT / "src" / "engine"
+    if not USE_ENGINE or not engine_dir.is_dir():
+        return False
+    required = ("finance.py", "constraints.py", "risks.py", "compare.py",
+                "persistence.py", "export.py")
+    return all((engine_dir / name).exists() and
+               "raise NotImplementedError" not in (engine_dir / name).read_text(encoding="utf-8")
+               for name in required)
 
 
 def _scenario_path(scenario_id: str) -> Path:
@@ -146,15 +155,33 @@ def _run_core_cached(scenario_id: str, plan_json: str):
 
 
 def _result_dict(result) -> dict:
+    """Преобразовать вложенный WP1 RunResult в плоский контракт UI v1.0."""
     if isinstance(result, dict):
-        return deepcopy(result)
-    if is_dataclass(result):
-        return asdict(result)
-    if hasattr(result, "model_dump"):
-        return result.model_dump(mode="json")
-    if hasattr(result, "to_dict"):
-        return result.to_dict()
-    raise TypeError("Ядро вернуло неизвестный тип RunResult.")
+        data = deepcopy(result)
+    elif is_dataclass(result):
+        data = asdict(result)
+    elif hasattr(result, "model_dump"):
+        data = result.model_dump(mode="json")
+    elif hasattr(result, "to_dict"):
+        data = result.to_dict()
+    else:
+        raise TypeError("Ядро вернуло неизвестный тип RunResult.")
+    if "monthly_balance" in data:
+        return data
+    if not all(key in data for key in ("deliveries", "inventory", "service", "costs", "meta")):
+        raise ValueError("RunResult ядра не содержит обязательные разделы контракта.")
+    checks = data.get("constraint_checks")
+    if checks is None:
+        checks = [{**item, "passed": False} for item in data.get("violations", [])]
+    return {"scenario_id": data["scenario_id"], "plan_id": data["plan_id"],
+            "monthly_balance": data["inventory"]["monthly_balance"],
+            "yearly_balance": data["service"]["yearly_balance"],
+            "source_schedule": data["deliveries"]["source_schedule"],
+            "inventory_trace": data["inventory"]["inventory_trace"],
+            "financial_breakdown": data["costs"]["financial_breakdown"],
+            "constraint_checks": checks,
+            "risk_register": data.get("risks", {}).get("risk_register", []),
+            "meta": data["meta"]}
 
 
 def get_run_result(scenario_id: str, plan: dict) -> dict:
@@ -172,7 +199,7 @@ def get_run_result(scenario_id: str, plan: dict) -> dict:
         except Exception as exc:
             raise ValueError(f"Расчёт сценария {scenario_id}: {exc}") from exc
     if scenario_id not in SCENARIOS:
-        raise ValueError(f"Сценарий {scenario_id} ожидает ядро WP1; сейчас доступен только демо-режим.")
+        raise ValueError(f"Сценарий {scenario_id} ожидает ядро WP1; сейчас доступен только демо-режим до завершения WP1.")
     path = MOCK_DIR / f"{scenario_id}.json"
     result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else build_mock(scenario_id)
     result = deepcopy(result)
@@ -184,7 +211,7 @@ def run_geo_scenario(plan: dict, event_label: str, source_id: str,
                      multiplier: float, first_year: int, last_year: int) -> dict:
     """Исследовательский ценовой шок; CASE_INPUT-файлы не изменяются."""
     if not engine_available():
-        raise ValueError("Геополитический сценарий ожидает расчётное ядро WP1.")
+        raise ValueError("Геополитический сценарий ожидает завершения расчётного ядра WP1.")
     if not event_label.strip():
         raise ValueError("Событие: укажите event_label.")
     sources = {row["source_id"]: row["name"] for row in source_catalog()}
@@ -275,11 +302,42 @@ def final_plan_files() -> list[dict]:
     return [item for item in list_saved_plans() if "FINAL" in item["plan_id"].upper()]
 
 
+def apply_decision_rows(plan: dict, section: str, rows: list[dict]) -> dict:
+    """Проверить правки таблицы и вернуть обновлённый план без мутации исходника."""
+    allowed = {
+        "supply_orders": ("source_id", "period", "ordered_volume_t"),
+        "capacity_reservations": ("source_id", "year", "reserved_capacity_t_per_year", "start_month"),
+        "investments": ("investment_id", "action", "payment_date"),
+    }
+    if section not in allowed:
+        raise ValueError(f"Раздел решений {section} неизвестен.")
+    cleaned = []
+    for index, row in enumerate(rows, 1):
+        item = {}
+        for key in allowed[section]:
+            value = row.get(key)
+            if isinstance(value, float) and math.isnan(value):
+                value = None
+            if key in ("year", "start_month") and isinstance(value, (int, float)) and math.isfinite(value):
+                if value.is_integer() if isinstance(value, float) else True:
+                    value = int(value)
+            item[key] = value
+        if all(value is None or value == "" for value in item.values()):
+            continue
+        cleaned.append(item)
+    candidate = deepcopy(plan)
+    candidate["decisions"][section] = cleaned
+    errors = validate_plan(candidate)
+    if errors:
+        raise ValueError("\n".join(errors))
+    return candidate
+
+
 def save_plan_json(plan: dict) -> bytes:
     errors = validate_plan(plan)
     if errors:
         raise ValueError("\n".join(errors))
-    return (json.dumps(plan, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    return (json.dumps(plan, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")
 
 
 def load_plan_json(payload: bytes) -> dict:
@@ -298,7 +356,7 @@ def load_plan_json(payload: bytes) -> dict:
 def export_core_archive(scenario_id: str, plan: dict, fmt: str = "csv") -> bytes:
     """Экспорт того же кэшированного RunResult через API ядра."""
     if not engine_available():
-        raise ValueError("Экспорт ядра недоступен: src/engine ещё не опубликован.")
+        raise ValueError("Экспорт ядра недоступен: публичный API WP1 ещё не завершён.")
     if fmt not in ("csv", "xlsx"):
         raise ValueError(f"Формат экспорта {fmt} не поддерживается.")
     engine = importlib.import_module("src.engine")

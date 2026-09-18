@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import streamlit as st
 
-from app.services import (available_scenarios, chart_thresholds, clear_result_cache,
+from app.services import (apply_decision_rows, available_scenarios, chart_thresholds, clear_result_cache,
                            constraint_catalog, default_plan, engine_available, final_plan_files,
                            list_saved_plans, load_plan_from_catalog, save_plan_to_catalog,
                            export_core_archive, geo_effect, run_geo_scenario,
@@ -97,10 +97,28 @@ def graphs(result: dict, base: dict, stress: dict) -> None:
     table(scenario_deltas(base, stress))
 
 
+def editable_decision_table(plan: dict, section: str, labels: dict[str, str]) -> None:
+    rows = plan["decisions"][section]
+    if not rows:
+        return
+    st.caption("Измените ячейки или удалите строку, затем нажмите «Применить изменения».")
+    edited = st.data_editor(frame(rows), num_rows="dynamic", use_container_width=True,
+        hide_index=True, column_config={key: st.column_config.Column(label)
+                                        for key, label in labels.items()},
+        key=f"editor_{section}_{plan['plan_id']}")
+    if st.button("Применить изменения", key=f"apply_{section}"):
+        try:
+            st.session_state.plan = apply_decision_rows(plan, section, edited.to_dict(orient="records"))
+            st.success("Изменения плана сохранены в текущей сессии.")
+            st.rerun()
+        except ValueError as exc:
+            st.error(str(exc))
+
+
 def plan_page(plan: dict) -> None:
     st.header("План и контракты")
     if not engine_available():
-        st.info("Демо-режим: ядро WP1 ещё не опубликовано; изменения решений не меняют синтетические показатели.")
+        st.info("Демо-режим: полный API ядра WP1 ещё не готов; изменения решений не меняют синтетические показатели.")
     plan["plan_id"] = st.text_input("Идентификатор плана", value=plan["plan_id"])
     decisions = plan["decisions"]
     sources = source_catalog()
@@ -108,6 +126,8 @@ def plan_page(plan: dict) -> None:
     with st.expander("Заказы по каналам и периодам", expanded=True):
         table(decisions["supply_orders"], {"source_id": "Канал", "period": "Период",
                                             "ordered_volume_t": "Заказ, т"})
+        editable_decision_table(plan, "supply_orders", {"source_id": "Канал", "period": "Период",
+                                                       "ordered_volume_t": "Заказ, т"})
         with st.form("order_form"):
             c1, c2, c3 = st.columns(3)
             source = c1.selectbox("Канал", source_ids, key="order_source")
@@ -130,6 +150,8 @@ def plan_page(plan: dict) -> None:
     with st.expander("Резервирование мощностей", expanded=True):
         table(decisions["capacity_reservations"], {"source_id": "Канал", "year": "Год",
                 "reserved_capacity_t_per_year": "Мощность, т/год", "start_month": "Месяц начала"})
+        editable_decision_table(plan, "capacity_reservations", {"source_id": "Канал", "year": "Год",
+            "reserved_capacity_t_per_year": "Мощность, т/год", "start_month": "Месяц начала"})
         with st.form("reserve_form"):
             c1, c2, c3, c4 = st.columns(4)
             source = c1.selectbox("Канал", source_ids, key="reserve_source")
@@ -154,6 +176,8 @@ def plan_page(plan: dict) -> None:
     with st.expander("Инвестиции"):
         table(decisions["investments"], {"investment_id": "Опция", "action": "Действие",
                                          "payment_date": "Дата платежа"})
+        editable_decision_table(plan, "investments", {"investment_id": "Опция", "action": "Действие",
+                                                     "payment_date": "Дата платежа"})
         with st.form("investment_form"):
             c1, c2, c3 = st.columns(3)
             investment = c1.selectbox("Опция", ("EARTH_NEW", "LUNAR_ISRU", "ZBO"))
@@ -280,7 +304,7 @@ def scenarios(result: dict, base: dict, stress: dict) -> None:
             del st.session_state.geo_plan_snapshot
             st.rerun()
     if not engine_available():
-        st.info("Расчёт геополитического сценария станет доступен после публикации ядра WP1.")
+        st.info("Расчёт геополитического сценария станет доступен после завершения ядра WP1.")
 
 
 def risks(result: dict) -> None:
