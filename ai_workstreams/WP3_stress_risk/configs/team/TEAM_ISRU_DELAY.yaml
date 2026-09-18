@@ -1,0 +1,17 @@
+scenario_id: TEAM_ISRU_DELAY
+label_ru: "Сдвиг ввода лунного источника на 2039"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Вопрос В3 открыт; заказ и CAPEX плана неизменны, 2038 год недоступен."
+scenario_parameters:
+  commissioning_override:
+    source_id: D
+    original_available_from: "2038-01"
+    new_available_from: "2039-01"
+  actual_delivery_share:
+    Lunar-ISRU:
+      2038: 0.0
+      2039: 1.0
+      2040: 1.0

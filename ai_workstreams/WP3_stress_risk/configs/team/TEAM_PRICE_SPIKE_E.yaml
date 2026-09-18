@@ -1,0 +1,15 @@
+scenario_id: TEAM_PRICE_SPIKE_E
+label_ru: "Рост цены аварийного канала"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Плюс 25% — испытательный коэффициент к переменной цене E, не к резервному тарифу."
+variable_price_multiplier:
+  Emergency:
+    2038: 1.25
+    2039: 1.25
+scenario_parameters:
+  source_id: E
+  original_price_mln_per_t: 13.8
+  new_price_mln_per_t: 17.25

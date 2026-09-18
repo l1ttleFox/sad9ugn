@@ -1,0 +1,14 @@
+scenario_id: TEAM_ISRU_UNDERDELIVERY_COMBINED
+label_ru: "Дополнительная недопоставка ISRU в обязательном стрессе"
+status: TEAM_ASSUMPTION
+notes:
+  - "Условный исследовательский шок, а не оценка вероятности."
+  - "Явная комбинация: все поля MANDATORY_STRESS, кроме доли ISRU 2038 0.55→0.40; применять один раз, reliability не умножать."
+demand_multiplier: {2035: 1.0, 2036: 1.0, 2037: 1.0, 2038: 1.15, 2039: 1.15, 2040: 1.15}
+critical_demand_multiplier: {2035: 1.0, 2036: 1.0, 2037: 1.0, 2038: 1.15, 2039: 1.15, 2040: 1.15}
+variable_price_multiplier:
+  Earth-Core: {2035: 1.0, 2036: 1.0, 2037: 1.0, 2038: 1.25, 2039: 1.25, 2040: 1.0}
+  Earth-Flex: {2035: 1.0, 2036: 1.0, 2037: 1.0, 2038: 1.25, 2039: 1.25, 2040: 1.0}
+actual_delivery_share:
+  Lunar-ISRU: {2038: 0.40, 2039: 0.75, 2040: 1.0}
+loss_ceiling: {enabled: true, from_year: 2038, max_losses_divided_by_throughput: 0.02}

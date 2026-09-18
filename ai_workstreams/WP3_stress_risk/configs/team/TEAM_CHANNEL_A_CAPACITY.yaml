@@ -1,0 +1,12 @@
+scenario_id: TEAM_CHANNEL_A_CAPACITY
+label_ru: "Сокращение мощности канала A"
+status: TEAM_ASSUMPTION
+notes:
+  - "Условный исследовательский шок, а не оценка вероятности."
+  - "Отдельно от бонусного удорожания A и обязательного стресса."
+scenario_parameters:
+  source_capacity_override:
+    source_id: A
+    year: 2038
+    original_capacity_t_per_year: 190
+    new_capacity_t_per_year: 152

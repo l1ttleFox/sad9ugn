@@ -1,0 +1,197 @@
+{
+  "register_id": "WP3_WAVE1",
+  "baseline": "BASE",
+  "risk_count": 10,
+  "risks": [
+    {
+      "risk_id": "R01",
+      "event": "Поставка ISRU ниже обязательных 55%",
+      "cause": "Проблемы добычи и переработки",
+      "affected_parameter": {
+        "change": "D, 2038: 0.55→0.40",
+        "mapping": "configs/team/TEAM_ISRU_UNDERDELIVERY_COMBINED.yaml / actual_delivery_share.Lunar-ISRU.2038"
+      },
+      "period": "2038",
+      "probability_basis_or_range": "Нет частот; условная доля 0.40",
+      "physical_financial_service_consequence": "0.15 × Q_D,plan,2038 т недопоставки",
+      "dependencies": [
+        "Отдельный TEAM-комбинированный сценарий, не правка CASE_INPUT",
+        "Резерв B/E и запас"
+      ],
+      "owner": "Оператор ISRU",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R02",
+      "event": "Ввод ISRU сдвигается на 2039",
+      "cause": "Задержка пусконаладки",
+      "affected_parameter": {
+        "change": "D, available_from: 2038-01→2039-01",
+        "mapping": "configs/team/TEAM_ISRU_DELAY.yaml / scenario_parameters.commissioning_override"
+      },
+      "period": "2038",
+      "probability_basis_or_range": "В3 открыт; сценарий задержки 12 месяцев",
+      "physical_financial_service_consequence": "Q_D,plan,2038 т недопоставки; до 120 т/год мощности",
+      "dependencies": [
+        "Отдельно от обязательного стресса",
+        "Возможна замена B/C/E"
+      ],
+      "owner": "Оператор ISRU",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R03",
+      "event": "Отказ ZBO-криокулера",
+      "cause": "Отказ теплоотвода",
+      "affected_parameter": {
+        "change": "loss_rate: 0.012→0.045",
+        "mapping": "configs/team/TEAM_ZBO_FAILURE.yaml / scenario_parameters.storage_loss_override"
+      },
+      "period": "2038",
+      "probability_basis_or_range": "Без статистики; длительность 12 мес — условная граница",
+      "physical_financial_service_consequence": "0.033 × throughput_2038 т дополнительных потерь",
+      "dependencies": [
+        "Поверх BASE",
+        "Сервис и потолок 2% в отдельном combined-тесте"
+      ],
+      "owner": "Оператор депо",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R04",
+      "event": "MMOD-пробой ёмкости",
+      "cause": "Орбитальный микрометеороид/мусор",
+      "affected_parameter": {
+        "change": "списание 10–50% запаса, центр 25%",
+        "mapping": "configs/team/TEAM_MMOD.yaml / scenario_parameters.inventory_shock"
+      },
+      "period": "2038-07",
+      "probability_basis_or_range": "В2 открыт; интервал чувствительности, не частота",
+      "physical_financial_service_consequence": "0.25 × I_start,2038-07 т разовой потери",
+      "dependencies": [
+        "Поверх BASE",
+        "Зависит от текущего запаса"
+      ],
+      "owner": "Оператор депо",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R05",
+      "event": "Аварийная цена E выше тарифа",
+      "cause": "Спот-волатильность",
+      "affected_parameter": {
+        "change": "13.8→17.25 млн/т",
+        "mapping": "configs/team/TEAM_PRICE_SPIKE_E.yaml / variable_price_multiplier.Emergency.2038,2039"
+      },
+      "period": "2038–2039",
+      "probability_basis_or_range": "Условный +25%, без вероятности",
+      "physical_financial_service_consequence": "3.45 × Q_pay,E,2038:2039 млн дополнительных расходов",
+      "dependencies": [
+        "Поверх BASE",
+        "Только при активации E"
+      ],
+      "owner": "Закупки",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R06",
+      "event": "Позднее исполнение опциона C",
+      "cause": "Решение после контрольной даты",
+      "affected_parameter": {
+        "change": "exercise_date + 12 месяцев",
+        "mapping": "configs/team/TEAM_EARTH_NEW_EXERCISE_DELAY.yaml / scenario_parameters.plan_investment_shift"
+      },
+      "period": "2037–2039",
+      "probability_basis_or_range": "Условный сдвиг 12 месяцев",
+      "physical_financial_service_consequence": "до min(130, Q_C,plan,2039) т неуспевшей мощности за год",
+      "dependencies": [
+        "Нужна пара планов; scenario YAML не меняет решение",
+        "Lead time 24 мес TA-02"
+      ],
+      "owner": "Планирование",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R07",
+      "event": "Смета ISRU превышена на 15%",
+      "cause": "Строительно-пусковые затраты",
+      "affected_parameter": {
+        "change": "1250→1437.5 млн",
+        "mapping": "configs/team/TEAM_CAPEX_OVERRUN.yaml / scenario_parameters.investment_capex_override"
+      },
+      "period": "дата платежа плана",
+      "probability_basis_or_range": "Условный +15%, не частота",
+      "physical_financial_service_consequence": "187.5 млн дополнительных CAPEX; проверить лимит 1800",
+      "dependencies": [
+        "Поверх BASE",
+        "Зависит от других CAPEX до 2037"
+      ],
+      "owner": "Инвестиционный комитет",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R08",
+      "event": "Канал A теряет мощность",
+      "cause": "Ограничение производства или доступности",
+      "affected_parameter": {
+        "change": "190→152 т/год в 2038",
+        "mapping": "configs/team/TEAM_CHANNEL_A_CAPACITY.yaml / scenario_parameters.source_capacity_override"
+      },
+      "period": "2038",
+      "probability_basis_or_range": "Условное −20%, без частоты",
+      "physical_financial_service_consequence": "до 38 т дефицита мощности при полной резервации",
+      "dependencies": [
+        "Поверх BASE, не бонусный price event",
+        "Связь с геополитическим модулем, но шоки разделены"
+      ],
+      "owner": "Провайдер A",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R09",
+      "event": "Деградация MLI базового хранения",
+      "cause": "Тепловой режим",
+      "affected_parameter": {
+        "change": "loss_rate: 0.045→0.06",
+        "mapping": "configs/team/TEAM_MLI_DEGRADATION.yaml / scenario_parameters.storage_loss_override"
+      },
+      "period": "2036–2037",
+      "probability_basis_or_range": "Условные +1.5 п.п., без частоты",
+      "physical_financial_service_consequence": "0.015 × throughput_2036:2037 т дополнительных потерь",
+      "dependencies": [
+        "Поверх BASE",
+        "Только до ввода ZBO"
+      ],
+      "owner": "Оператор депо",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    },
+    {
+      "risk_id": "R10",
+      "event": "Геополитический тариф канала A",
+      "cause": "Изменение условий поставки",
+      "affected_parameter": {
+        "change": "6.2→7.44 млн/т",
+        "mapping": "configs/team/TEAM_GEO_CHANNEL_A.yaml / variable_price_multiplier.Earth-Core.2038,2039"
+      },
+      "period": "2038–2039",
+      "probability_basis_or_range": "Условный +20%, без частоты",
+      "physical_financial_service_consequence": "1.24 × Q_pay,A,2038:2039 млн дополнительных расходов",
+      "dependencies": [
+        "Поверх BASE",
+        "Не совмещать автоматически с mandatory +25%"
+      ],
+      "owner": "Закупки",
+      "mitigation": "Пересчитать тот же план, проверить резерв 45 дней, сервис и лимиты; подобрать B/C/E только отдельным адаптивным планом.",
+      "residual": "После мер пересчитать остаточный дефицит и стоимость в волне 2; до прогона не оценено."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+scenario_id: TEAM_MLI_DEGRADATION
+label_ru: "Деградация изоляции базового хранения"
+status: TEAM_ASSUMPTION
+notes:
+  - "Условный исследовательский шок, а не оценка вероятности."
+  - "Применять только в месяцы работы BASE-хранилища; с обязательным стрессом не смешивать."
+scenario_parameters:
+  storage_loss_override:
+    storage_id: BASE
+    period_start: "2036-01"
+    period_end: "2037-12"
+    original_loss_rate: 0.045
+    new_loss_rate: 0.06
