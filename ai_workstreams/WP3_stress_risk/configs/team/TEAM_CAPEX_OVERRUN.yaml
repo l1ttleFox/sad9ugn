@@ -1,0 +1,13 @@
+scenario_id: TEAM_CAPEX_OVERRUN
+label_ru: "Перерасход сметы ISRU"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Плюс 15% к одному платежу ISRU; контрактное значение 1250 не меняется."
+scenario_parameters:
+  investment_capex_override:
+    investment_id: LUNAR_ISRU
+    original_capex_mln: 1250
+    new_capex_mln: 1437.5
+    payment_date: plan_investment_payment_date

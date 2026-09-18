@@ -1,0 +1,11 @@
+scenario_id: TEAM_EARTH_NEW_EXERCISE_DELAY
+label_ru: "Задержка исполнения опциона Earth-New"
+status: TEAM_ASSUMPTION
+notes:
+  - "Условный исследовательский шок, а не оценка вероятности."
+  - "Меняет решение плана в копии: payment_date exercise_option +12 месяцев; затем lead time 24 месяца TA-02."
+scenario_parameters:
+  plan_investment_shift:
+    investment_id: EARTH_NEW
+    action: exercise_option
+    shift_months: 12

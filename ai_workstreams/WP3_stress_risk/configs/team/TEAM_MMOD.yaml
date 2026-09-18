@@ -1,0 +1,14 @@
+scenario_id: TEAM_MMOD
+label_ru: "Пробой хранилища и утрата запаса"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Доля 25% — условная середина интервала 10–50% до ответа В2; потерю списать один раз."
+scenario_parameters:
+  inventory_shock:
+    period: "2038-07"
+    original_lost_inventory_t: 0
+    lost_inventory_share: 0.25
+    base: inventory_start_before_deliveries
+  sensitivity_lost_inventory_share: [0.1, 0.5]

@@ -1,0 +1,14 @@
+scenario_id: TEAM_ZBO_FAILURE
+label_ru: "Отказ охлаждения ZBO"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Период отказа 12 месяцев — испытательная граница; потолок 2% включать только в отдельном combined-сценарии."
+scenario_parameters:
+  storage_loss_override:
+    storage_id: ZBO
+    period_start: "2038-01"
+    period_end: "2038-12"
+    original_loss_rate: 0.012
+    new_loss_rate: 0.045

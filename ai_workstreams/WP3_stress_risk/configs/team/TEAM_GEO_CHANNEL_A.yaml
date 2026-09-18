@@ -1,0 +1,16 @@
+scenario_id: TEAM_GEO_CHANNEL_A
+label_ru: "Геополитическое удорожание канала A"
+status: TEAM_ASSUMPTION
+notes:
+  - "Отдельный исследовательский сценарий поверх BASE; с MANDATORY_STRESS не объединять без отдельного combined-сценария."
+  - "Числа задают тяжесть условного события, а не его вероятность; исходный CASE_INPUT не менять."
+  - "Плюс 20% — бонусный условный event; не накладывать на обязательные +25% без отдельного combined-сценария."
+variable_price_multiplier:
+  Earth-Core:
+    2038: 1.2
+    2039: 1.2
+scenario_parameters:
+  event: geo_channel_a_tariff
+  source_id: A
+  original_price_mln_per_t: 6.2
+  new_price_mln_per_t: 7.44
