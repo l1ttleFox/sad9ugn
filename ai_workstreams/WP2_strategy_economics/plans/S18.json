@@ -1,0 +1,1099 @@
+{
+  "plan_id": "S18",
+  "scenario_id": "BASE",
+  "version": "wave1-draft-1.0",
+  "decisions": {
+    "supply_orders": [
+      {
+        "source_id": "A",
+        "period": "2035-01",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-01",
+        "ordered_volume_t": 4.227
+      },
+      {
+        "source_id": "C",
+        "period": "2035-01",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-02",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-02",
+        "ordered_volume_t": 8.333
+      },
+      {
+        "source_id": "C",
+        "period": "2035-02",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-03",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-03",
+        "ordered_volume_t": 8.333
+      },
+      {
+        "source_id": "C",
+        "period": "2035-03",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-04",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-04",
+        "ordered_volume_t": 8.333
+      },
+      {
+        "source_id": "C",
+        "period": "2035-04",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-05",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-05",
+        "ordered_volume_t": 8.524
+      },
+      {
+        "source_id": "C",
+        "period": "2035-05",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-06",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-06",
+        "ordered_volume_t": 8.708
+      },
+      {
+        "source_id": "C",
+        "period": "2035-06",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-07",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-07",
+        "ordered_volume_t": 8.708
+      },
+      {
+        "source_id": "C",
+        "period": "2035-07",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-08",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-08",
+        "ordered_volume_t": 8.708
+      },
+      {
+        "source_id": "C",
+        "period": "2035-08",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-09",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-09",
+        "ordered_volume_t": 7.365
+      },
+      {
+        "source_id": "C",
+        "period": "2035-09",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-10",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-10",
+        "ordered_volume_t": 1.059
+      },
+      {
+        "source_id": "C",
+        "period": "2035-10",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-11",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-11",
+        "ordered_volume_t": 1.059
+      },
+      {
+        "source_id": "C",
+        "period": "2035-11",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2035-12",
+        "ordered_volume_t": 11.0
+      },
+      {
+        "source_id": "B",
+        "period": "2035-12",
+        "ordered_volume_t": 1.059
+      },
+      {
+        "source_id": "C",
+        "period": "2035-12",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-01",
+        "ordered_volume_t": 12.833
+      },
+      {
+        "source_id": "B",
+        "period": "2036-01",
+        "ordered_volume_t": 1.493
+      },
+      {
+        "source_id": "C",
+        "period": "2036-01",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-02",
+        "ordered_volume_t": 9.961
+      },
+      {
+        "source_id": "B",
+        "period": "2036-02",
+        "ordered_volume_t": 1.209
+      },
+      {
+        "source_id": "C",
+        "period": "2036-02",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-03",
+        "ordered_volume_t": 4.333
+      },
+      {
+        "source_id": "B",
+        "period": "2036-03",
+        "ordered_volume_t": 1.209
+      },
+      {
+        "source_id": "C",
+        "period": "2036-03",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-04",
+        "ordered_volume_t": 4.333
+      },
+      {
+        "source_id": "B",
+        "period": "2036-04",
+        "ordered_volume_t": 1.209
+      },
+      {
+        "source_id": "C",
+        "period": "2036-04",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-05",
+        "ordered_volume_t": 4.353
+      },
+      {
+        "source_id": "B",
+        "period": "2036-05",
+        "ordered_volume_t": 1.229
+      },
+      {
+        "source_id": "C",
+        "period": "2036-05",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-06",
+        "ordered_volume_t": 4.321
+      },
+      {
+        "source_id": "B",
+        "period": "2036-06",
+        "ordered_volume_t": 1.216
+      },
+      {
+        "source_id": "C",
+        "period": "2036-06",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-07",
+        "ordered_volume_t": 3.408
+      },
+      {
+        "source_id": "B",
+        "period": "2036-07",
+        "ordered_volume_t": 0.428
+      },
+      {
+        "source_id": "C",
+        "period": "2036-07",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-08",
+        "ordered_volume_t": 4.718
+      },
+      {
+        "source_id": "B",
+        "period": "2036-08",
+        "ordered_volume_t": 0.813
+      },
+      {
+        "source_id": "C",
+        "period": "2036-08",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-09",
+        "ordered_volume_t": 4.334
+      },
+      {
+        "source_id": "C",
+        "period": "2036-09",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-10",
+        "ordered_volume_t": 5.147
+      },
+      {
+        "source_id": "C",
+        "period": "2036-10",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-11",
+        "ordered_volume_t": 5.137
+      },
+      {
+        "source_id": "C",
+        "period": "2036-11",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2036-12",
+        "ordered_volume_t": 5.142
+      },
+      {
+        "source_id": "C",
+        "period": "2036-12",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-01",
+        "ordered_volume_t": 8.974
+      },
+      {
+        "source_id": "C",
+        "period": "2037-01",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-02",
+        "ordered_volume_t": 10.25
+      },
+      {
+        "source_id": "C",
+        "period": "2037-02",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-03",
+        "ordered_volume_t": 10.182
+      },
+      {
+        "source_id": "B",
+        "period": "2037-03",
+        "ordered_volume_t": 0.193
+      },
+      {
+        "source_id": "C",
+        "period": "2037-03",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-04",
+        "ordered_volume_t": 9.989
+      },
+      {
+        "source_id": "B",
+        "period": "2037-04",
+        "ordered_volume_t": 0.464
+      },
+      {
+        "source_id": "C",
+        "period": "2037-04",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-05",
+        "ordered_volume_t": 9.719
+      },
+      {
+        "source_id": "B",
+        "period": "2037-05",
+        "ordered_volume_t": 0.849
+      },
+      {
+        "source_id": "C",
+        "period": "2037-05",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-06",
+        "ordered_volume_t": 9.333
+      },
+      {
+        "source_id": "B",
+        "period": "2037-06",
+        "ordered_volume_t": 0.035
+      },
+      {
+        "source_id": "C",
+        "period": "2037-06",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-07",
+        "ordered_volume_t": 10.138
+      },
+      {
+        "source_id": "B",
+        "period": "2037-07",
+        "ordered_volume_t": 0.036
+      },
+      {
+        "source_id": "C",
+        "period": "2037-07",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-08",
+        "ordered_volume_t": 10.156
+      },
+      {
+        "source_id": "B",
+        "period": "2037-08",
+        "ordered_volume_t": 0.05
+      },
+      {
+        "source_id": "C",
+        "period": "2037-08",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-09",
+        "ordered_volume_t": 10.142
+      },
+      {
+        "source_id": "C",
+        "period": "2037-09",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-10",
+        "ordered_volume_t": 10.192
+      },
+      {
+        "source_id": "C",
+        "period": "2037-10",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "A",
+        "period": "2037-11",
+        "ordered_volume_t": 0.192
+      },
+      {
+        "source_id": "C",
+        "period": "2037-11",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2037-11",
+        "ordered_volume_t": 10.0
+      },
+      {
+        "source_id": "A",
+        "period": "2037-12",
+        "ordered_volume_t": 9.957
+      },
+      {
+        "source_id": "C",
+        "period": "2037-12",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2037-12",
+        "ordered_volume_t": 0.235
+      },
+      {
+        "source_id": "A",
+        "period": "2038-01",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-01",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-01",
+        "ordered_volume_t": 0.176
+      },
+      {
+        "source_id": "A",
+        "period": "2038-02",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-02",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-02",
+        "ordered_volume_t": 0.267
+      },
+      {
+        "source_id": "A",
+        "period": "2038-03",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-03",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-03",
+        "ordered_volume_t": 0.536
+      },
+      {
+        "source_id": "A",
+        "period": "2038-04",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-04",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-04",
+        "ordered_volume_t": 0.92
+      },
+      {
+        "source_id": "A",
+        "period": "2038-05",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-05",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-05",
+        "ordered_volume_t": 0.115
+      },
+      {
+        "source_id": "A",
+        "period": "2038-06",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-06",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-06",
+        "ordered_volume_t": 0.097
+      },
+      {
+        "source_id": "A",
+        "period": "2038-07",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-07",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-07",
+        "ordered_volume_t": 0.111
+      },
+      {
+        "source_id": "A",
+        "period": "2038-08",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-08",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-08",
+        "ordered_volume_t": 0.061
+      },
+      {
+        "source_id": "A",
+        "period": "2038-09",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-09",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-09",
+        "ordered_volume_t": 10.0
+      },
+      {
+        "source_id": "A",
+        "period": "2038-10",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-10",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-10",
+        "ordered_volume_t": 0.357
+      },
+      {
+        "source_id": "A",
+        "period": "2038-11",
+        "ordered_volume_t": 8.083
+      },
+      {
+        "source_id": "C",
+        "period": "2038-11",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-11",
+        "ordered_volume_t": 9.202
+      },
+      {
+        "source_id": "A",
+        "period": "2038-12",
+        "ordered_volume_t": 15.583
+      },
+      {
+        "source_id": "C",
+        "period": "2038-12",
+        "ordered_volume_t": 10.833
+      },
+      {
+        "source_id": "D",
+        "period": "2038-12",
+        "ordered_volume_t": 0.504
+      },
+      {
+        "source_id": "A",
+        "period": "2039-01",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-01",
+        "ordered_volume_t": 0.677
+      },
+      {
+        "source_id": "A",
+        "period": "2039-02",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-02",
+        "ordered_volume_t": 0.573
+      },
+      {
+        "source_id": "A",
+        "period": "2039-03",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-03",
+        "ordered_volume_t": 0.575
+      },
+      {
+        "source_id": "A",
+        "period": "2039-04",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-04",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-05",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-05",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-06",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-06",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-07",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-07",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-08",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-08",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-09",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-09",
+        "ordered_volume_t": 8.074
+      },
+      {
+        "source_id": "A",
+        "period": "2039-10",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "B",
+        "period": "2039-10",
+        "ordered_volume_t": 1.737
+      },
+      {
+        "source_id": "D",
+        "period": "2039-10",
+        "ordered_volume_t": 0.574
+      },
+      {
+        "source_id": "A",
+        "period": "2039-11",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "D",
+        "period": "2039-11",
+        "ordered_volume_t": 6.227
+      },
+      {
+        "source_id": "A",
+        "period": "2039-12",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "B",
+        "period": "2039-12",
+        "ordered_volume_t": 1.667
+      },
+      {
+        "source_id": "D",
+        "period": "2039-12",
+        "ordered_volume_t": 4.421
+      },
+      {
+        "source_id": "D",
+        "period": "2040-01",
+        "ordered_volume_t": 6.228
+      },
+      {
+        "source_id": "B",
+        "period": "2040-02",
+        "ordered_volume_t": 1.667
+      },
+      {
+        "source_id": "D",
+        "period": "2040-02",
+        "ordered_volume_t": 4.561
+      },
+      {
+        "source_id": "D",
+        "period": "2040-03",
+        "ordered_volume_t": 6.228
+      },
+      {
+        "source_id": "B",
+        "period": "2040-04",
+        "ordered_volume_t": 1.667
+      },
+      {
+        "source_id": "D",
+        "period": "2040-04",
+        "ordered_volume_t": 4.561
+      },
+      {
+        "source_id": "D",
+        "period": "2040-05",
+        "ordered_volume_t": 6.228
+      },
+      {
+        "source_id": "B",
+        "period": "2040-06",
+        "ordered_volume_t": 1.667
+      },
+      {
+        "source_id": "D",
+        "period": "2040-06",
+        "ordered_volume_t": 4.561
+      },
+      {
+        "source_id": "D",
+        "period": "2040-07",
+        "ordered_volume_t": 6.228
+      },
+      {
+        "source_id": "B",
+        "period": "2040-08",
+        "ordered_volume_t": 1.667
+      },
+      {
+        "source_id": "D",
+        "period": "2040-08",
+        "ordered_volume_t": 4.561
+      },
+      {
+        "source_id": "D",
+        "period": "2040-09",
+        "ordered_volume_t": 6.228
+      },
+      {
+        "source_id": "D",
+        "period": "2040-10",
+        "ordered_volume_t": 4.561
+      }
+    ],
+    "capacity_reservations": [
+      {
+        "source_id": "A",
+        "year": 2035,
+        "reserved_capacity_t_per_year": 100
+      },
+      {
+        "source_id": "A",
+        "year": 2036,
+        "reserved_capacity_t_per_year": 132
+      },
+      {
+        "source_id": "A",
+        "year": 2037,
+        "reserved_capacity_t_per_year": 154
+      },
+      {
+        "source_id": "A",
+        "year": 2038,
+        "reserved_capacity_t_per_year": 154
+      },
+      {
+        "source_id": "A",
+        "year": 2039,
+        "reserved_capacity_t_per_year": 187
+      },
+      {
+        "source_id": "A",
+        "year": 2040,
+        "reserved_capacity_t_per_year": 190
+      },
+      {
+        "source_id": "B",
+        "year": 2035,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "B",
+        "year": 2036,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "B",
+        "year": 2037,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "B",
+        "year": 2038,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "B",
+        "year": 2039,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "B",
+        "year": 2040,
+        "reserved_capacity_t_per_year": 110
+      },
+      {
+        "source_id": "C",
+        "year": 2037,
+        "reserved_capacity_t_per_year": 130
+      },
+      {
+        "source_id": "C",
+        "year": 2038,
+        "reserved_capacity_t_per_year": 130
+      },
+      {
+        "source_id": "C",
+        "year": 2039,
+        "reserved_capacity_t_per_year": 130
+      },
+      {
+        "source_id": "C",
+        "year": 2040,
+        "reserved_capacity_t_per_year": 130
+      },
+      {
+        "source_id": "D",
+        "year": 2038,
+        "reserved_capacity_t_per_year": 120
+      },
+      {
+        "source_id": "D",
+        "year": 2039,
+        "reserved_capacity_t_per_year": 120
+      },
+      {
+        "source_id": "D",
+        "year": 2040,
+        "reserved_capacity_t_per_year": 120
+      }
+    ],
+    "investments": [
+      {
+        "investment_id": "EARTH_NEW",
+        "action": "buy_option",
+        "payment_date": "2035-01"
+      },
+      {
+        "investment_id": "EARTH_NEW",
+        "action": "exercise_option",
+        "payment_date": "2035-01"
+      },
+      {
+        "investment_id": "ZBO",
+        "action": "fund_capex",
+        "payment_date": "2036-06"
+      },
+      {
+        "investment_id": "LUNAR_ISRU",
+        "action": "fund_capex",
+        "payment_date": "2036-06"
+      }
+    ],
+    "inventory_policy": {
+      "initial_inventory_t": 65.0,
+      "initial_inventory_source": {
+        "source_id": "A",
+        "order_period": "2034-01",
+        "delivery_period": "2035-01",
+        "volume_t": 65.0,
+        "paid_in": "2035"
+      },
+      "reserve_mode": "physical",
+      "target_month_end_inventory_t": 55.1
+    }
+  },
+  "assumptions": [
+    {
+      "id": "TA-01",
+      "value": 30.416666666666668,
+      "unit": "дней",
+      "rationale_ru": "длительность месяца 365/12 (равномерный спрос, 365 дней в учебном году)",
+      "scope": "календарь"
+    },
+    {
+      "id": "TA-02",
+      "value": 24,
+      "unit": "мес",
+      "rationale_ru": "lead time Earth-New в контрольных расчётах консервативно 24 мес",
+      "scope": "канал C"
+    },
+    {
+      "id": "TA-03",
+      "value": "поставка в следующем месяце",
+      "unit": "-",
+      "rationale_ru": "Emergency 42 дня (6 недель) в месячной сетке",
+      "scope": "канал E"
+    },
+    {
+      "id": "TA-04",
+      "value": "M+L месяцев",
+      "unit": "-",
+      "rationale_ru": "конвенция: заказ в месяце M → поставка в M+L",
+      "scope": "все каналы"
+    },
+    {
+      "id": "TA-05",
+      "value": 1,
+      "unit": "мес",
+      "rationale_ru": "ZBO вводится в месяц, следующий за месяцем платежа",
+      "scope": "ZBO"
+    },
+    {
+      "id": "TA-06",
+      "value": 0.1,
+      "unit": "доля (реальная)",
+      "rationale_ru": "ставка дисконтирования, t0=2035 (Sommariva et al. 2023, WACC 11.5–13%, округление для консерватизма)",
+      "scope": "финансы"
+    },
+    {
+      "id": "TA-07",
+      "value": "конец года",
+      "unit": "-",
+      "rationale_ru": "момент дисконтирования — потоки года приводятся к 31.12",
+      "scope": "финансы"
+    },
+    {
+      "id": "TA-08",
+      "value": "среднее (I_start+I_end)/2 по месяцам",
+      "unit": "-",
+      "rationale_ru": "time-weighted средний физический запас для holding cost",
+      "scope": "хранение"
+    },
+    {
+      "id": "TA-09",
+      "value": 0.4,
+      "unit": "доля served года",
+      "rationale_ru": "канал E считается базовым при отборе >40% обслуженного спроса года",
+      "scope": "канал E"
+    },
+    {
+      "id": "TD-WP2-01 (TEAM_DECISION)",
+      "value": "demand-chasing + netting коротких каналов",
+      "unit": "-",
+      "rationale_ru": "политика заказов: непросроченные каналы заказываются в m под поставку m+L (спрос+потери+целевой запас−проекция−забронировано); канал с меньшим lead time, стоящий выше по приоритету, резервирует объём позже (netting); E — реактивный под дефицит следующего месяца",
+      "scope": "supply_orders"
+    },
+    {
+      "id": "TD-WP2-02 (TEAM_DECISION)",
+      "value": 7.0,
+      "unit": "т",
+      "rationale_ru": "оперативный буфер сверх 45-дневного резерва (внутригодовая неравномерность, месячная дискретизация)",
+      "scope": "inventory_policy"
+    }
+  ]
+}

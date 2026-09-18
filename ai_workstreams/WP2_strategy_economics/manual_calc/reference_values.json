@@ -1,0 +1,305 @@
+{
+  "description_ru": "Эталонные числа WP2 волны 1 для сверки с ядром WP1 в волне 2 (независимый ручной расчёт, r=0.10, t0=2035, конвенции TA-01…TA-09)",
+  "values": [
+    {
+      "plan_id": "S10",
+      "scenario_id": "BASE",
+      "total_pv_mln": 9951.4,
+      "total_cost_mln": 12399.28,
+      "year_2040": {
+        "procurement_mln": 1714.11,
+        "reservation_mln": 102.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1937.48,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1430.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S10",
+      "scenario_id": "MANDATORY_STRESS",
+      "total_pv_mln": 11488.55,
+      "total_cost_mln": 14510.85,
+      "year_2040": {
+        "procurement_mln": 1777.27,
+        "reservation_mln": 102.0,
+        "holding_mln": 29.58,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1990.85,
+        "served_total_t": 448.5,
+        "sl_total": 1.0,
+        "i_start_jan_t": 57.85
+      },
+      "capex_cum_2037_mln": 1430.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S11",
+      "scenario_id": "BASE",
+      "total_pv_mln": 9881.73,
+      "total_cost_mln": 12341.65,
+      "year_2040": {
+        "procurement_mln": 1748.17,
+        "reservation_mln": 102.0,
+        "holding_mln": 38.53,
+        "fixed_opex_mln": 70.0,
+        "total_mln": 1958.7,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 53.77
+      },
+      "capex_cum_2037_mln": 1250.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S14",
+      "scenario_id": "BASE",
+      "total_pv_mln": 11964.99,
+      "total_cost_mln": 14482.17,
+      "year_2040": {
+        "procurement_mln": 1507.27,
+        "reservation_mln": 141.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1769.65,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S14",
+      "scenario_id": "MANDATORY_STRESS",
+      "total_pv_mln": 13158.62,
+      "total_cost_mln": 16177.12,
+      "year_2040": {
+        "procurement_mln": 1856.25,
+        "reservation_mln": 141.0,
+        "holding_mln": 44.36,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 2123.61,
+        "served_total_t": 448.5,
+        "sl_total": 1.0,
+        "i_start_jan_t": 59.17
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S16",
+      "scenario_id": "BASE",
+      "total_pv_mln": 10041.4,
+      "total_cost_mln": 12489.28,
+      "year_2040": {
+        "procurement_mln": 1714.11,
+        "reservation_mln": 102.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1937.48,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1520.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S17",
+      "scenario_id": "BASE",
+      "total_pv_mln": 12226.45,
+      "total_cost_mln": 14767.22,
+      "year_2040": {
+        "procurement_mln": 1507.27,
+        "reservation_mln": 141.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1769.65,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S18",
+      "scenario_id": "BASE",
+      "total_pv_mln": 11797.61,
+      "total_cost_mln": 14282.38,
+      "year_2040": {
+        "procurement_mln": 1507.27,
+        "reservation_mln": 141.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1769.65,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S18",
+      "scenario_id": "MANDATORY_STRESS",
+      "total_pv_mln": 13145.55,
+      "total_cost_mln": 16163.37,
+      "year_2040": {
+        "procurement_mln": 1856.25,
+        "reservation_mln": 141.0,
+        "holding_mln": 44.37,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 2123.62,
+        "served_total_t": 448.5,
+        "sl_total": 1.0,
+        "i_start_jan_t": 59.17
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S19",
+      "scenario_id": "BASE",
+      "total_pv_mln": 11635.08,
+      "total_cost_mln": 14095.04,
+      "year_2040": {
+        "procurement_mln": 1571.01,
+        "reservation_mln": 123.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1815.38,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S21",
+      "scenario_id": "BASE",
+      "total_pv_mln": 12088.11,
+      "total_cost_mln": 14622.37,
+      "year_2040": {
+        "procurement_mln": 1507.27,
+        "reservation_mln": 141.0,
+        "holding_mln": 50.92,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1781.19,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 70.78
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S21",
+      "scenario_id": "MANDATORY_STRESS",
+      "total_pv_mln": 13372.47,
+      "total_cost_mln": 16427.7,
+      "year_2040": {
+        "procurement_mln": 1856.25,
+        "reservation_mln": 141.0,
+        "holding_mln": 57.64,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 2136.88,
+        "served_total_t": 448.5,
+        "sl_total": 1.0,
+        "i_start_jan_t": 77.6
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S22",
+      "scenario_id": "BASE",
+      "total_pv_mln": 12161.76,
+      "total_cost_mln": 14751.53,
+      "year_2040": {
+        "procurement_mln": 1555.35,
+        "reservation_mln": 169.0,
+        "holding_mln": 36.06,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1842.41,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 50.08
+      },
+      "capex_cum_2037_mln": 1790.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S25",
+      "scenario_id": "BASE",
+      "total_pv_mln": 9938.1,
+      "total_cost_mln": 12489.28,
+      "year_2040": {
+        "procurement_mln": 1714.11,
+        "reservation_mln": 102.0,
+        "holding_mln": 39.38,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 1937.48,
+        "served_total_t": 390.0,
+        "sl_total": 1.0,
+        "i_start_jan_t": 54.75
+      },
+      "capex_cum_2037_mln": 1520.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    },
+    {
+      "plan_id": "S25",
+      "scenario_id": "MANDATORY_STRESS",
+      "total_pv_mln": 12338.84,
+      "total_cost_mln": 15758.0,
+      "year_2040": {
+        "procurement_mln": 1856.3,
+        "reservation_mln": 141.0,
+        "holding_mln": 44.28,
+        "fixed_opex_mln": 82.0,
+        "total_mln": 2123.58,
+        "served_total_t": 448.5,
+        "sl_total": 1.0,
+        "i_start_jan_t": 57.85
+      },
+      "capex_cum_2037_mln": 1520.0,
+      "min_sl_total": 1.0,
+      "min_sl_critical": 1.0,
+      "total_shortage_t": 0.0
+    }
+  ]
+}
