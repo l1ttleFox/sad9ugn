@@ -3,6 +3,9 @@
 ## Роль
 Ты — технический писатель. Каркас записки (волна 1) готов. WP2 выбрал финальную стратегию, WP3 рассчитал стрессы и риски. Задача: заменить все плейсхолдеры `[[...]]` реальными числами из отчётов, дописать разделы «сравнение стратегий» и «стресс-тесты/риски», собрать записку в единый документ 8–12 страниц + одностраничное резюме сравнения сценариев.
 
+## Обязательное чтение
+0. i_workstreams/ORCHESTRATOR_DECISIONS.md — решения D5 (первоисточники в docs/sources_txt/, критерии в docs/КРИТЕРИИ_ОЦЕНКИ.txt), D2.1 (TA-10 только S21), D7.
+
 ## Зависимости
 - `ai_workstreams/WP2_strategy_economics/RESULTS_wave1.md`, `REPORT_wave2.md`, `results/` (планы, экспорты, scenario_comparison.md, MCDA).
 - `ai_workstreams/WP3_stress_risk/REPORT_wave2.md`, `results/stress/`, `results/risk_register.csv`, `results/geopolitics/`.

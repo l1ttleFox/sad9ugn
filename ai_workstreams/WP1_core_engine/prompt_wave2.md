@@ -4,6 +4,7 @@
 Ты — senior Python-разработчик. Продолжаешь расчётное ядро (волна 1 завершена: загрузка, поставки, баланс, сервис). Теперь — финансовый блок. От него зависит критерий 3 жюри (экономические расчёты, 5 баллов) и все выводы WP2.
 
 ## Обязательное чтение
+0. i_workstreams/ORCHESTRATOR_DECISIONS.md — решения оркестратора D1–D7 (ОБЯЗАТЕЛЬНЫ).
 1. `ai_workstreams/00_contracts/core_api.md`, `result_format.json`, `units_and_conventions.md` (§7 платежи, §8 CAPEX, §10 финансы).
 2. `docs/CALCULATION_RULES.md` §5 (take-or-pay), §6 (резервирование), §8 (полная стоимость), §9 (дисконтирование), §12 (Earth-New 90+270=360).
 3. `ai_workstreams/WP1_core_engine/REPORT_wave1.md` — что уже сделано.

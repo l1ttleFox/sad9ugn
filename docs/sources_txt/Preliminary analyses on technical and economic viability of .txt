@@ -1,0 +1,883 @@
+Acta Astronautica 204 (2023) 425–433
+Available online 5 January 2023
+0094-5765/© 2023 IAA. Published by Elsevier Ltd. All rights reserved.
+Preliminary analyses on technical and economic viability of moon-mined 
+propellant for on-orbit refueling 
+Andrea Sommariva a, Paolo Gaudenzi b, Mattia Pianorsi a,*, Michele Pasquali b, Edoardo Vittori c, 
+Marco Eugeni b, Matilde Italiano b, Chiara Telli b, Miriam Di Nicola b, Leonella Gori a, 
+Barbara Chizzolini d 
+a SDA Bocconi School of Management, Via Sarfatti 10, Milano, Italy 
+b Universit`a di Roma La Sapienza, Piazza Aldo Moro 5, Roma, Italy 
+c Politecnico di Milano, Piazza Leonardo da Vinci 32, Milano, Italy 
+d Bocconi University, Via Sarfatti 25, Milano, Italy   
+ARTICLE INFO  
+Keywords: 
+Lunar propellant 
+In-space refueling 
+Economic convenience 
+ABSTRACT  
+The present study analyses the technical feasibility and economic sustainability of Moon-mined propellant 
+transportation, storage, and distribution to final users. Two technical architectural options are considered for 
+propellant transportation: taking fuel from the Moon or from Earth. Both architectures assume the same storage 
+and distribution system, i.e., the use of an orbiting depot. The depot will be reachable by various types of 
+spacecrafts for refueling. Both architectures are evaluated in terms of technical feasibility, performance and 
+economic convenience. As the estimates of the investment, operational costs, and revenues are highly uncertain, 
+a risk evaluation, i.e. the Monte Carlo analysis, is used to evaluate the exposure of the ventures to factors that 
+could affect the volatility of results and lead them to fail. These analyses identify transporting propellant from the 
+Moon as the most promising solution.   
+1. Introduction 
+Several science missions (e.g. the SOFIA Mission of NASA 2020, 
+among others [1]) provided the evidence of high concentration of water 
+on Moon poles. This abundance of resources paves the way for the 
+expansion of space activities and the development of new business 
+models. Previous works have researched and confirmed the technical 
+feasibility of building a mining plant on the Moon surface to provide 
+water extraction and derive propellant from it [2]. The prospect of 
+propellant availability in space would affect many sectors of space 
+economy while enhancing deep space exploration. 
+On-orbit refueling is performed on a space-based facility (client) by a 
+specifically designed space vehicle (supplier). There are several benefits 
+associated to it, which range from the extension of a mission’s lifetime 
+and the improvement of its flexibility – with regards to mission costs 
+reduction and payload mass increase – to the opportunity of enabling 
+new missions by reducing the difficulty of travelling beyond Low Earth 
+Orbit (LEO). This can lead to new business models for space activities 
+and enormous potential market implications such as providing demand 
+for materials mined from the Moon and, in the long-term, from asteroids. 
+In particular, the availability of propellant produced on the Moon and 
+supplied to clients by a distribution architecture is key for the devel-
+opment of cis-lunar space activity and beyond. By leveraging lunar ice, 
+rockets could potentially refuel once in space, thus being allowed to 
+reach distant locations. Since the amount of energy required for ascent 
+and descent maneuvers on the Moon surface is considerably less than 
+that needed to escape Earth’s gravity, the propellant distribution ac-
+tivities become less expensive in terms of propellant consumption. 
+Despite the realization of such architecture for cryogenic propellant 
+transport, storage and distribution in cis-lunar space demands to face 
+nontrivial technical challenges, the potential scientific benefits and 
+positive market implications outweigh the disadvantages. 
+The objective of the present study, result of a collaboration between 
+the Mechanical and Aerospace Engineering Department (DIMA) of 
+Sapienza University of Rome and SDA Bocconi School of Management, is 
+to understand the economics behind an infrastructure that can enable 
+the refueling of spacecrafts with lunar propellant. Building on the results 
+of a previous research addressing the economic viability of water 
+* Corresponding author. 
+E-mail address: mattia.pianorsi@sdabocconi.it (M. Pianorsi).  
+Contents lists available at ScienceDirect 
+Acta Astronautica 
+journal homepage: www.elsevier.com/locate/actaastro 
+https://doi.org/10.1016/j.actaastro.2023.01.004 
+Received 17 July 2022; Received in revised form 1 December 2022; Accepted 4 January 2023   
+
+Acta Astronautica 204 (2023) 425–433
+426
+extraction on the Moon surface to produce in-situ liquid hydrogen (LH2) 
+and oxygen (LOX), this study evaluates both the technical feasibility and 
+the economical convenience of a system for propellant transportation, 
+storage, and distribution, which can provide on-orbit refueling to po-
+tential users. 
+2. Adopted approach 
+At first, the technical viability analysis is conducted to determine the 
+optimal configuration of the propellant distribution facility by exam-
+ining the engineering feasibility of the infrastructure and evaluating the 
+engineering costs related to it. The analysis, based upon the assumption 
+that a mining plant on the moon surface is technically feasible and able 
+to provide cryogenic propellant from the moon’s ice, is performed 
+considering state of the art of on-orbit refueling and available engi-
+neering solutions in terms of technologies for cryogenic propellant 
+storage and transfer. As a result, a depot-centric propellant distribution 
+architecture is determined together with its optimal placement at 
+Lagrangian point L1. The depot is envisioned to be served by a vehicle 
+(here and henceforth referred to as “Moon shuttle”) which performs 
+ascent and descent maneuvers from/to the Moon surface and L1 to refuel 
+the depot’s tanks with Moon-mined propellant. This approach is 
+compared with the option of servicing the depot by a heavy launch 
+vehicle, which takes propellant from the Earth. Once full, the depot is 
+intended to be available for propellant transfer to clients performing 
+refueling docking maneuvers. 
+The definition of the propellant distribution architecture features 
+various steps: (i) the selection of the type of distribution architecture to 
+be considered, (ii) the determination the of optimal placement of the 
+distribution facility, (iii) a preliminary design of the distribution facility, 
+(iv) the analysis of refueling maneuvers associated to the distribution 
+architecture and finally (v) an estimation of the overall costs associated 
+to the distribution pattern, considering not only the initial necessary 
+investment, but also the operational costs, maintenance, and expansion 
+costs. 
+With the technical infrastructure and an estimation of the overall 
+investment costs, it is then possible to analyze the economic conve-
+nience. We assume that we are in a market composed by a mining 
+company, a monopolistic transporter/distributor company, and end- 
+users. The mining company only sells fuel on the Moon at a fixed 
+price of 500 $/kg as in Refs. [1,2]. The monopolistic trans-
+porter/distributor company buys propellant from the Moon and trans-
+ports it to the deposit in L1. 
+This approach is compared with a transporter which buys propellant 
+from Earth and transports it to the deposit. We will see that transporting 
+fuel from the Moon needs a high initial investment to research and 
+develop the Moon Shuttle, on the other hand transporting fuel from 
+Earth will have higher operational costs caused by Earth’s gravity. 
+Through the Net Present Value (NPV) analyses, it is possible to weigh 
+costs and benefits of these approaches. 
+The viability of the two projects is strongly affected by the potential 
+selling price of the propellant, a value that is determined from the ratio 
+of the net present value of the expected operating cash flows and the cost 
+of the initial capital of the suppliers. 
+Fig. 1. Example of LOX/LH2 depots in assembled configuration [5].  
+Fig. 2. Example of a fluid’s management system (spin around longitudinal 
+axis) [5]. 
+Fig. 3. Lunar propellant depot in L1 [9].  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+427
+3. Technical viability 
+3.1. Selection of the distribution architecture 
+Improving a space-based capability through a combination of on- 
+orbit activities is the most viable path forward for continuing to 
+expand space activities beyond their present limitations and enable new 
+missions. The process of performing servicing operation in space such as 
+inspection, orbit modification and maintenance, upgrade and repair, 
+assembly, debris mitigation and refueling is known as On-Orbit 
+Servicing (OOS). On-orbit refueling is a servicing operation attainable 
+using either Orbiting Depots (OD) [3] or a distributed launch architec-
+ture resorting to Heavy Lift (HL) launches [4]. 
+The HL configuration is limited by the performances of current 
+launchers in terms of payload capability and ΔV requirements [4]. The 
+technique is based on an in-space assembly of upper stages with the 
+main purpose of performing an ad-hoc propellant transfer to a vehicle. 
+This approach is subject to higher failure probability because of the 
+multi-launch architecture involving multiple systems. Additionally, the 
+system is specific for each space mission: the payload, the launch win-
+dows and the on-orbit docking are in fact designed to support a partic-
+ular end-user scenario [4]. ODs represent a far less mission-dependent 
+option when considering possible propellant distribution architectures. 
+In this case the depot servicing platforms are located where the pro-
+pellant is stored and transferred to vehicles as needed so that the mission 
+and depot’s design are meant to serve various types of users. This con-
+figures a flexible and adaptable system that can be easily launched in an 
+assembled configuration [5] (see Fig. 1). Both HL and OD options 
+require storing the propellant, which usually consists of liquid oxygen 
+and hydrogen, in cryogenic conditions. The HL approach requires less 
+storage time than the OD architecture as the latter is meant to represent 
+a flexible solution for any kind of space mission. On the contrary, in the 
+HL configuration the upper stage should be equipped by all the sub-
+systems required to store hydrogen and oxygen in liquid phase for each 
+launch, increasing the mass amount [6]. 
+Based on these considerations, the depot-centric configuration is 
+selected as the most suitable option to enable on-orbit refueling in cis- 
+lunar space. The depot should be designed as a space vehicle equipped 
+with propellant storage tanks placed in a suitable point in space, for 
+example LEO orbit or Lagrangian point L1. 
+3.2. Optimal placement of the orbiting depot 
+The placement of the distribution facility must consider the current 
+and forecast in-space market demand [7]. To this purpose, both LEO, 
+low lunar orbit (LLO) and the Lagrangian point L1 are strategic selling 
+points for a beyond-Earth In-Situ Resource Utilization (ISRU) facility to 
+support space missions and exploration [2]. A trade-off analysis between 
+different possible OD placements is performed considering four main 
+factors, such as technical requirements related to cryogenic propellant 
+storage and transfer, launch windows to reach both the depot’s place-
+ment and the client’s destination, and potential market demand. 
+On the technical requirements side, cryogenic propellants require 
+complex systems for fluid management and thermal control to minimize 
+the propellant boil-off driven by heat transfer that could hinder cryo-
+genic conditions (see Fig. 2). Existing technologies and materials are 
+considered capable of guaranteeing the necessary thermal management 
+performances [5]: in this sense, among the possible OD placement op-
+tions, LEO and LLO orbits are particularly unfavorable due to the wide 
+temperature range experienced caused by, among the others, solar ra-
+diation and terrestrial albedo [8]. The Lagrangian point L1 appears 
+instead to be a more suitable solution [8] (see Fig. 3). 
+One of the most important benefits of L1 placement is related to 
+launch windows, which are continuously open both to/from Earth and 
+to/from the lunar surface [10]. This would facilitate refueling maneu-
+vers from the lunar plant by making them always possible and it would 
+Table 1 
+The characteristics of the designed OD.  
+LOX mass [t] LH2 mass [t] Depot dry mass 
+[t] 
+Material Dimensions [m] 
+21.43 3.57 3.47 SS 301 Height h = 5.79 
+Diameter d = 4 
+Depot’s subsystems mass budget [kg] 
+Propulsion 927.73 
+AOCS 173.95 
+EPS 1,043.70 
+TCS 139.16 
+DMS 69.58 
+TTC 34.79 
+Structure 521.85 
+Harness 104.37 
+Dry Mass (with margin) 3479  
+Fig. 4. CSDC’s Moon shuttle rendering [20].  
+Table 2 
+CSDC’s Moon shuttle specs [20].  
+Moon Shuttle – CSDC 
+Payload 
+capability [t] 
+Vehicle dry 
+mass [t] 
+Tanks 
+capability [t] 
+Isp 
+[s] 
+Dimensions 
+[m] 
+25 14.2 69 450 Height h = 8.1 
+Diameter d =
+7.5  
+Table 3 
+OD and CSDC’s Moon shuttle DDT&E costs [22].  
+Vehicles DDT&E and Manufacturing Costs [M$] 
+Depot DDT&E Costs 400 
+Depot Manufacturing Costs 25 
+Moon Shuttle DDT&E Costs 1,200 
+Moon Shuttle Manufacturing Costs 700  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+428
+support lunar missions being a direct link between the Earth and the 
+Moon. Reaching the Moon surface is possible from LEO too, even though 
+the launch window is every 9 days. However, considering potential 
+users’ destinations, interplanetary departure from LEO is not guaranteed 
+during an interplanetary transfer window due to the orbit precession of 
+the depot over time, while it is guaranteed form L1 [11]. Despite the 
+convenience of the launch windows, a drawback of L1 placement is the 
+expensive braking maneuver which has to be performed to dock when 
+arriving from LEO [12]. When considering refueling maneuvers from the 
+Moon surface, on the other hand, L1 becomes particularly advantageous 
+[6]: from here, it would also be possible to refuel a LEO depot with lunar 
+propellant through a low-cost maneuver which resorts to aerobraking 
+systems [2]. 
+The potential market for a LEO-based OD solution consists in various 
+types of missions, ranging from servicing commercial Earth satellites to 
+supporting GEO and lunar missions. An orbiting depot placed in L1, on 
+the other side, would primarily service customers looking to exploit cis- 
+lunar (and beyond) development [2]. Since the placement of an OD is 
+highly dependent on the missions to be supported and eventual clients’ 
+requirements, a comprehensive scenario could also consider both solu-
+tions, i.e. LEO and L1 depots, working together. In a scenario foreseeing 
+a single OD, however, a L1-placed OD represents the best option for the 
+reasons discussed above and it is therefore selected for the analysis in the 
+following part of the study. 
+3.3. Preliminary design 
+The selected distribution facility includes a depot in L1 served by a 
+Moon shuttle. In order to define the depot’s features, it is necessary to 
+determine the main requirements of the design. They can be divided into 
+three categories: (i) technical requirements for cryogenic propellant 
+storage, (ii) requirements imposed by available launchers to position the 
+assembled depot in L1, (iii) requirements imposed by the chosen vehicle 
+to perform the depot refueling form the Moon surface. The design is 
+conceived to reach a compromise between these requirements and to 
+define the optimal configuration. 
+Technical requirements for cryogenic propellant storage mainly refer 
+to thermal insulation, zero boil-off and fluid management and transfer. 
+The features of existing tanks for cryogenic propellant are taken into 
+account to define the properties of the depot and its subsystem. In 
+particular, the selected thickness and materials of LOX/LH2 tanks are in 
+accordance with the values of Centaur’s tanks (a balloon-like tanks 
+developed by ULA) [9,13–17]. In this study, an optimal solution be-
+tween the structure’s thickness and the internal pressure at launch is 
+adopted. This type of concept, in fact, allows a lighter structure via 
+thickness reduction given that the necessary pressurization of the pro-
+pellant is maintained at launch and while in service so to grant the 
+required structural rigidity and avoid structural instabilities [13]. For 
+these reasons, the propellant depot is envisioned to be equipped with a 
+pressurization system and, thanks to the reduced structural mass gran-
+ted by the adopted monocoque configuration, also partially filled with 
+propellant at launch. 
+The dimensions of the depot are selected in compliance with the 
+performances of available launchers and refueling vehicles. The analysis 
+is carried out considering both pre-existing technologies and designed 
+vehicles, currently in testing phase. There are different launchers that 
+can reach L1 for OD placement, whereas the selection of the Moon 
+shuttle is more limited. The chosen refueling vehicle is designed by 
+Cislunar Space Development Company (CSDC) and it can transfer to the 
+depot up to 25 t of propellant from the lunar surface [9]. As it is it 
+propelled by LOX/LH2, this vehicle can be refueled directly by the lunar 
+plant. To be compatible with the Moon shuttle’s payload capability, the 
+depot’s capacity was fixed at 25 t of propellant mass so that it can be 
+completely refilled with a single trip. The chosen O/F ratio and the 
+actual dimension of the depot are selected considering the launcher’s 
+requirements in terms of fairing allowance and payload capability for 
+the L1 destination. The payload mass budget allowed by the launcher is 
+also taken into account to verify whether a full depot can be launched 
+from Earth. 
+For a preliminary investigation, SpaceX’s Falcon Heavy has been 
+considered [14]. Its maximum launch capability depends on the final 
+destination: for the L1 option, the maximum launch capability is only 
+17.5 t [18]. This means that the depot cannot be launched completely 
+full. As mentioned above, the chosen structure for the OD is a 
+balloon-like tank: following the design choice adopted for the Centaur 
+upper stage [19], inox austenitic steel 301 is considered as main 
+constitutive material. A capacity of 25 t LOX/LH2 with a mixture ratio of 
+6 [5] is selected, resulting in dimensions (h = 5.79 m, d = 4 m) chosen to 
+be compliant with Falcon Heavy’s fairings. The features of the design are 
+shown in Table 1. 
+3.4. Refueling scenarios 
+To evaluate the pros and cons of Moon-mined propellant availability 
+and distribution, a comparison is made between two possible refueling 
+scenarios for the L1 depot, namely, refueling performed from Earth and 
+from the Moon-based ISRU facility. To clarify the exposition, we refer to 
+the latter as Case 1 and to the former as Case 2. 
+3.4.1. Vehicles 
+To refuel the depot with lunar propellant it is necessary to select a 
+suitable vehicle which performs such maneuver. As mentioned above, 
+the chosen vehicle is designed by CSDC and shown in Fig. 4 [20]. To 
+date, no info about the lander reusability (i.e., how many times it can be 
+refueled before maintenance is due) is made available by CSDC. 
+The data used for the analysis is shown in Table 2. Since the vehicle 
+must be transferred to the Moon surface, the cost of its launch must also 
+be considered. Because of its dimensions, the most suitable launcher for 
+its transport is found to be NASA’s SLS [21]. 
+Being propelled by LOX/LH2, the Moon Shuttle is directly served by 
+the lunar mining plant. The in-situ facility would provide the necessary 
+Table 4 
+CSDC’s Moon shuttle transportation cost via NASA’s SLS [22].  
+Moon Shuttle transportation on Moon – NASA’s SLS launcher 
+Lift off mass [t] 14.2 
+Launch cost [$/kg] 47,183 
+Total launch cost [M$] 670  
+Table 5 
+Refueling costs from the Moon surface.  
+Case 1: Refueling costs from the Moon surface 
+Refueling vehicle [20] CSDC Moon shuttle 
+Refueling vehicle payload [t] [20] 25 
+Estimated propellant for maneuver [t] 50.02 
+Propellant cost on Moon surface [$/kg] [2] 500 
+Estimated refueling cost (propellant + maneuver) [M$] 37.51 
+Operation cost [M$/year] [22] 35  
+Table 6 
+Refueling costs from the Earth surface.  
+Case 2: Refueling costs from the Earth 
+Refueling vehicle [25] Falcon Heavy Expendable +
+Propellant tank 
+Refueling vehicle payload [t] 17.5 
+Launch costs [$/kg] 6,511.4 
+Estimated refueling cost (propellant +
+launch) [M$] 
+227.9 
+Operation cost [M$/year] [26] 42.38  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+429
+propellant both for the transport and for the depot’s refueling, with a 
+total cost obtained by summing the two. Once placed in L1 point, the 
+lander is intended to dock into the depot and refuel to perform the 
+descent manoeuvre to the moon surface, making use of the fuel already 
+present a launch in the OD. In this preliminary study, the propellant 
+required by the lander to perform propulsive manoeuvres for its first 
+docking into the depot is neglected. The costs due to the Design, 
+Development, Testing and Evaluation (DDT&T) of both the fuel depot 
+and the Moon shuttle are taken from literature [22] and are reported in 
+Table 3. 
+The refueling vehicle needs to be transported on the Moon surface in 
+order to perform refueling maneuvers. The costs of which are reported in 
+Table 4. Because of its assumed dimensions [22], the only currently 
+available launcher is NASA’s SLS that is currently under testing [21]. 
+3.4.2. Refueling maneuvers 
+The Moon-based refueling manoeuvres consists of three phases: (i) 
+the Moon shuttle leaves the Moon surface with the maximum payload 
+capability and performs an ascent maneuver; (ii) it then docks with the 
+depot in L1 to allow the fuel transfer and (iii) it finally comes back 
+landing with its only dry mass. For each phase, knowing the ΔV re-
+quirements, the necessary propellant’s mass for manoeuvre is estimated. 
+The main assumption is that there are no propellant losses during the 
+transfer; thus, the vehicle takes off with the sufficient propellant to 
+perform such an operation. For any phase the Tsiolkovsky equation has 
+been implemented to calculate the necessary propellant [23]. The cost 
+breakdown is presented in Table 5. 
+The result of this study shows that the Moon shuttle can leave lunar 
+surface, refuel L1 depot with 25 t of propellant and return to the Moon 
+without needing to refuel, consuming about 50 t of LOX/LH2 propellant. 
+Refueling from Earth is then analyzed by considering an architecture 
+compatible with the designed OD to be refilled. In this case, in the lift-off 
+mass evaluation, the tank to be launched containing the propellant 
+needed to refill the OD consists only of the structure, the propulsion and 
+the thermal management subsystems shown in Table 1. As already 
+mentioned, two Falcon Heavy launches would be necessary to 
+completely refuel the OD in this scenario. The total cost is estimated by 
+summing the propellant’s cost on Earth [24], that is negligible, and the 
+launch costs. By considering that the total launch cost for a FH 
+Expendable is of 150 M$, the cost estimation has been made as follows: 
+the maximum capability for FH Expendable is 17.5 t [25], but the 
+requirement is to bring 26.69 t as 25 t of propellant are needed to refill 
+the OD and the rest is necessary to transfer the refilling tank with its 
+subsystems, as derived by Table 1. It means that ~1.5 launches are 
+ideally required to completely refuel the OD; the total cost is obtained by 
+multiplying the real launch cost by the ideal number of launches, 
+totaling the price of 227.9 M$, as shown in Table 6. 
+A schematic representation of the various phases which constitute 
+the Case 1 and Case 2 refueling scenarios is shown in Fig. 5. 
+3.5. Overall costs of the case studies 
+Tables 7 and 8 sum up the computation and the comparisons that 
+have been performed in order to carry out the cost estimation for Moon- 
+and Earth-based OD refueling. Refueling from Earth of course does not 
+require a Moon-based refueling vehicle: all the associated costs, such as 
+design, test evaluation, manufacturing and transportation of such 
+vehicle therefore do not appear in the table. On the contrary, it is 
+apparent that performing a refueling maneuver from Earth surface 
+basically translates into operating with a quasi-heavy lift approach, 
+implying multiple required launches to refill the OD as the cheapest 
+available launcher, i.e., Falcon Heavy Expendable, does not match the 
+maximum capability of the depot. Therefore, the launch, the operations, 
+the propellant’s transfer and all the other maneuvers must be performed 
+more than one time, leading to a more difficult and less reliable refueling 
+strategy. 
+Fig. 5. Schematic representation of two refueling scenarios considered in the study. In Case 1 (left) the first 3 phases only take place once to deploy the Orbiting 
+Depot (OD) and the Moon Shuttle (MS) at L1 point and perform a successive docking to allow the latter to embark the necessary fuel to carry out the descent on the 
+Moon surface. Phases 4 to 7 are repeated to periodically refuel the OD. In Case 2 (right) only the first phase of OD deployment at L1 takes place once as Propellant 
+Tanks (PT) must be periodically launched form Earth to refuel the OD. 
+Table 7 
+Costs associated to L1-based OD refueling from the Moon (* per year).  
+Case 1: Refueling from Moon 
+Fixed costs  Parameter [M$] 
+DDT&E Depot 400 
+Moon Shuttle 1,200 
+Manufacturing Depot 25 
+Moon Shuttle 700 
+Transportation Depot in L1 150 
+Moon Shuttle on Lunar surface 670 
+Recurring costs Refueling 37.51 
+Operations 35*  
+Table 8 
+Costs associated to L1-based OD refueling from the Earth surface (* per year).  
+Case 2: Refueling from Earth 
+Fixed costs  Parameter [M$] 
+DDT&E Depot 400 
+Manufacturing Depot 25 
+Transportation Depot in L1 150 
+Recurring costs Refueling 227.9 
+Operations 42.38*  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+430
+4. Business model 
+4.1. Economic assumptions 
+The assessment of the economic sustainability of the two refueling 
+models (Case 1 and Case 2) requires a comparison between the two al-
+ternatives. Our aim is to identify the existence of a competitive space 
+that allows an economic choice between the two cases and requires 
+estimations of the expected future cash flows. The achievement of this 
+goal is possible by forecasting future cash flows of the firms involved in 
+the two cases. In our study we assume the presence of a single trans-
+porter/distributor; we justify this assumption by that considering the 
+required investment is too large for multiple companies to enter the 
+market together. This assumption simplifies, at this stage of our study, 
+the analysis of the competition in the market. Once estimated the ex-
+pected future cash flows, the rationale of the NPV criterion is the basis to 
+verify the presence of a competitive space based on the identification of 
+two minimum prices for the final users in every context, i.e., in Case 1 
+and Case 2, respectively. These estimations, requiring a discounting 
+process, are linked to consistent assumptions in terms of riskiness and 
+related opportunity cost of capital. 
+The Net Present Value formula is here presented: 
+NPV0= 
+∑N
+t=0
+CAPEXt
+(1+ r)t +
+∑T
+t=N+1
+CFt
+(1+ r)t  
+where CFt are the net cash inflow-outflow, r is the discount rate, and T is 
+the number of years of the project for which the cash flows are estimated 
+and discounted. CAPEXt are the cash outflows for the construction phase 
+of the analyzed projects. The fundamental principle of value creation is 
+that the project creates value by investing the capital raised from in-
+vestors to generate cash flows at rates of return exceeding the cost of 
+capital (the rate that investors require for bearing the risk associated 
+with the uncertainties of the projected cash flows). Both in Case 1 and 
+Case 2, N = 5 and T = 10: the other components of the NPV formula will 
+be described in the following sections. 
+4.1.1. General assumptions 
+Our model requires some hypotheses that are common to the two 
+scenarios. In terms of rationale, the valuation requires estimating de-
+mand, recurring costs, set-up costs, and cost of capital for the two cases. 
+All the assumptions are specific for each alternative but the quantity of 
+the supplied propellant, that is constant and equal to 280 Mt per year 
+[2]. This implies that at least eleven journeys per year are necessary to 
+recharge the depot (capability 25 Mt). 
+The estimations about the costs per each case have been already 
+described above in Tables 7–8 Despite the assumptions in terms of De-
+mand Quantity are available, the price that allows the revenues esti-
+mation is the unknown variable in our Cash flow estimation and the real 
+aim of this study. The final output of our research that generates the cash 
+flow estimation prospectus is presented in Table 9, where the first row 
+(“Final Price Fuel”) for the two Cases is the final output allowing us to 
+understand the competitive distance between the two choices. 
+Considering that one of our goals is to understand if there is room for 
+a commercial market to emerge, our interest is in the minimum selling 
+price that it is necessary to set for the “Case 1” and the “Case 2”. At this 
+price, the Net Present Value is equal to zero, implying that a lower price 
+destroys the convenience for the operator. 
+The market belongs to the operator who can sell the propellant at the 
+lower price and, additionally, the market exists between the two 
+boundaries. If our study confirms a difference between the two mini-
+mum prices, the potential market could incentivize the intervention of 
+public actors, willing to provide initial grants to stimulate the partici-
+pation of private firms. This intervention lowers the amount of invest-
+ment required to private companies and reduces their risk exposure. 
+Uncertainty is one of the most relevant aspects in the valuation of 
+every investment project, but it is crucial in innovative initiatives. The 
+most peculiar aspect of the two alternatives here analyzed is, likely, the 
+total absence of a similar work fruit of the human ingenuity. This is 
+particularly true for Case 1. In accordance with this consideration, we 
+estimate the two risk and expected return profiles, the first one suited to 
+the “from earth refueling” alternative and the latter one elaborated for 
+the “from moon refueling” project. In this part of the paper, we do not 
+model the risk (the following part presents the Scenario and Montecarlo 
+analysis), but we consider its presence; this requires a cost of capital 
+estimation different from the risk-free rate. 
+4.1.2. Specific assumption: case 2 – cost of capital 
+Even though there is a non-negligible difference between the aero-
+space projects already carried out in human history and the project 
+object of this study, it is possible to identify a portfolio of possible 
+comparable companies among the constituents of the S&P Kensho Space 
+Index, a Stock Index dedicated to companies focused on the space in-
+dustry. Starting with their parameter of risk remunerated by the finan-
+cial market, identified, according to the literature and the operating 
+practice, with the statistical Beta, we initially assume a similar financing 
+mix in terms of Debt and Equity contribution to our project. It is 
+remarkable that according with our expectations, the risk parameter for 
+our portfolio of peers is permanently high, around 1.70, representing 
+high sensitivity to the volatility of the overall market. We precise that, at 
+the birth of these innovative projects, we are using the Beta concept and 
+the assumptions in terms of financial structure with a long-time 
+perspective, as a possible measure of equilibrium solution, suitable for 
+our purposes. 
+Financial procedures for the treatment of risk allow us to recalculate 
+a beta for our project, based on a similar financial structure [27]. We use 
+the Bloomberg database as a basis for our calculations and are able to 
+estimate a final cost of capital aligned with the average Weighted 
+Average Cost of Capital (WACC), the discount rate for the expected cash 
+flows characterizing the portfolio of comparable companies (namely, 
+the WACC for our discounting process is equal to 11.50%). This discount 
+rate, joined with the assumption of a demand equal to 280 Mt allows us 
+to find out the minimum price (10.55 M$/Mt) that keeps the 
+Table 9 
+Data input assumptions for the project: from Moon to L1 and the project From 
+Earth to L1.    
+Case 1: From 
+Moon to L1 
+Case 2: From 
+Earth to L1 
+Revenues 
+(Operating phase) 
+Final fuel price [M$/Mt] 5.07 10.55 
+Yearly demand of fuel 
+[Mt] 
+280 280 
+Total yearly revenues 
+[M$] 
+1,419 2,954 
+Operating Costs 
+(Operating phase) 
+Refueling from moon 
+per journey [M$] 
+37.51 227.90 
+Yearly missions from 
+moon to depot [M$] 
+420.11 2,552.48 
+Yearly operation costs 
+[M$] 
+35 42.38 
+Total yearly operating 
+costs [M$] 
+455.11 2,594.86 
+Investment Costs DDT&E total costs [M$] 1,600 400 
+Manufacturing costs [M 
+$] 
+725 25 
+Launch costs [M$] 820 150 
+Total capital 
+expenditure (CAPEX) 
+[M$] 
+3,145 575 
+Depreciation & 
+Amortization 
+Depreciation rate 10.00% 10.00% 
+Yearly depreciation [M 
+$] 
+314.5 57.5 
+Tax Rate Corporate tax rate 28.00% 28.00% 
+Weighted Average 
+Cost of Capital 
+WACC discount rate 13% 11.50% 
+NPV 0 0  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+431
+convenience of the project.1 
+We highlight that we unconventionally explained the “Case 2 Cost of 
+capital estimation” before presenting “Case 1 Cost of Capital” only for 
+expository clarity due to the better comparability with existing 
+activities. 
+4.1.3. Specific assumption – case 1 – cost of capital 
+When considering the initiative of recharging the Depot in L1 with 
+the propellant mined on the lunar surface, we see not only a notable 
+increase in the necessary funds (the moon shuttle is the most relevant 
+incremental outflow) but also an exacerbation of the perceived risk. No 
+kind of human presence is currently active on the lunar territory, making 
+it extremely challenging to identify a group of comparable companies 
+for the cost of capital. The parameter used to explain the increase in risk 
+in the new context is linked to the size of the necessary investment. The 
+size has already demonstrated to be a good predictor of the increase in 
+risk, read as probability of obtaining lower than expected annualized 
+returns on investments, so we decide to link the increase in risk to this 
+marginal effect [28]. The new beta is therefore 13% higher than the beta 
+for project “from Earth” and the cost of financial sources rises accord-
+ingly to this assumption. 
+Carrying out the necessary calculations, we estimate a final WACC 
+discount rate for this case, equal to 13%. Even here, we identify the 
+minimum price that keeps the NPV convenient, i.e., not below zero: in 
+this case the price for fuel has to be set up at 5.07 M$/Mt. 
+This result is particularly important to influence the choice between 
+the two projects: refueling from the Moon, although more expensive 
+during the construction phase and riskier, appears more affordable in 
+terms of final price and makes the development of a commercial market, 
+possibly supported by public intervention, more likely and interesting 
+for the stakeholders. Establishing the minimum price that allows a non- 
+negative net present value for the two projects we find can the price 
+range for Case 1 that makes this alternative attractive: 10.55 M$/Mt – 
+5.07 M$/Mt. Perhaps even more interesting, we can state that Case 1 is a 
+competitive choice even at a final price of 10.55 M$/Mt. At this last 
+possible price, i.e., 10.55 M$/Mt, the Case 1 NPV results in about 3 
+$billion. The correspondent Internal Rate of Return (IRR), at that price, 
+is 16%, higher than the cost of capital. 
+An interesting conclusion is linked to the risk considerations. The 
+operative risk is different between the two alternatives (Case 1 and Case 
+2). This risk can affect the financial sustainability of the investment, but 
+the governmental intervention could mitigate the volatility, in partic-
+ular its downside, opening to the possibility of a Public-Private 
+Partnership (PPP) model designed as in the more traditional infra-
+structural Project Financing. 
+4.1.4. Business model summary 
+The models based on the expected values (according to our esti-
+mates) are computed using the estimated capital costs (Section 4.1.2 and 
+4.1.3), fixed and recurring costs (Tables 7and8), and on the volume 
+(280 Mt) and price (5.07 and 10.55 M$/kg) of propellant sold each year 
+for each case. The business model, with the volatility in inputs and 
+outputs included in the estimated cost of capital, is discussed above, and 
+is summarized in Table 9 for Case 1 and Case 2. But the model lacks the 
+explicit mention of the risk of under or overspending over each cost 
+item, or of the risk of changing the fuel prices through time. 
+5. Scenario and Monte Carlo analysis 
+In this section, we do a scenario and Monte Carlo analysis to gain 
+further insights on the profitability and risk of the project. Specifically, 
+we assume that the costs and the prices are random lognormal variables, 
+following standard practices. We highlight that a lognormal distribution 
+is particularly suitable to describe economic variables, in particular to 
+account possible extra high values of revenues and expenses. 
+A random variable, X, has a lognormal distribution, with parameters 
+μ and d, if ln(X) is normally distributed with mean μ and standard de-
+viation d. The variable X is always positive, right skewed, and its values 
+are massed around the Median, the value exp(μ). Considering Table 9, 
+the variables to which we assign a distribution are: final fuel price, total 
+yearly operating costs, and CAPEX. For both cases, we consider the value 
+in Table 9 as the median of the lognormal distribution and a standard 
+deviation of 10% of the median. 
+For example in the case of CAPEX for Case 1 we assume exp(μ) =
+Fig. 6. The lognormal distributions of the CAPEX of the Moon firm.  
+Fig. 7. The histograms of the NPV Case 1.  
+Fig. 8. The histogram of the NPV Case 2.  
+1 We will refer to 10.55 M$/Mt as the minimum price for Case 2. Similarly, 
+5.07 M$/Mt as the minimum price for Case 1. 
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+432
+3,145 M$ (see in Table 9), so a random value for CAPEXM
+i is specified as: 
+CAPEXM
+i = exp(μ)∗ ui → ln
+ 
+CAPEXM
+i
+)
+= μ+ ei; ei ∼ N
+ 
+0, d2)
+We show in Fig. 6 the histogram of the simulated CAPEX lognormal 
+distribution of Case 1. We forecast a safe scenario – low risk, so that the 
+standard deviation of each random variable is d = 10% of the median. In 
+the simulation of CAPEX for case 1 we obtain a standard deviation of 
+314. 
+As presented in Equation (1), cash flows for the Moon and Earth firms 
+have two parts. The first that lasts five years is the construction phase, 
+where the initial Capital (Depot, in Case 2; Depot and Moon Shuttle in 
+Case 1) is built, and the operating phase lasts the following 10 years. 
+In the simulation exercises, we compute the NPV from the expected 
+future cash flows 5,000 times for both Case 1 and Case 2. At each iter-
+ation, the random values are sampled from the lognormal distributions. 
+The 5,000 solved NPVs are represented in Figs. 7 and 8 for the two Cases. 
+Remember that in the “Expected” NPV calculations, the prices have 
+been fixed to get NPV zero, (the minimum price in Case 1 was fixed at 
+5.07 M$/Mt with a WACC discount rate at 13%, while for Case 2 it was 
+set at 10.55 M$/Mt with an 11.5% WACC discount rate). 
+The Moon and Earth NPV graphs show different structures. The 
+“Expected” NPV computed from the values in Table 9, is zero and co-
+incides with the median in histograms in Figs. 7 and 8, so the probability 
+of negative NPVs is 50%, the same for both cases. For Case 1 the 
+simulated values around the “Expected” NVP fall in the 90% confidence 
+interval, between   400 M$ to 380 M$. For Case 2 this interval is larger, 
+  604 M$ to 629 M$, and the random NPV has a higher standard devi-
+ation (370 M$ versus 250 M$), implying that the risk is larger for Case 2 
+than for Case 1. It is interesting to note that most of the risk of the NPV of 
+Earth firms is attached to the yearly missions, while most of the risk of 
+Moon firms NPV comes from the initial CAPEX. 
+We can also simulate the NPVs as functions of the discount rate (see 
+Fig. 9). These figures consider the minimum prices (for a null NPV at the 
+WACC in Table 9) as the discount rate changes, the central line in the 
+graphs is the “Expected” NVP, the lower line connects the values of the 
+5% quantile of the simulated NVP (VaR 5%), the higher line connects the 
+values of the 95% quantile of the simulated NVP (95% quantile). Look at 
+the differences of the costs between the Moon and the Earth projects in 
+Table 9: the increase of the discount rate lowers the Moon NPV more 
+than the Earth NPV, as the higher rate discounts the high Operating costs 
+of the Earth transporter, less the CAPEX of the Moon transporter. 
+In the last figure, Fig. 10, the Case 1 NPV is simulated assuming that 
+the median of the lognormal price is 10.55 M$/Mt, which doubles the 
+Case 1 minimum price, but it is still competitive with Earth refueling 
+firms. This almost triples the NVP at each discount rate, generates an IRR 
+of circa 32% and, for example, the probability of high profit and nega-
+tive NPV is zero at a discount rate 20%. 
+We highlight the relevance of the result emerging from the 
+comparison of Figs. 9 and 10: the NPV generated by Case 1 can afford a 
+higher level of risk and is positive until around a 32% discount rate. This 
+level is also the maximum cost of capital this project can afford, 
+implying a better appeal for private equity investors and allowing the 
+definition of a more sophisticated financial structure. This implies that 
+the project can tolerate a higher level of debt because the recourse to 
+borrowed funds increases the risk and the expected return on a project 
+[29], as the trend followed by the Capital Market Line indicates. The 
+increase in the expected return is the result of the additional debt, but, 
+on the other hand, the marginal unit of debt does not generate negative 
+effects on the value immediately, but only when its usage exceeds the 
+optimal level that equalizes benefits and costs it generates. Trade-off 
+theories analyze this aspect in detail. About the effects of debt intro-
+duction on value, see also [30,31]. 
+As a result, a higher level of debt tolerance can make the project 
+suitable to be financed with project finance loans by banks or with funds 
+provided by institutional investors because close to the risk and return 
+goals defined by these financial actors. 
+6. Conclusions 
+Our study compares two possible projects to refuel an on-orbit depot 
+of propellant available for in space recharging activities from the Moon 
+or Earth in order to verify two separate conclusions. We verify that 
+operating an on-orbit depot is feasible and that recharging it is 
+economically more affordable from the Moon as its price to final cus-
+tomers, which guarantees the profitability of the project, is lower than 
+recharging the depot from Earth, thus making this option more suitable 
+Fig. 9. NPV as a function of the discount rates.  
+Fig. 10. Moon NPV at the Earth minimum’s price.  
+A. Sommariva et al.                                                                                                                                                                                                                            
+
+Acta Astronautica 204 (2023) 425–433
+433
+to facilitate the emergence of a private demand, together with saving 
+costs to public space exploration missions. In addition, the more 
+expensive alternative from Earth is also more exposed to volatility 
+implying higher levels of the underlying operational risks. 
+Besides, the price gap suggests that there is enough room for more 
+than an operator that transports and distributes propellant from the 
+lunar surface, making it reasonable for governments to disburse initial 
+funding to multiple ventures, at least to support technology demon-
+stration and validation phases. In addition, the risk and return expec-
+tations are not only attractive to private equity investors but they are 
+also potentially suitable to balance the financial structure of the venture 
+with more risk-adverse financers such as institutional investors. 
+In conclusion, our study lays the foundation for approaching the 
+development of transportation and distribution infrastructures for lunar- 
+based propellant and it suggests that there are the conditions for 
+enhancing private capital formation with which governments can share 
+the risks of the venture as occurs in common infrastructure financing. 
+Declaration of competing interest 
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper. 
+References 
+[1] A. Sommariva, et al., The economics of moon mining, Acta Astronaut. 170 (2020) 
+712–718. 
+[2] G. Sowers, et al., Commercial lunar propellant architecture: a collaborative study 
+of lunar propellant production, Reach. Out. 13 (2019), 100026. 
+[3] A.M. Long, M.G. Richards, D.E. Hastings, On-orbit servicing: a new value 
+proposition for satellite design and operation, J. Spacecraft Rockets 44 (4) (2007) 
+964–976. 
+[4] J. Goff, et al., Depot-Centric Human Spaceflight: Strengthening American Industry, 
+Creating a Robust Beyond-LEO Exploration Program and Enabling the Commercial 
+Development of Space, 2009. www.nasa.gov. 
+[5] J.A. Goff, et al., AIAA SPACE 2009 conference & exposition 14 - 17 september 
+2009, in: Realistic Near-Term Propellant Depots: Implementation of a Critical 
+Spacefaring Capability, Pasadena, California, USA, 2009. 
+[6] J. Connolly, Human Lunar Exploration Mission Architectures, LPI Lunar 
+Knowledge Requirements Workshop, vols. 1–3, 2004. March 2004 Huston, Texas, 
+USA. 
+[7] J.P. Davis, J. Mayberry, J.P. Penn, On-orbit Servicing: Inspection, Repair, Refuel, 
+Upgrade, and Assembly of Satellites in Space, 2019. https://aerospace.org. 
+[8] B.F. Kutter, et al., A Practical, Affordable Cryogenic Propellant Depot Based on 
+ULA’s Flight Experience, AIAA SPACE, San Diego, California, USA, 2008, 2008 
+Conference & Exposition 9 - 11 September 2008. 
+[9] J.S. De Kruif, Atlas and Centaur flight experience using a delta-P system for 
+propellant mass gauging and utilization, joint army-navy-NASA-air force 
+(JANNAF) interagency propulsion committee, May 14 (2007) 2007. 
+[10] M. Loucks, J. Goff, J. Carrico, Practical Methodologies for Low Delta-V Penalty, 
+On-Time Departures to Arbitrary Interplanetary Destinations from A Medium- 
+Inclination Low-Earth Orbit Depot, AAS/AIAA Astrodynamics Specialist 
+Conference, 20 – 24 August 2017 Stevenson, 2017. Washington, USA. 
+[11] M. Loucks, J. Goff, J. Carrico, B. Hardy, RAAN-agnostic 3-burn Departure 
+Methodology for Deep Space Missions from LEO Depots, AAS/AIAA Astrodynamics 
+Specialist Conference, 20 – 24 August 2017 Stevenson, 2017. Washington, USA. 
+[12] R. Whitley, R. Martinez, Options for Staging Orbits in Cis-Lunar Space, IEEE 
+Aerospace Conference 5-12 March 2016, Big Sky, Montana, USA, 2016. 
+[13] R.P. Jewett, et al., Hydrogen Environment Embrittlement of Metals, 1973. NASA 
+Technical Report CR-2163. 
+[14] G. Szatkowski, Centaur Extensibility for Long Duration, AIAA SPACE Conference, 
+San Jose, California, USA, 2006, 19 September 2006. 
+[15] B.F. Kutter, Atlas Centaur Extensibility to Long-Duration In-Space Applications, 
+AIAA SPACE Conference, Long Beach, California, USA, 2005. 
+[16] S. Sakla, Centaur Test Bed (CTB) for Cryogenic Fluid Management, 42nd AIAA/ 
+ASME/SAE/ASEE Joint Propulsion Conference & Exhibit, 09-12 July 2006, 2006. 
+Sacramento, California, USA. 
+[17] B.F. Kutter, F. Zegler, G. O’Neil, B. Pitchford, A Practical, Affordable Cryogenic 
+Propellant Depot Based on ULA’s Flight Experience, vols. 9–11, AIAA SPACE 2008 
+Conference & Exposition, San Diego, California, 2008. September 2008. 
+[18] M.E. Evans, L.D. Graham, A flexible lunar architecture for exploration (FLARE) 
+supporting NASA’s artemis program, Acta Astronaut. 177 (2020) 351–372. 
+[19] V.P. Dawson, M.D. Bowels, Taming Liquid Hydrogen: the Centaur Upper Stage 
+Rocket 1958-2002, the NASA History Series, National Aeronautics and Space 
+Administration Office of External Relations, Washington, DC, USA, 2004. 
+[20] D. Bienhoff, Commercial cislunar transportation: from LEO to the Moon and all 
+points in between, Moon Village Association Workshop 2 (2018) 4–5. November 
+2018 Los Angeles, California, USA. 
+[21] D.A. Smith, SLS Mission Planner’s Guide, Advanced Development Office (XP70), 
+NASA, 2014, 24 February 2014. 
+[22] A.C. Charania, D. DePasquale, Economic analysis of a lunar in-situ resource 
+utilization (ISRU) propellant services market, Proceedings of the International 
+Astronautical Congress (IAC) IAC-07-A5.1.03 (2007) 1–17. 
+[23] R. Bate, D. Muller, J.E. White, Fundamental of Astrodynamics, Dover Publications, 
+New York, 1971. 
+[24] Standard Prices for Aerospace Energy Category Items, Defense Logistics Agency, 
+USA, 2020. 
+[25] Falcon Heavy users guide, https://www.spacex.com. 
+[26] M. Hayhurts, et al., Mission Operations Cost Estimation Tool (MOCET), 2015 NASA 
+Cost Symposyum 25-27 August 2015, Ames Research Center, Moffett Field, 
+California, USA, 2015. 
+[27] R.S. Hamada, The effect of the firm’s capital structure on the systematic risk of 
+common stocks, J. Finance (1972) 435–452. May issue. 
+[28] L. Gori, B. Chizzolini, S. Gatti, Features and Determinants of Risk in Investment 
+Choices by Private Equity Fund, BAFFI CAREFIN Centre, 2017. Research Paper No. 
+2016-25. 
+[29] H. Markowitz, Portfolio Selection in The Journal of Finance 7 (No. 1) (1952) 
+77–91. 
+[30] M. Miller, Debt and taxes, J. Finance 32 (2) (1977) 261–275. 
+[31] H. DeAngelo, R.W. Masulis, Leverage and dividend irrelevancy under corporate 
+and personal taxation, J. Finance 35 (2) (1980) 253–264. 
+A. Sommariva et al.                                                                                                                                                                                                                            

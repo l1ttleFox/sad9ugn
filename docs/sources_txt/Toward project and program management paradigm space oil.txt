@@ -1,0 +1,547 @@
+ P r o c e d i a  -  S o c i a l  a n d  B e h a v i o r a l  S c i e n c e s    1 1 9   (  2 0 1 4  )   6 5  –  7 4  
+1877-0428 © 2014 The Authors. Published by Elsevier Ltd. Open access under CC BY-NC-ND license. 
+Selection and peer-review under responsibility of the IPMA.
+doi: 10.1016/j.sbspro.2014.03.010 
+ScienceDirect
+27th IPMA World Congress 
+Toward project and program management paradigm in the space of 
+complexity: a case study of mega and complex oil and gas 
+development and infrastructure projects 
+Hiroshi Tanaka * 
+Japan Advanced Institute of Science and Technology, 1-1, Asahi-dai, Nomi-shi, Ishikawa-ken,  923-1211, Japan 
+Abstract 
+The author published his research paper at 26th International Project Management Association World Congress in which he 
+argued that the monodukuri industry, or broadly hard systems project industry, is being affected either positively or negatively 
+by a variety of complexity categorized by P.E.S.T.L.E. (political, economic, social, technological, legal and environmental) 
+factors and proposed a conceptual model of an enterprise viability system reinforced by meta program management. This paper 
+is based on the author’s continuing meta program management research and contextual analysis of the project industry, traces 
+how the typical events discussed under each of the PESTLE factor categories have behaved thereafter to confirm the validity of 
+impact descriptions, and presents a case analysis of current mega oil and gas development and complex infrastructure projects 
+for dominant characteristics of project operations. Then new thoughts of project and program management in the space of 
+complexity of the project industry are proposed as the first step to build a new management paradigm, which has been 
+qualitatively induced by the cases under study and are deriving from existing research results on complex projects.   
+The new thoughts include meta program management to balance multi objectives; knowledge and stakeholder integration to 
+create complex projects; finance planning and structuring as an essential ingredient of materializing complex projects; 
+management of extreme projects; and contingent risk management. 
+© 2014 The Authors. Published by Elsevier Ltd. 
+Selection and peer-review under responsibility of the IPMA. 
+Keywords: Project industry; complex projects; meta program management; knowledge integration; new paradigm of project management 
+* Pr. Hiroshi Tanaka Tel.:+81-42-734-7358; fax:+81-42-734-7358. 
+   E-mail address: hirojpmf@wta.att.ne.jp  
+Available online at www.sciencedirect.com
+© 2014 The Authors. Published by Elsevier Ltd. Open access under CC BY-NC-ND license. 
+Selection and peer-review under responsibility of the IPMA.
+
+66   Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+1. Research background and framework 
+While we are experiencing a slowdown in project investments in the mature economies caused by the global 
+economic recession and the tight-rope operation of the Eu ropean Monetary System, investments in oil and gas 
+development by multi-national oil companies and major natio nal oil companies, and in social infrastructures by 
+governments and private funds, in the emerging and de veloping economies, are steadily increasing according to the 
+World Development Indicators database (World Bank, 2013), the report of the World Economic Forum 2012 on 
+strategic infrastructure (World Economic Forum, 2012) , the infrastructure development report of the Asian 
+Development Bank (Asian Development Bank, 2009) and the annual reports of the multinational oil companies. It 
+is noted as we observe in Section 3 of this paper that financial and physical sizes, as well as complexity, of oil and 
+gas and infrastructure development projects have been upscaling exponentially over the past five years or so.  
+However, project management research has not caught up with this rapid development of the project industry, or 
+the industry related to social infrastructure and natural resources development due to a time lag usually occurring 
+between the state of the projects and scientific research based on data or a lack of researchers having live 
+knowledge of the industry. This fact has motivated the aut hor to initiate developing a conceptual framework to fill 
+the knowledge gap on project and program management paradigm on contemporary complex projects. This paper 
+is based on the author’s qualitative analysis of the state of the project industry dealing with recent major-sized 
+complex projects which are reported in economic newspapers, journals and public or business firms’ websites; and 
+contextual interpretation of the dimensions and character istics of those projects, by using the author’s 42-year 
+experience in the engineering-procurement-construction (E PC) industry for oil, natural gas and infrastructure 
+projects, his recent research on meta program management, and related recent research on project complexity by 
+others.  
+  The research step is as follows: 
+1.) Continuing monitoring of the complexity events listed in the author’s 2012 paper (Tanaka, 2013) for the 
+verification of impact analysis, 
+2.) Review on typical ongoing mega oil and gas and in frastructure projects for multiple project objectives, 
+unique features and complexity factors, and extraction of dominant characteristics of project operations, 
+3.) Literature review on project management research on complex projects, and 
+4.) Deriving new thoughts on program management that should be applied to major-sized and complex 
+energy and infrastructure development projects as the first step to build a new management paradigm. 
+  Considering that despite the professional and academi c demarcation between a project and a program, as most 
+industry branches do not use the term “program” even if a major-sized project as described so is actually or 
+virtually a program according to the professional definition, both complex projects and programs are hereafter 
+referred to solely as “projects” with an adjective “complex”, but management of these projects is referred to as 
+“program management”  as managing complex projects should be distinguished from project management focusing 
+on delivery which is mostly based on positivist management processes and operational techniques.  
+Here, the definition of complex projects borrows that of “Complex Project Management Competency Standards 
+Ver. 4.1” and P2M (PMAJ, 2007). Complex projects are highly strategic, emergent and adaptive systems 
+comprising either a major-sized project or a program that are characterized by an embodied holistic entrepreneurial 
+mission; high-profile project modeling as a holistic project mission entrains high uncertainty in scope definition, 
+hence scalability, while adapting to changing environm ents; recursiveness as they mobilize a variety of 
+stakeholders having multiple objectives, enabling means (technology, etc.), and financing options; and nonlinear 
+feedback loops.  
+2. Behaviors of complexity events in the project industry 
+Tanaka (Tanaka, 2013) listed typical complexity events in the world that are affecting the monodukuri industry 
+by categorized P.E.S.T.L.E. (political, economic, social, te chnological, legal and environmental) factors, nature of 
+the respective events’ complexity and their implication to the industry. The monodukuri industry was defined as the 
+industry of manufacturing and systems environment integration. For analysis purposes of this paper, the first 
+
+67 Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+element of the definition, manufacturing, is dropped, and the industry of systems environment integration is re-
+worded as the project industry. The listed complexity even ts, relevant to the project industry, have further been 
+monitored as summarized below based on a variety of media reports -- only news reported by plural media are 
+depended on -- to confirm relevancy of the analysis; the code within a parenthesis indicates the pertinent category 
+of the PESTLE factors.  
+  
+New state leaders in France, Russia, China (P) :  The new state heads of France, Russia, China and Japan (Japan 
+not listed in the 2012 paper) have all announced and are committed to positive infrastructure project export 
+policies: France, under state leadership, is stepping up its systems export to the emerging and developing 
+economies and promoting ties with Japan in infrastructure exports with its early results including Mitsubishi Heavy 
+Industry-AREVA joint venture (with GDF Suez)’s securing the US$ 20 billion contract for Turnkey’s No. 2 
+Nuclear Power Plant in Synop on the Black Sea, announced in May 2013, and TECHNIP-JGC Corporation 
+consortium’s award of Yamal LNG Export Terminal on the Russian Arctic Sea which is estimated to cost US$10 
+billion, announced in April 2013; Russia is committing the Arctic zone oil and gas deve lopment, Russian Far East 
+development among other major project  investments; China has promised additional development packages to 
+African countries during New President Xi Jinping’s official visit to the African countries in April 2013; Japan is 
+stepping up packaged infrastructure exports to emerging  and developing economies and participating in Russian 
+natural gas developments, which all in all will boost the project industry - Prime Minister Abe himself is 
+performing top state sales of Japanese infrastructure and high technology.  
+Iranian sanction (P): The previously one of the most active oil and natural gas project markets in the world, of Iran,  
+is totally frozen due to the political and economic sanction to the country. 
+Arab Spring (P):  Foreign project investments are further being stalled in the countries concerned and a backlash of 
+the Arab Spring has been manifested in some project scenarios. 
+Myanmar “early” spring (P):  Both Western and Asian project interests, viz. investors, developers and contractors, 
+are lining up in Myanmar eyeing for a new infrastructure development market planned to grow fast.  
+Persistent worldwide economic recession (E), EURO cris is (E), Escalating presence of BRICS, ASEAN (E), 
+Aggressive resources hunt by emerging economies (E):  The current primary marketing focus of the infrastructure 
+project industry based in EU and Asia is on the BRICS and ASEAN countries, which in turn are hunting natural 
+resources in part of BRICS (Russia, Brazil), African and Central Asian countries. 
+Remarkable shortage of infrastructure in fast growing countries (E):  The countries in Asia (Southeast, South and 
+Central Asias) fast-growing in economy entertain evenly serious shortage of infrastructure to support the rapid 
+increase of population and urban development, which fact has prompted the respective governments to formulate 
+specific infrastructure augmentation plans. The high hurd le to the implementation of the government plans is 
+finance gaps or infrastructure needs which cannot be financed by public sector -- refer to paragraph 4.3 of this 
+paper. 
+Commercialization of shale natural gas production (T):  The success in the commercialization of shale gas 
+production in the U.S.A. has drastically changed the long-range scenario of fossil fuel supply in the world; led the 
+U.S.A. to one of the top positions in the natural gas reserve and production; and increased the competitiveness of 
+the U.S. manufacturing industries. Its effect of pulling down the world prices of natural gas has affected Russian 
+supply of natural gas to EU and pushed the country to accel erate sanctions of four mega-sized liquefied natural gas 
+(LNG) production projects in Russia. 
+3. Dimensions and characteristics of mega and complex projects  
+   To elucidate the sizes and unique complexity dimensions  at a glance, typical mega projects in progress in the oil 
+& gas and infrastructure sectors is given in Table 1. The information sources are shown in the footnote.  The table 
+indicates the commonly used title of th e project with a project ID code, host country of the project, estimated 
+investment value of the project, planned completion time, project features inviting complexity and information 
+source reference to the footnotes. As seen, most use the title of projects, and not programs, though they are 
+programs according to the definition of the project management discipline. 
+
+68   Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+Table 1. Typical recent mega and complex energy development and infrastructure projects in the world 
+Project Name Host Country Planned 
+investment 
+amount 
+(B: billion) 
+Planned 
+completion 
+Project features Data 
+Source 
+[Project a.] 
+Pearl GTL Project Qatar US$18 to 
+19B 
+2013 
+(production 
+started in 2011) 
+The world’s largest natural gas to liquids 
+(GTL) production complex to produce 
+alternative high-value petroleum products; 
+joint venture of Shell and Qatar 
+Government; program management contract; 
+10+ prime contract packages, 56 thousand 
+project personnel from 60+ countries; 
+excellent project performance and 
+governance; viability of alternative energy 
+solutions established 
+1 
+[Project b.] 
+Ichthys  LNG 
+Project 
+Australia US$34B 
+(Phase I) 
+2016 
+(ongoing) 
+8.5 million  tons/year LNG production and 
+export (onshore/offshore); multi investors, 
+multi contractors; remote site; own source of 
+LNG for Japan with nuclear power plants 
+shutdown 
+2 
+[Project c.] 
+Vladivostok LNG 
+Project 
+Russia US$36B 2018 
+(investment 
+decided by 
+Gazprom) 
+15 million tons/year LNG production and 
+export (offshore/offshore facilities); multi 
+investors, multi contractors; remote site; 
+Russia to increase LNG export   
+3 
+[Project d.] 
+Cabo Delgado LNG 
+Project 
+Mozambique US$10 to 
+15B 
+2018 
+(investment 
+decided: under 
+front-end 
+design) 
+10 million tons/year LNG production and 
+export (onshore/offshore); multi investors 
+(US-Japan) joint venture, multi contractors; 
+remote site 
+4 
+[Project e.] 
+Delhi-Mumbai 
+Industrial Corridor 
+Project 
+India US$90B Phased 
+(ongoing) 
+Accelerated national economic development; 
+India-Japan government-to-government 
+strategic partnership program; 
+debottlenecking trunk export traffic systems 
+with a high-speed freight train network & 
+associated infrastructure development; 
+industrial clusters; flagship eco-smart cities; 
+multi objectives, multi-layer state program 
+and multi stakeholders 
+5 
+[Project f] 
+Russian Arctic Oil 
+and Gas 
+Development 
+Program 
+Russia US$500 to 
+700B 
+2020 
+(partially 
+ongoing) 
+Arctic oil and gas fields development (100 
+billion tons oil equivalent of potential 
+resources); racing against ice-breaking 
+offshore oil & gas development technology; 
+two base-load LNG production complexes,  
+associated infrastructures; extreme projects 
+at super-remote sites 
+6 
+[Project g.] 
+King Abdullah 
+Economic City 
+Saudi Arabia US$30 to 
+86 billion 
+2020 
+Futuristic mega city with a seaport, high 
+speed railway, industrial valley, central 
+business district, residential areas, 
+educational zone, resorts; multi objectives, 
+multi investors, multi owners, multi 
+developers 
+7 
+[Project h.] 
+Russian Far East 
+Region Overall 
+Russia US$110 2025 
+Modernization of the Siberian railroad 
+systems, ports and other trade facilities, city 
+infrastructures; industrial estates; energy 
+8 
+
+69 Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+Development 
+Program 
+development; multi objectives, multi 
+investors, remote projects 
+[Project i.] 
+Moscow 
+International 
+Business Center  
+Project 
+Russia US$40B 2018 
+Urban infrastructure for the New City - new 
+traffic systems, eco energy, city water/waste 
+management systems; national prestige; 
+multi developers, multi owners, multi 
+finance sources 
+9 
+[Project j.] 
+Masdar City Project UAE-Abu 
+Dhabi 
+US$18B 2020 -2025 
+(ongoing) 
+Futuristic eco-smart city to test the country’s 
+future growth and diversification strategy; 
+race against evolving technology 
+10 
+[Project k.] 
+Tangshan Smart 
+City Project 
+China US$800B 2025 – 
+(ongoing) 
+Futuristic eco-smart community including an 
+industrial valley; establishing a leading 
+model to demonstrate national prestige 
+11 
+Data source: 
+1. Shell global Pearl GTL website http://www.shell.com/global/aboutshell/our-strategy/major-projects-2/pearl.html, Hydrocarbons –
+technology website http://www.hydrocarbons-technology.com/projects/pearl/  
+2. INPEX Ichsys LNG Project website   http://www.inpex.co.jp/english/ichthys/index.html, 
+http://gateway.icn.org.au/project/451/ichthys-lng-project 
+3. Gazprom project website http://www.gazprom.com/press/news/2013/april/article160730/  
+4. Anadarco website http://www.anadarko.com/Investor/Pages/NewsReleases/NewsReleases.aspx?release-id=1769213  
+5. DMIC Project home page  http://delhimumbaiindustrialcorridor.com/  
+6. Is Russia ready for Arctic challenges, Petroleum Intelligence Weekly 29/03/2013 issue 
+http://www.energyintel.com/Pages/About_PIW_Datasource.aspx  
+Offshore oil and gas development in Russian Arctic zones  
+http://gasoilpress.com/dgir/dgir_detailed_work.php?DGIR_ELEMENT_ID=280&WORK_ELEMENT_ID=5565  
+7. King Abbdulah Economic City home  http://www.kingabdullahcity.com/  
+8. Moscow Approves New Funding to Develop Far Eastern Regions                                            
+http://www.jamestown.org/single/?no_cache=1&tx_ttnews%5Btt_news%5D=40726&tx_ttnews%5BbackPid%5D=381&cHash=257
+5a4665b2ae1869fc22bb73c1bb8aa  
+9. Project brief    http://www.designbuild-network.com/projects/mibc/   
+10. Project home  http://masdarcity.ae/en/  
+11. Program home http://en.tswstc.gov.cn/news_detail/newsId=6d95ed4a-b72c-4573-b7c0-0bd56add0a4e.html  
+        Note: some estimated project costs are taken from parallel news sources 
+  Salient characteristics of these mega projects that augment complexity include (the codes within parentheses refer 
+to the corresponding project codes in the table): 
+y Requirements of huge investment costs which per se present a significant source of great risk and mandate 
+innovative finance engineering and risk management (project a. through k.)  
+y Multi objectives entertained by the projects, e.g. a ll or most of, enhancing national prestige, creating 
+eminent future values, up-scaling new or alternative technology, investment return (project a. through k.) 
+y Multi owners and investors from multi countries required to meet an enormous fund requirement or to 
+combine source technologies and expertise to compose a complex project (project a. through k.)  
+y Multi contractors from multi countries to reap on combined benefits and to hedge risks inherent in 
+awarding a prime contract to a single contractor as well as to couple export credits provided by multiple 
+countries as tied to top-tier contractors of the countries (project a. through k.) 
+y Multi vendors from multi countries to realize technologically right and most economical sources (project 
+a. through k.) 
+y Tens of thousands workforces from multi countries to meet a required quality and quantity of skilled 
+construction workforces (project a. through k.)  
+y Compounding emerging technologies as in eco-sma rt community development that mandates races 
+against technological advancement (project e. through k.)  
+y Uncertainty associated with project implementation over an extended period of time, such as changes in 
+PESTLE factors and resultant scalability (upward or downward) or risk of project cancellation after 
+project start (project a. through k.) 
+y Logistic challenges, especially on mega projects at remote sites (project a. through k)  
+
+70   Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+y Unparalleled environmental risk (project b., c., d., f. )  
+4. New thoughts of project and program management toward a new management paradigm 
+   Based on the analysis of the characteristics of the mega and complex projects reviewed above, new thoughts of 
+(project and) program management are proposed by the author. These new thoughts are preliminary and should 
+evolve with further feedbacks from these mega projects to eventually build a new adaptive management paradigm. 
+4.1. Meta program management to balance multi objectives  
+    To manage mega and complex projects with numerous interactions of complexity factors, we need program 
+management beyond program management as traditional project management and program management founded 
+on positivist management approaches and operational techniques, e.g. for project governance, cannot deal with 
+projects characterized by multi objectives and multi layers of stakeholders with specific interests which are not 
+always well aligned each other, progressing technology, uncertain project environment and, all in all, scalability as 
+projects pursue evolving definitions. All of the above-listed projects have many of such complexity profiles as a 
+degree of disorder, uncertainty, non-linearity, irregularity, instability, requirement for innovative and highly 
+creative thoughts, multiplicity, scalability, recursiveness, requirement for management by praxis (and not by 
+process), requirement for heuristic logic, directional complexity such as unshared goals and paths and temporal 
+complexity such as results from unanticipated environmental impact (Tanaka, 2013). Bredillet (Bredillet, 2008). 
+states that project management needs to be understood as a complex discipline because it aims to deal with 
+complex, uncertain, ambiguous reality. In mathematics, since Ashby (Ashby, 1958) and the law of requisite variety, 
+it is well known that to control a complex system with n dimensions, you need an n+1 dimensional system. The 
+available control variety must be equal to or greater than the disturbance variety for control to be possible. The 
+author regards the following three methodologies as basis of developing a meta program management framework. 
+   Complex Project Manager Competency Standards Ver. 4.1 (International Centre for Complex Project 
+Management, 2012) provides valuable insights into complex projects by stating these standards move away from 
+traditional philosophies, approaches and languages, which cannot adequately describe complex projects; instead 
+these standards use a Systems Thinking philosophical approach and methodology . The standard views provide 
+insights from multiple perspectives, that together provide holistic understanding of the project management of 
+complexity, stresses using multiple views and behaviors suited to complex sets of interactions arising from 
+cognitive and emotional responses to dynamic conditions.  
+  Tanaka (Tanaka, 2013; Burkov, et al. 2011) defines meta program management as a meta framework of program 
+management beyond the traditional program management and is for organizations’ strategy implementation to 
+apply their organizational resources and capabilities for attaining major capital investments or carrying out major 
+innovation initiatives for enhanced organizational value and/or any form of transformation while responding 
+flexibly to changes in the ecosystem. This concept of meta program management reflects the meta-method, or 
+“MAP - Management and Analysis of Projects” - aiming at providing effective and efficient structure and process 
+for acting and learning in various complex, uncertain and ambiguous managerial situations of projects, programs 
+and portfolios (Bredillet, 2008),  and embraces program visioning and conceptualization founded on a holistic 
+mission carrying multi objectives; planning and modeling; structuring; implementation; and the exploitation of 
+program products, as against the traditional program management which means managing a collection of projects 
+that are organically combined with each other and hence could better be managed in a combined form. This 
+category of meta program management should serve as a development and planning framework for complex 
+projects in which a project is seen as a politico-socio-techno-economic system (Bredillet) as reviewed in Section 3 
+above, and project modeling is not straight forward and must pursue series of simulations based on a holistic 
+program mission coming from an organization or jointed organizations’ strategy to craft unique and significant 
+future values and to cope with changing PESTLE factors. It is observed that Tanaka’s meta program management 
+
+71 Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+model is active in the Japanese project industry which is participating in projects a. to f. and h. to k. of the above 
+project table, in such aspects as (Burkov et al., 2011).: 
+y Engineering driven projects that require ingenium to a varying degree, 
+y Continuous project development by combining diverse technology, engineering disciplines, management 
+methods and finance engineering in dialectic environment, 
+y Heavy use of “ba” theory (Nonaka, 1991) where program/project participants and other key stakeholders 
+contribute to collaborative knowledge and hence value creation through modeling, practicing, learning 
+and feeding back, and,
+y 8VHRIFRQYHQWLRQVIRUIURQW-HQGSODQQLQJRIDSURJUDPSURMHFWLQXQLTXHHQYLURQPHQW
+   Morey (Morey, 2011) refers to meta-program management as a new approach to drive momentum and achieve 
+coordinated outcomes across large complex public infrastructure programs, from his experience in managing a 
+complex alley of public infrastructure program in South East Queensland, Australia. He defines meta program 
+management as “a centrally sponsored group of programs and projects that are delivered by a number of discrete 
+self-governing organizations, and centrally coordinated to achieve outcomes that are of strategic importance”.  
+This meta-program management model should find its utmost value in a cluster of government development 
+programs under a holistic, strategic growth policy of a certain country or region/state. 
+4.2.  Knowledge and stakeholder integration to create complex projects 
+In project management as a complex integrative field (Bredillet, 2004), knowledge-based management is 
+crucial. Bredillet relates meta manageme nt in project context to the effect that respectful on the various project 
+management perspectives in presence, while providing an  integrative ontological and epistemological framework 
+the meta approach is about designing a contextual structure that: 
+• Provides a privileged place for project (and program) managers, project team members and stakeholders to 
+act and learn,  
+• Facilitates this praxis through a specific meta-method, one of the underlying paradigms being that there is a 
+co-evolution between the subject/actor and his or her environment (praxeological epistemology) and, 
+• Enables to generate a specific conven tion (configuration of order) and some kind of stability to cope with 
+uncertainty and ambiguity. 
+   Integration of multiple elements of knowledge held by  multiple stakeholders can be illustrated in Fig 1. with 
+reference to Kosaka’s three dimensional, knowledge fusion space model (Kosaka, 2010). 
+Fig. 1. Meta program management space as a platform of knowledge integration 
+
+
+72   Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+   A meta program management space serves as a platform of knowledge and stakeholder integration. Knowledge 
+elements required to realize a program design based on a holistic program mission, characterized by resonance to  
+PESTLE trendes, are integrated on a program modeling space called a mission-profiling platform. Knowledge 
+structuring and integration is performed as a function of a.) existing knowledge elements and identified new 
+knowledge required to meet the program design, b.) stakeholders possessing enabling means, including knowledge 
+elements, funds (financing abilities) and management capabilities, c.) financing options, and d.)  program delivery 
+alternatives such as front-end engineering (FEED) rolled over to engineering, procurement and construction (EPC), 
+design-build-own and public-private-partnership (PPP). On major-sized, complex projects, knowledge spiral 
+(Nonaka, 1991) is realized through a program mental space as a platform of shared context in motion for 
+collaborative knowledge and value creation (Burkov et al., 2011). 
+4.3. Finance planning and structuring as an essential ingredient of materializing major-sized projects 
+   No projects are materialized without funds procured for a particular project. For instance, according to Asian 
+Development Bank, in Asian countries alone (except Japan), the total required investment amount for 
+infrastructures, including those for energy, telecommunications, transportation, water and other social services, 
+planned by relevant governments, amounts to US$10 trillion or 5 to 6% of GDP in 2020, as drastically increased 
+from US$4 trillion in 2010; however, finance gaps, or infrastructure needs which cannot be financed by the public 
+sector, of US$750 billion per year, are anticipated during the 2010 䡚2020 period (Asian Development Bank, 
+2009).  
+   Except for “P2M - Project and Program Management for Enterprise Innovation Japan (Project Management 
+Association of Japan, 2007), no chapter or section is dedicated to finance planning for projects/programs in the 
+project management and program management standards used globally. 
+   Program managers of complex projects need fundamental knowledge of finance and involvement in finance 
+scheme planning although professional transactions of finance are conducted by finance specialists. The 
+knowledge in question include that on alternatives of financing for projects, e.g., combining direct project 
+investments by owners of component projects; official export credit(s) by export credit agency (ies), including 
+syndicated loans; government development funds; project finance; public-private-partnership (PPP) as well as on 
+structuring multi-source financing packages. Also, financing scheme development in relation to risk-based project 
+investment decision is an essential ingredient of new program management paradigm. 
+4.4. Management of extreme projects 
+   There emerges an increasing number of mega resources development projects involving extreme project 
+implementation conditions at remote locations such as oil and gas field development in deep seas, oil sands and 
+shale oil development at remote sites such as deep North Canada and Siberian basins, and oil and gas development 
+in the Arctic zone. These extreme projects require unconventional degrees of care and measures to protect human 
+safety in rough project execution environment, habitat and other natural environment and built facilities; prepare 
+against attack by natural perils as well as mandate heavy planning and problem solving of project logistics. 
+Continuing feedback of related experience is needed to build a body of knowledge of managing extreme projects 
+as part of meta program management.   
+4.5.  Contingent risk management 
+The mega and complex projects involve unique and systemic risks, including those not experienced by project 
+and program management to date, and cannot rely on traditional risk models. Traditional risk models perceive risk 
+as primarily objective and identifiable, and utilize primarily reductionist, linear processes such as mathematical and 
+statistical models (Kämpf et al., 2011).  
+We see a number of research papers, recommended practices and industrial state reports published recently 
+regarding unique risks and risk management in specific situations of complex projects such as value of flexibility 
+in managing uncertainty in oil and gas investments (Begg, 2002); risk management in the Arctic offshore (Kämpf 
+
+73 Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+et al., 2011); offshore oil and gas development in Russian Arctic zones (Nikitin et al, 2006); risk management of 
+shale gas developments and operations (Det Norske Veritas AS, 2013); risk management on (Canadian) oil sands 
+(Canadian Oil Sands, 2012); cross-cultural project manage ment on major-sized global oil and gas plant projects 
+(Tanaka, 2007); global infrastructure investments in times of crisis (Lin, 2012); risk management challenges for 
+complex infrastructure projects (Holmes, 2011); manageability of complex construction engineering projects 
+(Leitejen, 2009); transition from comparative risk assessme nt to multi-criteria decision analysis and adaptive 
+management in complex environmental policy design (Linkov, 2006); key principles of strategies and principles in 
+leading complex projects (Obelensky, 2013). Of these, the following two research literatures are considered to 
+provide high quality input to a new paradigm of contingent risk management for complex projects. 
+M. Kämpf and S. Haley of University of Alaska Anchorage, in their paper “Risk Management in the Arctic 
+Offshore: Wicked Problems Require New Paradigms” (Kämpf and Haley, 2011), points out the flaws of traditional 
+risk models for complex projects and examines how various groups with interests in the Arctic offshore define 
+risks. The findings link the wicked problem framework - that  of problems that are unstructured, complex, irregular, 
+interactive, adaptive, and novel - and the emerging paradigm of project management of the Second Order,”PM-2” 
+(Saynisch, 2010). The research synthesizes literature on the topic to offer strategies for navigating wicked 
+problems, provide new variables to deconstruct traditiona l risk models, and integrat e objective and subjective 
+schools of risk analysis.    
+I. Linkov, et al. conducted a comprehensive research on environmental risk assessment and decision-making 
+strategies over the last several decades (Linkov, et al., 2006) and argued that although comparative risk assessment 
+(CRA) has mainly been used in environmental risk assessment over the decades, as CRA lacks a structured method 
+for arriving at an optimal project alternative, multi-criteria decision analysis (MCDA) provides better-supported 
+techniques for the comparison of project alternatives base d on decision matrices, and it also provides structured 
+methods for the incorporation of project stakeholders' opinion s in the ranking of alternatives, and that the inherent 
+uncertainty in our ability to predict ecosystem evolution and response to different management policies requires 
+shifting from optimization-based management to an adaptive management paradigm. The author supports this 
+concept of a combination of MCDA  and adaptive management as it has applicability to complex energy 
+development and infrastructure projects planned under  multiple objectives and often conflicting stakeholder 
+interests and needing highly adaptive management to PESTLE environment which is common to all of the listed 
+case projects.  
+5. Conclusion 
+This paper expands the existing research on complex project management and meta program management. It
+verifies the nature of complexity of major-sized projects in the oil and gas development and infrastructure industry, 
+presents case studies of current global mega projects for identifying discriminant characteristics contributing to 
+unique project complexity and as a result qualitatively proposes new thoughts of project and program management 
+in the complexity space in the related project industry. The new thoughts include meta program management to 
+balance multi objectives; knowledge and st akeholder integration to create comp lex projects; finance planning and 
+structuring as an essential ingredient of materializing complex projects; management of extreme projects; and 
+contingent risk management, which should be elaborated with continuing feedbacks from the ongoing major-sized 
+projects in study to form a new paradigm of project management. 
+  
+References 
+Asian Development Bank (2009). Infrastructure for Seamless Asia. A joint study of the Asian Development Bank and the Asian Development 
+Bank Institure. Manilla: Asian Development Bank 
+Ashby, R. (1958). Requisite variety and implications for control of complex systems. Cybernetica, (1): pp. 83-99. 
+Bredillet, C. (2004). P2M - toward a new project & program management paradigm?. Proceedings of International P2M Forum  
+       2004. Tokyo: Project Management Association of Japan. 
+
+74   Hiroshi Tanaka  /  Procedia - Social and Behavioral Sciences   119  ( 2014 )  65 – 74 
+Bredillet, C. (2008). Learning and Acting in project situations through a meta-method (MAP) : a case study: Contextual and situational 
+approach for project management governance in management education. International Journal of Project Management. Vol.26 (3): pp.238–
+250.  
+Burkov, V., Bushuyev, S., Tanaka, H, Konstantin, K. Sergey,S., Rhyzhkov,S., et al. (2011). The theory of the balanced innovatio n model. 
+Project-oriented competitive science intensive enterprises creation and development  (monograph, Russian-English bilingual) pp.71-94. 
+Nikolayev: Ukrainian National University of Shipbuilding named after Admiral Makarov & Torubarov ES ( ISBN 978-966-2312-18-8) 
+Canadian Oil Sands (2012). Canadian Oil Sands Annual Report 2011 - Risk Management pp. 41-47. Canada: Canadian Oils Sands Limit ed 
+http://www.cdnoilsands.com/files/COS_AR11_FULL.pdf 
+DET NORSKE VERITAS AS (2013). Risk management of shale gas developments and operations – Recommended Practice DNV-RP-U301: 
+Norway: DET NORSKE VERITAS AS 
+Holmes, A. (2011). Risk management challenges for complex infra projects. Infrastructure Journal Supporting Infrastructure Investment.  
+     British Consulting   http://www.britishconsulting.com/en/i.journal-aug-2011-risk-management.pdf 
+International Centre for Complex Project Management (2012). Complex project manager competency standards, version 4.1. Sydney: 
+International Centre for Complex Project Management
+Kämpf, M et al. (2011). Risk management in the Arctic offshore: wicked problems require new paradigms. ISER Working Paper 2011. 3. UAA 
+University of Alaska Anchorage Institute of Social and Economic Research  (ISER) 
+Kosaka, M. (2010). An approach to knowledge growth models (in Japanese) p.62. Tokyo: Shakaihyoronsha Co., Ltd 
+Leietjen, M. (2009). Manageability of complex construction engineering projects: Dealing with uncertainty.Second International Symposium on 
+Engineering Systems MIT: Cambridge, Massachusetts, June 15-17  
+Linkov, I et al. (2006). From comparative risk assessment to multi-criteria decision analysis and adaptive management: Recent d evelopments 
+and applications. Environment International 32 , pp 1072-1093: Elsevier 
+Lin, J. Y. and Doemeland, D. (2012). Beyond Keynesianism: Global infrastructure investments in times of crisis. Policy Research  Working 
+Paper 5940. Washington: The World Bank Development Economics Vice Presidency Office of the Chief Economist 
+Morey, A (2011). Meta-program management: A new approach to drive momentum and achieve coordinated outcomes across large comple x 
+public infrastructure programs.Australia: ARUP http://www.arup.com/_assets/_download/6c639c0f-19bb-316e-400b9def809e45ce.pdf. 
+  
+Nonaka, I. (1991). The knowledge-creating company. Harvard Business Review, 69(NovemberDecember) pp.96-104. 
+Obelensky, N. (2013).Leading complex projects - key principles and strategy. Australia: International Centre for Complex Project Managment 
+Project Management Association of Japan (2007). P2M – a guide of project and program management for enterprise innovation (2nd English 
+Edition). Tokyo: Project Management Association of Japan 
+Saynisch, M. (2010). Mastering complexity and changes in projects, economy, and society via project management second order (PM -2). 
+Project Management Journal, 41(5), pp. 4-20, Wiley/PMI USA. 
+Tanaka, H. (2007). Cross-cultural project management on major-sized global oil and gas plant projects. In D. I. Cleland & L.R. Ireland (Eds), 
+Project manager’s handbook – Applying best practices across global industries pp.151-165. New York:McGraw-Hill  
+Tanaka, H. (2013) . A viable system model reinforced by meta program management. Procedia - Social and Behavioural Sciences Journal, 74, 
+pp. 135-145: Elsevier 
+World Bank (2013). World Development Indicators, April 2013. Washington: World Bank: 
+World Economic Forum (2012). Strategic infrastructure: steps to prioritize and deliver infrastructure effectively and efficient ly.World 
+Economic Forum 2012 reports. Geneva: Word Economic Forum 

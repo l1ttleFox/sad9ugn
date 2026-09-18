@@ -1,0 +1,1410 @@
+Space Logistics Modeling and Optimization:
+Review of the State of the Art
+Koki Ho
+Georgia Institute of Technology, Atlanta, Georgia 30309
+https://doi.org/10.2514/1.A35982
+I. Introduction
+T
+HE United States Space Force’s doctrine document published in
+2020, SpacePower: Doctrine for Space Forces , listed five core
+competencies that the U.S. Space Force needs to perform, one of
+which was “Space Mobility and Logistics ” [1]. In response to that,
+there has been rapidly growing interest in developing technologies
+to enable in-space operations via in-space infrastructures and in-
+space refueling, servicing, assembly, and manufacturing (ISAM).
+Space logistics has also been a topic of interest to NASA and other
+space agencies as an approach to designing sustainable space explo-
+ration campaigns. Additionally, there is a growing need for space
+logistics to effectively operate the megascale constellations in Earth
+orbits for communication, remote sensing, and related missions.
+Enabling space mobility and logistics capabilities requires a new
+way to view space missions that differs from conventional astrody-
+namics. For example, with fuel depots in space, the optimal path to
+the destination in terms of the lifecycle cost is not necessarily a fuel-
+optimal trajectory; rather, a path stopping by a fuel depot and being
+refueled before heading to the destination may be preferred even
+when it requires additional fuel. In addition, with ISAM technolo-
+gies, we need additional analysis capabilities to analyze and optimize
+the sizes of the fuel/spare depots and their inventory/sparing policies
+with astrodynamics in mind. This analysis requires logistics-driven
+modeling and optimization techniques coupled with astrodynamics.
+This intersection between these areas leads to an emerging field,
+space logistics modeling and optimization.
+Space logistics is formally defined as “the theory and practice of
+driving space system design for operability and supportability, and of
+managing the flow of materiel, services, and information needed
+throughout a space system lifecycle” [2] according to the AIAA Space
+Logistics Technical Committee. Space logistics is not a new research
+topic; the literature on space logistics has existed since the beginning of
+the space exploration era [3 –5]. According to the AIAA ’s meeting
+papers archive, the 1st AIAA/SOLE Space Logistics Symposium
+was held in 1987 [6], and it already had papers that covered various
+topics that are still relevant today such as in-space servicing [7,8] and
+even using artificial intelligence for space logistics [9]. Although the
+applications of interest back then do not necessarily match with our
+current ones, various key concepts were developed decades ago. In the
+early 2000s, in response to NASA’s Constellation Program, the idea of
+logistics network modeling was applied to human space mission
+design. In addition, more logistics-driven techniques for probabilistic
+modeling and inventory control have been applied to satellite servicing
+and megascale constellations. A recently published book,The Planning
+and Execution of Human Missions to the Moon and Mars[10], has two
+chapters that focus on space logistics and mathematical modeling for
+space mission design [11,12], which can be referenced for more details.
+The goal of this paper is to categorize the state-of-the-art studies in
+space logistics modeling and optimization in two ways: 1) by appli-
+cation questions that are addressed and 2) by logistics-driven methods
+that are used in the studies. The goal of the first categorization is to help
+the practitioners determine what research is out there that can support
+their applications. The goal of the second categorization is to system-
+atically map the existing literature to each logistics research subfield
+and thus help the researchers understand the state of the art and identify
+the underexplored and promising future research directions.
+II. Categorization of the State of the Art by Applications
+In this section, we first categorize the state-of-the-art literature by
+applications to aid the practitioners in understanding the existing
+research that can answer their application questions. We will intro-
+duce the three major applications in space logistics and then map the
+state of the art in the literature to each research question.
+Note that this is by no means a comprehensive list of all space
+logistics applications. This paper specifically focuses on the applica-
+tions that involve orbital mechanics considerations; other space logis-
+tics applications not reviewed in this paper include supportability and
+spare parts management within a space station [13 –15] and surface
+vehicle routing and logistics [16–23], among others.
+A. Application 1: In-Space Servicing, Assembly, and Manufacturing
+for Satellites
+Although ISAM has attracted a lot of attention in recent years, the
+concepts themselves have been explored for a long time. When an
+operational satellite experiences a component failure or runs out of its
+fuel, it could be more economical to repair and refuel the satellite on
+Dr. Koki Ho is the Dutton-Ducoffe Professor, Associate Professor, and the Director of the Space Systems Optimization
+Group in the Daniel Guggenheim School of Aerospace Engineering at Georgia Institute of Technology. His research
+focuses on developing modeling and optimization methods for rigorous space mission analysis and design. His
+unique research connecting logistics-based modeling, optimization, systems engineering, and space applications
+has provided a substantial impact on modern and future space missions that involve multiple missions, multiple
+vehicles, and reusable infrastructure elements. Dr. Ho earned his B.S. and M.S. degrees at the University of Tokyo
+and his Ph.D. at the Massachusetts Institute of Technology. He is the recipient of the National Science Foundation
+CAREER Award (2020), the NASA Early Career Faculty Award (2019), the DARPA Young Faculty Award (2019),
+and the Luigi Napolitano Award (2015), and he is a coauthor of one of the most downloaded Acta Astronautica
+articles. Dr. Ho was the Chair of the AIAA Space Logistics Technical Committee (2017 –2024) and also serves on the
+Steering Committee for the NASA-funded Consortium for Space Mobility and ISAM Capabilities (COSMIC).
+Presented as Paper 2024-1275 at the AIAA SciTech Forum, Orlando, FL, January 8 –12, 2024; received 12 January 2024; revision received 15 March 2024;
+accepted for publication 19 June 2024; published online Open Access 9 September 2024. Copyright © 2024 by Koki Ho. Published by the American Institute of
+Aeronautics and Astronautics, Inc., with permission. All requests for copying and permission to reprint should be submitted to CCC at www.copyright.com; employ
+the eISSN 1533-6794 to initiate your request. See also AIAA Rights and Permissions www.aiaa.org/randp.
+1417
+JOURNAL OF SPACECRAFT AND ROCKETS
+V ol. 61, No. 5, September–October 2024
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+orbit than to launch a new one from the ground, especially when the
+satellite is in a high-altitude orbit. One of the earlier successful
+examples of on-orbit servicing was the repair mission for the Hubble
+Space Telescope, although crewed repair missions have become
+difficult after the retirement of the Space Shuttle. In the 2000s,
+multiple studies introduced the modeling and simulation foundations
+for robotic/autonomous on-orbit servicing missions [24 –26] and
+examined the feasibility and economic analysis of various ISAM
+concepts [27,28]. More recently, robotic on-orbit servicing has also
+been explored by Defense Advanced Research Projects Agency
+(DARPA) in its Robotic Servicing of Geosynchronous Satellites
+program [29] as well as by industries such as Northrop Grumman
+[30]. In addition, in-space manufacturing has also been explored by
+DARPA’s Novel Orbital Moon Manufacturing, Materials, and Mass
+Efficient Design (NOM4D) Program [31] as well as other industry
+members such as Redwire.
+In parallel to the hardware technologies for robotic ISAM, there is
+a significant need for logistics-driven approaches in the context of
+ISAM. The key questions that this paper will focus on include the
+following:
+1) Application 1 Question 1 (A1Q1): how to analyze the perfor-
+mance of an ISAM architecture.
+2) Application 1 Question 2 (A1Q2): how to tactically plan and
+schedule the ISAM operations to satisfy the uncertain demands of the
+customer satellites under resource constraints.
+3) Application 1 Question 3 (A1Q3): how to strategically architect
+the ISAM infrastructure elements such as depots and vehicles.
+These questions can be answered through logistics-driven research
+as reviewed later.
+B. Application 2: Multimission Space Exploration Campaigns
+Besides ISAM for satellites in Earth orbits, we are also interested in
+how space exploration campaigns can leverage in-space logistics
+infrastructure elements. The concept of an in-space propellant depot
+for space exploration has been studied extensively (e.g., Refs. [32 –
+35]). In addition, the recent development of technologies for in-situ
+resource usage (ISRU) on the moon and Mars has become a game
+changer [36–39]. For example, the successful oxygen generation on
+Mars by the Mars Oxygen In-Situ Resource Utilization Experiment
+(MOXIE) experiment has paved the way for Mars exploration with
+little reliance on Earth [40]. Furthermore, reusable infrastructure
+elements and vehicles in space can also drastically change future
+space exploration. For example, NASA ’s Gateway concept is a
+representative example of in-space infrastructure for supporting
+exploration of the moon and beyond [41]. To achieve sustainable
+deep-space exploration, designing effective multimission space
+exploration campaigns leveraging such in-space logistics infrastruc-
+ture elements is critical.
+Like in the ISAM application, there is a significant need for
+logistics-driven approaches to designing and planning robotic and
+human space exploration campaigns. The key questions that this
+paper will focus on include the following:
+1) Application 2 Question 1 (A2Q1): how to analyze the perfor-
+mance of a logistics strategy in the context of a space exploration
+campaign.
+2) Application 2 Question 2 (A2Q2): how to plan and schedule the
+missions in a multimission exploration campaign with different types
+of trajectories (high thrust, low thrust, etc.) leveraging in-space infra-
+structure.
+3) Application 2 Question 3 (A2Q3): how to design and size the
+exploration vehicles and resource infrastructure technologies such as
+depots and ISRU plants.
+4) Application 2 Question 4 (A2Q4): how to respond to uncertain-
+ties in launch delay, infrastructure performance, and so on in a space
+campaign.
+5) Application 2 Question 5 (A2Q5): how to build the relationship
+between the governments and commercial players who supply in-
+space infrastructure.
+Logistics-driven research has played and will continue to play an
+important role in answering these questions.
+C. Application 3: Megascale Satellite Constellations
+Another growing trend in low-Earth space is megascale satellite
+constellations. Many entities have proposed and developed such
+systems including OneWeb [42], SpaceX ’s Starlink [43], and Ama-
+zon’s Project Kuiper [44]. The U.S. Department of Defense is also
+interested in concepts such as satellite swarms and proliferated low
+Earth orbit. Although satellite constellations have been developed
+and launched in the past, including Iridium [45] and Globalstar [46],
+those conventional ones involved tens of satellites in each constella-
+tion. In contrast, those recent constellations will involve hundreds to
+thousands of satellites, which is a significantly larger scale than any
+conventional constellation system.
+It is important to note that megascale constellations are not just a
+larger scale of small constellations. Instead, we encounter new logis-
+tics challenges due to the scalability issue of conventional methods.
+The key questions include the following:
+1) Application 3 Question 1 (A3Q1): how to launch and deploy a
+megascale constellation when it does not fit in a single launch vehicle.
+2) Application 3 Question 2 (A3Q2): how to analyze the system
+performance and allocate the on-orbit spares for the constellation so
+that it reliably satisfies performance requirements when failures
+would happen more frequently and in a more distributed way than
+conventional satellite systems.
+3) Application 3 Question 3 (A3Q3): how to flexibly reconfigure a
+satellite constellation when there is a change in the demand.
+4) Application 3 Question 4 (A3Q4): how to manage the commer-
+cial multistakeholder ecosystem for large-scale constellations.
+As the scale and complexity of the space systems of interest grow,
+logistics-driven techniques will be critical to address some of the
+inherent key challenges.
+D. Mapping of Literature to Each Application Question
+Table 1 shows the mapping of each study reviewed in this paper to
+each key research question listed previously. In our review, we
+primarily focus on the literature in recent years, but some earlier
+representative ones are also included to provide the context. The
+technical details of each work are revisited as they are recategorized
+by the employed technical logistics-driven methods in Sec. III. Note
+that most of these questions are still open and new studies are being
+performed as we speak.
+III. Categorization of the State of the Art by Logistics-
+Driven Methods
+This section categorizes the same set of literature reviewed previously
+by the logistics-driven methods used in each study to aid the researchers
+in understanding the state of the art from the technical perspective.
+Terrestrial logistics has a long history of research and practice, from
+which we have learned a lot to advance space logistics research. This
+subsection summarizes three key method categories, each of which
+covers a subfield of logistics research that is particularly relevant to
+space applications: 1) Network flow modeling and optimization for
+logistics planning and scheduling, 2) Probabilistic modeling and
+queueing theory for logistics performance analysis, and 3) Inventory
+control for resource infrastructure operations management. Each sub-
+field has been largely developed with terrestrial applications in mind,
+and thus the developed theories and techniques cannot be directly
+applicable to space applications. The challenges of applying terrestrial
+logistics-driven techniques are discussed for each subfield; how the
+literature has addressed some of these challenges is also discussed.
+Lastly, the set of literature that extends beyond these three key method
+categories in response to space-unique challenges is discussed. For
+more technical details on each terrestrial logistics subfield, refer to the
+textbooks in the operations research field like Refs. [103,104].
+A. Method 1: Network Flow Modeling and Optimization for Logistics
+Planning and Scheduling
+1. Motivation and Overview
+As we consider how to manage a system of spacecraft and infra-
+structure distributed over the vast space in Earth’s orbits, cislunar, and
+1418 HO
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+interplanetary space, it is natural to draw an analogy with how
+terrestrial logistics operations manage their fleet of vehicles and
+commodity flows, for which network modeling and optimization
+has been a primary tool. Figure 1 shows an example of network
+modeling for Earth –moon–Mars exploration logistics.
+A network-based approach models the system as a set of nodes and
+the arcs connecting them and employs various techniques to analyze
+and optimize the commodity flow over that network. For example, for
+a space exploration campaign problem, each orbital staging point
+(e.g., geosynchronous orbits, Lagrangian points, and low-lunar
+orbits) is modeled as a node, and the trajectories connecting them
+are modeled as arcs. For an on-orbit servicing problem, the nodes can
+also correspond to the customer satellites to be serviced. The com-
+modities include everything that flows over the network, including
+the propellant, spares, tools, payload, and vehicles themselves. The
+typical goal for such a problem is to find a vehicle/commodity
+transportation routing plan and schedule to minimize a cost function,
+which can be defined based on total campaign launch mass, cost, or
+other relevant metrics. Some of the well-known problem types in
+network optimization include the traveling salesman problem (TSP),
+which finds the optimal route to visit all nodes once and return to the
+origin node, and its generalized variant, the vehicle routing problem
+(VRP), which finds the optimal set of routes for a fleet of vehicles to
+deliver to a given set of customers. Another relevant class of network
+problem is the facility location problem (FLP), which finds the
+optimal location of the facilities such as depots and servicing stations
+to optimally serve the distributed customers. Thus, we can draw
+analogies between a spacecraft mission design problem and a TSP/
+VRP and between the propellant depot or ISAM facility location
+problem with a FLP .
+2. Challenges in Space Logistics Applications
+Unfortunately, optimizing and analyzing space logistics missions
+is substantially more complex than just solving a conventional TSP/
+VRP/FLP over aΔV map of orbits. There are some unique challenges
+that prevent a direct application of existing terrestrial logistics
+approaches.
+The most obvious difference between terrestrial logistics and space
+logistics is the orbital mechanics. Trajectory beyond Earth ’s orbits
+cannot be modeled as a two-body problem, and thus the generation of
+the ΔV or time of flight (TOF) will require a large computational
+effort. For high-thrust trajectories, these quantities can be precom-
+puted (e.g., via Lambert problem solvers) before optimizing the
+commodity flow, but this approach is not feasible for low-thrust
+trajectories, where the ΔV and TOF can be flow dependent; namely,
+if we assume a constant-thrust engine, the acceleration (and thus the
+Fig. 1 Example of network modeling for Earth –moon–Mars exploration logistics [75].
+Table 1 Categorization of the state of the art (SOTA) by application questions
+Application questions SOTA
+Application 1: ISAM for satellites
+A1Q1: how to analyze the performance of an ISAM architecture [24 –26,47–49]
+A1Q2: how to tactically plan and schedule the ISAM operations [50 –56]
+A1Q3: how to strategically architect the ISAM infrastructure elements such as depots and vehicles [54,55,57]
+Application 2: Multimission space exploration campaigns
+A2Q1: how to analyze the performance of a logistics strategy [58 –68]
+A2Q2: how to plan and schedule the missions in a multimission exploration campaign [35,69 –77]
+A2Q3: how to design and size the exploration vehicles and resource infrastructure technologies [73,78 –81]
+A2Q4: how to respond to uncertainties in launch delay, infrastructure performance, etc. [82,83]
+A2Q5: how to build the relationship between the governments and commercial players [84 –87]
+Application 3: Megascale satellite constellations
+A3Q1: how to launch and deploy a megascale constellation [88 –90]
+A3Q2: how to analyze the system performance and allocate the on-orbit spares for the constellation [91 –94]
+A3Q3: how to flexibly reconfigure a satellite constellation when there is a change in the demand [95,96]
+A3Q4: how to manage the commercial multistakeholder ecosystem for large-scale constellations [97 –102]
+HO 1419
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+ΔV and TOF) depends on the mass of the commodities that the
+spacecraft carries. Thus, the logistics optimization problem and the
+trajectory design problem are coupled. In addition, particularly when
+various trajectory options are considered for logistics missions in
+cislunar space and beyond, drastically different time scales of the
+flight (from hours to months or years) would need to be included in
+the same network, making the modeling of the time dimension
+challenging. On top of that, the orbital mechanics also lead to com-
+plex time-dependent trajectory performance; for example, the rela-
+tive locations of the depots and servicers could be time dependent and
+thus cannot be precomputed as amap. These challenges are unique to
+space applications and make the conventional network optimization
+formulation ineffective or infeasible.
+Besides orbital mechanics, the nature of space infrastructure also
+poses additional unique challenges. In terrestrial applications, when
+an infrastructure/facility is built and used, the deployment phase is
+typically relatively short compared to the usage phase of the infra-
+structure. However, that is not the case for space. As can be seen in
+examples like the International Space Station, the deployment and
+assembly phase of infrastructure in space can be nearly as long as its
+usage phase; the boundary between deployment and operation is
+blurred. With ISRU or in-space manufacturing, we can even use the
+resources generated by the previous stage of the infrastructure to
+deploy more infrastructure (this concept is sometimes referred to as
+bootstrapping strategy [39]). Thus, we need to consider the deploy-
+ment of infrastructure together with its operations.
+3. State of the Art
+Fortunately, many (yet not all) of the mentioned challenges have
+been tackled over 30 years of research in space logistics. Network
+modeling and optimization are the most well-explored fields in space
+logistics modeling; see Fig. 1 as an example. One of the first projects
+that leveraged network modeling for space mission design was
+SpaceNet [61], which is a simulation and visualization software for
+space logistics operations. This project and its subsequent studies
+(e.g., Refs. [60,62–66,68]§) primarily focused on supporting human
+space exploration campaigns with the then-active Constellation Pro-
+gram in mind. Since then, network and graph-theoretic modeling
+have played a key role in analyzing complex space logistics missions.
+Some of the representative works that focused on network modeling
+for space logistics missions include Refs. [35,70–72]. A more recent
+work specifically focused on the depot location problems for ISAM
+applications with a facility location problem formulation [57]. A
+variant of network flow models, the assignment problem, has also
+been used for satellite constellation deployment and reconfiguration
+analysis [90,95,96].
+From the optimization perspective, a variety of different formula-
+tions have been proposed to efficiently and effectively optimize the
+space exploration and/or ISAM mission design process. While some
+studies used metaheuristics such as genetic algorithms or particle
+swarm optimization [51,74] or simply evaluating all permutations of
+missions [53], most studies developed network-based mixed-integer
+linear programming (MILP) formulations so that commercial solvers
+such as Gurobi can solve them within guaranteed optimality gap.
+Note that, although the trajectory problem is a nonlinear problem,
+a two-phase approach has been proposed to decouple the non-
+linear trajectory problem from the integer linear network problem
+[50,52,56,90]. Two major types of network formulations for logistics
+optimization include 1) a path formulation and 2) a node-arc formu-
+lation. A path formulation defines its decision variables as the
+commodity flows over each possible vehicle’s and commodity’s path
+over the network, whereas a node-arc formulation defines its decision
+variables as the vehicle/commodity flows over each arc. The choice
+of formulation depends on the problem ’s structure, constraints, and
+the solution method ’s characteristics; for example, although a path
+formulation would be effective in modeling a generic path-based cost
+and/or feasibility conditions, a node-arc formulation would be more
+effective when the vehicle’s or commodity’s path is not easily defin-
+able or enumerable (e.g., reconfigurable vehicles and ISRU resour-
+ces). In the literature, path formulations have been typically
+developed in conjunction with column-generation techniques; such
+examples include Martian surface vehicle routing [19] and lunar
+mission vehicle routing (with no ISRU/ISAM) [69]. On the other
+hand, arc-based formulations have been developed when in-space
+infrastructure elements are involved, such as multimission Mars –
+moon–asteroid space campaign design with ISRU [35,71,72].
+Recently, another formulation, a path-arc formulation, was devel-
+oped, which leverages the path formulation for the vehicle and the
+node-arc formulation for the commodities [76].
+To tackle the trajectory-related challenges, attempts have been
+made to develop approximate surrogate models to compute the
+low-thrust, low-energy trajectory effectively leveraging Q-law and
+three-body dynamics [77]. Such approximation models can be incor-
+porated into MILP optimization through piecewise linear approxi-
+mation so that both (approximate) trajectory design and logistics
+optimization are performed concurrently.
+To address the time-related challenges, the literature has also
+developed multiple techniques to model and optimize the dynamic
+network flow. A classical method to consider the dynamic network
+flow is to use a time-expanded network, where the nodes are copied
+over the time dimension with predefined time steps and network
+flow is optimized over that expanded network. However, due to the
+significant time-scale differences in the problem and sometimes
+unknown TOF without solving the logistics problem (i.e., in the
+low-thrust trajectories), a classical time-expanded network can be
+ineffective or infeasible. To tackle this challenge, multiple variants of
+time-expanded networks have been developed. For the case where the
+different time scales are known beforehand, a biscale time-expanded
+network was developed [35]. For a specific type of problem such as
+Mars exploration leveraging the lunar resources, a partially static
+time-expanded network was also proposed as an approximation
+technique [35]. For a campaign that will largely repeat once entering
+a steady state (e.g., resupply logistics for Mars habitats), a partially
+periodic time-expanded network was developed to effectively con-
+currently optimize both the buildup of the space system and its steady
+operations [75]. For the flow-dependent TOF, where any of the
+mentioned variants of time-expanded networks would not be appli-
+cable, an event-driven network was developed to optimize the logis-
+tics flow without specifying the time steps [77].
+To consider the unique resource transformation mechanisms with
+ISRU and ISAM infrastructures, a new network formulation was
+developed in the space logistics community: generalized multi-
+commodity network flow, including its static [71] and dynamic
+versions [35]. This formulation generalizes the conventional multi-
+commodity flow formulation so that it can model the commodity
+transformation along the arcs (including resource generation or
+consumption); this general capability has enabled the modeling
+and optimization of missions with a significantly larger variety of
+space infrastructure systems such as ISRU [35,71] and ISAM
+systems [54,55]. Combined with the partially periodic time-
+expanded network mentioned previously [75], we can also model
+the deployment of resource infrastructure elements and their oper-
+ations usage concurrently.
+B. Method 2: Probabilistic Modeling and Queueing Theory
+for Logistics Performance Analysis
+1. Motivation and Overview
+As we consider how to analyze the logistics performance of a space
+system under uncertainties, like a multisatellite system under geo-
+metrically distributed uncertain failures and a servicing infrastructure
+to respond to them, we can learn from how fire stations or ambulance
+systems are designed to respond to uncertain demands distributed in a
+city. The probabilistic modeling and spatial queueing theory have
+been very useful tools to that end. Figure 2 shows an example of
+queueing modeling for an on-orbit servicing architecture.
+§Some of the cited works (e.g., Ref. [62]) did not necessarily leverage the
+network structure explicitly, but they are included as they leveraged the
+network modeling framework in SpaceNet.
+1420 HO
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+Queueing theory is a mathematical theory to analyze the perfor-
+mance of a queue. With the service time distribution and demand
+rate information as inputs, queueing theory analyzes the waiting
+time of a randomly arriving customer as well as how long the queue
+is expected to be. The simplest queueing model, M/M/1, assumes a
+Poisson demand arrival rate and an exponentially distributed ser-
+vice time and uses a Markov chain to model the system; more
+advanced models have been developed such as a queue with multi-
+ple servers (e.g., M/M/m), a queue with capacity (e.g., M/M/1/c), a
+queue with general service time distribution (e.g., M/G/1), and a
+queue with multiple classes of customers with different priorities
+(priority queues). To model fire station or ambulance systems, spatial
+queueing models have been used, which are based on the M/G/1
+model with the service time distribution built based on the geometric
+relationship between the servicer(s) and the potential customers
+[103]. Thus, analogously, to analyze the service responsiveness of
+an in-space servicing system, for example, we can consider a similar
+spatial queueing model (i.e.,orbital queueing model) with the service
+time distribution derived based on the orbital relationship between
+the servicer(s) and the potential customers.
+2. Challenges in Space Logistics Applications
+Developing an orbital queueing model will involve challenges
+beyond a direct application of M/G/1 models. Each of these chal-
+lenges is not necessarily unexplored in terrestrial applications, but the
+combination of them, coupled with orbital mechanics, makes the
+space application challenging.
+One difference between the ISAM facility servicing and fire
+station or ambulance systems is the limited resources. For any
+refueling and servicing operations, we need fuel and spares launched
+from the ground. Thus, we need to consider an inventory manage-
+ment strategy for the storage space of the servicer and the depot in
+orbit if there is one. (The study of inventory management is discussed
+in Sec. III.C.) This coupling between the queueing model and inven-
+tory management makes the analysis challenging.
+Additionally, the number of satellites a servicer serves is relatively
+limited. Thus, the demand distribution of the satellite population
+would depend on the number of satellites that have failed and are
+being repaired (i.e., the lower the number of functioning satellites, the
+lower the failure rate for the entire system.); note that this feature can
+often be ignored for terrestrial applications because of the large
+population that a fire station or an ambulance system serves. A queue
+with a finite number of customers (often referred to as a finite-source
+queue) has been studied [105], but its analysis is a substantially more
+challenging problem than conventional queues, particularly with
+generalized assumptions about the service time, the number of
+servicers, the classes of customers with priorities, and so on.
+Furthermore, the dynamic nature of the demand and service rates
+can make the problem challenging. For example, the demand rate
+(e.g., satellite failure rate) can be different depending on the phase of
+the satellite’s lifetime. In addition, the required service time and cost
+are also time dependent if the relative position of the servicing depots
+and the customer satellites changes over time. An effective model
+needs to address these challenges so the system can be useful for
+realistic space logistics analysis.
+3. State of the Art
+Modeling in-space logistics using probabilistic modeling tech-
+niques and queueing theory has been studied since the 1980s [47],
+but their theoretical developments for realistic space applications
+have been relatively limited.
+Earlier studies focused on modeling ISAM applications based on
+queueing theory and analyzed them with discrete-event simulations
+or agent-based simulations. Simulations have been used for on-orbit
+servicing analysis from the early 2000s [26]. More recently, attempts
+were made to model on-orbit servicing, recycling, and manufacturing
+applications using discrete-event simulations [48,67], in which the
+impacts of having different on-orbit recycling and manufacturing
+technologies on the performance of on-orbit operations were quanti-
+tatively evaluated.
+While simulations can tackle general scenarios, they are stochas-
+tic and computationally expensive, and thus not effective for ana-
+lyzing and optimizing the system; rather, there is a high need for
+analytic modeling of space logistics systems. Various studies have
+employed probabilistic modeling techniques based on a Markov
+model for analyzing the system availability of a constellation and
+designing its spare strategies [92,93] or its servicing strategies
+[24,25]. A more recent study developed a semi-analytic model for
+an on-orbit servicing system based on the finite-source M/G/1
+queueing model (i.e., M/G/1/K/K model) [49]. In this study, to
+model the limited launch resupply opportunities for the spares from
+the ground, an inventory control technique was also integrated (see
+Sec. III.C.3). The resulting analytic model matches well with the
+simulation model and can cut down the computational time from
+hours/days for simulations down to seconds, enabling large-scale
+tradespace exploration and optimization in the early stage of the
+design.
+C. Method 3: Inventory Control for Resource Infrastructure
+Operations Management
+1. Motivation and Overview
+As ISAM becomes a trend in space development, it is critical to
+explore the concepts of in-space propellant depots, spare/tool ware-
+houses, and other types of infrastructure. These infrastructure
+elements need to be regularly refueled or resupplied from the
+ground (or possibly ISRU facilities on the moon or Mars), and
+thus the operations management of the inventory can become a
+research question. To this end, we can draw an analogy between
+the inventory control of in-space depots/warehouses and that of
+terrestrial depots/warehouses. Figure 3 shows an example of inven-
+tory modeling for spare strategy a nalysis for a megascale satellite
+constellation.
+Inventory management is a subfield in logistics that analyzes and
+optimizes inventory policies, including the timing and quantity of
+orders, to minimize cost. Typically, the cost metric is the summation
+of the holding cost, purchase cost, fixed ordering cost, and shortage
+penalty. Inventory management becomes different when there are
+uncertainties in the demand and the lead time (i.e., the time between
+the order and its delivery). Given a cost metric, we can formulate an
+optimization problem to find the optimal policy under uncertainties;
+one such problem is the Newsvendor model [104]. When there
+are constraints to the system on how the orders need to be made
+Fig. 2 Example of queueing modeling for an on-orbit servicing architecture [49].
+HO 1421
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+(e.g., periodic launch and launch capacity), we can develop a para-
+metric inventory policy and optimize their parameters. Some popular
+policies include 1) a periodic review, order-up-to policy, which
+periodically orders to fill the inventory up to a certain level; 2) a
+reorder point, order quantity policy, which orders a fixed quantity as
+soon as the inventory level drops below a threshold; and 3) a reorder
+point, order-up-to policy, which orders to fill the inventory up to a
+certain level as soon as the inventory level drops below a threshold.
+These parametric policies can be applied and optimized to space
+logistics context as well depending on the structure of the problem.
+Furthermore, if we can consider multiple layers of inventory (e.g.,
+manufacturer to warehouses to retailers), we can consider a multi-
+echelon inventory model; this can be useful to spacecraft spare
+inventory, where Earth is modeled as manufacturer, spare orbits/
+depots as warehouses, and customer satellites as retailers.
+2. Challenges in Space Logistics Applications
+Applying inventory management to space logistics applications
+involves orbital mechanics, which often causes additional challenges
+in the modeling of stochastic demand and lead time.
+For the satellite refueling or repairing applications in the context of
+ISAM, the demand corresponds to the customer satellites ’ needs for
+fuels, materials, and spares. As reviewed in Sec. II.B, the demand
+depends on the phase of the satellites ’ lifetime and thus can be time
+varying. Furthermore, if servicing operations are involved, the
+demand is coupled with the transportation of the servicer (governed
+by the spatial queueing model). Thus, an integrated model between
+queueing and inventory management is often needed.
+In addition, a more unique challenge in space logistics application
+is the lead time distribution. The lead time corresponds to the time
+between the order and its delivery, which is modeled based on orbital
+mechanics. However, due to the dynamic nature of orbital mechanics,
+the relative position of the depots and customer satellites can vary
+over time. Thus, when multiple depots and multiple customer satel-
+lites are considered, the satellites need to be resupplied from the
+closest depot with a sufficient inventory level. This additional com-
+plexity in the modeling, which can be challenging if complex orbital
+mechanics is involved, is one of the unique requirements for space
+applications.
+3. State of the Art
+The idea of inventory management has been conceived for satellite
+replenishment since the 1960s [91]. When space logistics research
+was applied to human space exploration, inventory management was
+also recognized as an important area [58,59]. However, it was not
+until recently that mathematical inventory control theory was rigor-
+ously applied to tackle realistic large-scale space logistics problems.
+One of the recent studies that focused on developing an inventory
+control model is Ref. [94]. In this work, a multi-echelon inventory
+model was developed for spare strategies for megascale constella-
+tions. In this work, separate spare parking orbits are considered at a
+lower altitude than the original constellation orbit, and an analytic
+multi-echelon inventory model based on a reorder point, order quan-
+tity policy was developed by modeling Earth as the manufacturer,
+spare parking orbits as warehouses, and the constellation as the
+retailers. The resulting inventory model can be optimized efficiently
+to identify the optimal number of parking orbits and their locations as
+well as their inventory control strategies.
+Another work that optimized the inventory policy under uncer-
+tainties is Ref. [82]. In this work, a model was developed to optimize
+space station logistics under launch schedule uncertainties. Specifi-
+cally, the inventory policy (i.e., referred to as a decision rule) was
+parameterized by the safety stock level of the onboard inventory, and
+this parameter was optimized along with the logistics decisions to
+balance the loss due to supply shortage and the cost of extra supply
+(i.e., safety stock). Namely, it optimized the operational strategy to
+respond to the uncertainties in the launch delays.
+In addition, as reviewed earlier, inventory control was also used in
+combination with queueing models in Ref. [49]. In this work, the
+inventory model is used to estimate how often a stockout happens
+(i.e., not enough spares are available for further servicing missions)
+and how much delay is expected when it happens. This stochastic
+model is used as part of the service time distribution model, which is
+then fed back into the queueing model to evaluate the performance of
+the ISAM system.
+D. Extensions of Basic Models
+Beyond the mentioned basic models introduced, the literature has
+explored the extensions of these basic methods to address unique
+challenges in space logistics challenges. Some are reviewed in the
+following.
+1. Concurrent Design of Vehicle/Infrastructure and Space Logistics
+Network
+One unique feature of space missions is that we often design space
+vehicles and infrastructure elements dedicated to a certain space
+campaign. Thus, we also have an interesting research question in
+space logistics regarding how to achieve the concurrent design
+optimization of the vehicle, infrastructure, and logistics commodity
+flow network. This problem often involves nonlinearity and multi-
+disciplinary design analysis due to the nature of the spacecraft and
+space infrastructure design. Thus, to solve such a problem, we need
+new strategic formulations and solution methods beyond traditional
+logistics research.
+To enable the incorporation of vehicle sizing and infrastructure
+design, a few techniques have been developed depending on the
+required fidelity. If a linear vehicle and infrastructure sizing model
+is sufficient, a regular MILP formulation can be used [35,71,72]. A
+higher-fidelity version would be to use a more piecewise linear
+approximation for the vehicle sizing, which can still be converted
+into a MILP formulation but requires more variables and constraints
+[73]. For a yet higher-fidelity case where a nonlinear model needs to
+Fig. 3 Example of inventory modeling for spare strategy analysis for a megascale satellite constellation [94].
+1422 HO
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+be used, an embedded optimization [78] was developed earlier, and a
+more advanced and effective Augmented Lagrangian Coordination
+(ALC) approach has been developed recently [81]. The ALC-based
+approach is based on multidisciplinary optimization and leverages
+the unique structure of the problem by decomposing the whole
+mixed-integer nonlinear programming problem into a set of mixed-
+integer quadratic programming problems and nonlinear program-
+ming problems, each of which can be solved using specialized
+solvers. Finally, to incorporate the multisubsystem interaction within
+the ISRU or other in-space infrastructure into the logistics optimiza-
+tion, a multifidelity network flow was developed to capture these
+interactions effectively [79,80].
+2. Incorporating Operational Uncertainties in Space Logistics Network
+Optimization
+Although earlier space logistics research has primarily focused on
+deterministic problem setting, recent studies started to incorporate
+uncertainties such as launch delays, demand fluctuation, and infra-
+structure performance decay.
+A major approach is to characterize the uncertainties into a set of
+possible scenarios and optimize the strategy to respond to these
+scenarios together with the baseline design. The most straightforward
+formulation to this end is stochastic optimization, which has been
+applied to multistage megascale constellation deployment under
+demand uncertainties [88,89]. This approach is simple but cannot
+effectively provide a strategy to respond to the uncertainties. As an
+alternative, as reviewed earlier, the decision-rule-based optimization
+was developed where the strategies (i.e., decision rules) to respond to
+the uncertainties are parametrically defined and optimized (e.g.,
+safety stock to prepare for launch delays) [82]. Furthermore, to
+handle more generic uncertainties in a space campaign, where the
+decision rules cannot be intuitively parameterized, a hierarchical
+reinforcement learning (HRL) framework was developed [83]. Lev-
+eraging the strength of reinforcement learning (RL) to handle uncer-
+tainties and MILP’s strength to handle a large variable space well, the
+HRL framework uses RL to provide high-level guidance and uses
+MILP to optimize the detailed action to achieve that guidance. This
+success was one of the first studies that incorporated machine learn-
+ing into space logistics.
+Another approach to determining how to respond to uncertainties
+is to reoptimize as soon as we learn more information about the
+uncertainties [51,53]. Building upon this idea, a rolling horizon
+approach was developed for ISAM applications to respond to newly
+obtained demand information over time [54,55] and a reconfiguration
+approach was developed for satellite constellation configuration
+modification as we acquire new demand [95,96].
+3. Space Logistics Modeling for Commercialization
+Most existing works have focused on the centralized optimization
+of the entire space logistics network. However, given the recent trend
+of space commercialization, this is not necessarily the best modeling
+approach. Thus, an interesting recent extension of the mentioned
+work is to incorporate multiple players in space logistics. To this end,
+Ref. [87] extended network optimization research with the game
+theory to optimize the incentive that the government should provide
+to the commercial players (e.g., infrastructure providers). Other
+works used alternative approaches to examine the affordability and
+commercialization of space missions [85] and investigated a method
+to use the commercial suitability as an explicit criterion of the initial
+architecture selection [86]. Furthermore, various studies developed
+an interactive game as well as a simulation framework to assess the
+multistakeholder space systems [84,97 –102].
+IV. Summary of Reviewed Literature
+Table 2 summarizes how each reviewed piece of literature is
+mapped to the corresponding application area and logistics-driven
+method. Note that some papers span over multiple methods (e.g.,
+Ref. [49]). While not all combinations of the application areas and
+logistics-driven methods have an equal amount of room for explora-
+tion, this table shows some well-explored and underexplored combi-
+nations of application areas and methods.
+In addition, Fig. 4 shows the number of citations (as of 20 February
+2024, according to Google Scholar, https://scholar.google.com/) for
+each reviewed paper. The data are split into three timeframes, the
+2000s or earlier, the 2010s, and the 2020s, to show the most impactful
+papers in each decade in the space logistics area. Each reference also
+has its application (A1/A2/A3) and method(s) (M1/M2/M3/Ext)
+listed, where Ext stands for one of the extensions. Although the
+number of citations does not necessarily indicate the value of the
+work, this figure shows the trend and the shift of focus over time in
+terms of both the applications and methods.
+While many questions have been addressed by space logistics
+research, there is enormous room for growth. Some examples of
+the open fundamental research questions are 1) scalable algorithms
+(including heuristics) for large-scale space logistics network optimi-
+zation, 2) complex queueing networks for space logistics analysis,
+and 3) dynamic multi-item inventory for space logistics applications,
+among others. Furthermore, given the nature of the growing space
+logistics applications, we can expect to see logistics-driven methods
+applied to more problems beyond the ones reviewed previously.
+Drawing analogies between more terrestrial logistics applications
+and space logistics applications can lead to new research questions.
+Finally, most space logistics works have assumed simplified trajec-
+tory, vehicle, and operational models to enable large-scale trade-
+space exploration and optimization; once the solutions are obtained
+from these low-/midfidelity models, we need higher-fidelity simu-
+lations to validate these results. Such validations are critical yet
+largely unexplored research areas.
+V. Conclusions
+This paper provides an overview of the state of the art for space
+logistics modeling and optimization. The recent literature is catego-
+rized in two ways: 1) by application questions that are addressed and
+2) by logistics-driven methods that are used in the studies. The
+applications reviewed in this paper are determined by the needs of
+the community; the specific applications of interest include 1) ISAM
+for satellites, 2) multimission space exploration campaigns, and
+3) megascale satellite constellations. The logistics-driven methods
+reviewed in this paper are determined by mapping the relevant major
+logistics research subfield to space applications; the connection
+between each logistics research subfield to space logistics applica-
+tions is reviewed, and the relevant unique challenges in space appli-
+cations are discussed. The reviewed logistics-driven methods include
+1) network flow modeling and optimization for logistics planning and
+scheduling, 2) probabilistic modeling and queueing theory for logis-
+tics performance analysis, and 3) inventory control for resource
+infrastructure operations management. Several extensions of these
+basic models that tackled unique challenges in space applications are
+also reviewed. The authors expect that the first application-based
+categorization helps practitioners understand the existing research
+that can answer their application questions, whereas the second
+method-based categorization helps the researchers to understand
+the technical perspective of the literature and identify new underex-
+plored research directions.
+Table 2 Mapping of the applications and methods
+Applications/methods M1 M2 M3 Extensions
+A1: ISAM for satellites [50 –57] [24 –26,47–49] [49] [51,53 –55]
+A2: Space Exp. Campaigns [35,60 –66,68–72,74–77] [67] [58,59,82] [35,71 –73,78–87]
+A3: Satellite Constellations [90,95,96] [92,93] [91,94] [88,89,95 –102]
+HO 1423
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+Acknowledgments
+Although the initial version of the work was not associated with a
+funding source, its refinement and revision was conducted with
+support from the U.S. Air Force Office of Scientific Research, as
+part of the Space University Research Initiative, under Grant
+No. FA9550-23-1-0723. The author thanks the members of the AIAA
+Space Logistics Technical Committee for their helpful comments.
+The author also thanks Masafumi Isaji and Y uri Shimane for their
+suggestions about data visualization and improvement of the paper.
+References
+[1] Raymond, J. W., “Spacepower: Doctrine for Space Forces, ” Tech.
+Rept., Headquarters United States Space Force, 2020, https://
+www.spaceforce.mil/Portals/1/Space%20Capstone%
+20Publication_10%20Aug%202020.pdf.
+[2] “AIAA Space Logistics Technical Committee, ” https://www.aiaa-
+sltc.org/ [retrieved 11 May 2023].
+[3] Freeman, R. J., Gogerty, D. C., Graves, G. W., and Brooks, R. B., “A
+Mathematical Model of Supply Support for Space Operations, ” Oper-
+ations Research, V ol. 14, No. 1, 1966, pp. 1–15.
+https://doi.org/10.1287/opre.14.1.1
+[4] Root, M., “An Evaluation of the National Space Inventory for Logis-
+tics,” AIAA 3rd Annual Meeting , AIAA Paper 1966-866, 1966.
+[5] Carrillo, M. J., Jacobsen, S. E., Abell, J. B., and Lippiatt, T. F., A
+Development of Logistics Management Models for the Space Trans-
+portation System, 1983, https://ntrs.nasa.gov/citations/19840015596.
+[6] “AIAA/SOLE 1st Space Logistics Symposium, ” AIAA, https://
+arc.aiaa.org/doi/book/10.2514/MSLS87 [retrieved 21 Nov. 2023].
+[7] Shepard, K., “The Role of Inventory Management in Satellite Servic-
+ing,” AIAA/SOLE 1st Space Logistics Symposium , AIAA Paper 1987-
+0667, 1987.
+https://doi.org/10.2514/6.1987-667
+[8] Bell, J., and McGeehan, R., “Logistics and Operations Integration
+Requirements to Support Space Station Servicing of Free Flying
+Spacecraft-OMV Flight Operation, ” AIAA/SOLE 1st Space Logistics
+Symposium, AIAA Paper 1987-0686, 1987.
+https://doi.org/10.2514/6.1987-686
+[9] Barry, J., “Application of Artificial Intelligence (AI) Concepts
+for Employing Logistics Resources in the SDI Environment, ”
+AIAA/SOLE 1st Space Logistics Symposium , AIAA Paper 1987-
+0692, 1987.
+https://doi.org/10.2514/6.1987-692
+[10] Poliskie, M., The Planning and Execution of Human Missions to the
+Moon and Mars, AIAA, Reston, V A, 2023.
+https://doi.org/10.2514/4.106545
+[11] Shishko, R., and de Weck, O. L., “Interplanetary Supply Chains and
+Space Logistics: Enabler of the Final Frontier, ” The Planning and
+Execution of Human Missions to the Moon and Mars , AIAA, Reston,
+V A, 2023, pp. 151–194.
+https://doi.org/10.2514/5.9781624106545.0151.0194
+[12] Ho, K., Chen, H., and Du Jonchay, T. S., “Mathematical Methods for
+Space Mission Planning and Architecture Design, ” The Planning and
+Execution of Human Missions to the Moon and Mars , AIAA, Reston,
+V A, 2023, pp. 597–624.
+https://doi.org/10.2514/5.9781624106545.0597.0624
+[13] Siddiqi, A., and de Weck, O. L., “Spare Parts Requirements for Space
+Missions with Reconfigurability and Commonality,” Journal of Space-
+craft and Rockets, V ol. 44, No. 1, 2007, pp. 147–155.
+https://doi.org/10.2514/1.21847
+[88]
+Ext
+[26]
+M2
+[24]
+M2
+[95]
+M1/
+Ext
+[25]
+M2
+[69]
+M1
+[61]
+M1
+[60]
+M1
+[58]
+M3
+[62]
+M1
+[92]
+M2
+[93]
+M2
+[59]
+M3
+[91]
+M3
+[78]
+Ext
+[47]
+M2
+0
+50
+100
+150
+200
+250
+300
+Number of citations
+A1: ISAM for Satellites
+A2: Space Exp. Campaigns
+A3: Satellite Constellations
+2009 or Before
+[71]
+M1/
+Ext
+[35]
+M1/
+Ext
+[73]
+Ext
+[66]
+M1
+[72]
+M1/
+Ext
+[89]
+Ext
+[99]
+Ext
+[70]
+M1
+[52]
+M1
+[94]
+M3
+[75]
+M1
+[98]
+Ext
+[50]
+M1
+[51]
+M1/
+Ext
+[48]
+M2
+[97]
+Ext
+[64]
+M1
+[63]
+M1
+[74]
+M1
+[65]
+M1
+[84]
+Ext
+[85]
+Ext
+[76]
+M1
+0
+20
+40
+60
+80
+100
+120
+Number of citations
+2010–2020
+[79]
+Ext
+[53]
+M1/
+Ext
+[49]
+M2/
+M3
+[67]
+M2
+[54]
+M1/
+Ext
+[80]
+Ext
+[77]
+M1
+[83]
+Ext
+[82]
+M3/
+Ext
+[81]
+Ext
+[55]
+M1/
+Ext
+[96]
+M1/
+Ext
+[87]
+Ext
+[90]
+M1
+[86]
+Ext
+[57]
+M1
+[56]
+M1
+[68]
+M1
+[101]
+Ext
+[100]
+Ext
+[102]
+Ext
+0
+10
+20
+30
+40
+References and Used Methods
+Number of citations
+2020–2023
+Fig. 4 Number of citations (as of 20 Feb. 2024, according to Google Scholar) of the reviewed papers in each decade.
+1424 HO
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+[14] Owens, A., de Weck, O. L., Stromgren, C., Goodliff, K. E., and Cirillo,
+W.,“Supportability Challenges, Metrics, and Key Decisions for Future
+Human Spaceflight, ” AIAA SPACE and Astronautics Forum and
+Exposition, AIAA Paper 2017-5124, 2017.
+https://doi.org/10.2514/6.2017-5124
+[15] Kline, R. C., and Bachman, T. C., “Estimating Spare Parts Require-
+ments with Commonality and Redundancy,” Journal of Spacecraft and
+Rockets, V ol. 44, No. 4, 2007, pp. 977–984.
+https://doi.org/10.2514/1.28072
+[16] Siddiqi, A., de Weck, O., and Iagnemma, K., “Reconfigurability in
+Planetary Surface V ehicles: Modeling Approaches and Case Study, ”
+Journal of the British Interplanetary Society , V ol. 59, No. 12, 2006,
+pp. 450–460.
+[17] Ahn, J., de Weck, O. L., and Hoffman, J.,“An Optimization Framework
+for Global Planetary Surface Exploration Campaigns, ” Journal of the
+British Interplanetary Society, V ol. 61, No. 12, 2008, pp. 487–498.
+[18] Ahn, J., and de Weck, O. L., “Mars Surface Exploration Caching from
+an Orbiting Logistics Depot, ” Journal of Spacecraft and Rockets ,
+V ol. 47, No. 4, 2010, pp. 690–694.
+https://doi.org/10.2514/1.37694
+[19] Ahn, J., de Weck, O. L., Geng, Y ., and Klabjan, D., “Column Gen-
+eration Based Heuristics for a Generalized Location Routing Problem
+with Profits Arising in Space Exploration, ” European Journal of
+Operational Research, V ol. 223, No. 1, 2012, pp. 47–59.
+https://doi.org/10.1016/j.ejor.2012.06.018
+[20] Lee, D., and Ahn, J., “Integrated Optimization of Planetary Rover
+Layout and Exploration Routes, ” Engineering Optimization, V ol. 50,
+No. 1, 2018, pp. 164 –182.
+https://doi.org/10.1080/0305215X.2017.1299718
+[21] Lee, D., and Ahn, J., “V ehicle Routing Problem with V ector Profits
+with Max-Min Criterion, ” Engineering Optimization, V ol. 51, No. 2,
+2019, pp. 352–367.
+https://doi.org/10.1080/0305215X.2018.1458845
+[22] Choi, E., and Ahn, J., “Optimal Planetary Surface Routing Considering
+Exploration V alues and Synergies,” Journal of Aerospace Information
+Systems, V ol. 19, No. 6, 2022, pp. 406–420.
+https://doi.org/10.2514/1.I011052
+[23] Choi, E., and Ahn, J., “Optimal Planetary Surface Exploration with
+Heterogeneous Agents,” Journal of Spacecraft and Rockets , V ol. 60,
+No. 4, 2023, pp. 1343 –1354.
+https://doi.org/10.2514/1.A35632
+[24] Saleh, J. H., Lamassoure, E., and Hastings, D. E., “Space Systems
+Flexibility Provided by On-Orbit Servicing: Part 1,” Journal of Space-
+craft and Rockets, V ol. 39, No. 4, 2002, pp. 551–560.
+https://doi.org/10.2514/2.3844
+[25] Lamassoure, E., Saleh, J. H., and Hastings, D. E., “Space Systems
+Flexibility Provided by On-Orbit Servicing: Part 2,” Journal of Space-
+craft and Rockets, V ol. 39, No. 4, 2002, pp. 561–570.
+https://doi.org/10.2514/2.3845
+[26] Long, A. M., Richards, M. G., and Hastings, D. E., “On-Orbit Serv-
+icing: A New V alue Proposition for Satellite Design and Operation, ”
+Journal of Spacecraft and Rockets, V ol. 44, No. 4, 2007, pp. 964–976.
+https://doi.org/10.2514/1.27117
+[27] Galabova, K. K., and de Weck, O. L., “Economic Case for the Retire-
+ment of Geosynchronous Communication Satellites via Space Tugs, ”
+Acta Astronautica, V ol. 58, No. 9, 2006, pp. 485–498.
+https://doi.org/10.1016/j.actaastro.2005.12.014
+[28] Gralla, W. L., and de Weck, O. L., “Strategies for On-Orbit Assembly
+of Modular Spacecraft,” Journal of the British Interplanetary Society ,
+V ol. 60, No. 6, 2007, pp. 219–227.
+[29] “DARPA Robotic Servicing of Geosynchronous Satellites (RSGS)
+Program,” DARP A, https://www.darpa.mil/program/robotic-servicing-
+of-geosynchronous-satellites [retrieved 11 May 2023].
+[30] “Northrop Grumman SpaceLogistics, ” Northrop Grumman, https://
+www.northropgrumman.com/space/space-logistics-services/
+[retrieved 11 May 2023].
+[31] “DARPA Novel Orbital and Moon Manufacturing, Materials, and
+Mass-Efficient Design (NOM4D) Program, ” DARPA, https://www.
+darpa.mil/program/novel-orbital-and-moon-manufacturing-materials-
+and-mass-efficient-design [retrieved 11 May 2023].
+[32] Gaebler, J. A., Lugo, R. A., Axdahl, E. L., Chai, P . R., Grimes, M. S.,
+Long, M. R., Rowland, R. A., and Wilhite, A.,“Reusable Lunar Trans-
+portation Architecture Utilizing Orbital Propellant Depots,” AIAA Space
+2009 Conference and Exposition, AIAA Paper 2009-6711, 2009.
+https://doi.org/10.2514/6.2009-6711
+[33] Wilhite, A., Arney, D. C., and Chai, P ., “Permanent Manned Outpost
+with Commercial Launch and Propellant Depots, ” AIAA SPACE
+Conference and Exposition 2012 , AIAA Paper 2012-5130, 2012.
+https://doi.org/10.2514/6.2012-5130
+[34] Noevere, A. T., and Wilhite, A., “Techniques for Integrated Thermal-
+Structural Design of an Orbital Propellant Depot,” AIAA SPACE 2013
+Conference and Exposition, AIAA Paper 2013-5495, 2013.
+https://doi.org/10.2514/6.2013-5495
+[35] Ho, K., de Weck, O. L., Hoffman, J. A., and Shishko, R., “Dynamic
+Modeling and Optimization for Space Logistics Using Time-Expanded
+Networks,” Acta Astronautica, V ol. 105, No. 2, 2014, pp. 428–443.
+https://doi.org/10.1016/j.actaastro.2014.10.026
+[36] “NASA ISRU,” NASA, https://www.nasa.gov/isru [retrieved 11 May
+2023].
+[37] Shishko, R., Fradet, R., Saydam, S., Tapia-Cortez, C., Dempster, A.,
+Coulton, J., and Do, S., “An Integrated Economics Model for ISRU in
+Support of a Mars Colony–Initial Results Report,” 10th Symposium on
+Space Resource Utilization, AIAA Paper 2017-0422, 2017.
+https://doi.org/10.2514/6.2017-0422
+[38] Shishko, R., Fradet, R., Do, S., Saydam, S., Tapia-Cortez, C., Demp-
+ster, A. G., and Coulton, J.,“Mars Colony In Situ Resource Utilization:
+An Integrated Architecture and Economics Model,” Acta Astronautica,
+V ol. 138, Sept. 2017, pp. 53–67.
+https://doi.org/10.1016/j.actaastro.2017.05.024
+[39] Kornuta, D., Abbud-Madrid, A., Atkinson, J., Barr, J., Barnhard, G.,
+Bienhoff, D., Blair, B., Clark, V ., Cyrus, J., DeWitt, B., et al., “Com-
+mercial Lunar Propellant Architecture: A Collaborative Study of Lunar
+Propellant Production,” REACH, V ol. 13, March 2019, Paper 100026.
+https://doi.org/10.1016/j.reach.2019.100026
+[40] Hecht, M., Hoffman, J., Rapp, D., McClean, J., SooHoo, J., Schaefer,
+R., Aboobaker, A., Mellstrom, J., Hartvigsen, J., Meyen, F., et al.,
+“Mars Oxygen ISRU Experiment (MOXIE),” Space Science Reviews,
+V ol. 217, Jan. 2021, pp. 1–76.
+https://doi.org/10.1007/s11214-020-00782-8
+[41] “NASA Gateway Program, ” NASA, https://www.nasa.gov/gateway
+[retrieved 11 May 2023].
+[42] “OneWeb,” OneWeb, https://oneweb.net/ [retrieved 11 May 2023].
+[43] “SpaceX Starlink Constellation, ” SpaceX, https://www.starlink.com/
+[retrieved 11 May 2023].
+[44] “Amazon Project Kuiper, ” Amazon, https://www.aboutamazon.com/
+what-we-do/devices-services/project-kuiper [retrieved 11 May 2023].
+[45] Fossa, C., Raines, R., Gunsch, G., and Temple, M., “An Overview
+of the IRIDIUM (R) Low Earth Orbit (LEO) Satellite System, ”
+Proceedings of the IEEE 1998 National Aerospace and Electronics
+Conference. NAECON 1998. Celebrating 50 Years (Cat. No.
+98CH36185), Inst. of Electrical and Electronics Engineers, New Y ork,
+1998, pp. 152–159.
+https://doi.org/10.1109/NAECON.1998.710110
+[46] Dietrich, F. J., Metzen, P ., and Monte, P ., “The Globalstar Cellular
+Satellite System,” IEEE Transactions on Antennas and Propagation ,
+V ol. 46, No. 6, 1998, pp. 935–942.
+https://doi.org/10.1109/8.686783
+[47] Martin, D., II, “Application of Queuing Theory to On-Orbit Logistics,”
+2nd Space Logistics Symposium , AIAA Paper 1988-4752, 1988.
+https://doi.org/10.2514/6.1988-4752
+[48] Sears, P . J., and Ho, K., “Impact Evaluation of In-Space Additive
+Manufacturing and Recycling Technologies for On-Orbit Servicing, ”
+Journal of Spacecraft and Rockets , V ol. 55, No. 6, 2018, pp. 1498 –
+1508.
+https://doi.org/10.2514/1.A34135
+[49] Ho, K., Wang, H., Trempe, P . A. D., Tristan Sarton du Jonchay, T., and
+Tomita, K., “Semi-Analytical Model for Design and Analysis of On-
+Orbit Servicing Architecture, ” Journal of Spacecraft and Rockets ,
+V ol. 57, No. 6, 2020, pp. 1129–1138.
+https://doi.org/10.2514/1.A34663
+[50] Bang, J., and Ahn, J., “Two-Phase Framework for Near-Optimal Multi-
+Target Lambert Rendezvous,” Advances in Space Research , V ol. 61,
+No. 5, 2018, pp. 1273 –1285.
+https://doi.org/10.1016/j.asr.2017.12.025
+[51] V erstraete, A. W., Anderson, D., Louis, N. M. S., and Hudson, J.,
+“Geosynchronous Earth Orbit Robotic Servicer Mission Design,” Jour-
+nal of Spacecraft and Rockets, V ol. 55, No. 6, 2018, pp. 1444–1452.
+https://doi.org/10.2514/1.A33945
+[52] Bang, J., and Ahn, J., “Multitarget Rendezvous for Active Debris
+Removal Using Multiple Spacecraft,” Journal of Spacecraft and Rock-
+ets, V ol. 56, No. 4, 2019, pp. 1237–1247.
+https://doi.org/10.2514/1.A34344
+[53] Hudson, J. S., and Kolosa, D., “V ersatile On-Orbit Servicing Mission
+Design in Geosynchronous Earth Orbit, ” Journal of Spacecraft and
+Rockets, V ol. 57, No. 4, 2020, pp. 844–850.
+https://doi.org/10.2514/1.A34701
+[54] Sarton du Jonchay, T., Chen, H., Gunasekara, O., and Ho, K., “Frame-
+work for Modeling and Optimization of On-Orbit Servicing Operations
+HO 1425
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+Under Demand Uncertainties, ” Journal of Spacecraft and Rockets ,
+V ol. 58, No. 4, 2021, pp. 1157–1173.
+https://doi.org/10.2514/1.A34978
+[55] Sarton du Jonchay, T., Chen, H., Isaji, M., Shimane, Y ., and Ho, K.,
+“On-Orbit Servicing Optimization Framework with High- and Low-
+Thrust Propulsion Tradeoff, ” Journal of Spacecraft and Rockets ,
+V ol. 59, No. 1, 2022, pp. 33–48.
+https://doi.org/10.2514/1.A35094
+[56] Lee, D., and Ahn, J., “Optimal Multitarget Rendezvous Using Hybrid
+Propulsion System,” Journal of Spacecraft and Rockets, V ol. 60, No. 2,
+2023, pp. 689–698.
+https://doi.org/10.2514/1.A35540
+[57] Shimane, Y ., Gollins, N., and Ho, K., “Orbital Facility Location
+Problem for Satellite Constellation Servicing Depots, ” Journal of
+Spacecraft and Rockets, V ol. 61, No. 3, 2024, pp. 808–825.
+https://doi.org/10.2514/1.A35691
+[58] Shull, S., Gralla, E., Siddiqi, A., de Weck, O., and Shishko, R., “The
+Future of Asset Management for Human Space Exploration: Supply
+Classification and an Integrated Database, ” Space 2006, AIAA Paper
+2006-7232, 2006.
+https://doi.org/10.2514/6.2006-7232
+[59] Shull, S. A., Gralla, E. L., Silver, M., and de Weck, O. L., “Logistics
+Information Systems for Human Space Exploration: State of the Art
+and Emerging Technologies, ” SpaceOps 2006 , AIAA Paper 2006-
+5733, 2006.
+https://doi.org/10.2514/6.2006-5733
+[60] Gralla, E., Shull, S., and de Weck, O. L., “A Modeling Framework for
+Interplanetary Supply Chains,” Space 2006, AIAA Paper 2006-7229,
+2006.
+https://doi.org/10.2514/6.2006-7229
+[61] de Weck, O. L., Simchi-Levi, D., Shishko, R., Ahn, J., Gralla, E.,
+Klabjan, D., Mellein, J., Shull, A., Siddiqi, A., Bairstow, B., et al.,
+“Spacenet v1. 3 User ’s Guide,” NASA TP-214725, 2007, p. 2007.
+[62] Siddiqi, A., de Weck, O. L., Lee, G., and Shull, S., “Matrix Modeling
+Methods for Spaceflight Campaign Logistics Analysis, ” Journal of
+Spacecraft and Rockets, V ol. 46, No. 5, 2009, pp. 1037–1048.
+https://doi.org/10.2514/1.43319
+[63] Ishimatsu, T., Grogan, P ., and de Weck, O. L., “Interplanetary Trajec-
+tory Analysis and Logistical Considerations of Human Mars Explora-
+tion,” Journal of Cosmology, V ol. 12, 2010, pp. 3588–3600.
+[64] Grogan, P ., Siddiqi, A., and de Weck, O. L., “Matrix Methods for
+Optimal Manifesting of Multi-Node Space Exploration Systems, ”
+Journal of Spacecraft and Rockets , V ol. 48, No. 4, 2011, pp. 679 –
+690.
+https://doi.org/10.2514/1.51870
+[65] Grogan, P ., de Weck, O. L., and Lee, C.,“Comparative Usability Study
+of Two Space Logistics Analysis Tools, ” AIAA SPACE 2011
+Conference & Exposition, AIAA Paper 2011-7345, 2011.
+https://doi.org/10.2514/6.2011-7345
+[66] Grogan, P ., Y ue, H., and de Weck, O. L., “Space Logistics Modeling
+and Simulation Analysis Using SpaceNet: Four Application Cases, ”
+AIAA Space 2011 Conference & Exposition , AIAA Paper 2011-7346,
+2011.
+https://doi.org/10.2514/6.2011-7346
+[67] Moraguez, M., and de Weck, O., “Benefits of In-Space Manufacturing
+Technology Development for Human Spaceflight, ” 2020 IEEE Aero-
+space Conference, Inst. of Electrical and Electronics Engineers, New
+Y ork, 2020, pp. 1–11.
+https://doi.org/10.1109/AERO47225.2020.9172304
+[68] Capra, L., Hilton, J., Bentley, S., Sherman, T., Alfaro, A., Savin, R., de
+Weck, O. L., and Grogan, P . T.,“SpaceNet Cloud: Web-Based Model-
+ing and Simulation Analysis for Space Exploration Logistics, ”
+ASCEND 2021, AIAA Paper 2021-4068, 2021.
+https://doi.org/10.2514/6.2021-4068
+[69] Taylor, C., Song, M., Klabjan, D., de Weck, O. L., and Simchi-Levi, D.,
+“A Mathematical Model for Interplanetary Logistics, ” Logistics
+Spectrum, V ol. 41, No. 1, 2007, pp. 23–33.
+[70] Arney, D. C., and Wilhite, A. W., “Modeling Space System Architec-
+tures with Graph Theory,” Journal of Spacecraft and Rockets, V ol. 51,
+No. 5, 2014, pp. 1413 –1429.
+https://doi.org/10.2514/1.A32578
+[71] Ishimatsu, T., de Weck, O. L., Hoffman, J. A., and Ohkami, Y .,
+“Generalized Multicommodity Network Flow Model for the Earth-
+Moon-Mars Logistics System, ” Journal of Spacecraft and Rockets ,
+V ol. 53, No. 1, 2016, pp. 25–38.
+https://doi.org/10.2514/1.A33235
+[72] Ho, K., de Weck, O. L., Hoffman, J. A., and Shishko, R., “Campaign-
+Level Dynamic Network Modelling for Spaceflight Logistics for the
+Flexible Path Concept,” Acta Astronautica, V ol. 123, June–July 2016,
+pp. 51–61.
+https://doi.org/10.1016/j.actaastro.2016.03.006
+[73] Chen, H., and Ho, K., “Integrated Space Logistics Mission Planning
+and Spacecraft Design with Mixed-Integer Nonlinear Programming, ”
+Journal of Spacecraft and Rockets, V ol. 55, No. 2, 2018, pp. 365–381.
+https://doi.org/10.2514/1.A33905
+[74] Jagannatha, B. B., and Ho, K., “Optimization of In-Space
+Supply Chain Design Using High-Thrust and Low-Thrust Propulsion
+Technologies,” Journal of Spacecraft and Rockets , V ol. 55, No. 3,
+2018, pp. 648–659.
+https://doi.org/10.2514/1.A34042
+[75] Chen, H., Lee, H. W., and Ho, K., “Space Transportation System and
+Mission Planning for Regular Interplanetary Missions, ” Journal of
+Spacecraft and Rockets, V ol. 56, No. 1, 2019, pp. 12–20.
+https://doi.org/10.2514/1.A34168
+[76] Mcbrayer, K., Daniel, N., Deguignet, M., V elte, A., Robertson, B., and
+Mavris, D. N., “A Network Flow-Based Formulation to Optimize
+Campaign Alternatives for a Reference Lunar Surface Base, ”
+International Astronautical Congress , International Astronautical
+Federation (IAF), Paris, France, 2019.
+[77] Jagannatha, B. B., and Ho, K., “Event-Driven Network Model for
+Space Mission Optimization with High-Thrust and Low-Thrust Space-
+craft,” Journal of Spacecraft and Rockets , V ol. 57, No. 3, 2020,
+pp. 446–463.
+https://doi.org/10.2514/1.A34628
+[78] Taylor, M. C., de Weck, P . O., and Klabjan, P . D., “Integrated Trans-
+portation System Design for Space Exploration Logistics, ” Interna-
+tional Astronautical Congress, International Astronautical Federation
+(IAF), Paris, France, 2006.
+[79] Chen, H., Sarton du Jonchay, T., Hou, L., and Ho, K., “Integrated In-
+Situ Resource Utilization System Design and Logistics for Mars
+Exploration,” Acta Astronautica, V ol. 170, May 2020, pp. 80–92.
+https://doi.org/10.1016/j.actaastro.2020.01.031
+[80] Chen, H., Sarton du Jonchay, T., Hou, L., and Ho, K., “Multifidelity
+Space Mission Planning and Infrastructure Design Framework for
+Space Resource Logistics,” Journal of Spacecraft and Rockets, V ol. 58,
+No. 2, 2021, pp. 538 –551.
+https://doi.org/10.2514/1.A34666
+[81] Isaji, M., Takubo, Y ., and Ho, K., “Multidisciplinary Design Optimi-
+zation Approach to Integrated Space Mission Planning and Spacecraft
+Design,” Journal of Spacecraft and Rockets , V ol. 59, No. 5, 2022,
+pp. 1660–1670.
+https://doi.org/10.2514/1.A35284
+[82] Chen, H., Gardner, B. M., Grogan, P . T., and Ho, K., “Flexibility
+Management for Space Logistics via Decision Rules, ” Journal of
+Spacecraft and Rockets, V ol. 58, No. 5, 2021, pp. 1314–1324.
+https://doi.org/10.2514/1.A34985
+[83] Takubo, Y ., Chen, H., and Ho, K.,“Hierarchical Reinforcement Learn-
+ing Framework for Stochastic Spaceflight Campaign Design,” Journal
+of Spacecraft and Rockets , V ol. 59, 2022, No. 2, pp. 421–433.
+https://doi.org/10.2514/1.A35122
+[84] Grogan, P ., and de Weck, O., “Federated Simulation and Gaming
+Framework for a Decentralized Space-Based Resource Economy, ”
+Earth and Space 2012: Engineering, Science, Construction, and
+Operations in Challenging Environments , American Soc. of Civil
+Engineers, Reston, V A, 2012, pp. 1468–1477.
+[85] Shishko, R., Price, H., Wilcox, B., Stoica, A., Howe, S., and Elliott, J.,
+“An Affordable Lunar Architecture Emphasizing Commercial and
+International Partnering Opportunities, ” 2018 IEEE Aerospace
+Conference, Inst. of Electrical and Electronics Engineers, New Y ork,
+2018, pp. 1–16.
+https://doi.org/10.1109/AERO.2018.8396423
+[86] Sarton du Jonchay, T., Chen, H., Wieger, A., Szajnfarber, Z., and Ho,
+K., “Space Architecture Design for Commercial Suitability: A Case
+Study in In-Situ Resource Utilization Systems, ” Acta Astronautica ,
+V ol. 175, Oct. 2020, pp. 45–50.
+https://doi.org/10.1016/j.actaastro.2020.05.012
+[87] Chen, H., Ornik, M., and Ho, K., “Space Exploration Architecture and
+Design Framework for Commercialization,” Journal of Spacecraft and
+Rockets, V ol. 59, No. 2, 2022, pp. 538–551.
+https://doi.org/10.2514/1.A35077
+[88] de Weck, O. L., de Neufville, R., and Chaize, M., “Staged Deployment
+of Communications Satellite Constellations in Low Earth Orbit, ”
+Journal of Aerospace Computing, Information, and Communication ,
+V ol. 1, No. 3, 2004, pp. 119–136.
+https://doi.org/10.2514/1.6346
+[89] Lee, H. W., Jakob, P . C., Ho, K., Shimizu, S., and Y oshikawa, S.,
+“Optimization of Satellite Constellation Deployment Strategy Consid-
+ering Uncertain Areas of Interest, ” Acta Astronautica , V ol. 153,
+1426 HO
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 
+
+
+Dec. 2018, pp. 213 –228.
+https://doi.org/10.1016/j.actaastro.2018.03.054
+[90] Sung, T., and Ahn, J., “Optimal Deployment of Satellite Mega-
+Constellation, ” Acta Astronautica , V ol. 202, Jan. 2023, pp. 653 –
+669.
+https://doi.org/10.1016/j.actaastro.2022.10.027
+[91] Dishon, M., and Weiss, G. H., “A Communications Satellite Replenish-
+ment Policy,” Technometrics, V ol. 8, No. 3, 1966, pp. 399–409.
+https://doi.org/10.1080/00401706.1966.10490373
+[92] Kelley, C., and Dessouky, M., “Minimizing the Cost of Availability of
+Coverage from a Constellation of Satellites: Evaluation of Optimiza-
+tion Methods,” Systems Engineering, V ol. 7, No. 2, 2004, pp. 113–122.
+https://doi.org/10.1002/sys.10059
+[93] Zheng, H., and Ren, L., “Availability Analysis of Satellite Constella-
+tion,” 8th International Conference on Reliability, Maintainability and
+Safety, Inst. of Electrical and Electronics Engineers, New Y ork, 2009,
+pp. 245–248.
+https://doi.org/10.1109/ICRMS.2009.5270198
+[94] Jakob, P ., Shimizu, S., Y oshikawa, S., and Ho, K., “Optimal Satellite
+Constellation Spare Strategy Using Multi-Echelon Inventory Control,”
+Journal of Spacecraft and Rockets , V ol. 56, No. 5, 2019, pp. 1449 –
+1461.
+https://doi.org/10.2514/1.A34387
+[95] de Weck, O. L., Scialom, U., and Siddiqi, A., “Optimal Reconfigura-
+tion of Satellite Constellations with the Auction Algorithm, ” Acta
+Astronautica, V ol. 62, Nos. 2–3, 2008, pp. 112 –130.
+https://doi.org/10.1016/j.actaastro.2007.02.008
+[96] Lee, H. W., and Ho, K., “Regional Constellation Reconfiguration
+Problem: Integer Linear Programming Formulation and Lagrangian
+Heuristic Method,” Journal of Spacecraft and Rocets , V ol. 60, No. 6,
+2023, pp. 1828–1845.
+https://doi.org/10.2514/1.A35685
+[97] Grogan, P . T., Golkar, A., Shirasaka, S., and de Weck, O. L., “Multi-
+Stakeholder Interactive Simulation for Federated Satellite Systems, ”
+2014 IEEE Aerospace Conference , Inst. of Electrical and Electronics
+Engineers, New Y ork, 2014, pp. 1–15.
+https://doi.org/10.1109/AERO.2014.6836253
+[98] Grogan, P . T., and de Weck, O. L., “Interactive Simulation Games to
+Assess Federated Satellite System Concepts, ” 2015 IEEE Aerospace
+Conference, Inst. of Electrical and Electronics Engineers, New Y ork,
+2015, pp. 1–13.
+https://doi.org/10.1109/AERO.2015.7119101
+[99] Grogan, P . T., Ho, K., Golkar, A., and de Weck, O. L., “Multi-Actor
+V alue Modeling for Federated Systems, ” IEEE Systems Journal ,
+V ol. 12, No. 2, 2016, pp. 1193–1202.
+https://doi.org/10.1109/JSYST.2016.2626981
+[100] Guzzetti, D., Tauritz, D. R., Qureshi, R., Roberts, C., Indaco, M., Bone,
+L., and Kimbrel, E., “Satellite Tycoon: Modeling Economic Competi-
+tion in the Business of p-LEO Constellations, ” 11th International
+Workshop on Satellite and Constellations Formation Flying ,
+International Astronautical Federation (IAF), Paris, France, 2022.
+[101] Qureshi, R., Roberts, C., Indaco, M., and Guzzetti, D., “Modeling and
+Gamification Framework of Business Competition Between p-LEO
+Constellations,” Astrodynamics Specialist Conference, Paper AAS 22-
+812, 2022.
+[102] Qureshi, R. S., Roberts, C., Kimbrell, E., Mulder, S., Rao, A., Tauritz,
+D. R., and Guzzetti, D., “A Table-Top Game to Simulate Competition
+Between p-LEO Satellite Internet Constellations,” Astrodynamics Spe-
+cialist Conference, AAS Paper 23-458, 2023.
+[103] Larson, R., and Odoni, A., Urban Operations Research, Prentice–Hall,
+Upper Saddle River, NJ, 1984.
+[104] Simchi-Levi, D., Chen, X., and Bramel, J., The Logic of Logistics:
+Theory, Algorithms, and Applications for Logistics Management ,
+Springer–V erlag, Berlin, 2014.
+[105] Sztrik, J., “Finite-Source Queueing Systems and Their Applications, ”
+Formal Methods in Computing , V ol. 1, 2001, pp. 7–10.
+O. L. de Weck
+Associate Editor
+HO 1427
+Downloaded by 207.244.89.161 on September 17, 2026 | http://arc.aiaa.org | DOI: 10.2514/1.A35982 

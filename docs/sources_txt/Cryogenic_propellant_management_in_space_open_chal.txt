@@ -1,0 +1,1415 @@
+npj | microgravity Perspective
+Published in cooperation with the Biodesign Institute at Arizona State University, with the support of NASA
+https://doi.org/10.1038/s41526-024-00377-5
+Cryogenic propellant management in
+space: open challenges and perspectives
+Check for updates
+Alessia Simonini 1 , Michael Dreyer2, Annafederica Urbano3, Francesco Sanfedino3,
+Takehiro Himeno4, Philipp Behruzi5,M a r cA v i l a 2, Jorge Pinho 1, Laura Peveroni1 &
+Jean-Baptiste Gouriet1
+This paper presents open challenges and perspectives of propellant management for crewed deep
+space exploration. The most promising propellants are liquid hydrogen and liquid methane, together
+with liquid oxygen as an oxidizer. These ﬂuids remain liquid only at cryogenic conditions, that is, at
+temperatures lower than 120 K. To extend the duration of space exploration missions, or even to
+enable them, the storage and refueling from a cryogenic on-orbit depot is necessary. We review
+reference missions, architectures, and technology demonstrators and explain the main operations
+that are considered as enablers for cryogenic storage and transfer. We summarize the state of the art
+for each of them, showing that many gaps in physical knowledge still need to be ﬁlled. This paper is
+based on recommendations originally proposed in a White Paper for ESA ’s SciSpacE strategy.
+Since theﬁrst crewed mission reached the surface of the moon more than 50
+years ago, many nations strive for more open and broader access to space.
+The research and development to enable and improve space accessibility by
+robotic machines and human beings led to a discovery boost in severalﬁelds.
+Physical and biological sciences havehad a new ground of exploration, but
+new technologies have also enabled a better life on Earth1.A f t e rm o r et h a n
+50 years, research and development is still needed to push the boundaries of
+space exploration. Human space endeavors beyond low Earth orbit (LEO)
+a r en o wt h en e wt a r g e t2–4. Propulsion is an important subsystem of a
+spacecraft or launcher, and propellant is by far its largest mass fraction. For
+instance, ~98.5% of the Saturn V launch mass was propellant and propul-
+sion systems5.
+Many national space agencies are working to enable deep space
+exploration. One example is NASA’s exploration program, which outlines
+the basic requirements for future exploration missions3. On 14.10.2020, one
+of NASA ’s tipping point selection was: “Cryogenic Fluid Management
+Technology Demonstration: NASA and industry partners have developed
+and tested numerous technologies to enable long-term cryogenic ﬂuid
+management, which is essential for establishing a sustainable presence on
+the Moon and enabling crewed missions to Mars. Implementation of the
+technologies in operational missions requires further maturation through
+in-space demonstrations.” The awarded companies are Eta Space of Meritt
+Island, Florida, Lockheed Martin of Littleton, Colorado, SpaceX of
+Hawthorne, California, and United Launch Alliance (ULA) of Centennial,
+Colorado.
+In the last two decades, several propulsion systems have been proposed
+and analysed for deep space exploration. The most promising ones are those
+fully based on nuclear thermal power (requiring liquid hydrogen) and on
+nuclear electric power plus cryogenic chemical propulsion for large velocity
+change maneuvers3,6,7.T h es t u d i e s6 and7 show that large amounts of cryo-
+genic fuels need to be stored in space and transferred between spacecraft. For
+this reason, we focus this review paper on physical problems which are
+encountered in cryogenic systems only8. Cryogenic fuels (propellants, i.e.,
+hydrogen, methane, and oxidizer, i.e.,oxygen) have several advantages: they
+provide a high speciﬁc impulse, are non-toxic, and can be produced in situ
+(In Situ Resource Utilization - ISRU), i.e., on the surface of the Moon or
+Mars9. The enabling capabilities for cryogenic propellants are the long-term
+storage in space and on planets, and the transfer between depots and
+spacecraft. Depots will be launched empty or partly ﬁlled, and need to be
+reﬁlled in space. A series of documents that explain the actual limitation and
+the current interest in cryogenic propellant management physics can be
+found in the references10,11.
+This review is organized in two part s. Firstly, the application per-
+spectives are presented, summarizingthe conditions of a typical reference
+mission and the associated architecture. This part is used to identify the
+requirements in terms of the size and working conditions of a possible tank
+1Liquid and Solid Propellant Research Expert Group, von Karman Institute for Fluid Dynamics, 72, chaussée de Waterloo, Rhode-Saint-Genèse 1640, Bel gium.
+2Center of Applied Space Technology and Microgravity (ZARM), University of Bremen, Am Fallturm 2, Bremen 28359, Germany.3Fédération ENAC ISAE-SUPAERO
+ONERA, Université de Toulouse, 10 avenue Edouard Belin, Toulouse BP 54032 - 31055, France. 4Department of Aeronautics and Astronautics, The University of
+Tokyo, 7-3-1, Hongo, Bunkyo-ku, Tokyo 138656, Japan. 5JTLF, ArianeGroup GmbH, 1 Airbus-Allee, Bremen 28199, Germany.
+e-mail: alessia.simonini@vki.ac.be
+npj Microgravity |           (2024) 10:34 1
+1234567890():,;
+1234567890():,;
+
+enabling human deep space exploration. Then, the most relevant techno-
+logical demonstrators are discussed as background knowledge. The most
+common phenomena occurring in a typic al architecture are illustrated
+together with gaps in physical knowle dge associated with cryogenic pro-
+pellant management.
+Application perspectives and background
+Reference missions and architectures
+A successful exploration mission requires spacecraft to change their velocity
+(also called△V maneuvers) in order to follow precise trajectories. Velocity
+change requirements are derived from orbital and spaceﬂight mechanics,
+involving the balance of propulsive, gravitational, and aerodynamic forces
+when entering the atmosphere of planets. The propulsive forces are pro-
+duced by the spacecraft engine. Propellants are grouped into storable and
+cryogenic propellants. The main difference is the achievable speciﬁci m p u l s e
+Isp or thrust per unit massﬂow rate, which is deﬁned as the ratio between the
+thrust and the product of massﬂow rate and the gravitational acceleration
+constant. Storable propellants (hydrazine, monomethylhydrazine, and
+nitrogen tetroxide) have a lower speciﬁc impulse, but they remain liquid at
+ambient conditions and do not need cooling. On the other side, cryogenics
+are in a gaseous phase at ambient conditions, because they are characterized
+by very low saturation temperatures at normal pressure, 101,325 Pa (20 K
+for hydrogen, 112 K for methane). As a consequence, they need to be cooled
+down in order to be stored in a liquid phase and require good insulation.
+Design reference missions (DRM ’s) are required to compute the
+necessary velocity changes. The Artemis program is the current NASA
+project to return humans to the moon’s surface, with the purpose to stay and
+to prepare for human Mars exploration missions. The ﬁrst Artemis
+uncrewed mission around the Moon was completed in December 2022 with
+the ﬁrst ﬂight of the Space Launch System (SLS) and the secondﬂight of the
+Orion Crew Exploration Vehicle (CEV) with the European Service Module
+(ESM) (see nasa.gov/specials/artemis).
+A crewed Mars mission requires larger velocity changes and shall be
+used here as an example12. Conjunction and opposition class missions were
+t a k e nb yO l e s o ne ta l .i n2 0 2 16 for a concept of operations (see their page 24).
+The baseline is a nuclear electric propulsion (NEP)— a chemical vehicle with
+liquid methane and liquid oxygen for high-thrust maneuvers. Typical
+mission milestones are:
+1. Several heavy launches from Earth to Low Earth orbit (LEO)
+2. Rendezvous and docking, assembly in LEO
+3. Transfer to trans Lunar orbit (TLO)
+4. Rendezvous and docking with habitat
+5. Heavy launch from Earth to TLO with CEV and crew transfer to
+habitat
+6. Trans Mars injection (TMI)
+7. Injection into Mars orbit
+8. Descent to Mars surface
+9. Surface mission (30 days)
+10. Ascent to Mars orbit
+11. Trans Earth injection (TEI)
+12. Trans Lunar orbit and crew transfer to the CEV
+13. Return to Earth surface
+This concept of operations requi res a tanker spacecraft to fuel the
+chemical stage in Earth orbit.
+Other scenarios (see ref. 7) require nuclear thermal propulsion with
+liquid hydrogen as propellant, heated by the nuclear reactor. This does not
+require an oxidizer and produces the highest speci ﬁci m p u l s e .M o r e
+information on possible mission scenarios, road maps, and technological
+challenges are given by refs.10,13–15.
+In this review, we follow the rationale of Hartwig8 for propellant depots
+in orbit. Without the ability to fuel and/or refuel spacecrafts in orbit, all the
+propellant has to be taken from Earth to reach the destination and return to
+Earth. This traditional method requires a heavy launch vehicle, such as the
+Space Launch System (SLS), with a payload mass of 95 t to LEO and 27 t for
+trans Lunar injection. This will not be sufﬁcient to send humans beyond the
+Moon. A possible solution is to use a propellant depot.
+A propellant depot is deﬁned as an orbiting propellant storage vessel
+that can host fuels for up to several years7. The depot shall be launched and
+brought to its ﬁnal orbit in an empty or partially ﬁlled state, since its wet
+mass might exceed the capacities of available launchers. Propellant transfer
+from a tanker to the depot and from the depot to an exploration spacecraft is
+required. Depots have multiple advantages:
+1. The dry mass of an exploration payload, launched from the surface of
+the Earth, may be larger, because it will be fueled in space.
+2. Commercial launch services can be used to supply and re-supply
+the depot.
+3. The depot could be used to ﬁll or re-ﬁll the exploration spacecraft.
+4. Depot technologies could be used to enhance planetary and Earth
+sciences16.
+Cryogenic ﬂuid management (CFM) technologies are required to
+enable all necessary steps, such as draining, chill down, transfer, andﬁlling in
+both directions. In Table 1, rough order of magnitude numbers from dif-
+ferent studies on propellant depots in space are summarized.
+An important consideration is the location of the depot. First of all, a
+concept of operations (CONOPS) is required. Probable locations of the
+depot (or depots) are:
+1. low Earth orbit (LEO), height of orbit above surface 160 km to
+1000 km, time of orbit 90 min
+2. geosynchronous orbit (GEO), height of orbit above surface 35,786 km,
+time of orbit 24 h
+3. Earth-Moon Lagrange 1 orbit (EML1), distance of the orbit from the
+center of the Earth 326,400 km (85% of the Earth-Moon distance of
+384,400 km), time of orbit 29.5 d
+4. Earth-Moon Lagrange 2 orbit (EML2), distance of the orbit from the
+center of the Earth 448,900 km, i.e., 60,000 km beyond the Moon, time
+of orbit 29.5 d
+Some features are the△V requirements to reach the depot and to keep
+the depot where it belongs, the thermal loads, the storage duration, and the
+possible problems associated with radio interference and space. The most
+important quantity is the boil-off loss. This is the mass of liquid propellant
+which is converted into a gas due to the incoming heatﬂuxes.
+Possible architectures for such orbital propellant depots have been
+considered by Gaebler et al. in their 2009 paper17. An example of an orbital
+depot with multiple propellant tanks is shown in Fig. 3 in ref.17.I ts h o u l db e
+capable of storing 330 t of propellant in space. Each tank measures 11 m in
+length and 5 m in diameter. A total of 8 tanks are considered. A reusable
+Table 1 | Rough order of magnitude parameters for propellant
+depots in space
+Depot type dual ﬂuid, 6 to 8 tanks 17
+Capacity 50 t per tank
+Diameter 5 m
+Length 10 m to 20 m
+Fluids hydrogen, methane, oxygen 11,114
+Storage time 6 month to 12 month 20
+Acceleration From microgravity to high-g 8,17
+Pressure 100 kPa to 350 kPa 8,11
+Conditioning Autogeneous pressurization 8,11,13,115
+Heat ﬂux 50 W m 2 to 100 W m2 26,116
+Transfer rate 0.15 kg s 1 to 4.4 kg s1 117,118
+Wall material Aluminum 25
+The data have been compiled from different sources.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 2
+
+transfer vehicle (RTV) will perform transits between the low Earth orbit
+(LEO) of the depot and a low Lunar orbit (LLO). An example of such a
+vehicle is shown in ref. 17 in ﬁgure 4.
+In their 2010 paper, ref. 18 advocate for a depot-based space
+transportation architecture. The concept consists of a very basic
+depot in LEO and subsequent EML1 and EML2 depots. The EML2
+location seems to be the best due to the thermal, micrometeoroid,
+and atomic oxygen environment . Propellant stocked at EML2 is
+nearly at Earth escape energy. Transfer between LEO and EML2
+requires a △V =3 . 2k m s1. The depot development begins with a test-
+bed, continues with Centaur-based structures, and reaches a 120 t
+dual propellant contain ment which has an annual ﬂow through of
+300 t. Nevertheless, gas hydrogen created due to boil-off can be
+reused as well as monopropellant for station keeping and other
+purposes. The depots could serve multiple purposes, such as Moon
+exploration and crewed Mars missions, and be refueled from the
+Moon surface once in situ resources utilization (ISRU) capacities are
+available.
+In their 2011 paper, Smithermann and Woodcock5 provide detailed
+information for eight reference missions:
+1. Geo-synchronous orbit satellite servicing
+2. Crew transfer vehicle (CTV) between LEO depot and EML1 depot
+3. Lunar lander
+4. Reusable upper stage (RUS) cargo
+5. Earth-Sun Lagrange point 2 mission using the RUS, CTV, and a Deep
+Space Habitat (DSH)
+6. Mars orbital depot delivery
+7. Crew mission to Mars orbit
+8. Semi-cycler crew mission to Mars orbit
+Their study presents extended tables for these reference missions:△V,
+speciﬁc impulse, mass ratio, prope llant mass, hardware mass, and
+remaining mass.
+In 2016, Perrin and Casler19 sought to determine the optimum archi-
+tecture for a fuel depot supplied from lunar assets. Their study concluded
+that EML1 is the best location for an orbiting depot. The design reference
+missions are commercial satellite s ervicing mission (CSS), Mars cargo
+mission (MC), and propellant delivery mission. △V requirements and
+time-of-ﬂight calculations are presented based on two-body orbital
+mechanics. Depot locations are LEO, GEO, and EML1. The boil-off con-
+sideration requires knowledge of the heatﬂuxes at different locations. Some
+numbers are compiled in Table2.
+At y p i c a ls t o r a g et i m eo ff u e l sw i l lb eo ft h eo r d e ro fm o n t h s20 or even
+years6. The tank itself might undergo different kinds of accelerations during
+a complete mission, e.g. launch, ball istic phase, rendezvous, and station
+keeping. Consequently, the ﬂuids within the tanks will behave differently
+depending on the acceleration environment21.
+The operative pressure in the tanks will be in the range of 100 to
+350 kPa8,11. Prior to the transfer, the liquid inside the tank needs to be
+in an appropriate thermodynamic condition. A thermodynamic
+equilibrium will be achieved in long storage phases, bringing the
+vapor and the liquid to saturation, even with a pressure rise due to
+incoming heat ﬂuxes. A liquid at saturation will immediately start to
+evaporate, if the pressure is lower ed in the transfer line and in the
+receiver tank. The conditioning of propellants prior to the transfer to
+the engines is currently performed by depressurization, followed by
+pressurization 22. The depressurization sacri ﬁces some liquid, which
+evaporates, and cools down the remaining bulk. The gas can be used
+for other purposes. Pressurization can be achieved in two ways:
+heterogeneous pressurization with a non-condensable gas, or auto-
+geneous pressurization with the same species. A certain degree of
+subcooling can be kept for a limited period of time, and enable the
+transfer of liquid without vaporization due to pool or ﬂow cavitation.
+Typical heat ﬂuxes towards the tank range from 1 W m2 with multi-
+layer insulations (MLI) to 100 W m2 without MLI23,24. The heatﬂux leads to
+the increase of the internal energy of theﬂuids (vapor and liquid) and may
+cause pool boiling at inner structures, either in a subcooled or saturated state.
+The surface structure of the wetted surface of the tank plays an important
+role in the creation of active nucleation sites, at which boiling will occur.
+Upper stage tanks are built from aluminum25. The topology and the che-
+mical composition of the internal solidsurfaces decide the wall superheat,
+which is required to trigger the generation of a bubble germ. Heatﬂuxes do
+not enter evenly, as outlined by ref.26.
+The typical operation phases of a depot are storage, conditioning,
+maneuvers, and transfer. Several dominating physical phenomena can be
+associated with each phase. The understanding and the capability to model
+and simulate these phenomena is necessary to enable and improve technical
+solutions. We have compiled the main operation phases and their effects on
+the ﬂuid systems in Table 3. In addition, a simple sketch shown in Fig. 1
+visualizes the most important features of a propellant depot in space. The
+paper is organized along these lines, and more details will be reported in the
+following sections, based on the current state of the art.
+Table 2 | Summary of features for different depot locations from 19
+Location Total propellant mass kg Heat ﬂux Wm2 Boil-off rate kg h 1 chill-down mass kg/transfer
+LEO 434696 2162 0.02 to 0.20 5.6
+GEO 212696 1388 0.01 to 0.13 5.6
+EML1 204871 1367 0.01 to 0.12 5.6
+The total propellant mass is based on fueling the commercial satellite servicing mission (CSS) vehicle and the Mars cargo mission (MC) vehicle every 6 months. The heat ﬂux comes from the sun and the
+albedo of the Earth. The boil-off rates and chill-down masses are for hydrogen only.
+Table 3 | Operation phases (OP), effects, and associated
+physical phenomena (APP)
+OP Effect APP
+Storage Near saturation conditions Boiling caused
+by superheated wall
+microzone physics
+Conditioning Pressure variations Bulk cavitation
+Bubble growth,
+shrinkage, and collapse
+Maneuvers Dynamic interaction between Gas/liquid interface position
+ﬂuid and structure Liquid sloshing
+Transfer Pressure drop Gas/liquid interface position
+in tanks and lines Phase separation
+Cavitation
+Line chill down Flow boiling
+Heat transfer modes
+Interaction supply/receiver Dynamic models
+tank liquid transfer
+Receiver tank ﬁlling Interface stability
+Vented or no-vent ﬁlling
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 3
+
+Technological demonstrator
+The technological demonstrators presented in this review mainly have the
+purpose to demonstrate that a system or a subsystem works in relevant
+conditions. NASA has considered that,among others, propulsion systems
+utilizing cryogenics are necessary for achieving future long-duration mis-
+sions beyond the moon11,13. Launchers with cryogenic propellants have been
+used for decades with the mission of sending satellites into low Earth orbit or
+to re-supply the international space station. For this reason, technologies
+exist for cryogenicﬂuid management and storage, which, nevertheless, was
+intended to allow its use for a few hours: the state of the art for cryogenic
+storage is 14 h20. In order to enable human missions to Mars, the require-
+ment is to store cryogenic fuels for months or possibly years20.M o r e o v e r ,
+cryogenic liquids are highly susceptible to phase change resulting from even
+minute changes in pressure and temperature. Since cryogenic liquids tend to
+vaporize at common testing conditions, the measurement of theirﬂow rate
+is compromised by the difﬁculty in quantifying theﬂuid quality (Percentage
+of gas mass with regard to the total mass). In theﬁeld of propulsion, this can
+present itself as a serious impediment to reliable engine performance, as
+predictable and repeatable propellant ﬂow rates are required to ensure
+proper combustion and resulting thrust27.
+Many propellant depot technological demonstrators have been
+attempted without reaching space 28–31.I ns o m ec a s e s ,t h et e c h n o l o g y
+reached space, but the failure of somesystems did not allow to retrieve the
+expected results. This is the case of Sloshsat-Flevo32–34, a spacecraft for the
+experimental study of liquid dynamics and liquid management problems in
+space, launched in GTO in February 2005. The tank instrumentation did not
+respond after being on-orbit, but some qualitative results about the dynamic
+response of the sloshing ﬂuid mass could be retrieved from the satellite
+control instrumentation.
+The study of cryogenic management in microgravity has an impact on
+different technologies, such as Propellant Management Devices (PMD),
+Zero Boil-Off tanks (ZBO), Vapor Cooling Systems (VCS), Thermo-
+dynamic Vent Systems (TVS), Filling Operations (FO), Propellant Chill-
+Down (PTCD), Transfer Operations (TO), and Heterogeneous/Auto-
+genous Pressurization (HP/AP) 20. Several representative technology
+demonstrators for space propellant systems reported in the literature are
+summarized in Table4.
+The ﬁrst documented experiments of propellant management devices
+operating with liquid hydrogen in a compensated gravity environment were
+performed in 1962 35–37. Flachbart et al. 38 evaluate the effects of helium
+pressurant on the performance of a s pray-bar TVS to demonstrate the
+capability of pressure control for liquid hydrogen. A thermodynamic
+cryogen subcooler has been proposed by ref.39,b yr e m o v i n ge n e r g yf r o mt h e
+cryogenic propellant through isobaric subcooling of the cryogen below its
+normal boiling point prior to launch.This simple technique can extend the
+operational life (factor of 2) of a spacecraft or an orbital cryogenic depot for
+months with minimal mass penalty. A comparison between venting and
+non-venting cryogenic storage tanks has been performed by ref. 40 for a
+180 L cryogenic cylinder with vertical injection at on-ground conditions.
+They analysed theﬂuid and wall temperature distribution for both conﬁg-
+urations and reported that two pressure regions occur during ventedﬁlling:
+pressure rise and gradual decrease. The observed regions during no-vented
+ﬁll are pressure rise, gradual balance, and sharp pressure increase. Liquid
+hydrogen tank rapid chill and ﬁll of a ﬂight volume tank testing were
+performed on the ground by ref.41. They found that the tank structure chill-
+down process was slow due to ﬂow boiling developed at the walls, which
+changed the heat transfer coef ﬁcient. No-vented ﬁll operation did not
+succeed. Nevertheless, as buoyancy inhibits the vapor ﬁlm formation, the
+authors suggest that on-orbitﬁlling would promote the creation of the vapor
+layer at the wall, increasing the ef ﬁciency of the cool-down process. Pro-
+pellant management devices (PMD) for cryogenic liquids were tested in
+compensated gravity conditions (TEXUS 48 Sounding Rocket) using liquid
+nitrogen by Behruzi et al. 42. Different operations were tested: draining,
+reﬁlling, heating, and depressurization. A successful operation could be
+demonstrated. The ﬁrst liquid hydrogen microgravity experiment per-
+formed in Europe was presented by ref. 43.T h e ye m b a r k e do nam o d u l e
+containing a cryogenic cell on a sounding rocket at SSC with two tanks of 2 L
+and 20 L of liquid/gas hydrogen, fully instrumented by temperature, pres-
+sure, and level sensors. High-speed cameras were placed to observe the
+behavior inside the tanks. The main objective for the mission was to study
+the behavior of liquid hydrogen under controlled gravity conditions, created
+by a cold gas thrust module. This experiment was conducted to support the
+development of liquid propellant management systems for the Ariane
+launcher. The use of active cooling systems such as cryocoolers eliminates
+boil-off for tanks ﬁlled with liquid oxygen, as demonstrated by ref. 44.
+Nevertheless, signiﬁcant work still needs to be done on cryocooler inte-
+gration for on-orbit tanks, especially for liquid hydrogen. The boilingﬂow of
+cryogenic nitrogen in complicated channels under low-gravity condition
+was realized with the sounding rocket’s suborbital ballisticﬂight by JAXA
+and the University of Tokyo45,46. The transition of ﬂow regimes from gas-
+liquid two-phaseﬂow to liquid mono-phaseﬂow was visualized. Compared
+with the corresponding ground test, it was con ﬁrmed that the two-phase
+ﬂow in the complex channel could wet theheat transfer surfaces more easily
+due to the absence of gravity, and th at a more uniform chill-down effect
+could been obtained. Kassemi et al.47 proposed an experimental and CFD
+comparison for three different experimental databases on self-
+pressurization (AP) at Earth gravity and microgravity. The three data-
+bases come from the ZBOT experimentat normal and compensated gravity
+Fig. 1 | Scheme of operations for an orbiting depot
+and associated physical phenomena. The three
+operations represented are ballistic phase, docking
+and transfer. For each phase the most typical phy-
+sical phenomena occurring is represented: in green
+the phenomena dominated by a variation in pres-
+sure, in red those dominated by a variation in tem-
+perature and in yellow those dominated by a
+variation of velocity.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 4
+
+conditions (ISS) performed with perﬂuoro-n-pentane (PnP), the ground
+K-site tank experiment performed w ith liquid hydrogen, and the TPCE
+(Tank Pressure Control Experiment) experiment on the Space Shuttle,
+performed with Freon-113. The authors conclude that when measurements
+are taken under tight experimental control and known boundary condi-
+tions, the agreement with two-phase CFD results is good (for both large and
+small Bond number regimes), even though these models often use semi-
+empirical coefﬁcients, such as the accommodation coef ﬁcient. A quite
+unique technological demonstrator for the storage and transfer of liquid
+methane was developed by ref.48: the Robotic Refueling Mission 3 (RRM3).
+This mission extends RRM1 and RRM2, which demonstrated satellite
+refueling operations in a platform installed outside the ISS. As cryogenics
+cannot be handled inside the ISS fo r safety reasons, RRM3 is operated
+outside the ISS. Several operations have been demonstrated, among which
+was a four months zero boil-off methane storage by means of a cryocooler.
+Unfortunately, a problem during on-orbit venting expelled all methane
+prior to the transfer demonstration.
+Gaps in physical knowledge
+I nt h ep r e v i o u ss e c t i o n ,w eh a v es e en what the perspectives of deep space
+exploration are and what is achieved with technological demonstrator. In
+this section, we summarize the state ofthe art on gaps in physical knowledge
+identiﬁed as enablers for the required operations (see Table 3). The
+demonstrators attempt to advance technologies, based on engineering
+assumptions and correlations. However, the data collected from technology
+demonstrators are difﬁcult to be exploited for physical modeling necessary
+to master complex thermo-ﬂuid-dynamic systems. Simpliﬁed experiments
+under controlled boundary conditions are required in a relevant gravita-
+tional environment to advance reliable modeling.
+A typical fuel depot mission implies several operational phases: three of
+them are schematically reported in Fig. 1 with the associated physical
+phenomena that could appear. Theﬁgure is not meant to be exhaustive but
+is a graphical reference to highlight the main gaps in physical knowledge that
+need to be managed in the context of fuel depot missions. Speciﬁcally, the
+main highlighted phases are:
+1. Ballistic phase during which the depot, full of fuel, is in its orbit. The
+ﬂuid is at rest and in saturation conditions. Heatﬂuxes can induce pool
+boiling, meaning bubble growth induced by the superheated condi-
+tions of the tank wall. Tank depressurization for thermal control can
+induce pool cavitation, meaning bubble growth by superheated liquid
+in the presence of vapor germs. The control of these physical phe-
+nomena is important for the conditioning and storage of cryo-
+genic ﬂuids.
+2. Maneuverswith the purpose of attitude control or docking during the
+rendezvous between the depot and the receiver tank might cause
+accelerations applied on the ﬂuid resulting in sloshing phenomena.
+Sloshing, not only affects the trajectory and positioning of the vehicle,
+but promotes thermal mixing, de-strati ﬁcation, condensation, and
+evaporation phenomena.
+3. The ﬁnal phase is thetransferof the propellant from the depot towards
+the receiver tank. The transfer wi ll be affected both by temperature
+overheating and depressurization of the ﬂow, which could induce
+convective boiling and hydrodynamic cavitation.
+The gaps in physical knowledge considered here are grouped based on
+the operation they contribute to in a s pace depot system: conditioning,
+storage, maneuvers, and transfer. Because conditioning and storage is
+associated with phase change phenomena due to temperature and pressure
+variations, they are grouped in a single section.
+Conditioning and storage
+For long-duration missions, the inevitably incoming thermal energy (e.g.,
+due to radiation) and the different gravitational levels result in complex
+multiphase conﬁgurations26. After longer times, for example, during long-
+coasting phases, the liquid propellantreaches saturation conditions. Small
+Table 4 | Technology demonstrators for cryogenic tanks
+Reference Investigation Technol. Gravity Conditions Fluids Highlights
+Early tests35– 37 Liquid hydrogen behavior in compensated gravity PMD Suborbital ﬂights Hydrogen First series of hydrogen tests on sounding rocket experiment, 4 ﬂights.
+Flachbart et al.38 Effect of helium pressurant on TVS performance with
+liquid hydrogen
+TVS HP Ground Liquid hydrogen, gaseous
+helium
+Thermal energy removal from the ullage by spray.
+Mustaﬁ et al.39 Design of an isobaric subcooling system PTCD Ground Hydrogen, oxygen Subcool the liquid prior to launch. Conceptual design proposed. Not an of ﬁcial
+demonstrator yet.
+Wang et al.40 Comparison of ﬁlling pressure and temperature in ven-
+ted and non-vented cryogenic tanks
+TVS FO Ground Nitrogen Thermodynamic state of vented and no-vented ﬁlls is different, so correlation
+should be developed.
+Flachbart et al.41 Liquid hydrogen tank rapid chill and ﬁll testing PTCD FO Ground Hydrogen Tank structure chill-down process was slow. No-vent ﬁll operation did not
+succeed.
+Behruzi et al.42 PMDs usable for upper stages tested with liquid
+nitrogen
+PMD Suborbital ﬂight Nitrogen Results are applicable to the real scale (size and ﬂuids) PMDs based on the used
+scaling laws.
+Leudiere et al.43 Liquid hydrogen behavior in compensated gravity PMD Suborbital ﬂights Hydrogen First European hydrogen experiment in a sounding rocket, conducted by industry.
+Plachta et al.44 Zero Boil-Off test for oxygen tank ZBO Ground Oxygen Active cooling system for oxygen eliminated boil-off and robust controlled tank
+pressure.
+Sarae et al.45, Kinefuchi
+et al.46
+Chill-down process in a complex channel PTCD Suborbital Flight LN2 The transition of ﬂow regimes from gas-liquid two-phase ﬂow to liquid mono-
+phase ﬂow was visualized.
+Kassemi et al.47 Comparison of CFD and experimental data from 3 dif-
+ferent datasets of self-pressurization
+HP Ground, ISS, Space
+Shuttle
+Hydrogen, PnP,
+Freon-113
+Only experimental controlled and known boundary conditions allow a good
+agreement with experiments and CFD of two-phase systems.
+Breon et al.48 Storage and transfer of a cryogenic fuel on orbit ZBO TO HP/
+AP TVS
+Ground, ISS Nitrogen, Argon, Methane 4 months Zero Boil-Off methane storage by a cryocooler. Problem during on-orbit
+venting expelled all methane prior to transfer demonstration.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 5
+
+overheats from the solid walls may lead topool boiling. Small superheats due
+to depressurization may lead to pool cavitation. Both effects lead to the
+formation and the growth of bubbles (see Fig. 1)49. After long-coasting
+phases and prior to liquid transfer, the saturatedﬂuid needs to be subcooled
+to avoidﬂow cavitation during transfer orre-ignition of the engine. Efﬁcient
+cryocoolers are not available in the case of liquid hydrogen. Therefore, the
+cooling of liquid hydrogen is currently performed by pressure variation
+cycles22. This tank propellant conditioning process involves depressuriza-
+tion followed by re-pressurization. Thedepressurization phase will remove
+thermal energy from the saturated liquid phase (pool cavitation in Fig. 1)
+and evaporate a part of the liquid, which leads to superheated conditions.
+Nucleated bubbles might appear and grow at this phase50. Without buoy-
+ancy in microgravity conditions, the bubbles are expected to increase in size
+and remain near the wall, thus affecting the wall heat transfer26. Successively,
+a re-pressurization of the system is required for transfer operations. This re-
+pressurization will induce vapor condensation. Bubbles eventually shrink or
+collapse, which releases heat that causes a temperature of the liquid sur-
+rounding the bubbles. Vapor-accumulating regions could be created,
+resulting in undesired thermal conditions and producing issues in the
+propellant removal. Moreover, the phenomena could be coupled with
+boiling induced by thermal superheat26. These complex multiphase phe-
+nomena, including phase changes induced by pressure and temperature
+variations in microgravity conditions, are challenging to investigate
+experimentally and model11.
+Validating different CFD and nodal tools with microgravity data is
+necessary to routinely design in-space cryogenic systems, especially with the
+ﬂuid dynamics and heat transfer being tightly coupled as in two-phase
+cryogenic systems20. One of the main difﬁculties arises because of the multi-
+scale nature of the problem. The thermal characterization at the tank scale
+(meter scale) is impacted by these phase change phenomena arising at the
+bubble scale (milli-meter scale)49. Moreover, the phase change is driven by
+the thermal boundary layer at the interface and/or by phenomena arising in
+the microregion and microlayers in the contact line region, which may be of
+particular importance for cryogenicﬂuids that are perfectly wettable (nano-
+meter to micrometer scale). On top of that, the simulation of bubble cavi-
+tation, that is induced by a pressure drop, requires the use of a fully com-
+pressible or a suitable variable de nsity approach and the coupling with
+accurate thermodynamic descriptions of both phases and of the saturation
+conditions at the interface.
+Understanding the effect of the above-mentioned phenomena is of
+primary importance for tank thermal control. Studies devoted to phase
+change phenomena in microgravity have already been realized. Never-
+theless, few of them have been devoted to phase change phenomena of
+cryogenics in microgravity, while most of them have been performed at
+terrestrial gravity conditions. In Table 5 the most relevant experimental
+studies regarding phase change p henomena in cryogenics and/or in
+microgravity have been collected, presenting brieﬂy the kind of investiga-
+tion, the gravity conditions or platform, the kind of liquid used, and with
+some highlights of the results and conclusions. The summary of gaps in
+physical knowledge and their applic ation for conditioning and storage
+operations is show in Table6.
+Maneuvers
+Liquids embarked in vehicles react to external accelerations, hence man-
+euvers, depending on the different kinds of liquid/gas involved and the
+geometry of the container. Such movement is called sloshing. All sorts of
+maneuvers on a space depot might promote a sloshing appearance: station-
+keeping, rendezvous, docking, de-o rbiting, spinning satellites, ﬂat-spin
+transition, landing, in-orbit refueling, and other fast orbital maneuvers. In all
+these phases, the dynamics of the spacecraft interacts with the dynamics of
+the ﬂuid: the movement of the spacecraft excites the fuel in the tanks, that
+exerts forces and moments on the container. The container transmits these
+disturbing forces/moments to the main body, in some cases causing
+structural damages and/or stability/performance loss. In non-isothermal
+systems, especially those using cryogenic propellants, the free surface
+movement gets thermodynamic mixing between phases. The thermo-
+dynamic mixing can cause undesired pressure ﬂuctuations, which might
+disrupt the fuel feeding to the engine or create structural damages. During
+ballistic phases in space, when accele ration forces are reduced, surface
+tension forces dominate the dynamics of the liquid51: capillary and residual
+gravitational potential energies tend tominimize and the gas/liquid interface
+assumes the position of the minimum free surface energy52,53. The effect of
+external excitation on the dynamic of liquids in microgravity results thus
+different than the same liquid in norm al gravity conditions (on Earth or
+under a constant acceleratedﬁeld). Known cases of the effect of sloshing in
+space are reported in the literature: Hoffman et al.54 estimated that sloshing
+was the principal cause of the inef ﬁcient or apparently ineffective
+momentum damping observed on the occasion of the anomaly of the Near
+Earth Asteroid Rendezvous (NEAR) mission. Sloshing is also suspected to
+be the cause of the instability of the upper stage that brought the loss of the
+Falcon 1 mission in 200755.
+Sloshing mitigation can be realized by means of passive or active
+solutions. Passive solutions consist of baf ﬂes and bladders 56,57 which are
+traditionally designed to reduce the i mpact of sloshing force/torques. A
+historical application of an anti-sloshing device is found in the ESA Auto-
+mated Transfer Vehicle (ATV) project58. These devices have the advantage
+to increase the sloshing frequency and reduce the sloshing amplitude51.I n
+the attitude control bandwidth, the resonance introduced by the pertur-
+bation appears at low frequencies, requiring to move the frequency of the
+sloshing modes to higher ranges. However, this increase of resonance fre-
+quency might fall in the spacecraft structure ﬂexible modes having dis-
+rupting consequences for guidance and control performances 52,59.
+Table 5 | Experimental studies on thermodynamic characterization of ﬂuid systems in microgravity
+Reference Investigation Gravity
+Condition
+Fluids Highlights
+Bellur
+et al.119,120
+Condensation and evaporation in cryogenics with
+optical techniques
+Ground Hydrogen,
+Methane
+Techniques are developed and applied for the characterization of phase
+change rates with changing temperature and pressure conditions.
+Flash and
+splash121– 124
+Bubble dynamics in isothermal cavitation Parabolic
+Flight
+Water Dynamic of bubbles in water cavitation has been studied in microgravity.
+Studies included: cavitation in drops, plasma-generated bubbles, strong
+collapse, shock wave formations and luminescence.
+RUBI125– 127 The experiment addresses fundamental ques-
+tions about two-phase heat transfer during boiling
+processes
+ISS FC-72 Creation of bubbles on heated substrates by the short laser pulse. Contact line
+behavior on single bubbles. Multiple bubbles study. Bubble growth has been
+studied as: undisturbed growth, in ﬂuenced by shear ﬂow, inﬂuenced by
+electric ﬁeld.
+Source I89 Dual species system behavior in a compensated
+gravity environment
+Suborbital
+ﬂight
+HFE-7000,
+Gaseous
+nitrogen
+Free surface behavior, in ﬂuence of temperature gradients on thermocapillary
+ﬂows, heat transfer enhancement
+Source II88 Single species system behavior in a compensated
+gravity environment
+Suborbital
+ﬂight
+HFE-7000 Free surface behavior, the in ﬂuence of evaporation on apparent contact angle
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 6
+
+Nevertheless, the introduction of supplementary structural elements into
+the design increases the system’s overall mass as well as the mission costs.
+Active solutions might either act directly on the guidance and control
+(GNC) reference of the mission or to introduce actuators directly in cor-
+respondence with the disturbance s ource in order to actively damp the
+system. However, smoother angular velocity proﬁles and bigger tranqui-
+lizing times after aggressive maneuvers,respectively, cause loss of agility and
+available mission time window, whileno active solutions are designed and
+tested in space applications to the author’sk n o w l e d g ei no r d e rt om i t i g a t e
+the sloshing phenomenon.
+High-ﬁdelity CFD simulations can, to some extent, accurately
+represent sloshing phenomena in microgravity conditions. Never-
+theless, integration of CFD tools with GNC algorithms often brings
+complicated analysis due to the numerical noise introduced in the
+system by CFD outputs 58. Furthermore, the huge computational time
+t a k e nb yC F Ds i m u l a t i o n sm a k e sG N Cc e r t iﬁcation (large number of
+validations for different scenario s, Monte Carlo analyses to cover
+system uncertainties) extremely ch allenging and incompatible with
+the industry ’s deadlines. The widespread practice is to model sloshing
+phenomena as an equivalent mechanical system that acts like
+structural ﬂexible modes 60. Two simple linear models are commonly
+used: the mass-spring-damper model is able to represent the linear
+lateral sloshing; on the other hand the equivalent pendulum model
+has the main advantage to adapt the frequency mode in function of
+the acceleration. However, bot h these linear models have good
+accuracy for small amplitude liquid sloshing and axisymmetric
+tanks61–64. The biggest drawback is that these models do not take into
+account the dependency of the sloshing phenomena by the velocity
+and acceleration of the spacecra ft that provokes non-negligible
+inertial forces/torques on the liquid 65. More advanced studies,
+including non-linearities, were conducted by several
+authors52,58,59,66–71.
+Most of the equivalent mechanical models52,72–74 present the difﬁculty
+to identify its constitutive parameters (e.g., liquid friction force and torque)
+by a semi-empirical approach. Pioneering work on the sloshing control are
+proposed by the following references:65,75–77.
+Nevertheless, for model validation of the control approach, experi-
+ments are fundamentals. The research activity driven by Airbus DS in
+Bremen70,78 has to be considered pioneering in this direction: an experiment
+was conceived in order to study a way to control the sloshing of upper stages
+of launchers in the long-coasting phase by using a hexapode sloshing sys-
+tem. The main limit of these tests is that the experiment is driven in a normal
+gravity environment. Experiments relevant to microgravity conditions are
+difﬁcult. Drop towers providing short time microgravity periods (about 9 s)
+and parabolicﬂights, having a high disturbing noise on accelerations, do not
+allow testing of the control strategy. The main space missions which pro-
+vided a step forward in the analysis of sloshing in microgravity are reported
+in Table 7.
+A last mention is given to the interaction of sloshing with the ther-
+modynamic system. The literature on this topic is divided into two major
+sets of research campaigns: ground-based and microgravity. While the
+ground-based campaigns cannot achieve dynamical similarity with the
+microgravity environment, several studies, such as references79–84,h a v eb u i l t
+essential foundational knowledge on the physics of the problem. These
+campaigns characterized the thermodynamic response of partially ﬁlled
+tanks under different sloshing excitations, working ﬂuids, pressurization
+techniques, pressurant gasses, and tank designs (e.g., with or without baf-
+ﬂes). The state of the art on microgravity experiments has been mainly
+Table 6 | Summary table of gaps in physical knowledge and their application for conditioning and storage
+Physical knowledge’s gap Application
+Heat transfer coef ﬁcients with different phases (gas/liquid, liquid/solid, gas/solid), different conditions (e.g.,
+gravity conditions, interfaces conditions), and different concurring mechanisms (e.g., natural convection,
+thermocapillary convection, etc.)
+Thermal control, zero boil-off, mixing, system readiness
+for next status.
+Creation of bubbles due to heat input or depressurization, with and without ﬂow Thermal control by means of depressurization/pressur-
+ization, zero boil-off
+Critical heat ﬂux (CHF) curve in relevant acceleration environments Thermal control, tank ﬁlling
+Mass transfer rates due to phase change Thermal control, tank ﬁlling, autogenous pressurization
+Mass transfer rates due to species concentration (effect of non-condensable gas) Heterogeneous pressurization
+Identiﬁcation of interaction between the different scales in time and space of problems Ef ﬁcient, accurate and representative CFD simulations
+Table 7 | Experimental studies on sloshing in microgravity
+Reference Investigation Gravity
+Cond.
+Fluids Highlights
+SloshSat-
+FLEVO
+(ESA)68,128
+Launched on 12 February 2005 to study sloshing in a tank subjected to
+induced perturbations with a system of 12 nitrogen gas thrusters.
+On-
+orbit
+GTO
+Water The mission operated for 8 days. Communication problems
+hampered the quality and quantity of data collected. Thanks to
+this mission COMFLO solver (University of Germany) 129 was
+improved and validated.
+SPHERES-
+Slosh (NASA)
+Two free-ﬂying satellites known as Synchronized Position Hold, Engage,
+Reorient, Experimental Satellites (SPHERES) are attached to opposite
+ends of a metal frame holding a plastic tank with green-colored water.
+ISS Water The data were used to re ﬁne critical computer models to better
+solve launch and spacecraft fuel slosh. A synchronization pro-
+blem between the SPHERES and the camera acquiring the
+sloshing images results in a limited validation use of the data 130.
+SPHERES
+thether-slosh
+(NASA)131
+Experimental test-bench to study automated strategies for steering
+passive cargo. It consists of two automated satellites (SPHERES) con-
+nected to two different tanks: a liquid- ﬁlled tank and a solid tank of
+same mass.
+ISS Water The evaluation of how the ﬂuid and solid tanks affected the
+closed-loop control of the tethered system can inform future
+development of control strategies. The results appear to indi-
+cate the correct application of control effort to reach closed-
+loop set points.
+FLUIDICS
+(ESA)132,133
+Experimental test-bench to validate the Direct Numerical Simulation for
+two-phase ﬂow with the realﬂuid’s behavior within a spherical tank under
+microgravity conditions.
+ISS Water Excellent agreement between experimental results and simu-
+lation with DIVA ® (Dynamics of Interface for Vaporization and
+Atomization). Control of sloshing was not a goal of this mission.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 7
+
+derived from drop tower experiments (5 s of microgravity) 85–87,a n d
+sounding rocket ﬂights (6 min of microgravity) 88,89 campaigns. In such
+experiments, the gas-liquid interface retains a stable shape with a rising
+contact line along the walls, and periodic oscillations of its center along the
+axial direction. Although these conditions allow for detailed investigations
+of heat and mass transfer in a microgravity environment, the stable shape of
+the free surface does not account for more complex free surface behavior
+which might be encountered in long ballistic period and thruster excitations.
+The summary of gaps in physical knowledge and their application for
+m a n e u v e r si ss h o wi nT a b l e8.
+Transfer
+The transfer of fuel from a supply tank to a receiver tank involves several
+major phenomena: the chill-down of the line and the creation of different
+ﬂow regimes, depending on the temperature and pressure conditions of the
+line, ﬂuid-hammer effects, and depressurization of the supply tank. Starting
+from the situation in which the supply tank is properly conditioned, transfer
+can start. When the cryogenic ﬂuid enters the pipe, evaporation occurs
+immediately, and the ﬂow during the chill-down phase becomes a two-
+phase ﬂow. The topology of such a ﬂow has a strong impact on the heat
+transfer and the pressure drop along the channel. Therefore, generally, the
+ﬁrst step in two-phaseﬂow experiments, or models, is to determine the two-
+phase ﬂow regime, which is dependent on many factors, such as ﬂuid
+velocity,ﬂuid density,ﬂuid quality, gravity, and pipe size. At Earth gravity,
+for horizontalﬂow, theﬂow regime is visually classiﬁed as bubblyﬂow, plug
+ﬂow, stratiﬁed ﬂow, wavy ﬂow, slug ﬂow, and annular ﬂow90.F o rv e r t i c a l
+ﬂow, the ﬂow regimes include bubbly ﬂow, slug ﬂow, churn ﬂow, and
+annularﬂow91. The only difference between the horizontal and verticalﬂows
+is the effect of gravity that causes the horizontal ﬂow to become non-
+symmetrical to the tube centerline .R e g i m e so fc o m m o nt w o - p h a s eﬂow
+such as air–water have been extensively mapped from experiments. How-
+ever, the published data for cryogens are limited 92–94.T h ei n ﬂuence of
+microgravity on the chill-down process has to be taken into account. Indeed,
+in microgravity the two-phase ﬂow patterns and the heat transfer char-
+acteristics should be the same, whatever the orientation of the pipe, and the
+ﬂow should be not stratiﬁed95. The difference in density and inertia under
+terrestrial conditions has an impact on the pipe ﬂow distribution: the two
+phases are usually non-uniformly distributed across the pipe. The absence of
+gravity impacts theﬂow regimes, the pressure drop, and the heat transfer. In
+space, the effect of surface tension fo rces and surface phenomena is sup-
+posed to be more important than on Earth93,96. First modeling efforts of chill
+down based on one-dimensional de scriptions were carried out in the
+sixties97,98. These one-dimensional models provided simple, but acceptable
+estimations of the chill downtime (the time required to achieve steady-state
+cryogenicﬂow). However, they neglected the transient characteristic of the
+chill down, the inﬂuence of theﬂow regimes and, in most cases, the inﬂuence
+of the heat transfer regimes. Last but not least, no estimation of the
+instantaneous wall and bulkﬂuid temperature was possible.
+During cryogenic chill down, the pipe wall is in contact either with the
+liquid or with the vapor: the characterization of liquid/solid heat transfer is
+much more complex than the one of gas/liquid due to the occurrence of
+different phenomena. Indeed, when the cold liquid startsﬂowing in the pipe
+Table 8 | Summary table of gaps in physical knowledge and their application for maneuvers
+Physical knowledge’s gap Application
+Liquid motion with free surfaces (often referred to as sloshing) at different acceleration
+regimes caused by any kind of excitation or environmental conditions.
+GNC (long-coasting dynamic control, accurate positioning), reduce overde-
+sign weight, tank (re)- ﬁlling, fuel transfer towards the engine.
+Inertia-induced liquid jets (Geysering) Tank ﬁlling, optimize settling maneuvers
+Two-phase distribution Mass gauging, liquid-only removal, gas-only removal, droplet injection for
+cooling
+Table 9 | Experimental studies on cryogenic chill-down
+Reference Investigation Gravity
+Cond.
+Fluids Highlights
+Velat92 Experimental investigation to collect detailed information on ﬂow
+structure, ﬂow properties, and heat transfer mechanisms asso-
+ciated with cryogenic chill-down.
+1g Liquid
+nitrogen
+Visualizations of the entire chill-down process are documented
+among a range of mass ﬂuxes. The existence and magnitude of cir-
+cumferential and small axial temperature gradients in the transfer line
+during the various phases of chill-down is reported.
+Hu et al. 134 Liquid nitrogen chill-down rates and ﬂow patterns between
+upward ﬂow and downward ﬂow in a vertical pipe.
+1g Liquid
+nitrogen
+Increasing mass ﬂow rate, rewetting temperature, and quench front
+velocity increase while the critical heat ﬂux decreases. The total chill-
+down time for upward ﬂow is longer than for downward ﬂow. Critical
+heat ﬂux, heat transfer coef ﬁcient, and the quench front velocity are
+higher for upward ﬂow.
+Rame and
+Hartwig135
+Liquid hydrogen chill-down is experimentally studied for con-
+tinuous and pulsed ﬂow conditions
+1g Liquid
+nitrogen
+The authors propose a connection between the non-monotonically
+decreasing temperature and the ﬂow conditions, which increase the
+heat transfer coef ﬁcient.
+Yuan
+et al.93,96
+Liquid nitrogen chill-down process under both normal gravity and
+microgravity conditions
+0g,
+drop
+tower
+Liquid
+nitrogen
+The bottom wall heat ﬂux is lower in 0g than in 1g. Wall temperature
+and inlet ﬂow rate do depend on gravity.
+Kawanami
+et al.101
+Liquid nitrogen forced convective boiling for low mass velocity in
+terrestrial and microgravity conditions
+1g, 0g Liquid
+nitrogen
+Heat transfer and quench front velocity is 20% higher in 0g. Gravity
+has no effect on the maximum heat ﬂux, which increases exponen-
+tially with the quench front velocity.
+Hartwig
+et al.136
+Chill-down in microgravity using pulse ﬂow and low-thermally
+conductive coatings
+Parabolic
+Flight
+Liquid
+nitrogen
+The tested combination of coatings and pulsating ﬂow enhances
+signiﬁcantly the performances of the chill-down: 75% reduction of
+mass consumption.
+Sarae
+et al.45
+See Table 4.
+Kinefuchi
+et al.46
+See Table 4.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 8
+
+and chill-down occurs, the heat transfer regimes observed areﬁlm boiling,
+transition boiling (which is often neglected), nucleate boiling, and con-
+vective heat transfer. The transitionfrom one regime to another depends on
+several parameters: wall heatﬂux, ﬂuid properties, and wall temperature. If
+the wall temperature is higher than the Leidenfrost temperature,ﬁlm boiling
+is assumed to occur; if the temperatu re is between the Leidenfrost tem-
+perature and the transition one, the nucleate boiling regime is considered as
+the actual state of the ﬂow99.
+Recent activities are mainly focused on the deﬁnition of chill-downﬂow
+regimes and related heat transfer characteristics, to be able to correctly
+describe the phenomena and to developadequate models for prediction. A
+l a r g ea m o u n to fw o r ki sd o n eo ng r o u n d ,b u tc h i l l - d o w ni nd e p o t so c c u r si n
+microgravity conditions. Some activities include test-bench and experiments
+to reproduce microgravity conditions96,100,101. Chill-down process optimiza-
+tion is also a promising ﬁeld of investigation, which aim at continuously
+improving the efﬁciency of cryogenicﬂuid applications. These two research
+activities are developed complementary with the common goal of reaching a
+comprehensive capability of chill-down management. Liquid nitrogen is
+often selected as a working ﬂuid because, even if its thermophysical prop-
+erties do not represent liquid hydrogen and oxygen perfectly, it is aﬁrst step
+towards thermodynamic similarity and an experimental cryogenic envir-
+onment with respect to using classic laboratory ﬂu i d s ,e . g .a l c o h o l s .T h e
+scientiﬁc works related to chill-down, selected in Table 9,a r eo r i e n t e dt o
+applications such as cryogenic enginesand propellant storage stations (used
+for spacecraft supply). Finally, ano ther phenomenon of relevance in a
+transfer line is the so-calledﬂuid-hammer102–104. The complex interaction of
+the ﬂow ﬁeld and liquid-vapor phase transitions, developing of boiling and
+condensation in the line due to pressureﬂuctuation, generates instabilities.
+The feature of such phenomena involves the slow propagation of pressure
+ﬂuctuations in two-phase regions, vapor accumulated downstream at war-
+mer pipe sections, and vapor bubbles coalescence105–107.M e c h a n i c a lv i b r a -
+tions can play a role in interacting withlow-frequency pressure disturbances.
+I ft h et h e r m a l - h y d r o d y n a m i cd i s t urbances generate large-amplitudeﬂow
+oscillations and hydraulic shocks (ﬂuid-hammer), a loss of thermal- ﬂow
+control and mechanical damages might occur108. While several investiga-
+tions have been performed to study cryogenic ﬂuid-hammer in gravity
+conditions109–111, microgravity experiments are still limited112,113.T h es u m -
+mary of gaps in physical knowledge and their application forﬂuid transfer
+operations is show in Table10.
+Summary and outlook
+Several nations strive to enlarge their horizon of exploration by extending
+their presence in space, and aiming to go back to the Moon and to reach
+Mars. A versatile, reliable, and efﬁcient transportation is required to enable
+the presence of human beings in deep space. The most promising propul-
+sion systems are based on cryogenic liquids and use hydrogen or methane as
+fuel and oxygen as oxidizer. For the development of a lunar economy and for
+human missions to Mars, refueling in orbit will be necessary. In this paper,
+we reviewed reference missions and architectures for cryogenic depots and
+analysed the fundamental operations of refueling in orbit, i.e., conditioning
+and storage, maneuvers, and transfer. We summarized the physical phe-
+nomena associated with these operations and described gaps in knowledge
+that need to be ﬁlled in order to enable space depots. Our review is by no
+means exhaustive, but aims to highlight the scientiﬁcc h a l l e n g e si nt h eﬁelds
+of thermodynamics, ﬂuid dynamics, and structural mechanics, and more
+importantly, their nonlinear couplings ,t h a ta r eo p e n .T h es o l u t i o nt ot h e s e
+challenges would lead to new and more capable technologies. In a nutshell,
+the synergies between scientiﬁc and technological exploration strategies for
+deep space exploration promise to open new horizons of research.
+Received: 13 December 2023; Accepted: 4 March 2024;
+References
+1. Olla, P. Space Technologies for the Bene ﬁt of Human Society and
+Earth (Springer, 2009).
+2. Hufenbach, B. et al. The global exploration roadmap. In Proc. of the
+62nd International Astronautical Congress , IAC-11.B3.1.8
+(International Astronautical Federation, 2011).
+3. National Aeronautics and Space Administration. NASA Technology
+Taxonomy 2020 (2020).
+4. Minster, O., Hatton, J. P., Ngo-Anh, T. J. Roadmaps for Future
+Research. A Redeﬁnition of Strategic Goals for Future Space
+Research on the ISS and Supporting Research Platforms(ESA,
+ESTEC, 2016).
+5. Smitherman, D. & Woodcock, G. Space transportation infrastructure
+supported by propellant depots. In AIAA SPACE 2011 Conference
+and Exposition, AIAA 2011-7160 (AIAA, 2011).
+6. Oleson, S. R. et al. Compass ﬁnal report: Nuclear electric propulsion
+(NEP) - chemical vehicle 1.2. No. TM-20210017131 in Technical
+Memorandum (NASA, Glenn Research Center, 2021).
+7. National Academies of Sciences, Engineering and Medicine. Space
+Nuclear Propulsion for Human Mars Exploration (The National
+Academies Press, 2021).
+8. Hartwig, J. W. Liquid Acquisition Devices for Advanced In-space
+Cryogenic Propulsion Systems (Elsevier Academic Press, 2016).
+9. Cilliers, J., Hadler, K. & Rasera, J. Toward the utilisation of resources
+in space: knowledge gaps, open questions, and priorities. npj
+Microgravity 9, 22 (2023).
+10. Meyer, M. et al. NASA Technology Roadmaps, TA 2: In-space
+Propulsion Technologies. Tech. Rep. (2015).
+11. Johnson, W. L. & Stephens, J. R. NASA ’s cryogenic ﬂuid
+management technology development roadmaps. In JANNAF In-
+Space Chemical Propulsion 1– 12 (JANNAF, 2018).
+12. Stinner, A. & Begoray, J. Journey to Mars: the physics of travelling to
+the red planet. Phys. Educ. 40, 35 (2005).
+13. Chato, D. J. Cryogenic technology development for exploration
+missions. In 45th AIAA Aerospace Sciences Meeting and Exhibit
+https://doi.org/10.2514/6.2007-953 (2007).
+14. Drake, B. G. & Watts, K. D. Human Exploration of Mars Design
+Reference Architecture 5.0, Addendum 2 - NASA/SP-2009-566-
+ADD2. Tech. Rep. (NASA, 2014).
+15. Anonymous. NASA ’s exploration systems architecture study -
+NASA-TM-2005-214062. Tech. Rep. (NASA, 2005).
+Table 10 | Summary table of gaps in physical knowledge and their application for ﬂuid transfer operations
+Physical knowledge’s gap Application
+Liquid/Gas interfaces during transfer in all gravity conditions Tank (re)- ﬁlling, fuel in transfer lines
+Heat transfer coefﬁcients with different phases (gas/liquid, liquid/solid, gas/solid), different conditions (e.g., gravity
+conditions, interfaces conditions), and different concurring mechanisms (e.g., natural convection, thermocapillary
+convection, etc.)
+Tank (re)-ﬁlling, fuel in transfer lines
+Creation of bubbles due to heat input or depressurization, with and without ﬂow Fuel in transfer lines, ﬂow control (regulation valves,
+etc.), material fatigue.
+Effect of gravity on the creation of bubbles (cavitation or boiling) and presence of ﬂow Fuel in transfer lines, ﬂow control (regulation valves,
+etc.), material fatigue.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 9
+
+16. Tanner, C., Young, J., Thompson, R. & Wilhite, D. A. On-orbit
+propellant resupply options for mars exploration architectures. In
+57th International Astronautical Congress (2006).
+17. Gaebler, J. et al. Reusable lunar transportation architecture utilizing
+orbital propellant depots. In AIAA SPACE 2009 Conference and
+Exposition (2009).
+18. Zegler, F. & Kutter, B. Evolving to a depot-based space
+transportation architecture. In AIAA SPACE 2010 Conference and
+Exposition (2012).
+19. Perrin, T. & Casler, J. Architecture study for a fuel depot supplied
+from lunar assets. In AIAA Space Forum (AIAA, 2016).
+2 0 . H a n s e n ,H .C . ,J o h n s o n ,W .L . ,M e y e r ,M . ,W e r k h e i s e r ,A .&
+Stephens, J. R. Cryogenic ﬂuid management technologies
+enabling for the Artemis program and beyond. In ASCEND
+2020 (2020).
+21. Dreyer, M. et al. Propellant behavior in launcher tanks - an overview
+of the compere program. In EUCASS (2009).
+22. Behruzi, P., Dodd, C. & Netter, G. Future propellant management
+device concepts for restartable cryogenic upper stages. In 43rd
+AIAA/ASME/SAE/ASEE Joint Propulsion Conference and
+Exhibit (2007).
+23. Johnson, W. R. Thermal performance of multilayer insulations.
+(NTRS) 19740014451. Tech. Rep. (NASA, 1974).
+24. Liu, Z., Li, Y., Xie, F. & Zhou, K. Thermal performance of foam/MLI for
+cryogenic liquid hydrogen tank during the ascent and on orbit
+period. Appl. Therm. Eng. 98, 430– 439 (2016).
+25. Merino, J. et al. Ariane 6 - Tanks and structures for the new european
+launcher. In Deutscher Luft- und Raumfahrtkongress 2017 (2017).
+26. Muratov, C., Osipov, V. & Smelyanskiy, V. Issues of Long-term
+Cryogenic Propellant Storage in Microgravity . NASA/TM-2011-
+215988 (National Aeronautics and Space Administration, 2011).
+27. Mena, J. L., Ingle, M. A., Shirsat, V. & Choudhuri, A. An investigation
+of a cavitating venturi ﬂow control feature in a cryogenic propellant
+delivery system. Flow. Meas. Instrum. 41,9 7– 103 (2015).
+28. Schuster, J. R., Wachter, J. P. & Vento, D. M. The COLD-SAT
+experiment for cryogenicﬂuid management technology. InThe 1990
+JANNAF Propulsion Meeting (Johns Hopkins University, 1990).
+29. Gravlee, M., Kutter, B., Wollen, M., Rhys, N. & Walls, L. CRYOTE
+(cryogenic orbital testbed) concept. In AIAA SPACE 2009
+Conference and Exposition (2012).
+30. Gravlee, M., Kutter, B., McLean, C. & Marquardt, J. Cryogenic orbital
+testbed (CRYOTE) development status. Cryogenics 52,
+231– 235 (2012).
+31. Meyer, M. L., Motil, S. M., Ginty, C. A. & Melis, M. E. The cryogenic
+propellant storage and transfer technology demonstration mission:
+progress and transition. In 50th AIAA/ASME/SAE/ASEE Joint
+Propulsion Conference (2014).
+32. Prins, J. SLOSHSAT FLEVO Facility for Liquid Experimentation and
+Veriﬁcation in Orbit - NLR-TP-2000-630 . Tech. Rep. (National
+Aerospace Laboratory, 2000).
+33. Vreeburg, J. Measured states of SLOSHSAT FLEVO - NLR-TP-2005-
+518. Tech. Rep. (National Aerospace Laboratory, 2005).
+34. Prins, J. SLOSHSAT FLEVO project, ﬂight, and lessons learned. In
+56th International Astronautical Congress of the International
+Astronautical Federation, the International Academy of Astronautics,
+and the International Institute of Space Law https://doi.org/10.2514/
+6.IAC-05-B5.3.B5.5.05 (2012).
+35. Knoll, R. Weightlessness Experiments with Liquid Hydrogen in
+Aerobee Sounding Rockets. Tech. Rep. (NASA, 1962).
+36. Mcardle, J. G., Dillon, R. C. & A., A. D. Weightlessness Experiments
+with Liquid Hydrogen in Aerobee Sounding Rockets; Uniform
+Radiant Heat Addition - Flight 2 . Tech. Rep. (1962).
+37. Nunamaker, R. R., Corpas, E. L. & McArdle, J. G. Weightlessness
+Experiments with Liquid Hydrogen in Aerobee Sounding Rockets .
+Tech. Rep. (1963).
+38. Flachbart, R. H., Hastings, L. J., Hedayat, A., Nelson, S. L. & Tucker,
+S. Testing the effects of helium pressurant on Thermodynamic Vent
+System performance with liquid hydrogen. In AIP Conference
+Proceedings 1483 (American Institute of Physics, 2008).
+39. Musta ﬁ, S., Canavan, E., Johnson, W., Kutter, B. & Shull, J.
+Subcooling cryogenic propellants for long duration space
+exploration. In AIAA Space 2009 Conference and Exposition (2009).
+40. Wang, C., Li, Y. & Wang, R. Performance comparison between no-
+vent and vented ﬁlls in vertical thermal-insulated cryogenic
+cylinders. Exp. Therm. Fluid Sci. 35, 311– 318 (2011).
+41. Flachbart, R. H. et al. Large-scale liquid hydrogen tank rapid chill and
+ﬁll testing for the advanced shuttle upper stage concept. Tech. Rep.
+(NASA, 2013).
+42. Behruzi, P. et al. Cryogenic propellant management sounding rocket
+experiments on TEXUS 48. In 49th AIAA/ASME/SAE/ASEE Joint
+Propulsion Conference (2013).
+43. Leudiere, V., Bianchi, S., Lundin, M., Andersson, G. & Loth, K.
+CRYOFENIX mission - study of liquid hydrogen under low gravity. In
+22nd ESA Symposium on European Rocket and Balloon
+Programmes and Related Research (ESA, Place, 2015).
+44. Plachta, D. W., Johnson, W. L. & Feller, J. R. Zero boil-off system
+testing. Cryogenics 74,8 8– 94 (2016).
+45. Sarae, W. et al. Sounding rocket experiment on chill-down process
+with liquid nitrogen in a complex channel. In 51st AIAA/SAE/ASEE
+Joint Propulsion Conference (2015).
+46. Kinefuchi, K. et al. Investigation of cryogenic chilldown in a complex
+channel under low gravity using a sounding rocket. J. Spacecr.
+Rockets 56,9 1– 103 (2019).
+47. Kassemi, M., Hylton, S. & Kartuzova, O. 1G and microgravity tank
+self-pressurization: experiments and CFD model validations across
+Ra and Bo regimes. Int. J. Microgravity Sci. Appl. 37, 370103 (2020).
+48. Breon, S. R. et al. Robotic refueling mission 3-an overview. IOP Conf.
+Ser. Mater. Sci. Eng. 755, 012002 (2020).
+49. Urbano, A., Tanguy, S. & Colin, C. Direct numerical simulation of
+nucleate boiling in zero gravity conditions. Int. J. Heat. Mass Tran.
+143, 118521 (2019).
+50. Brennen, C. E. Cavitation and Bubble Dynamics (Oxford Univ.
+Press, 1995).
+51. Ibrahim, R. A. Liquid Sloshing Dynamics: Theory and Applications
+(Cambridge Univ. Press, 2005).
+52. Deng, M. & Yue, B. Nonlinear model and attitude dynamics of ﬂexible
+spacecraft with large amplitude slosh. Acta Astronaut. 133, 111 –
+120 (2017).
+53. Concus, P., Finn, R. & Weislogel, M. Capillary surfaces in an exotic
+container: results from space experiments. J. Fluid Mech. 394,
+119– 135 (1999).
+54. Hoffman, E. J. et al. The Near Rendezvous Burn Anomaly of
+december 1998. Technical report, (Applied Physics Laboratory,
+Johns Hopkins University, 1999).
+55. SpaceX. Falcon 1 Demo Flight 2 - Flight Review Update . Technical
+report, SpaceX (2007).
+56. Dodge, F. T. Engineering Study of Flexible Baf ﬂes for Slosh
+Suppression. Technical report NASA CR - 1880, (NASA, 1971).
+57. Tam, W., Dommer, K., Wiley, S., Mosher, L. & Persons, D. Design and
+manufacture of the messenger propellant tank assembly. In 38th
+AIAA/ASME/SAE/ASEE Joint Propulsion Conference & Exhibit
+4139 (2002).
+58. Bayle, O. et al. In ﬂuence of the ATV propellant sloshing on the GNC
+performance. In AIAA Guidance, Navigation, and Control
+Conference and Exhibit 4845 (2002).
+59. Gasbarri, P., Sabatini, M. & Pisculli, A. Dynamic modelling and
+stability parametric analysis of a ﬂexible spacecraft with fuel slosh.
+Acta Astronaut. 127, 141 – 159 (2016).
+60. Mazzini, L. Flexible Spacecraft Dynamics, Control and Guidance
+(Springer, 2015).
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 10
+
+61. Abramson, H. N. The dynamic behavior of liquids in moving
+containers, with applications to space vehicle technology. Technical
+report NASA SP - 106, NASA (1966).
+62. Buseck, R. & Benaroya, H. Mechanical models for slosh of liquid fuel.
+In Aerospace Design Conference, 1093 (1993).
+63. Vreeburg, J. & Chato, D. Models for liquid impact onboard
+SLOSHSAT FLEVO. In Space 2000 Conference and Exposition ,
+5152 (2000).
+64. Ibrahim, R. A., Pilipchuk, V. N. & Ikeda, T. Recent advances in liquid
+sloshing dynamics. Appl. Mech. Rev. 54, 133– 199 (2001).
+65. Bourdelle, A. et al. Propellant sloshing torque H1 -based observer
+design for enhanced attitude control. IFAC-PapersOnLine 52,
+286– 291 (2019).
+66. Thompson, J. W. & O ’Connor, W. Wave-based attitude control of
+spacecraft with fuel sloshing dynamics. Arch. Mech. Eng. 63,
+263– 275 (2016).
+67. Zhou, Z. & Huang, H. Constraint surface model for large amplitude
+sloshing of the spacecraft with multiple tanks. Acta Astronaut. 111,
+222– 229 (2015).
+68. Vreeburg, J. Dynamics and control of a spacecraft with a moving
+pulsating ball in a spherical cavity. Acta Astronaut. 40,
+257– 274 (1997).
+69. Enright, P. & Wong, E. Propellant slosh models for the Cassini
+spacecraft. In Astrodynamics Conference, 3730 (1994).
+70. Konopka, M. et al. Active slosh control and damping - simulation and
+experiment. Acta Astronaut. 158,8 9 – 102 (2019).
+71. Berry, R. L. & Tegart, J. R. Experimental study of transient liquid
+motion in orbiting spacecraft. Technical report NASA CR - 144003,
+NASA (1975).
+72. Schlapkohl, T., Kang, J.-Y. & Coverstone, V. Analytical control law
+for spacecraft reorientation via Lyapunov theory. In AIAA Guidance,
+Navigation, and Control Conference , 7894 (2010).
+73. Yang, D.-D., Yue, B.-Z., Wu, W.-J., Song, X.-J. & Zhu, L.-M. Attitude
+maneuver of liquid-ﬁlled spacecraft with a ﬂexible appendage by
+momentum wheel. Acta Mechanica Sin. 28, 543– 550 (2012).
+74. Zwart, P. J., Gerber, A. G. & Belamri, T. A two-phase model for
+predicting cavitation dynamics. In International Conference on
+Multiphase Flow (2004).
+75. Sopasakis, P., Bernardini, D., Strauch, H., Bennani, S. & Bemporad,
+A. Sloshing-aware attitude control of impulsively actuated
+spacecraft. In 2015 European Control Conference (ECC) ,
+1376– 1381 (2015).
+76. Bourdelle, A. et al. Towards new controller design oriented models of
+propellant sloshing in observation spacecraft. In AIAA Scitech 2019
+Forum 0115 (2019).
+77. Biannic, J.-M., Bourdelle, A., Evain, H., Moreno, S. & Burlion, L. On
+robust lpv-based observation of fuel slosh dynamics for attitude
+control design. IFAC-PapersOnLine 52, 170– 175 (2019).
+78. Jetzschmann, C., Strauch, H. & Bennani, S. Model based active
+slosh damping experiment. Preprint at arXiv:1801.10017 (2018).
+79. Moran, M. E., McNelis, N. B., Kudlac, M. T., Haberbusch, M. S. &
+Satornino, G. A. Experimental results of hydrogen sloshing a 62
+cubic foot (1750 liter) tank. In 30th Joint Propulsion Conference and
+Exhibit (1994).
+80. Das, S. & Hop ﬁnger, E. Mass transfer enhancement by gravity waves
+at a liquid-vapour interface. Int. J. Heat. Mass Tran. 52,
+1400– 1411 (2009).
+81. Van Foreest, A. Modeling of cryogenic sloshing including heat
+and mass transfer. In 46th AIAA/ASME/SAE/ASEE Joint
+Propulsion Conference & Exhibit . https://doi.org/10.2514/6.
+2010-6891 .
+82. Himeno, T. et al. Heat exchange and pressure drop enhanced by
+sloshing. 47th AIAA/ASME/SAE/ASEE Joint Propulsion
+Conference and Exhibit 2011 https://doi.org/10.2514/6.2011-
+5682 (2011).
+83. Arndt, T., Dreyer, M., Behruzi, P., Winter, M. & van Foreest, A.
+Cryogenic sloshing tests in a pressurized cylindrical reservoir. In
+45th AIAA/ASME/SAE/ASEE Joint Propulsion Conference and
+Exhibit. https://doi.org/10.2514/6.2009-4860.
+84. Ludwig, C., Dreyer, M. & Hop ﬁnger, E. Pressure variations in a
+cryogenic liquid storage tank subjected to periodic excitations.Int. J.
+Heat. Mass Tran. 66, 223– 234 (2013).
+85. Kulev, N., Basting, S., Bänsch, E. & Dreyer, M. Interface reorientation
+of cryogenic liquids under non-isothermal boundary conditions.
+Cryogenics 62,4 8– 59 (2014).
+86. Schmitt, S. & Dreyer, M. E. Free surface oscillations of liquid
+hydrogen in microgravity conditions. Cryogenics 72,2 2– 35 (2015).
+87. Friese, P. S., Hop ﬁnger, E. J. & Dreyer, M. E. Liquid hydrogen
+sloshing in superheated vessels under microgravity. Exp. Therm.
+Fluid Sci. 106, 100– 118 (2019).
+88. Fuhrmann, E. & Dreyer, M. E. Heat and mass transfer at a free surface
+with diabatic boundaries in a single-species system under
+microgravity conditions. Exp. Fluids 55,1 – 18 (2014).
+89. Fuhrmann, E., Dreyer, M., Basting, S. & Bänsch, E. Free surface
+deformation and heat transfer by thermocapillary convection. Heat.
+Mass Transf. 52, 855– 876 (2016).
+90. Carey, V. P. Liquid-Vapor Phase-Change Phenomena: An Introduction
+to the Thermophysics of Vaporization and Condensation Processes in
+Heat Transfer Equipment(CRC Press, 2018).
+91. Dziubinski, M., Fidos, H. & Sosno, M. The ﬂow pattern map of a two-
+phase non-Newtonian liquid– gas ﬂow in the vertical pipe. Int. J.
+Multiph. Flow. 30, 551– 563 (2004).
+92. Velat, C. J. Experiments in Cryogenic Two-Phase Flow. Master
+thesis, University of Florida (2004).
+93. Yuan, K., Chung, J. N. & Ji, Y. Cryogenic two-phase ﬂow and heat
+transfer under terrestrial and microgravity. vol. Heat Transfer, Part B
+of ASME International Mechanical Engineering Congress and
+Exposition, 265– 270 (2005).
+94. Jackson, J. K. Cryogenic Two-Phase Flow During Chilldown: Flow
+Transition and Nucleate Boiling Heat Transfer (University of
+Florida, 2006).
+95. Agarwal, A. Numerical Simulation of Cryogenic Flow with Phase
+Change Using Sharp Interface Cut-cell Method . Ph.D. thesis,
+University of Florida (2010).
+96. Yuan, K. Cryogenic Boiling and Two-Phase Chilldown Process
+Under Terrestrial and Microgravity Conditions . Ph.D. thesis,
+University of Florida (2006).
+97. Burke, J., Byrnes, W., Post, A. & Ruccia, F. Pressurized cooldown of
+cryogenic transfer lines. In Advances in Cryogenic Engineering:
+Proceedings of the 1958 Cryogenic Engineering Conference ,
+378– 394 (Springer, 1960).
+98. Bronson, J. et al. Problems in cool-down of cryogenic systems. In
+Advances in Cryogenic Engineering: Proceedings of the 1961
+Cryogenic Engineering Conference University of Michigan Ann
+Arbor 198– 205 (Springer, 1962).
+99. Zhang, H., Mudawar, I. & Hasan, M. M. Assessment of
+dimensionless CHF correlations for subcooled ﬂow boiling in
+microgravity and earth gravity. Int. J. Heat. Mass Transf. 50,
+4568– 4580 (2007).
+100. Antar, B. N. & Collins, F. G. Flow boiling during quench in low gravity
+environment. Microgravity Sci. Technol. 10, 118– 128 (1997).
+101. Kawanami, O., Azuma, H. & Ohta, H. Effect of gravity on cryogenic
+boiling heat transfer during tube quenching. Int. J. Heat. Mass Tran.
+50, 3490– 3497 (2007).
+102. Lema Rodriguez, M. Multiphase Fluid Hammer: Modeling,
+Experiments and Simulations. Ph.D. thesis, von Karman Institute for
+Fluid Dynamics (2013).
+103. Porca, P., Lema, M., Rambaud, P. & Steelant, J. Experimental and
+numerical multiphase-front ﬂuid hammer. J. Propul. Power 30,
+368– 376 (2014).
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 11
+
+104. Pinho, J., Lema, M., Rambaud, P. & Steelant, J. Multiphase
+investigation of water hammer phenomenon using the full cavitation
+model. J. Propul. Power 30, 105– 113 (2014).
+105. Kakac, S. & Bon, B. A review of two-phase ﬂow dynamic
+instabilities in tube boiling systems. Int. J. Heat. Mass Tran. 51,
+399– 433 (2008).
+106. Ruspini, L. C., Marcel, C. P. & Clausse, A. Two-phase ﬂow
+instabilities: a review. Int. J. Heat. Mass Tran. 71, 521– 548 (2014).
+107. Manavela Chiapero, E., Fernandino, M. & Dorao, C. Review on
+pressure drop oscillations in boiling systems. Nucl. Eng. Des. 250,
+436– 447 (2012).
+108. Esposito, C., St eelant, J. & Vetrano, M. R. Impact of cryogenics
+on cavitation through an ori ﬁce: a review. Energies 14,
+8319 (2021).
+109. Gouriet, J.-B., Huertas-Martinez, A., Buchlin, J.-M., Vetrano, M. R. &
+Steelant, J. Multiphase ﬂuid hammer with cryogenic ﬂuids. In 9th
+Space Propulsion (2016).
+110. Peveroni, L., Esposito, C., Pinho, J., Steelant, J. & Gouriet, J.-B.
+Hydro-thermodynamic behaviour of a hydraulic restriction in liquid
+nitrogen in steady-state and ﬂuid-Hammer conditions. In Aerospace
+Europe Conference (2020).
+111. Klein, S., Traudt, T. & Oschwald, M. Comparison of water and
+cryogenic ﬂuid hammer experiments for rocket engine feed line
+systems. Exp. Fluids 64, 30 (2023).
+112. Elvira, R., Monzón, A., Fernández Cabrera, J. & Riesgo, I.
+Waterhammer effect in microgravity environment. AIP Conf. Proc.
+905, 245– 246 (2007).
+113. Khusid, B. et al. Topical: Boiling, Condensation and Two-phase
+Flows in Microgravity. Tech. Rep. (2021).
+114. Cassady, J. et al. The Seventh Community Workshop for
+Achievability and Sustainability of Human Exploration of Mars. In
+The Seventh Community Workshop for Achievability and
+Sustainability of Human Exploration of Mars (Explore Mars Inc. and
+The American Astronautical Society, 2019).
+115. Delee, C. H. et al. Techniques for on-orbit cryogenic servicing.
+Cryogenics 64, 289– 294 (2014).
+116. Flynn, T. M. Cryogenic engineering, Revised and Expanded. (2nd
+ed.) (CRC Press, 2005).
+117. Taylor, W. J., Chato, D. J., Moran, M. M. & Nyland, T. W. On-orbit
+cryogenic ﬂuid transfer research at NASA Lewis Research Center.
+Cryogenics 32, 199– 204 (1992).
+118. Chato, D. J. Cryogenic ﬂuid transfer for exploration. Cryogenics 48,
+206– 209 (2008).
+119. Bellur, K. et al. Visualization of the evaporation and condensation
+phenomena in cryogenic propellants. J. Flow. Vis. Image Process.
+23, 137– 156 (2016).
+120. Bellur, K., Médici, E. F., Hermanson, J. C., Choi, C. K. & Allen, J. S.
+Determining solid-ﬂuid interface temperature distribution during
+phase change of cryogenic propellants using transient thermal
+modeling. Cryogenics 91, 103– 111 (2018).
+121. Obreschkow, D. et al. Cavitation bubble dynamics inside liquid
+drops in microgravity. Phys. Rev. Lett. 97,3 – 6 (2006).
+122. Farhat, M. What we learned from cavitation bubbles in microgravity.
+In Pletser, V. (ed.) Preparation of Space Experiments (2021).
+123. Kobel, P., Obreschkow, D., De Bosset, A., Dorsaz, N. & Farhat, M.
+Techniques for generating centimetric drops in microgravity and
+application to cavitation studies. Exp. Fluids 47,3 9– 48 (2009).
+124. De Bosset, A., Obreschkow, D., Kobel, P., Dorsaz, N. & Farhat, M.
+Direct effects of gravity on cavitation bubble collapse. Int.
+Astronautical Federation - 58th Int. Astronautical Congr. 2007 1,
+519– 523 (2007).
+125. Sielaff, A. et al. The multiscale boiling investigation on-board the
+International Space Station: a overview. Appl. Therm. Eng. 205,
+117932 (2022).
+126. Ronshin, F., Sielaff, A., Tadrist, L., Stephan, P. & Kabov, O. Dynamics
+of bubble growth during boiling at microgravity. J. Phys. Conf. Ser.
+2119, 012170 (2021).
+127. Nejati, I. et al. Experimental investigation of single bubble
+nucleate boiling in microgravity. Microgravity Sci. Technol. 32,
+597– 607 (2020).
+128. Vreeburg, J. Measured states of SLOSHSAT FLEVO. Technical
+report (National Aerospace Laboratory, 2005).
+129. Veldman, A. E., Gerrits, J., Luppes, R., Helder, J. A. & Vreeburg, J.
+The numerical simulation of liquid sloshing on board spacecraft. J.
+Comput. Phys. 224,8 2– 99 (2007).
+130. Storey, J. M., Kirk, D., Marsell, B. & Schallhorn, P. Progress towards
+a microgravity CFD validation study using the ISS SPHERES-
+SLOSH experiment. In AIAA Propulsion and Energy 2020 Forum .
+https://doi.org/10.2514/6.2020-3814.
+131. Behruzi, P., Roascio, D., Kirk, D. R., Lapilli, G. & Zachrau, H. J.
+Spheres tether slosh free ﬂyer experiment on ISS. In 2018 Joint
+Propulsion Conference (American Institute of Aeronautics and
+Astronautics Inc, AIAA, 2018).
+132. Lepilliez, M., Popescu, E. R., Gibou, F. & Tanguy, S. On two-phase
+ﬂow solvers in irregular domains with contact line. J. Comput. Phys.
+321, 1217– 1251 (2016).
+133. Dalmon, A. et al. Comparison between the FLUIDICS experiment
+and direct numerical simulations of ﬂuid sloshing in spherical tanks
+under microgravity conditions. Microgravity Sci. Technol. 31,
+123– 138 (2019).
+134. Hu, H., Chung, J. N. & Amber, S. H. An experimental study on ﬂow
+patterns and heat transfer characteristics during cryogenic
+chilldown in a vertical pipe. Cryogenics 52, 268– 277 (2012).
+135. Rame, E., Hartwig, J. W. & McQuillen, J. B. Flow visualization of liquid
+hydrogen line chill down tests. In52nd Aerospace Sciences Meeting
+https://doi.org/10.2514/6.2014-1074 (2014).
+136. Hartwig, J. et al. Nitrogen ﬂow boiling and chilldown experiments in
+microgravity using pulse ﬂow and low-thermally conductive
+coatings. npj Microgravity 8, 33 (2022).
+Acknowledgements
+The authors thank ESA for supporting this article and the Topical Team
+on Propellant Management Physics (C.N. 4000127841/19/NL/PG/pt).
+The authors from Germany acknowledge the funding by the German
+Aerospace Center through grant numbers 50WM2248 and 50RL2290.
+The authors from Belgium acknowledge BELSPO for supporting their
+activities on Propellant Management through grant number
+4000142407.
+Author contributions
+All authors contributed to the conception of this publication.
+A. Simonini coordinated the realization of the manuscript. A. Simonini,
+M. Dreyer, A. Urbano, F. Sanfedino, P. Behruzi, J. Pinho, and T. Himeno
+contributed to writing the different sections. All authors reviewed the
+manuscript.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondenceand requests for materials should be addressed to
+Alessia Simonini.
+Reprints and permissions informationis available at
+http://www.nature.com/reprints
+Publisher’s noteSpringer Nature remains neutral with regard to jurisdictional
+claims in published maps and institutional afﬁliations.
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 12
+
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article ’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2024
+https://doi.org/10.1038/s41526-024-00377-5 Perspective
+npj Microgravity |           (2024) 10:34 13

@@ -1,0 +1,1723 @@
+Fundamental Research 5 (2025) 450–463 
+Contents lists available at ScienceDirect 
+Fundamental Research 
+journal homepage: http://www.keaipublishing.com/en/journals/fundamental-research/ 
+Review 
+Supply chain resilience: A review from the inventory management 
+perspective 
+Ying Guo a 
+ ,Fang  Liu b , ∗ ,Jing-Sheng  Song c ,Shuming  Wang d 
+a School of Business, Shandong Normal University, Jinan 250358, China 
+b Durham University Business School, Durham University, Durham, DH1 3LB, United Kingdom 
+c Fuqua School of Business, Duke University, Durham, NC 27708, US 
+d School of Economics and Management, University of Chinese Academy of Sciences, Beijing 100190,China 
+a r t i c l e i n f o 
+Article history: 
+Received 16 January 2023 
+Received in revised form 4 July 2024 
+Accepted 6 August 2024 
+Available online 13 August 2024 
+Keywords: 
+Supply chain resilience 
+Inventory pre-positioning 
+Multiple sourcing 
+Demand surges 
+Supply disruptions 
+a b s t r a c t 
+The COVID-19 pandemic has exposed vulnerabilities in global supply chains, leading to economic damage and 
+product shortages caused by demand surges and supply disruptions. Concurrently, geopolitical conﬂicts and the 
+rising frequency of natural disasters due to climate change have ampliﬁed the urgency to develop strategies for 
+building resilient supply chains. This article presents a comprehensive literature review on inventory management 
+strategies for enhancing supply chain resilience, such as stockpiling, multi-sourcing, capacity reservation, and 
+ﬂexible supply contracts. We classify these strategies into two categories: one deals with supply-side disruption 
+risks, and the other deals with demand-side disruption risks. For each category, we summarize the practical 
+challenges, the state-of-art research, and potential avenues for future research. 
+1. Introduction 
+1.1. Supply chain resilience 
+Supply chain resilience refers to the ability of a supply chain “to re- 
+turn to its original state or move to a new, more desirable state after 
+being disturbed ” [1] . It implies the supply chain’s ability to mitigate, 
+respond to, and recover from risks that cause mismatches between de- 
+mand and supply. Therefore, the supply chain is more resilient if the 
+possibility of mismatches is lower, the duration is shorter, or the state 
+after recovery is better. 
+As the world grows increasingly interconnected, global disruptions 
+such as the Coronavirus (COVID-19) signiﬁcantly and lastingly impact 
+supply chain logistics, suppliers, and workforce [2] . Local disturbances, 
+including natural disasters such as earthquakes and ﬂoods, as well as 
+sudden shifts in inﬂation, market trends, political policies, and climate 
+changes, can similarly inﬂuence global supply chain operations due to 
+their cascading eﬀects [3] . Concurrently, pervasive digital technolo- 
+gies are reshaping supply chain processes and conﬁgurations [4] . These 
+transformations, however, may lead to heightened risks of supply dis- 
+ruptions due to increased coordination complexity inherent in Indus- 
+try 4.0 designs and potential interruptions in information ﬂow stem- 
+∗ Corresponding author. 
+E-mail address: fang.liu@durham.ac.uk (F. Liu) . 
+ming from data security issues [5] . Additionally, dramatic changes in 
+consumer behavior, particularly following the pandemic, pose further 
+challenges [6] . Such shifts can disrupt supply chains as unpredictable 
+demand creates substantial mismatches between supply and demand. 
+Moreover, supply chain members are increasingly encountering events 
+for the ﬁrst time, where neither the probability nor the impact of risks 
+is known, thereby escalating uncertainties and disruption risks towards 
+unknown unknowns [7] . These developments underscore the ongoing 
+and critical challenge of building a more resilient supply chain. 
+1.2. Existing reviews on supply chain resilience 
+The growing signiﬁcance of supply chain resilience has attracted the 
+attention of many scholars. A number of surveys provide an overview 
+of the academic literature from diﬀerent perspectives. For example, Ka- 
+malahmadi and Parast [8] review works focusing on the deﬁnition and 
+principles of resilience. They deﬁne supply chain resilience as “The adap- 
+tive capability of a supply chain to reduce the probability of facing sudden 
+disturbances, resist the spread of disturbances by maintaining control over 
+structures and functions, and recover and respond by immediate and eﬀec- 
+tive reactive plans to transcend the disturbance and restore the supply chain 
+to a robust state of operations ”. They identify foundational supply chain 
+https://doi.org/10.1016/j.fmre.2024.08.002 
+2667-3258/©2024  The Authors. Publishing Services by Elsevier B.V. on behalf of KeAi Communications Co. Ltd. This is an open access article under the CC 
+BY-NC-ND license ( http://creativecommons.org/licenses/by-nc-nd/4.0/ ) 
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+resilience principles, including supply chain reengineering, collabora- 
+tion, agility, and the development of a supply chain risk management 
+culture. Finally, they summarize key elements of a resilient supply chain, 
+such as ﬂexibility and redundancy for supply chain reengineering, trust 
+and information sharing for collaboration, visibility and velocity for 
+agility, leadership and innovation for supply chain risk management 
+culture. Emphasizing analytical decision-making, Snyder et al. [9] and 
+Hosseini et al. [10] review the literature focusing on quantitative mod- 
+els for developing supply chain resilience. They discuss the objective 
+functions, decision variables, and constraints of mathematical models 
+addressing various resilience challenges such as supplier segregation, in- 
+ventory location, order quantity, and restoration capacity of disrupted 
+primary supplier. Hosseini et al. [11] review works that focus on re- 
+silience of supply networks. They discuss how to detect bottlenecks and 
+how risk propagates in a supply network and comb through mitigation 
+strategies for network disruptions. They emphasize that supply network 
+topology design, redundancy and proactive and reactive ﬂexibility for 
+supply network reengineering can help avoid and postpone disruptions, 
+or alleviate the impacts of the disruptions. They incorporate multiple 
+stakeholders roles in supply network decisions. 
+Several surveys have further elucidated the roles of speciﬁc strate- 
+gies such as procurement, collaborative actions, and Industry 4.0 tech- 
+nologies in enhancing supply chain resilience. For instance, Roberta 
+Pereira et al. [12] emphasize procurement as a crucial interface that 
+rapidly communicates market demand changes to suppliers. They 
+explore how various procurement activities address key intra- and 
+inter-organizational challenges in implementing supply chain resilience 
+strategies. The procurement activities include establishing supplier 
+bases, developing supplier selection criteria, building supplier relation- 
+ships, setting up network conﬁgurations, reserving knowledge backups, 
+and managing internal stocks. Scholten and Schilder [13] highlight the 
+collaboration for building a resilient supply chain as the “glue that holds 
+supply chain, organizations together in a crisis ”. They unravel in de- 
+tail how the collaborative activities of information sharing and collabo- 
+rative communication, joint relationship eﬀorts (decision synchroniza- 
+tion, resource sharing and incentive alignment), and mutually created 
+knowledge enable supply chain resilience. Based on discussions of pre- 
+vious literature, Spieske and Birkel [14] investigate the relationships 
+among seven technologies of industrial 4.0 –a r t i ﬁ c i a l intelligence, big 
+data analytics, blockchain, cloud computing, cyber physical systems, 
+the Internet of Things, and additive manufacturing (e.g., 3D printing) –
+and supply chain resilience antecedents distinguished by supply chain 
+reengineering, agility, collaboration, and supply chain risk management 
+culture. 
+1.3. Inventory-related strategies on supply chain resilience 
+Eﬀective inventory management at diﬀerent levels of supply chain 
+is an essential strategy to build supply chain resilience. Research by 
+Remko [2] reveals that since the onset of COVID-19, 47% of respondents 
+are considering holding more inventory, and 58% intend to diversify 
+their sourcing strategies to mitigate supply chain risks. When demand 
+surges occur, inventory provides immediate availability to ﬁll the need. 
+Similarly, in the event of supply disruptions, on-hand inventory serves 
+as a buﬀer to continue serving demand. Therefore, inventory held in an 
+organization plays a pivotal role in cushioning supply chain disruptions. 
+In this paper, we review inventory-related strategies that are applied 
+to mitigate the impact of supply chain disruptions. Inventory manage- 
+ment fundamentally aims to strike a balance between costs and service 
+levels, which necessitates a detailed understanding of both demand- 
+side and supply-side information. Consequently, inventory management 
+strategies for hedging against demand-side and supply-side disruptions 
+often diﬀer due to their distinct advantages. Accordingly, our discussion 
+separately addresses how strategies hedge against risks from disruptions 
+on the demand side and the supply side, exploring these areas distinctly 
+to highlight their unique challenges and solutions. 
+Speciﬁcally, to hedge against demand-side disruptions, ﬁrms often 
+employ pre-positioning of emergency supplies. This strategy enables im- 
+mediate response to demand surges, signiﬁcantly reducing shortage im- 
+pacts on customer service. Ergun et al. [15] note that pre-positioned in- 
+ventories are particularly eﬀective in mitigating frequent, large demand 
+surges, as they substantially decrease the response time needed. 
+Conversely, to guard against supply-side disruptions, ﬁrms might 
+adopt multiple sourcing strategies. This approach ensures that com- 
+panies can maintain material inﬂows even if some suppliers face dis- 
+ruptions. For instance, if a supplier fails to deliver materials on time 
+due to supply uncertainty, companies can procure from alternative 
+suppliers or the spot market to stabilize material ﬂow. Song et al. 
+[16] highlight that multiple sourcing is especially advantageous for 
+mitigating risks associated with suppliers’ production or transportation 
+disruptions. 
+However, relying solely on inventory pre-positioning or multiple 
+sourcing has its limitations in managing disruption risks. For instance, 
+while pre-positioning can hedge against demand-side disruptions, main- 
+taining large stockpiles is often costly. Alternatives like reserving 
+capacities-referred to as virtual inventory-can be more cost-eﬀective 
+[15,17] . This approach, complemented by sharing inventory data, im- 
+plementing Vendor-Managed Inventory (VMI) programs, or engaging in 
+collaborative inventory planning, allows stakeholders to work together 
+to enhance supply chain resilience. Thus, reserved capacity and ﬂexible 
+cooperation contracts serve as ideal supplements to physical inventory 
+pre-positioning. 
+Conversely, when hedging against supply-side disruptions, placing 
+additional orders with regular or emergency suppliers typically involves 
+lead times. Therefore, maintaining inventory reserves is crucial to pre- 
+vent the risk of supply disruptions from propagating through the supply 
+chain during these lead times [15] . Moreover, cultivating ﬂexible rela- 
+tionships can encourage suppliers to prioritize a company’s needs during 
+disruptions, based on trust and reliability [9] . Consequently, combining 
+inventory reserves with ﬂexible sourcing contracts eﬀectively supports 
+multiple sourcing strategies in mitigating supply-side disruptions. 
+Compared to traditional inventory management literature, the dis- 
+course on inventory-related strategies in supply chain resilience pri- 
+marily focuses on mitigating the impacts of demand surges and sup- 
+ply disruptions. For instance, within the framework of supply chain re- 
+silience, the quantity of pre-positioned inventories is typically greater 
+than what is maintained for regular demand, and these inventories 
+are often stored in dedicated warehouses. Additionally, it is generally 
+preferable to source supplies from a diverse array of suppliers to ensure 
+shorter lead times for arrivals [16] , rather than prioritizing the lowest 
+cost acquisitions. However, conventional inventory models that account 
+for uncertainty could still be adapted to enhance supply chain resilience 
+[18,19] . 
+1.4. A framework for bridging research and practice 
+Recognizing the critical role of inventory management in enhanc- 
+ing supply chain resilience, this paper seeks to systematically review 
+relevant scientiﬁc research. Our goal is to evaluate current inventory 
+strategies that bolster resilience and identify signiﬁcant research gaps. 
+By synthesizing existing literature, we aim to provide actionable insights 
+for managers to make better decisions and oﬀer scholars a clearer un- 
+derstanding of crucial research areas. 
+We propose a framework shown in Fig. 1 , to bridge theoretical devel- 
+opments and practical applications, facilitating comprehension of how 
+robust inventory management practices contribute to a resilient supply 
+chain. 
+The top portion of Fig. 1 illustrates the core strategies employed 
+to build supply chain resilience against disruptions from the demand 
+side, which include inventory pre-positioning and its supporting tools–
+reactive capacity and ﬂexible cooperation contracts. In the bottom 
+portion, we demonstrate widely used strategies to cope with supply 
+451
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+Fig. 1. A framework for practice and research . 
+uncertainties, i.e., multiple sourcing and its supporting tools–inventory 
+reserves and ﬂexible sourcing contracts. 
+The middle portion of Fig. 1 indicates the logic ﬂow of our review. 
+That is, we begin with identifying the practical challenges in implement- 
+ing the core strategies across diﬀerent phases of supply chain disrup- 
+tions: pre-event, during, and post-event. We then analyze how current 
+research tackles these periods with speciﬁc focus on mitigating risks 
+from both demand and supply perspectives. Furthermore, we discuss the 
+supporting tools that enhance the eﬀectiveness of these primary strate- 
+gies. Finally, we point out future research opportunities. 
+To conduct the review based on the framework outlined above, we 
+selected papers indexed in INFORMS and Web of Science within the 
+ﬁelds of Operations Research and Management Science. These papers 
+contain keywords such as “resilience/resilient ”“risk  ”“disruption  ”“de-  
+mand surge ”“ u n c e r t a i n ” “emergency ”o r “breakdown ”i n their titles 
+or abstracts. We also searched for Chinese references through Google 
+Scholar and the China National Knowledge Infrastructure (CNKI). Our 
+search was supplemented with ChatGPT, which signiﬁcantly aided the 
+process. 
+The databases contain thousands of journal articles, from which we 
+initially selected the top 300 based on relevance and journal quality 
+rankings. We then narrowed this selection to works focusing on inven- 
+tory management decisions related to sourcing, storing, and fulﬁllment, 
+resulting in approximately 168 papers. Each paper was evaluated based 
+on its research questions, contributions, methodological rigor, and con- 
+clusions. Papers that did not provide information relevant to the pur- 
+pose of this literature review were excluded. Additionally, we directly 
+collected some papers from the references of review articles on supply 
+chain resilience, inventory management, pre-positioned inventory, and 
+multiple sourcing, including works by Roberta et al. [12] , Balcik et al. 
+[20] , Song et al. [4] , Xin et al. [21] , Spieske et al. [14] , Cohen et al. 
+[22] , and Ergun et al. [15] . 
+In total, we selected 102 articles for an in-depth review, with 37 on 
+pre-positioning, 36 on multiple sourcing, 17 on the supporting strate- 
+gies for pre-positioning, and 12 on the supporting strategies for multiple 
+sourcing. 
+In Section 2 we review the inventory-related strategies that are ap- 
+plied to deal with demand uncertainties. In Section 3 we review the 
+inventory-related strategies that are applied to deal with supply uncer- 
+tainties. In Section 4 we propose future research opportunities on in- 
+ventory management strategies from demand-side and supply-side to 
+improve supply chain resilience. Finally, we conclude the paper. 
+2. Demand-side strategies 
+If a demand shortage occurs, the ﬁrst line of defense is often in- 
+ventory. Thus, stockpiling inventories for demand surges has become a 
+common practice. For instance, during the COVID-19 pandemic, Sam’s 
+Club increased its reserves of household-use items to 3-5 times the usual 
+amount, enabling immediate responses to demand spikes (Sina Finance, 
+2022). 1 Similarly, governments establish strategic national stockpiles, 
+1 https://ﬁnance.sina.com.cn/chanjing/cyxw/2022-04-26/doc- 
+imcwipii6527394.shtml . 
+such as the U.S. Strategic National Stockpile, which stores emergency 
+supplies including oil, food, medical supplies, and personal protective 
+equipment (PPE) to assist in disaster relief and prevent disease trans- 
+mission [23] . 
+Additionally, the slow yet steady capability of reactive capacity com- 
+plements the inventory pre-positioning that is quick yet with limited 
+capacity, making it a vital support strategy [15] . Furthermore, the in- 
+tegration and coordination of external resources with partners become 
+necessary to supplement limited or cost-ineﬃcient in-house eﬀorts [24] . 
+In this section, we explore three inventory-related strategies to man- 
+age demand uncertainties: inventory pre-positioning, reactive capacity, 
+and ﬂexible cooperation contracts. We ﬁrst detail the challenges and 
+current solutions associated with inventory pre-positioning, followed by 
+an analysis of how supporting strategies enhance pre-positioning and 
+their combined eﬀectiveness in mitigating demand-side disruptions. 
+2.1. Inventory pre-positioning 
+Although inventory pre-positioning improves the responsiveness 
+of the supply chain, there are many challenges when implementing 
+this strategy. We summarize these challenges in Table 1 according to 
+whether they occur before, during, or after the demand surge, as il- 
+lustrated in Section 2.1.1 , and the associated ways to solve these chal- 
+lenges are also presented in Table 1 . Furthermore, we divide the exist- 
+ing research into diﬀerent ways to deal with challenges, as discussed in 
+Section 2.1.2 . 
+2.1.1. Challenges 
+Inventory pre-positioning before a demand surge involves critical de- 
+cisions on how much to order, when to order, and where to store. These 
+measures require accurate information on potential demand surges, such 
+as the location and distribution of demand. However, predicting the ex- 
+act location, timing, and magnitude of an emergency is highly challeng- 
+ing, making it diﬃcult to accurately estimate demand surge information 
+[18,48] . For example, despite Japan’s advanced monitoring systems and 
+seismic analysis in a region prone to earthquakes, the massive 2011 
+earthquake and subsequent tsunami were unexpected. 2 
+Moreover, pre-positioned inventories can perish or become obsolete 
+if demand surges are infrequent [29,30,32] . For instance, millions of 
+masks stockpiled in Ontario, Canada, after the SARS outbreak expired 
+before the coronavirus pandemic. 3 This perishability presents a signiﬁ- 
+cant challenge in formulating inventory policies, even for a single loca- 
+tion, due to the “curse of dimensionality ”[32] . 
+During a demand surge, swiftly delivering limited pre-positioned in- 
+ventories is crucial, yet there are signiﬁcant challenges to achieving this. 
+First, evaluating response objectives that allocate these goods involves 
+navigating conﬂicting goals [49] . For example, the impact of unmet de- 
+mand during disasters extends beyond ﬁnancial losses to include threats 
+to life and health [15,50] . In addition, excess inventory can harm social 
+welfare; notably, over 1.56 billion face masks used in 2020 to combat 
+COVID-19 may end up polluting the oceans, raising public concerns. 4 
+Second, delivery times may be impeded by factors such as traﬃc 
+congestion or labor shortages [37,38] . Additionally, the facilities storing 
+pre-positioned inventories face risks of damage or destruction due to 
+wars, earthquakes, or severe weather [25,27,48] . 
+Lastly, the unpredictable nature of demand surge trajecto- 
+ries —characterized by explosive growth or sudden disappearance —
+further complicates the fulﬁllment process [51] . 
+2 Raﬀerty, John P. and Pletcher, Kenneth. “Japan earthquake and tsunami 
+of 2011 ”. Encyclopedia Britannica, 16 Jul. 2023, https://www.britannica. 
+com/event/Japan-earthquake-and-tsunami-of-2011 . 
+3 https://singapore.timesofnews.com/breaking-news/millions-of-masks- 
+stockpiled-in-canadas-ontario-expired-before-coronavirus-hit.html . 
+4 https://oceansasia.org/covid-19-facemasks/ . 
+452
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+Table 1 
+Challenges of inventory pre-positioning under diﬀerent phases . 
+Phases Challenges Ways to deal with challenges 
+Lack of demand surge location information: Multiple warehouse locations [24,25] 
+Diﬃcult to decide on pre-positioning location Robust stochastic facility location model [26] 
+Before demand surge Lack of demand distribution information: Scenario-based stochastic model [27] 
+Diﬃcult to decide on pre-positioning Distributionally robust model [18,26] 
+Preparation phase quantity due to poor demand forecasting Predictive analytics and data-driven methods [28] 
+Inventories may perish before being used: Inventory rotation [29,30] 
+Diﬃcult to decide on the amount of goods Inventory sharing [31,32] 
+to stockpile Data-driven dynamic ordering [6] 
+Approximation policy to deal with the curse of dimensionality [32,33] 
+Complex objectives: Diﬃcult to balance response Multi-objective planning [18,34] 
+time, shortage, equity, sustainability, cost, etc. Membership-type agreement [35] 
+During demand surge Long response time: Diﬃcult to deliver the pre- Incentive mechanism [36] 
+-positioned goods Mobile warehouse [37] 
+Unmanned aerial vehicles [38] 
+Response phase High fulﬁllment uncertainty: Warehouses may be Two-stage programming [39] 
+destroyed, trajectory of demand surges may not Dynamic deployment model [40,41] 
+be assessed correctly, and demand loss disparity 
+Lack of control during rehabilitation: The duration Risk Exposure Index (REI) [42,43] 
+of the recovery phase is diﬃcult to control 
+After demand surge Heavy burden on disposal of pre-positioned goods: Inventory model incorporating disposal [44] 
+Diﬃcult to measure social value of old products Matching mechanism for reallocation [45] 
+Recovery phase Lack of information for reconﬁguration under new Technology-driven inventory model [46] 
+environment: Reposition inventory for future 
+demand surges; Innovative operational tools for Dynamic structural-logical constraints [47] 
+upgrading inventory management systems 
+After pre-positioned inventory is deployed to meet demand, the sup- 
+ply chain enters the recovery phase. This phase extends the responsibil- 
+ity of stakeholders from merely mitigating impacts to enhancing long- 
+term resilience and performance. However, it is challenging to predict 
+the time required to recover from a demand surge and the state of the 
+supply chain post-recovery [43] . This uncertainty complicates decisions 
+related to ordering and discontinuing inventory pre-positioning, espe- 
+cially in complex situations like the COVID-19 pandemic. 
+Another concern arises if pre-positioned inventories exceed the de- 
+mand. Managing surplus humanitarian supplies becomes a perplexing 
+issue for managers. 5 Disposing of excess inventory is problematic, as ef- 
+ﬁciently distributing leftover supplies to organizations that need them 
+is diﬃcult [45] . 
+In the recovery phase, supply chains often transit into a “new nor- 
+mal ”s i t u a t i o n , where some critical but vulnerable suppliers may have 
+ceased operations [43] . This shift can complicate inventory reposition- 
+ing, as supply chains must adapt to new environmental forces and im- 
+mature reconﬁgured networks. 
+2.1.2. Current research 
+Table 1 shows that extensive research has been conducted on the 
+inventory pre-positioning. We proceed from summarizing studies that 
+address challenges in the preparation phase to those addressing chal- 
+lenges in the recovery phase, as detailed in Table 1 . 
+Preparation phase. During the preparation phase, choosing the opti- 
+mal warehouse location for handling future demand emergencies is crit- 
+ical. This decision must balance the beneﬁts of fast delivery against the 
+costs and risks associated with warehouse vulnerability [27,48] . Davis 
+et al. [24] suggest prioritizing the nearest warehouse to meet demand 
+surges quickly, with reserved capacity transshipped from other locations 
+as needed. The classical P-median model, assuming that customers al- 
+ways get service from the facility that minimizes their travel cost, is 
+developed in the warehouse location problem by introducing a reliabil- 
+ity aspect [52,53] , where a pre-speciﬁed number of facilities may be 
+disrupted with a probability. 
+5 https://www.npr.org/sections/goatsandsoda/2019/02/26/691598686/from- 
+trailers-to-tents-what-happens-to-leftover-aid-supplies . 
+However, when faced with uncertain demand locations, robust op- 
+timization methods become essential. For example, Lu et al. [25] ap- 
+ply distributionally robust optimization (DRO) to determine optimal fa- 
+cility locations under correlated disruptions, while Liu et al. [26] en- 
+hance location decisions using a state-wise robust stochastic facility lo- 
+cation model with a state-wise ambiguity set of demand distributions. Lu 
+et al. [25] verify that the robust model based on the worst-case correla- 
+tion outperforms the traditional model even when disruptions are only 
+mildly correlated, and Liu et al. [26] investigate the location policies 
+in diﬀerent models–state-wise ambiguity set model, the distributionally 
+robust optimization counterpart model, and the stochastic average ap- 
+proximation counterpart, and shows that the state-wise robust stochas- 
+tic facility location model indeed enhances the quality of the location 
+decision. 
+Alongside location decisions, determining the optimal inventory 
+level is crucial to balance holding costs with the risk of demand short- 
+fall [20,48] . The newsvendor model is frequently used to calibrate the 
+pre-positioned inventory levels for uncertain demand surges [15,20] . 
+Scenario-based stochastic models are also common, where uncertainties 
+are represented by a ﬁnite number of scenarios with known probabili- 
+ties [18] . For instance, Mete and Zabinsky [27] model diﬀerent disaster 
+scenarios based on urban fault lines and time of day, and Balcik and Ak 
+[54] use historical data and expert opinion to determine disaster prob- 
+abilities. 
+Distributionally robust optimization (DRO) methods are increasingly 
+utilized. Ni et al. [18] propose a min-max robust model that requires 
+only the most likely values, upper, and lower bounds of random inputs, 
+adjusting the level of conservatism through an uncertainty budget to 
+match the decision-maker’s risk tolerance. They ﬁnd that robust models 
+often outperform deterministic and stochastic counterparts. Addition- 
+ally, motivated by the growing availability of advanced demand forecast 
+tools, Hu et al. [28] introduce a two-stage pre-positioning framework 
+that integrates predictive analytics and data-driven demand forecasting 
+into inventory sizing, achieving near-optimal performance with their 
+prediction-driven decisions. 
+In order to enhance the eﬀectiveness of future responses, it is cru- 
+cial to consider the perishability of items when making inventory pre- 
+positioning decisions. Various strategies have been proposed in the liter- 
+ature to mitigate expiration issues. For instance, Shen et al. [55] exam- 
+ine the management of perishable inventory at a pharmaceutical com- 
+453
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+pany using a deterministic Economic Manufacturing Quantity (EMQ) 
+model with a minimum volume constraint at a single location. Their ap- 
+proach allows for the rotation of perishable stockpiles through regular 
+market demand, maintaining freshness and usability. Zhou and Olsen 
+[29,30] explore the rotation strategy of national emergency medical 
+supplies to hospitals, ﬁnding that implementing a rotation policy after a 
+critical period is eﬀective. Speciﬁcally, they recommend an order-up-to 
+policy for ordering decisions and a rotate-up-to policy for rotation deci- 
+sions, which can also address the problem of outdated masks in strategic 
+national stockpiles during pandemics. Furthermore, Liu et al. [31] and 
+Zhang et al. [32] demonstrate that sharing perishable inventory in the 
+face of highly variable demand can signiﬁcantly reduce obsolescence. 
+In addition, managing perishable inventory systems involves com- 
+plex challenges such as the “curse of dimensionality ”which complicates 
+inventory management. To address this, Zhang et al. [33] designed a 
+truncated balancing policy that simpliﬁes balancing underage and over- 
+age costs, oﬀering a worst-case performance bound of two. Zhang et al. 
+[32] also propose a myopic inventory sharing policy that uncovers a 
+simple structure for optimal transshipment direction and provides lower 
+and upper bounds on the optimal transshipment quantity. 
+Response phase. During a demand surge, multiple objectives must be 
+balanced when making inventory deployment decisions, including min- 
+imizing both logistics and deprivation costs [34,49,56] . Holguín-Veras 
+et al. [49] and Ni et al. [18] address these by jointly minimizing the 
+logistics and deprivation costs. To quantify deprivation costs, Holguín- 
+Veras et al. [57] employ contingent valuation techniques, calculating 
+these costs as a function of deprivation time. 
+Challenges also arise from the need to coordinate among hundreds 
+of organizations with potentially conﬂicting objectives during emer- 
+gencies. To navigate this complexity, Liu et al. [35] propose a multi- 
+period membership-type agreement and develop a dynamic principal- 
+agent model to facilitate partnerships among independent entities. This 
+model is particularly applicable to relationships between multiple hu- 
+manitarian organizations during crises. 
+Addressing response times is crucial, especially when warehouses 
+are distant from the demand surge areas or labor shortages occur. Sodhi 
+and Tang [17] advocate for using locally pre-positioned inventories to 
+enhance last-mile deliveries during regular disasters like ﬂoods. Sim- 
+ilarly, Eftekhar et al. [58] note the advantages of local purchasing 
+from suppliers near aﬀected areas to increase responsiveness. Several 
+innovative solutions have also been proposed. For example, Srinivas 
+and Marathe [37] introduce the “mobile warehouse ” concept, where 
+trucks dedicated to speciﬁc geographic locations carry inventories to 
+meet demand quickly. The recently developed unmanned aerial vehi- 
+cles (UAVs), which can improve the speed of data collection and save 
+travel time without following the physical road network, motivated 
+Zhang et al. [38] to solve the drone routing problem by introducing 
+two types of edges, actual ground network and airspace. Wang et al. 
+[36] demonstrate that providing incentives through bonus contracts to 
+suppliers immediately after a disaster can signiﬁcantly reduce delivery 
+lead times. 
+Furthermore, sophisticated optimization techniques like two-stage 
+stochastic programming, robust optimization, and dynamic models 
+are extensively used to enhance response eﬀectiveness during surges 
+[18,27,39,41,59] . For instance, Mete and Zabinsky [27] and Ni et al. 
+[18] employ two-stage stochastic models where initial decisions about 
+warehouse selection and inventory pre-positioning are followed by sub- 
+sequent transportation and demand fulﬁllment decisions. Guo et al. 
+[39] also use a two-stage stochastic model to investigate where to pre- 
+position and how to deploy the inventories to minimize the expected 
+demand loss during a disaster assuming that the demand surge may oc- 
+cur at random locations and the demand arrives sequentially over time. 
+They ﬁnd that the optimal deployment policy is a “nested ”policy  with 
+respect to the shadow price at each demand location. More studies on 
+two-stage programming for disaster management can refer to the re- 
+view paper of Grass and Fischer [59] . A dynamic deployment model 
+that incorporates the time proﬁle of a demand surge may be a more ef- 
+ﬁcient tool to deal with an uncertain trajectory. In Uichanco [40] , the 
+trajectory of a demand surge may be changing in an unknown fashion. 
+As such, they develop a practically relevant stochastic pre-positioning 
+model where the probability models of municipality-level demand and 
+of supply damage are both dependent on the typhoon outcome. Alterna- 
+tively, Liu et al. [41] investigate dynamic capacity planning and deploy- 
+ment model to deal with demand trajectory variation. They design an 
+adaptive allocation policy that is near optimal with perfect information. 
+Recovery phase. Following a demand surge, Simchi-Levi [43] outlines 
+ﬁve steps supply chain executives should take to develop an eﬀective 
+recovery plan. He emphasizes the importance of the time-to-recover 
+(TTR) metric, which helps companies determine when to rebuild their 
+warehouse capacities. Utilizing TTR parameters, Gao et al. [42] analyze 
+the risk-exposure index that reﬂects the cascading eﬀects of disruptions 
+within supply chains, allowing for modeling of optimal recovery opera- 
+tions to minimize total sales loss during disruptions. 
+As the supply chain returns to full functionality, the management of 
+remaining pre-positioned inventories, including their eﬃcient disposal 
+and return, becomes crucial to sustaining supply chain resilience. Stauf- 
+fer and Kumar [44] examine how incorporating returns and disposal into 
+the initial deployment decision can inﬂuence pre-positioning strategies, 
+ﬁnding that it tends to increase the initial deployment level. Further 
+addressing the management of excess inventories, Zhang et al. [45] de- 
+scribe how medical surplus recovery organizations (MSROs) can repur- 
+pose medical surplus products to meet the needs of healthcare facilities 
+in underserved regions. They introduce a simple scoring mechanism that 
+utilizes detailed inventory and recipient information to optimize the dis- 
+posal process, thus maximizing the value of leftover inventories. 
+Unlike traditional static supply chain designs, the increasingly 
+volatile market conditions and frequent disruptions necessitate dynamic 
+network structures to enhance resilience management. Hong et al. 
+[11] highlight that adapting to these dynamic environments is crucial 
+for maintaining supply chain functionality as challenges and demands 
+evolve. In response to these changes, the adoption of advanced technolo- 
+gies has accelerated, reshaping various aspects of supply chain manage- 
+ment. Ivanov [46] discusses how technology-driven inventory manage- 
+ment can signiﬁcantly enhance supply chain resilience. This approach 
+not only enables rapid collection of inventory data but also supports au- 
+tomatic handling of warehouse operations. Further advancing this area, 
+Ivanov et al. [47] propose a mathematical model to address dynam- 
+ically changing constraints within supply chains. Their model, which 
+tackles structural-terminal-logical constraints, is complemented by a 
+decomposition-based algorithm designed to eﬃciently manage these 
+complexities. 
+2.2. Reactive capacity and ﬂexible cooperation contracts 
+2.2.1. Relationship with the inventory pre-positioning strategy 
+Pre-positioned inventories are crucial for promptly addressing de- 
+mand surges but often fall short during exceptionally high-demand sce- 
+narios, such as those experienced during global crises like the COVID- 
+19 pandemic. The fast-but-ﬁnite nature of physical inventory highlights 
+the need for complementary strategies that enhance ﬂexibility and ex- 
+tend capacity beyond what static stockpiles can provide. Two primary 
+strategies that eﬀectively complement inventory pre-positioning are the 
+establishment of reserved capacities [23] and the facilitation of resource 
+sharing through tailored contracts between warehouses [60] . 
+Reserved capacities : During the initial outbreak of COVID-19, the de- 
+mand for N-95 masks quickly exceeded the available stockpiles, caus- 
+ing severe shortages. Companies like Ford and Burberry exempliﬁed the 
+strategic use of reserved capacities by adapting their production lines 
+to manufacture masks, supplementing the overwhelmed pre-positioned 
+inventories [61] . This adaptation underlines the necessity of reserved ca- 
+pacities that allow for dynamic adjustment of production processes in re- 
+sponse to ﬂuctuating demands [23] . However, the eﬀectiveness of such 
+454
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+capacities can be challenged by rapid demand surges that outpace pro- 
+duction capabilities, leading to potential delays [15] , as was observed 
+with mask production in China during the early pandemic stages. 6 So 
+the pre-positioned inventory and reactive capacity planning are interac- 
+tive based on the demand rate of surges [51] . 
+Flexible cooperation contracts : The collaborative inventory strategy 
+further supports the rapid deployment of supplies by maintaining a cu- 
+mulative stock in strategically located warehouses [60] . Through ﬂexi- 
+ble cooperation contracts, organizations pursue common goals by cen- 
+tralizing resources, which reduces the need for large individual inven- 
+tory holdings [13] . These contracts lead to more cost-eﬃcient and ef- 
+fective pre-positioning inventory planning, including decisions about 
+the number and location of warehouses and the amount of inventory 
+each should hold. For instance, Balcik et al. [60] propose an innovative 
+insurance contract to allocate costs among partner countries collabo- 
+ratively establishing inventory pre-positioning. This strategy not only 
+reduces ﬁxed warehouse costs but also signiﬁcantly lowers inventory 
+levels and required investments. The collaborative network established 
+through these contracts also enhances the overall response capacity. An- 
+other notable example is the employee-sharing schemes among Chinese 
+companies during COVID-19, which eﬀectively mitigated the challenge 
+of labor shortages, 7 showcasing the beneﬁts of resource sharing as a 
+strategic response [60] . 
+2.2.2. Current research 
+Zooming in on the strategies for hedging against demand surges, we 
+review the streams of studies on reserved capacity and ﬂexible coopera- 
+tion contracts that complement and support ﬂexibly the pre-positioning 
+in mitigating the risk of the demand surges. 
+Reserved capacity approach . Reserved production capacity allows 
+manufacturers to scale up production rates above normal levels when 
+necessary, achieving higher service levels during demand surges [51] . 
+Scholars have explored the joint strategy of combining pre-positioned 
+inventory with reactive production capacity, noting how the charac- 
+teristics of demand surge trajectories —such as duration, intensity, and 
+volatility —aﬀect the preference between these strategies. For exam- 
+ple, reactive production is preferred for less volatile surges, while pre- 
+positioning is advantageous when demand is more unpredictable [51] . 
+Furthermore, when inventory holding costs and capacity reservation 
+costs are low, combining reserved production capacity with inventory 
+shows superior performance compared to an inventory-only strategy 
+[51,62] . Chaturvedi and Martínez-de-Albéniz [63] argue that the aver- 
+age reserved production capacity and stockpile can act as economic sub- 
+stitutes given a certain demand distribution, while Song et al. [4] sug- 
+gest that inventory and production capacity can be either substitutes or 
+complements, depending on their positional relationship. 
+Local procurement also supports reactive capacity by enhancing re- 
+sponsiveness and providing culturally appropriate products, especially 
+when transportation to the demand area is costly or inaccessible [58] . 
+Policies such as the tailored base-surge (TBS) approach leverage nearby 
+emergency facilities quick-response capabilities dynamically, ensuring 
+high service levels during random demand surges [64,65] . 
+Flexibility cooperation contract approach . Flexibility cooperation con- 
+tracts typically involve agreements among two or more autonomous or- 
+ganizations to collaboratively work towards common goals [13] . This 
+form of horizontal cooperation among pre-positioned inventories is rec- 
+ognized as an eﬀective reactive strategy for managing demand surge 
+risks [60] . Liu et al. [31] introduced a virtual stockpile pooling strategy 
+among multiple warehouses to enhance the supply network’s respon- 
+siveness and cost-eﬃciency. Similarly, Zhang et al. [32] show that in- 
+ventory sharing can increase optimal inventory levels, and Rodríguez- 
+Pereira et al. [66] have designed cost-sharing mechanisms for collab- 
+6 https://www.sixthtone.com/news/1005781 . 
+7 https://www.sixthtone.com/news/1005235 . 
+orative inventory pre-positioning among humanitarian organizations, 
+boosting their response capabilities. 
+Moreover, appropriate coordination contracts between relief suppli- 
+ers and humanitarian organizations can signiﬁcantly aid in procuring 
+extra needed relief items post-disaster. These include quantity ﬂexibility 
+contracts [54] , option contracts [67] , bonus contracts [36] , compensa- 
+tion contracts [68] , and insurance contracts [60] . Li et al. [69] also ex- 
+plore buyback contracts and capacity reservation contracts, which help 
+to coordinate the supply chain eﬀectively against demand uncertainty. 
+2.3. The gap between existing research and practices 
+Despite the strategic beneﬁts of inventory pre-positioning supported 
+by reactive capacities and ﬂexible cooperation contracts, signiﬁcant 
+gaps remain between theoretical frameworks and practical implementa- 
+tions. These strategies are designed to alleviate the impacts of demand 
+shortages eﬀectively, yet they are often not pre-established prior to dis- 
+ruptions, particularly in scenarios involving unprecedented challenges. 
+This disconnection highlights the need for more robust preparations and 
+adaptive strategies that can preemptively address the demands of un- 
+foreseen disruptions. 
+2.3.1. New features of demand-side practices 
+The dynamics of the supply chain continue to evolve, introducing 
+new features that signiﬁcantly alter the landscape of supply chain re- 
+silience. Numerous disruptive factors give rise to unpredictable demand 
+surges with unknown probability and unknown impact [70] . For exam- 
+ple, the COVID-19 pandemic triggered unprecedented demand surges 
+for household goods and protective equipment [15] . Similarly, the rare 
+cold-driven climate catastrophe in Texas sparked a demand surge for 
+home-based electrical heating, resulting in widespread power outages. 8 
+These events underscore the diﬃculties in predicting surge occurrences 
+and their probabilities, as new demand-side features bring formidable 
+challenges in managing demand-side disruptions. 
+Moreover, shifts in consumer behavior following the COVID-19 pan- 
+demic have further complicated supply chain dynamics [6] . Consumers 
+are increasingly favoring online shopping, and their expectations for 
+corporate social responsibility are growing. Companies failing to align 
+their operations with these new consumer preferences face the risk of 
+signiﬁcant disruptions in their supply chains due to a sharp drop in de- 
+mand [71] . These dramatic shifts in demand after such disruptive events 
+create substantial challenges for optimizing ordering and allocation de- 
+cisions for inventory pre-positioning, especially when the duration and 
+magnitude of demand shifts cannot be inferred simply from past infor- 
+mation [15] . 
+2.3.2. The gap in demand-side strategies 
+While many studies employ advanced optimization techniques (such 
+as robust models, data-driven dynamic methods, and approximation al- 
+gorithms) and operating mechanisms (such as inventory sharing, in- 
+formation disclosure, and mobile warehouse design) to address inven- 
+tory pre-positioning challenges, an appropriate level of supply chain re- 
+silience is often not established prior to optimizing these decisions [15] . 
+Resilience is typically measured by the probability of meeting demand, 
+with costs of demand shortages and enhancements considered as prelim- 
+inary inputs. This approach, however, may overlook the interconnected 
+impacts of demand behaviors, such as the spread of infectious diseases 
+when calculating the costs of shortages, despite the inclusion of individ- 
+ual deprivation costs in many analyses, i.e., the economic valuation of 
+the human suﬀering [15,36,49,57] . 
+Additionally, although DRO is a widely adopted method for deci- 
+sion making in response to disruptive scenarios, it can lead to models 
+8 https://corporatesolutions.swissre.com/insights/knowledge/polar-vortex- 
+a-counter-intuitive-threat-of-climate-change.html . 
+455
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+Table 2 
+Challenges of multiple sourcing under diﬀerent phases . 
+Phases Challenges Ways to deal with challenges 
+Auctions [73] 
+Lack of supply risk information: Diﬃcult to Contracts negotiations [74] 
+select suppliers Distributionfree approach [75] 
+Before supply disruption Advanced blockchain [76] 
+Order-tracking [77] 
+Preparation phase High complexity of supply chain: Costly to Redesign supply chains [71,78] 
+maintain more than one supplier Simulating disruption propagation [3] 
+Non-trivial optimal ordering policy: Suppliers Approximate newsvendor model [79,80] 
+have diﬀerent leadtimes and selling prices Model structures [64,81] 
+Complex supply disruption risks: Suppliers Model correlated disruption risks [82] 
+have correlated risks; Supply disruption Multi-tier supply chain model [83] 
+During supply disruption risks may come from high-tier suppliers Order splitting [84,85] 
+Scarcity of raw materials: Emergency source Evaluate alternative materials [86] 
+Response phase has uncertain capacity and a higher price Intensify contact with supplier [87] 
+Lack of supply disruption information: Hard Data-driven sourcing model [88,89] 
+to know whether the order is executable Advanced technologies [14] 
+Lack of control during supplier recovery: Enhance long-term relationship [90] 
+After supply disruption Supplier diversiﬁcation may hurt recovery Restoring design information stock [91] 
+High network reconstruction uncertainty: 
+Recovery phase Supply chain network dynamically changes; Technology-driven multi-sourcing model [92] 
+More stakeholders such as governments may Dynamic rules in network [11] 
+guide supply chain networks with complex 
+interactive behaviors 
+that diverge signiﬁcantly from actual conditions, potentially resulting 
+in unnecessary pre-positioning costs [11] . Moreover, challenges like the 
+curse of dimensionality in optimizing inventory decisions remain daunt- 
+ing, especially when considering practical factors such as budget con- 
+straints [58] , connetabilities between stakeholders [56] , and perisha- 
+bility rates of pre-positioned inventory [32] . Thus, there is a clear need 
+for further research to develop new methods and resilience measure- 
+ment techniques that can eﬀectively tackle these complex yet practical 
+challenges. 
+The eﬀectiveness of reactive capacity and ﬂexible contracts in sup- 
+porting inventory pre-positioning rests on their ability to enable supply 
+chains to ramp up production or secure external inventories in response 
+to a surge in demand. However, in reality, these strategies may be inad- 
+equate during sudden demand shifts or signiﬁcant changes in consump- 
+tion behavior, as evidenced at the onset of the COVID-19 outbreak. For 
+example, BYD Auto had to reconﬁgure its automobile manufacturing ca- 
+pacity to produce face masks, establishing an ad hoc supply chain [11] . 
+Furthermore, the demand for diﬀerent products can be highly corre- 
+lated, complicating the implementation of mixed strategies that do not 
+consider these connections. Dynamic and transformable capacities or 
+contracts are essential to manage such complexities, though achieving 
+such ﬂexibility is challenging due to high requirements for resources, 
+information, and expertise [4,46,72] . Therefore, more eﬀective designs 
+for reactive capacities and ﬂexible cooperation contracts are needed to 
+support inventory pre-positioning strategies against unknown and cor- 
+related demand surges. 
+3. Supply-side strategies 
+Multiple sourcing is a critical strategy that companies utilize to hedge 
+against potential disruptions in their suppliers production or transporta- 
+tion processes [16] . This approach ensures that companies can maintain 
+a stable ﬂow of materials even if the primary supplier fails to deliver on 
+time. To bolster multiple sourcing, maintaining an inventory reserve is 
+crucial. This reserve acts as a buﬀer to prevent supply shortages from 
+impacting downstream operations in the supply chain [15] . In addition, 
+sourcing contracts related to suppliers’ production, ﬁnancing, supply 
+network, and so on, are also necessary to mitigate supply disruption risks 
+[9] . This section will discuss how multiple sourcing, inventory reserves, 
+and ﬂexible sourcing contracts are strategically combined to manage 
+and mitigate supply uncertainties eﬀectively. 
+3.1. Multiple sourcing 
+To implement the multiple sourcing strategies to strengthen supply 
+chain resilience, managers need to decide how to source from the two 
+or multiple suppliers. The problem turns out to be quite complex and 
+challenging, as summarized in Table 2 . Given these challenges before, 
+during, and after the supply disruption, multiple sourcing has drawn the 
+attention of many researchers over several decades, also as combed in 
+Table 2 . 
+3.1.1. Challenges 
+Similar to the categorization in Table 1 , we organize the challenges 
+of multiple sourcing into three phases in Table 2 , based on when they 
+typically occur. 
+Preparation phase . In the preparation phase, supplier selection is in- 
+ﬂuenced by factors such as sourcing price, reliability, service, product 
+quality, lead times, and organizational culture [93] . However, obtain- 
+ing accurate information on aspects like a supplier’s reliability can be 
+challenging, as suppliers may withhold private information to maintain 
+competitive advantages [9] . 
+Additionally, Ang et al. [83] demonstrate that manufacturers may 
+rely less on dual sourcing when disruption risks arise from secondary 
+(tier 2) suppliers, especially if there is signiﬁcant overlap in the supply 
+chain. Political and economic factors also complicate supplier selection 
+and sourcing strategies, as they can drive substantial reforms in supply 
+chain structures [71,94] . Furthermore, the upfront costs associated with 
+diversifying suppliers and the potential diseconomies of scale make in- 
+vesting in supplier diversiﬁcation costly [95] . Dong et al. [96] ﬁnd that 
+higher ﬁxed ordering costs can deter ﬁrms from relying on dual sourcing 
+strategies. 
+Moreover, the landscape of supply networks is rapidly evolving due 
+to globalization and signiﬁcant technological advancements in the last 
+decade. For instance, additive manufacturing is emerging as a viable 
+dual-sourcing option for producing spare parts on demand, thereby re- 
+ducing dependency on traditional suppliers [92] . 
+Political uncertainties also play a crucial role in reshaping the global 
+supply chain network. Recent geopolitical tensions, such as the China- 
+U.S. trade tensions and the Russia-Ukraine conﬂict, have prompted 
+countries to incentivize domestic production or realignment of supply 
+chains toward allied nations, particularly in critical sectors like semi- 
+conductors and pharmaceuticals [11] . These incentives, along with the 
+456
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+need to navigate complex political landscapes, add another layer of com- 
+plexity to managing global supply chain resilience, involving multiple 
+stakeholders including governments and industry groups. 
+In terms of sourcing optimization, deciding on order policies from 
+multiple suppliers is technically challenging due to variations in lead 
+times and prices [16,81] . These complexities require companies to care- 
+fully balance costs, supplier capabilities, and potential supply chain dis- 
+ruptions in their strategic planning. 
+Response phase . During a supply disruption, it is important to recog- 
+nize that the disruption in any link of a supply chain can trigger a ripple 
+eﬀect, impacting downstream operations [3] . Many products require a 
+large number of components, often resulting in supply chains that span 
+5–10 tiers with numerous suppliers at each tier [22] . Consequently, a 
+company may face disruptions originating from tier-2 or even higher- 
+tier suppliers, complicating the management of supply risks [83] . 
+Real-world supply risks are often correlated and strategically timed, 
+adding layers of complexity to supply chain management. For instance, 
+labor strikes may be scheduled during peak demand periods or when in- 
+ventories are low, maximizing the bargaining power of striking workers 
+[9] . These intricately linked supply disruption scenarios pose signiﬁcant 
+challenges to implementing eﬀective multiple sourcing strategies. 
+During the recent COVID-19 pandemic, for example, border closures 
+aimed at controlling the virus spread led to severe shortages of raw 
+materials, which in turn caused dramatic price increases for medicines 
+and semiconductors. The scarcity aﬀected not only industries relying on 
+wood and steel but also those dependent on rubber and plastics, leading 
+to widespread sourcing bottlenecks. 9 This created enormous uncertainty 
+in the supply capacity, even for emergency or backup suppliers. 
+Moreover, the asymmetry of disruption information between com- 
+panies and their suppliers adds another layer of diﬃculty. Firms often 
+struggle to respond eﬀectively to supply failures due to incomplete infor- 
+mation about the extent and duration of disruptions [9] . For example, 
+when Ericsson faced production issues due to a ﬁre at a key compo- 
+nent supplier, the uncertainty regarding the disruption’s duration led 
+to signiﬁcant operational and ﬁnancial setbacks, eventually causing the 
+company to exit the cell phone market in 2001 after a staggering 2.34 
+billion loss. 10 
+Recovery phase . After a supply disruption, employing multiple sourc- 
+ing strategies can complicate the recovery process. While diversifying 
+suppliers is generally beneﬁcial for risk mitigation, it can also result in 
+lower purchasing volumes from each supplier, which might hinder their 
+motivation or ability to prioritize the recovery needs [90] . Additionally, 
+each supplier might have diﬀerent capabilities and timelines for recov- 
+ery from disruptions, making it challenging for companies to synchro- 
+nize recovery eﬀorts or predict recovery timelines eﬀectively [90] . 
+Compounding these challenges, the dynamics within the supply 
+chain network can frequently shift due to factors such as bankruptcies, 
+layoﬀs, or other economic pressures, further complicating the mainte- 
+nance of stable supplier relationships and making it even more diﬃcult 
+for ﬁrms to resume normal operations promptly. 
+3.1.2. Current research 
+We now review the existing works related to the supply-side strate- 
+gies according to the three phases of the supply disruption as presented 
+in Table 2 . 
+Preparation phase. To motivate suppliers to disclose their supply in- 
+formation, Chaturvedi and Martínez-de-Albéniz [73] analyze a two-part 
+payment auction, encouraging truth-telling about production costs and 
+reliability through strategic payment timing —one before and one after 
+delivery. This mechanism eliminates the need for the buyer to pay extra 
+for information on suppliers’ reliability when they know the production 
+9 https://www.jaegergroup.com/en/blog/raw-material-shortages-due-to- 
+corona-how-manufacturing-companies-should-react/ . 
+10 https://covid-19.mitpress.mit.edu/pub/4138hanq/release/1 . 
+costs but not the reliability. Gao [74] also advocates using contracts to 
+curb opportunistic behavior from suppliers in a dynamic context where 
+an unreliable supplier’s private state of production is vulnerable to ran- 
+dom shocks and evolves over time. The author reveals that the optimal 
+contract has a semi-stationary structure: a supply-state-dependent base- 
+stock or ( 𝑠, 𝑆) policy, leading an easy-to-implement, dynamic long-term 
+revenue-sharing contract. 
+Advanced technologies like blockchain also play a crucial role in 
+mitigating information asymmetry within the supply chain. Dong et al. 
+[76] show that while blockchain-enhanced visibility helps manufactur- 
+ers make informed decisions, its beneﬁts across the supply chain depend 
+on the speciﬁc structural arrangements. Similarly, Song et al. [77] ﬁnd 
+that order-tracking information becomes particularly valuable in dual- 
+sourcing decisions when supply lead times are highly uncertain, empha- 
+sizing the importance of timely and accurate information in managing 
+supply disruptions. 
+Distribution-free approach is another eﬀective tool for sourcing deci- 
+sions amidst supply disruptions when distributional information about 
+supply is limited [75] . Furthermore, Xiong et al. [88] employ a data- 
+driven approach to construct uncertainty sets for solving dual sourcing 
+problems in the presence of limited historical data about sourcing price 
+and demand uncertainties. 
+The complexity of the supply chain itself presents additional chal- 
+lenges. Bimpikis et al. [78] describe how certain network structures can 
+amplify shocks to production output. They ﬁnd that in the absence of 
+disruptive events, the resulting equilibrium networks take the form of a 
+box, i.e., the number of ﬁrms with the same cost coeﬃcient in each tier 
+is the same, whereas more ﬁrms tend to enter upstream stages of the 
+production process when disruption probabilities increase. To enhance 
+monitoring and mitigate disruption risks, Charoenwong et al. [94] and 
+Xu et al. [71] advocate for simplifying supply chain structures by reduc- 
+ing the overseas supplier base and increasing reshoring or local sourcing. 
+Charoenwong et al. [94] provide empirical evidence that, in response to 
+uncertainties in complex trade relationships, ﬁrms with signiﬁcant do- 
+mestic sales are inclined to decrease their reliance on foreign suppliers. 
+Additionally, Xu et al. [71] argue that reshoring and local sourcing serve 
+as proactive strategies to bolster supply chain resilience in the face of 
+escalating geopolitical and economic uncertainties. 
+Federgruen and Yang [79] and Federgruen and Yang [80] use the 
+newsvendor model to identify the optimal set of suppliers under supply 
+disruption risks, aiming to minimize total procurement costs while sat- 
+isfying uncertain demand at a speciﬁed probability level. In Federgruen 
+and Yang [79] , the exact analysis of the model is challenging due to 
+the multiplicative uncertainty in shortfall probability, which follows a 
+general distribution. To address this, the authors propose two approxi- 
+mations: an upper-bound approximation using the large-deviations tech- 
+nique, and an asymptotic approximation that applies the central limit 
+theorem as the number of suppliers approaches inﬁnity. Federgruen and 
+Yang [80] modify the earlier model by assuming zero ﬁxed costs and 
+heterogeneous per-unit costs. They develop two variations: a service 
+constraint model and a total cost model that incorporates a stock-out 
+penalty. They demonstrate that the optimal cost value functions, given 
+eﬀective supply, are strictly convex and diﬀerentiable, allowing for the 
+determination of a unique minimum. 
+After determining the supply base, deciding when and how much to 
+order from two or more suppliers is critical to balancing inventory cost 
+and service levels. This problem is complex and has been extensively ex- 
+plored in the literature. For a comprehensive overview, we recommend 
+the recent surveys by Svoboda et al. [97] and Xin and Van Mieghem 
+[21] . 
+Notably, due to distinct lead times and prices from diﬀerent suppli- 
+ers, the form of the optimal policy for general multi-sourcing models re- 
+mains largely unknown. Consequently, researchers have developed sev- 
+eral eﬀective heuristic policies to address this challenge. These include 
+single and dual index policies [81] , Tailored Base Surge (TBS) policies 
+[64] , and Capped Dual-Index Policies [98] . 
+457
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+More recently, there has been some progress in understanding the 
+optimal policy form. Considering a dual sourcing system with endoge- 
+nous stochastic lead times, Song et al. [16] characterize optimal or- 
+dering policies as consisting of a constant threshold and a switching 
+curve dependent on outstanding orders. Additionally, Federgruen et al. 
+[99] ﬁnd that optimal procurement strategies for dual sourcing with 
+general lead time combinations exhibit monotonicity and limited sensi- 
+tivity properties. Song et al. [77] verify that the value function of the 
+dual-sourcing inventory dynamic program is supermodular in the net 
+inventory and the outstanding orders, and convex in the outstanding 
+orders and the emergency inventory position. 
+Response phase. When responding to supply disruptions within a 
+multi-sourcing system, it is common for studies to assume that supply 
+disruption risks at diﬀerent suppliers are independent. However, risks 
+may actually be correlated among suppliers. Shan et al. [82] investigate 
+a scenario where a retailer deals with competing suppliers who have 
+correlated default risks. Interestingly, they ﬁnd that the retailer might 
+prefer a supply network where supply disruption risks are positively cor- 
+related, despite the loss of diversiﬁcation beneﬁts, because this increases 
+competition among suppliers. 
+For more intricate supply chains with multi-tier supplier risks, Ang 
+et al. [83] explore how manufacturers can provide contract terms to 
+motivate Tier 1 suppliers to optimally source from Tier 2 suppliers in 
+an asymmetric information setting. They demonstrate that with price 
+and quantity contracts, manufacturers can encourage Tier 1 suppliers 
+to engage in dual sourcing to mitigate supply disruption risks, albeit at 
+a higher price. 
+Another critical focus for managers is determining how to allocate 
+orders among suppliers to minimize the impacts of disruptions. Hu and 
+Kostamis [84] use an approximation model that overlooks the possibility 
+of simultaneous disruptions at multiple suppliers and ﬁnd that the opti- 
+mal order allocations are best ranked by the ratio of each unreliable sup- 
+pliers cost advantage over a reliable one to their disruption probability. 
+When ordering from one reliable and one unreliable supplier, the total 
+order quantity and its allocation between the two are independent deci- 
+sions. Considering simultaneous supply disruptions, Khojasteh-Ghamari 
+[85] advocates for order splitting across suppliers from diﬀerent regions 
+to diversify risk. 
+Addressing raw material scarcity resulting from supply disruptions 
+involves evaluating alternative materials and collaborative problem- 
+solving. A survey by MIT and PriceWaterhouseCoopers reports that 48% 
+of 209 respondents use some form of product substitution to mitigate 
+supply risks [86] . Freeman et al. [86] develop a single-period stochas- 
+tic linear program with a sample average approximation to calculate 
+the manufacturer’s expected proﬁt, demonstrating through Monte Carlo 
+experiments that substitution helps ensure suﬃcient capacity to con- 
+vert orders into ﬁnished products. However, manufacturers often en- 
+counter signiﬁcant challenges in developing alternatives and adjusting 
+their product portfolios. For instance, case studies of disaster recover- 
+ies at Aisin Seiki and Riken Corporation reveal that temporary sourcing 
+may not be feasible if speciﬁc design and manufacturing methods are 
+required [100] . Alternatively, Saghaﬁan and Van Oyen [101] suggest 
+contracting with or establishing a ﬂexible backup resource to insure the 
+supply stream operationally against future disruptions. Moreover, Xue 
+et al. [87] design option and order commitment contracts as emergency 
+backups to mitigate the eﬀects of price ﬂuctuations in a volatile spot 
+market when disruptions occur. 
+Xiong et al. [88] tackle dual sourcing challenges with limited histor- 
+ical data using a data-driven robust approach. They introduce a robust 
+dual-sourcing rolling horizon formulation and construct an uncertainty 
+set of random variables based on historical observations. Additionally, 
+advancements in information technology, particularly those that ex- 
+pedite shipping options, can overcome these challenges [93] . Spieske 
+and Birkel [14] highlight how Industry 4.0 technologies enhance risk 
+transparency, supporting better sourcing decisions in the face of sup- 
+ply disruptions. Furthermore, using technologies like GPS, RFID, and 
+blockchain, Song et al. [89] develop smart ordering and dynamic ex- 
+pediting policies that utilize real-time supply information. They show 
+that two special cases of their general policy, Policy-M and Policy-E, 
+can be eﬃciently evaluated using product-form solutions involving only 
+marginal distributions of the state variable. Policy-M retains full sourc- 
+ing ﬂexibility and makes expediting decisions while ignoring upstream 
+congestion. Policy-E only orders from the normal, farthest source and 
+makes expediting decisions based on both upstream and downstream 
+information. They demonstrate the relative advantage of policy-E and 
+hence reveal the value of dynamic expediting. 
+Recovery phase. Jain et al. [90] provide extensive empirical evidence 
+showing that, for faster recovery from disruptions, maintaining long- 
+term relationships with a few selected suppliers is more beneﬁcial than 
+diversifying across more suppliers. As such, there is a downside to di- 
+versiﬁcation when taking recovery into account. Similarly, Scholten and 
+Schilder [13] ﬁnd that coordination among stakeholders signiﬁcantly 
+enhances the speed of recovery, highlighting the importance of collab- 
+orative relationships in resilient supply chain management. 
+From a diﬀerent perspective, Fujimoto and Park [91] analyze how 
+manufacturers manage and process the ﬂow of value-carrying design in- 
+formation to customers. They argue that a supply chain disruption can 
+be viewed as an interruption in the ﬂow of this critical design informa- 
+tion. To address this, they propose methods for restoring essential design 
+information either at the site of destruction or at alternative production 
+lines, thereby facilitating the recovery of the damaged supply chain. 
+In dynamic sourcing environments, dual sourcing models are in- 
+creasingly integrated with emerging technologies to enhance supply 
+chain ﬂexibility and responsiveness. Song and Zhang [92] investigate 
+the application of 3D printing technology within a spare parts supply 
+chain, where parts are either sourced traditionally from a distant sup- 
+plier or printed on-demand locally using a 3D printer with limited ca- 
+pacity. They ﬁnd that 3D printing oﬀers a viable solution for producing 
+parts on demand, particularly when the printing times are short. How- 
+ever, they also highlight a crucial consideration: because multiple parts 
+may compete for the same ﬁnite printing capacity, it is vital to maintain 
+a low utilization rate of the printer to avoid excessive waiting times. 
+Looking forward, Hong et al. [11] recommend focusing on dynamic 
+rules for modeling risk propagation and developing mitigation strate- 
+gies. They advocate for more attention to network reconstruction post- 
+disruption and incorporating interactive behaviors of stakeholders into 
+supply chain models. These approaches aim to adapt more eﬀectively 
+to the evolving supply chain environment and enhance the overall re- 
+silience. 
+3.2. Inventory reserves and ﬂexible sourcing contracts 
+3.2.1. Relationship with the sourcing strategy 
+As previously discussed, sourcing from multiple suppliers alone may 
+not quickly and completely halt the propagation of supply disruptions 
+downstream. To enhance the eﬀectiveness of multiple sourcing in miti- 
+gating supply disruption risks, strategies such as inventory reserves and 
+ﬂexible sourcing contracts are crucial. For example, many manufactur- 
+ers maintain stockpiles of key components as a hedge against supply dis- 
+ruptions [31] . Furthermore, ﬂexible sourcing contracts can act as both 
+incentives, such as advance payment contracts that encourage suppliers 
+to invest in proactive risk mitigation [76] , and mechanisms to ensure 
+truthful reporting of supplier reliability, thus optimizing the supply net- 
+work for proﬁt and resilience [9] . 
+Inventory reserves : In contrast to the immediate availability of inven- 
+tory, sourcing from multiple suppliers can be time-consuming due to 
+the lead times associated with placing additional orders with backup or 
+emergency suppliers [15] . To counteract these delays, companies may 
+produce or order in advance of actual demand and hold products in in- 
+ventory, thus shortening the response time to supply disruptions [15] . 
+Lücker and Seifert [102] numerically demonstrate that even with a dual 
+sourcing strategy covering 100% of demand, inventory reserves remain 
+458
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+essential for maintaining high resilience levels. They also ﬁnd that the 
+quantity of inventory reserves decreases with disruption time, but only 
+when the disruption duration is already suﬃciently long. 
+Flexible sourcing contracts : Building contractual relationships between 
+buyers and their suppliers is another vital strategy for reducing op- 
+erational and disruptive supply risks [9] . Huawei, for example, en- 
+hances supplier relationships through regular training and coaching 
+to mitigate risks and increase eﬃciency, and by establishing contrac- 
+tual backup supply networks that guarantee the supply of core chips. 11 
+Sourcing contracts, such as incentive contracts (e.g., investment sub- 
+sidies) and capacity reservation contracts (also known as option con- 
+tracts), are designed to minimize supply disruption risks by enabling 
+choices among multiple unreliable suppliers and facilitating the swift ar- 
+rival of emergency sourcing orders following a disruption [9,101] . The 
+speciﬁc sourcing policies and supplier selection and ordering decisions 
+are heavily inﬂuenced by the type of sourcing contracts [9] , indicating 
+that there is no one-size-ﬁts-all rule for ﬂexible sourcing contracts to 
+achieve a mutually beneﬁcial outcome in supporting multiple sourcing 
+strategies. 
+3.2.2. Current research 
+Scholars have extensively studied the roles of inventory reserves and 
+ﬂexible sourcing contracts in complementing multiple sourcing strate- 
+gies to mitigate supply-side disruption risks. 
+Inventory reserve approach . Inventory reserves are critical for fulﬁll- 
+ing customer demand during supply chain disruptions [103] . Ergun et al. 
+[15] point out that the fast-but-ﬁnite nature of inventory reserves makes 
+them ideal complements to other strategies, helping to mitigate the mis- 
+match between demand and supply. Lücker and Seifert [102] explore 
+the combined eﬀect of multiple sourcing and inventory reserves in a 
+pharmaceutical supply chain facing deterministic demand and supply 
+disruption risk. Their numerical results indicate that in a dual sourc- 
+ing system, maintaining higher inventory reserves is increasingly ben- 
+eﬁcial as the likelihood or duration of disruptions grows. Furthermore, 
+Rozhkov et al. [104] demonstrate that increasing stockpiles at upstream 
+suppliers also enhances disruption mitigation and service levels during 
+pandemics. Craig et al. [105] analyze the positive correlation between a 
+suppliers inventory service level and the demand it receives from retail- 
+ers, showing that a supplier’s inventory reserves can signiﬁcantly reduce 
+a buyer’s supply uncertainty. 
+Flexible sourcing contract approach . Flexible sourcing contracts are es- 
+sential for ensuring reliable supplies. Handﬁeld et al. [106] discuss how 
+companies like Honda, Intel, Toyota, and BMW invest heavily in en- 
+hancing their suppliers’ reliability and restoring their capacities after 
+disruptions. Kim et al. [107] investigate performance-based contracts 
+that tie compensation to agreed-upon performance metrics, which can 
+eﬀectively address system disruptions. Jia and Zhao [108] design con- 
+tracts that not only improve supply reliability but also address quality- 
+related disruptions in the pharmaceutical supply chain by adjusting pur- 
+chase prices and compensation terms. Dong et al. [76] examine ad- 
+vance payment and wholesale contracts designed to optimize sourcing 
+in multi-tier supply chains to reduce disruption risks. Gao [74] develops 
+a dynamic long-term revenue-sharing contract that encourages suppli- 
+ers to disclose true risk information, facilitating better supply risk man- 
+agement. Additionally, Xue et al. [87] highlight how option and order 
+commitment contracts can allocate supply disruption risks either to the 
+supplier or the buyer, leading to a more eﬀective risk management. 
+3.3. The gap between existing research and practices 
+Existing literature has identiﬁed key beneﬁts of multiple sourcing 
+and its supporting strategies —such as inventory reserves and ﬂexible 
+sourcing contracts —in mitigating supply-side disruptions. These bene- 
+ﬁts include reduced emergency costs [87] , shortened supply lead times 
+11 https://www.huawei.com/en/sustainability/sustainability-report . 
+[16] , enhanced supply reliability [75] , and improved ﬂexibility [101] . 
+Despite these advancements, signiﬁcant gaps remain between current 
+research and the practical implementation of these strategies within dy- 
+namic supply disruption contexts. 
+3.3.1. New features of supply-side practices 
+Recent years have seen supply chains becoming increasingly global- 
+ized and complex, often spanning multiple countries and multi-tier sec- 
+tors. This complexity heightens their vulnerability to disruptions [72] . 
+For example, localized lockdowns in China during the COVID-19 pan- 
+demic had cascading eﬀects on global multinationals like Apple, Tesla, 
+General Electric, Amazon, and Adidas, all warning of potential disrup- 
+tions to their operations. 12 Additionally, geopolitical instabilities such as 
+the U.S.-China trade conﬂict and the Russia-Ukraine war pose substan- 
+tial risks to supply stability [4] . Addressing these challenges requires 
+building resilience at broader system levels, considering the complexity 
+of partnerships in an interconnected supply network. 
+Technological advancements are also reshaping supply processes. In- 
+novations like drone deliveries by Amazon and Walmart, and Audis use 
+of 3D printing for tail light covers, represent structural shifts in sup- 
+ply chain operations [4] . While digital technologies enable real-time, 
+data-driven decision-making, issues with data quality can adversely af- 
+fect these decisions, increasing coordination complexity across supply 
+channels [5] . Furthermore, data security concerns introduce additional 
+disruption risks, challenging the reliability of data-driven models. 
+3.3.2. The gap in supply-side strategies 
+Practical implementation of multiple sourcing strategies faces nu- 
+merous challenges. Suppliers varying backgrounds and operational 
+scales complicate the adoption of uniform sourcing policies. Existing re- 
+search often focuses on routine scenarios with predictable variables like 
+yield or lead times [9] , but does not adequately address extreme cases 
+such as suppliers engaging in unethical practices. This gap highlights 
+the need for more comprehensive strategies that account for potential 
+negative impacts, including increased risk of supplier violations. 
+Additionally, the complexity of managing partnerships for manufac- 
+turers relying on thousands of components poses signiﬁcant barriers to 
+implementing eﬀective multiple sourcing. While heuristic policies pro- 
+posed by researchers such as Allon and Van Mieghem [64] , Hua et al. 
+[81] , Song et al. [16] , and Sun and Van Mieghem [98] aim to address 
+these complexities, the roles of various stakeholders —government, in- 
+vestors, NGOs, and media —in inﬂuencing supply disruptions remain un- 
+derexplored. 
+Digital technologies enable multi-tier suppliers, manufacturers, lo- 
+gistics providers, and other stakeholders to interact with each other on 
+a platform [4] , creating new supply interaction structures and sourc- 
+ing processes. These evolving dynamics necessitate further research 
+into how digital platforms can support or complicate multiple sourcing 
+strategies. Emerging issues such as data licensing, data security, and the 
+management of virtual relationships also demand closer examination. 
+Supporting strategies such as inventory reserves and ﬂexible sourc- 
+ing contracts are increasingly challenged by complex political factors 
+that impact supply chain conﬁgurations. Recent developments, such as 
+alliance relationships, trade policies, international environmental and 
+labor regulations, and political dynamics, play greater roles in shaping 
+supply chains. 
+For example, the China-U.S. trade war has posed signiﬁcant risks for 
+companies like Huawei, threatening the continuity of input ﬂows for 5G 
+network equipment and smartphones once existing inventories are de- 
+pleted. 13 This situation underscores the need for multinational ﬁrms to 
+dynamically adjust inventory reserves, considering special regulations 
+12 https://www.ft.com/content/9318db50-e0c3-4a27-9230-55ﬀ59bcc46e . 
+13 https://arstechnica.com/gadgets/2020/08/chip-and-phone-supply-chain- 
+shaken-as-huawei-faces-mortal-threat/ . 
+459
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+and the shifting political landscape, such as ally sourcing and relation- 
+ship restoration. This dynamic setting of inventory reserves in response 
+to political changes is an emerging area of interest. 
+Moreover, there is a growing body of research focusing on how con- 
+tractual relationships can mitigate operational supply risks [9] . How- 
+ever, if a supplier fails to provide essential raw materials following a dis- 
+ruption, the sourcing relationship may be suspended, and ﬁrms might 
+need to develop new relationships. This transition can be particularly 
+challenging for ﬁrms with dominant positions in their industries, as they 
+might ﬁnd ﬂexible contracts less eﬀective [109] . 
+Additionally, while data analytics is commonly used for demand pre- 
+diction, the application of computing power and AI to support opera- 
+tional decisions on the supply side is less developed. This discrepancy 
+highlights a signiﬁcant gap between research and practice, necessitating 
+further exploration into how dynamic and intelligent supply relation- 
+ships can enhance the eﬀectiveness of inventory reserves and ﬂexible 
+sourcing contracts in combating supply disruption risks. 
+4. Future research opportunities 
+Signiﬁcant progress has been made in addressing the challenges out- 
+lined in Table 1 and Table 2 . However, as discussed in Sections 2.3 and 
+3.3, considerable gaps remain between current research and practical 
+implementation, necessitating further investigation. Additionally, the 
+supply chain landscape has undergone unprecedented changes during 
+and after the COVID-19 pandemic, introducing new complexities such 
+as increased frequency of unforeseen disasters, evolving demand be- 
+haviors, shifting cross-border relationships, and the adoption of data- 
+intensive policies. These transformations are prompting a reformation of 
+supply chain networks, as evidenced by recent scholarly work [43,46] . 
+As a result, new issues and challenges have emerged, particularly in the 
+realm of inventory management, aﬀecting both the supply and demand 
+sides. 
+4.1. Research directions for demand-side strategies 
+As highlighted by the gap between current research and practical 
+needs, it is crucial —and increasingly urgent —for researchers to estab- 
+lish a consensus on identifying optimal resilience levels in the face of 
+“unknown unknowns. ” Additionally, there is a pressing need to de- 
+velop hybrid human-AI models that can eﬀectively predict and adapt 
+to rapidly changing consumer behaviors. 
+Exploiting an approach for setting resilience targets . Constructing robust 
+methods for measuring resilience is fundamental to deﬁning and opti- 
+mizing inventory-related decisions. However, with unknown unknowns, 
+determining the appropriate level of resilience is particularly challeng- 
+ing due to the unpredictable nature of black swan events and the absence 
+of known distribution functions. Although Ergun et al. [15] provide a 
+thorough discussion on quantifying the appropriate level of supply chain 
+resilience and utilize the basic newsvendor model to balance shortage 
+costs against protection costs, their approach has limitations. Speciﬁ- 
+cally, their model does not adequately address the diﬃculty in obtain- 
+ing accurate demand distribution functions or in accurately deﬁning the 
+costs associated with shortages and overages. 
+Furthermore, robust optimization methods, commonly employed to 
+address parameter and distributional uncertainty, also present chal- 
+lenges. Establishing a reliable uncertainty set can be problematic due 
+to limited understanding of potential black swan events. Additionally, 
+the real-world application of inventory pre-positioning systems intro- 
+duces greater complexity. Factors such as the intercorrelation of mul- 
+tiple products, budget constraints, perishability of inventory, the re- 
+verse logistics of reusable resources, disposal of remaining items, and 
+public interventions further complicate the resilience measurement and 
+optimization process [15,44] . Therefore, unforeseeable demand surges 
+and inventory system complexities would lead to a resilience measure- 
+ment model that may require new tools from multiple disciplines to 
+analyze. 
+Developing human-AI prediction models for demand behaviors . Abnor- 
+mal events often lead to deviations from typical consumer behavior, 
+such as the panic buying or hoarding observed during the COVID-19 
+pandemic [15] . Similarly, subjective emotions can inﬂuence decision- 
+makers, leading to ineﬃciencies such as the over-distribution of masks 
+by the Red Cross Society in Hubei, which hindered the response to 
+COVID-19. 14 
+Understanding these demand behaviors is crucial for formulating 
+more realistic mathematical programming problems and addressing 
+challenges associated with calculating the shortage costs of surging de- 
+mands in pre-positioning-related policies. However, during turbulent 
+times, ﬁrms often lack perfect information about the rapidly changing 
+consumer expectations or demand surges, making it diﬃcult to use tra- 
+ditional models. 
+Robust optimization is one approach to handle uncertainties caused 
+by limited information. More recently, with advances in AI and machine 
+learning, data-driven predictive models have become popular for antic- 
+ipating demand based on historical data. However, for unprecedented 
+events ( “unknown unknowns ”) with little or no historical data, leverag- 
+ing AI to predict the likelihood of demand surges from big data becomes 
+challenging. AI excels in processing and analyzing large datasets and 
+could potentially inform dynamic capacity or contractual adjustments 
+that depend on real-time demand and resource ﬂow data. 
+Nevertheless, the integration of AI predictions in supply chain man- 
+agement must consider human factors. Humans often have “private ”
+information not accessible to algorithms [110] and may override AI 
+recommendations [111] . This highlights the need for eﬀective collab- 
+oration between smart AI algorithms and human judgment. 
+Therefore, exploring how AI prediction models can enhance the man- 
+agement of demand-side disruptions, and determining the best methods 
+for integrating these models with human insights are critical areas for 
+future research. This exploration should focus on developing hybrid sys- 
+tems that eﬀectively combine human strategic thinking and AI’s analyt- 
+ical power to improve inventory pre-positioning and other supportive 
+strategies. 
+4.2. Research directions for supply-side strategies 
+Similarly, on supply side, we suggest that future research directions 
+need more consideration of interactions of many stakeholders and smart 
+data-driven forces to optimize supply management under continually 
+dynamic and digital-developed environment. 
+Incorporating more stakeholders’ behavior in disruption contexts . The 
+wave of supply chain disruptions, fueled by events such as the COVID- 
+19 pandemic and the China-U.S. trade war, has made global sourc- 
+ing shift towards ally-sourcing or friend-sourcing. This trend illustrates 
+the increasing impact of government policies and geopolitical issues 
+on supply chain performance [71] . Charoenwong et al. [94] empiri- 
+cally demonstrate that as uncertainty in U.S. trade policy grows, ﬁrms 
+with high domestic revenue shares tend to reduce their number of 
+foreign suppliers, while those with signiﬁcant foreign sales might in- 
+crease them. Considering that ally-sourcing reduces geopolitical conﬂict 
+risks, this deglobalization scenario poses several new research ques- 
+tions: What are the diﬀerences in supply disruption risk propagation 
+between within-region and across-region supply networks? How do na- 
+tional powers inﬂuence ﬂexible sourcing contracts and supplier shifts? 
+How can optimal resilience levels be adjusted to account for political 
+relationships? 
+Furthermore, local or friendly sourcing enables buyers to develop 
+deeper, more meaningful relationships with their suppliers and exert 
+14 https://news.cgtn.com/news/2020-02-01/Hubei-Red-Cross-faces-scrutiny- 
+over-whereabouts-of-donations-NJGbCJxb9u/index.html . 
+460
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+greater control, 15 potentially enhancing stakeholder interactions includ- 
+ing cultural exchanges, R&D incentives, and compliance with sustain- 
+ability and ethics standards [11] . Future research should explore how 
+these enriched buyer-supplier relationships and enhanced stakeholder 
+interactions inﬂuence supply disruption risks and aﬀect the eﬀective- 
+ness of multiple sourcing and its supporting strategies. 
+Embedding smart data-driven forces into conceptual models . Designing 
+and operating sourcing contracts manually can be challenging due to 
+the dynamic status and irrational behaviors of stakeholders within the 
+supply chain. Utilizing data-driven technologies such as blockchain to 
+construct smart contracts between buyers and suppliers holds promise 
+for enhancing future ﬂexible coordination strategies. The availability 
+of large-scale, dynamic datasets from systems like ERP and blockchain 
+enables the development of data-driven models that support the creation 
+of supply resilience strategies using real-time supply information [112] . 
+This shift from model-driven to data-driven approaches oﬀers greater 
+ﬂexibility and alignment with practical evidence. Such models can aid 
+in evaluating complex supply-side disruption risks involving multiple 
+supplier interactions, enhancing supply resilience assessment, and op- 
+timizing sourcing strategies. However, challenges remain in eﬀectively 
+utilizing real-time supply information during disruptive events, as com- 
+panies may be overwhelmed by requests from logistics providers and 
+customers [89] . Furthermore, data-intensive inventory models risk data 
+contamination, which can lead to inaccurate operational and manage- 
+ment parameter estimations. While existing studies emphasize robust in- 
+ventory models and heuristic solutions, consensus on model validation 
+is lacking. Liu et al. [113] propose a globalized distributionally robust 
+counterpart that ensures no constraint violation for distributions within 
+the ambiguity set and accounts for potential deviations outside this set. 
+More research is needed to integrate data-driven approaches with smart 
+policies eﬀectively. Additionally, designing trust mechanisms to prevent 
+data contamination and developing smart policies for multi-source in- 
+ventory systems remain critical areas for future research, especially as 
+the impacts of digital technology on supply chain resilience continue to 
+evolve [14,46] . 
+These considerations highlight the need for a robust dialogue on in- 
+tegrating advanced technologies and AI with traditional supply chain 
+practices to address the complexities of modern supply disruptions ef- 
+fectively. 
+5. Conclusion 
+The COVID-19 pandemic has signiﬁcantly disrupted supply chain op- 
+erations, compelling both practitioners and researchers to devise and 
+reﬁne inventory-related strategies that bolster supply chain resilience. 
+This paper has reviewed various strategies, pinpointed their implemen- 
+tation challenges, and proposed future research directions. From our 
+discussions, we have distilled several critical insights. 
+5.1. Strategic insights 
+Pre-positioning and multiple sourcing : Pre-positioning is eﬀective for 
+rapid response to demand shortages by immediately deploying pre- 
+stored relief items during a demand surge. However, it requires signiﬁ- 
+cant coordination among various stakeholders to maintain a continuous 
+supply. Multiple sourcing, in contrast, ensures a stable supply when cer- 
+tain suppliers fail to deliver, and like pre-positioning, it beneﬁts greatly 
+from stakeholder coordination. The integration of pre-positioning with 
+multiple sourcing can signiﬁcantly enhance overall supply chain re- 
+silience. 
+Supporting strategies : While powerful, both pre-positioning and mul- 
+tiple sourcing have limitations that can be mitigated through supporting 
+strategies. For instance, the costly nature of maintaining large inventory 
+15 https://una.com/resources/article/local-sourcing/ . 
+reserves can be oﬀset by strategies like capacity reservation, which pro- 
+vides buﬀer against demand surges. Similarly, inventory reserves can 
+help mitigate the ripple eﬀects of supply disruptions. Strategic ﬂexibil- 
+ity, such as the kind suggested by Tang and Tomlin [114] and Tomlin 
+[115] , where even a small degree of ﬂexibility can signiﬁcantly reduce 
+disruption impacts, is crucial. Investments in ﬂexible supply contracts 
+can elevate resilience levels at a relatively low cost. However, strategies 
+requiring longer lead times, such as reactive capacity and coordination 
+supply contracts, need to be employed judiciously to maximize their 
+eﬀectiveness. 
+Integrating ﬂexibility and redundancy : A mix of inventory-related mit- 
+igation strategies with elements of redundancy and ﬂexibility forms a 
+cornerstone of a cost-eﬀective resilience strategy. This approach not 
+only addresses the immediate impacts of disruptions but also prepares 
+the supply chain for future uncertainties. 
+Role of new technologies : Emerging data-driven technologies are re- 
+deﬁning supply chain resilience. The adoption of digital supply chain 
+solutions, Industry 4.0 technologies, and blockchain enhances resilience 
+by reducing reliance on human labor, improving demand forecast accu- 
+racy through big data, and ensuring more reliable, transparent supply 
+processes. 
+5.2. Looking ahead 
+In the post-pandemic world, the supply chain landscape faces new 
+vulnerabilities due to changes in consumer behavior and prolonged sup- 
+ply disruptions. Pre-positioning and multiple sourcing remain pivotal 
+in mitigating these risks. Complementary strategies that enhance these 
+core approaches include enhancing supplier networks, adopting ﬂexi- 
+ble production capabilities, optimizing corporate ﬁnancing, and reﬁn- 
+ing governance mechanisms. Additionally, broader aspects such as the 
+production network, supply chain ﬁnance, and the structure of supply 
+networks play instrumental roles in fostering supply chain resilience. 
+Ultimately, inventory-related strategies are crucial in crafting a more 
+resilient supply chain capable of withstanding and adapting to the dy- 
+namic global market landscape. Further research should continue to ex- 
+plore and reﬁne these strategies, ensuring they evolve in tandem with 
+emerging global challenges and technological advancements. 
+Declaration of competing interest 
+The authors declare that they have no conﬂicts of interest in this 
+work. 
+Acknowledgments 
+The authors thank the editorial members and three anonymous ref- 
+erees for their insightful and detailed comments that have signiﬁcantly 
+improved this paper. This research was supported by the National Nat- 
+ural Science Foundation of China ( 72104131 ). 
+References 
+[1] M. Christopher, H. Peck, Building the resilient supply chain, Int. J. Logist. Manage. 
+15 (2) (2004) 1–14 . 
+[2] V.H. Remko, Research opportunities for a more resilient post-COVID-19 supply 
+chain–closing the gap between research ﬁndings and industry practice, Int. J. Oper. 
+Prod.Manage. 40 (4) (2020) 341–355 . 
+[3] Y. Li, K. Chen, S. Collignon, et al., Ripple eﬀect in the supply chain network: For- 
+ward and backward disruption propagation, network health and ﬁrm vulnerability, 
+Eur. J. Oper. Res. 291 (3) (2021) 1117–1131 . 
+[4] J.S. Song, G.J. Van Houtum, J.A. Van Mieghem, Capacity and inventory manage- 
+ment: Review, trends, and projections, Manuf. Serv. Oper. Manage. 22 (1) (2020) 
+36–46 . 
+[5] D. Ivanov, A. Dolgui, B. Sokolov, The impact of digital technology and industry 4.0 
+on the ripple eﬀect and supply chain risk analytics, Int. J. Prod. Res. 57 (3) (2019) 
+829–846 . 
+[6] N.B. Keskin, Y. Li, J.S. Song, Data-driven dynamic pricing and ordering with perish- 
+able inventory in a changing environment, Manage. Sci. 68 (3) (2022) 1938–1958 . 
+461
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+[7] M.A. Cohen, S. Cui, S. Doetsch, et al., Putting supply chain resilience theory into 
+practise, Manage. Bus. Rev. (2020) . Forthcoming in Available at SSRN 3742616 
+(3742616) 
+[8] M. Kamalahmadi, M.M. Parast, A review of the literature on the principles of enter- 
+prise and supply chain resilience: Major ﬁndings and directions for future research, 
+Int. J. Prod. Econ. 171 (2016) 116–133 . 
+[9] L.V. Snyder, Z. Atan, P. Peng, et al., OR/MS models for supply chain disruptions: 
+A review, IIE Trans. 48 (2) (2016) 89–109 . 
+[10] S. Hosseini, D. Ivanov, A. Dolgui, Review of quantitative methods for supply chain 
+resilience analysis, Transp. Res. Part E Logist. Transp. Rev. 125 (2019) 285–307 . 
+[11] L.J. Hong, J. Li, X. Wu, et al., Future research of supply chain re- 
+silience: Network perspectives and incorporation of more stakeholders, Fun- 
+damental Research (2023) . https://www.sciencedirect.com/science/article/pii/ 
+S266732582300290X 
+[12] C. Roberta Pereira, M. Christopher, A. Lago Da Silva, Achieving supply chain re- 
+silience: The role of procurement, Supply Chain Manage. Int. J. 19 (5/6) (2014) 
+626–642 . 
+[13] K. Scholten, S. Schilder, The role of collaboration in supply chain resilience, Supply 
+Chain Manage. Int. J. 20 (4) (2015) 471–484 . 
+[14] A. Spieske, H. Birkel, Improving supply chain resilience through industry 4.0: A sys- 
+tematic literature review under the impressions of the COVID-19 pandemic, Com- 
+put. Ind. Eng. 158 (2021) 107452 . 
+[15] O. Ergun, W.J. Hopp, P. Keskinocak, A structured overview of insights and oppor- 
+tunities for enhancing supply chain resilience, IISE Trans. 55 (1) (2023) 57–74 . 
+[16] J.S. Song, L. Xiao, H. Zhang, et al., Optimal policies for a dual-sourcing inventory 
+problem with endogenous stochastic lead times, Oper. Res. 65 (2) (2017) 379–395 . 
+[17] M.S. Sodhi, C.S. Tang, Buttressing supply chains against ﬂoods in asia for humani- 
+tarian relief and economic recovery, Prod. Oper. Manage. 23 (6) (2014) 938–950 . 
+[18] W. Ni, J. Shu, M. Song, Location and emergency inventory pre-positioning for dis- 
+aster response operations: Min-max robust model and a case study of Yushu Earth- 
+quake, Prod. Oper. Manage. 27 (1) (2018) 160–183 . 
+[19] B. Balcik, İ . Yan ı ko ğlu, A robust optimization approach for humanitarian needs as- 
+sessment planning under travel time uncertainty, Eur. J. Oper. Res. 282 (1) (2020) 
+40–57 . 
+[20] B. Balcik, C.D.C. Bozkir, O.E. Kundakcioglu, A literature review on inventory man- 
+agement in humanitarian supply chains, Surv. Oper. Res. Manage. Sci. 21 (2) 
+(2016) 101–116 . 
+[21] L. Xin, J.A. Van Mieghem, Dual-sourcing, dual-mode dynamic stochastic inventory 
+models: A review, Available at SSRN 3885147 (2021) . 
+[22] M. Cohen, S. Cui, S. Doetsch, et al., Bespoke supply-chain resilience: The gap be- 
+tween theory and practice, J. Oper. Manage. 68 (5) (2022) 515–531 . 
+[23] M.S. Sodhi, C.S. Tang, Rethinking the us strategic national stockpile for future 
+pandemics with inventory, capacity, and capability, in: Supply Chain Resilience, 
+Springer, 2023, pp. 191–209 . 
+[24] L.B. Davis, F. Samanlioglu, X. Qu, et al., Inventory planning and coordination in 
+disaster relief eﬀorts, Int. J. Prod. Econ. 141 (2) (2013) 561–573 . 
+[25] M. Lu, L. Ran, Z.J.M. Shen, Reliable facility location design under uncertain corre- 
+lated disruptions, Manuf. Serv. Oper. Manage. 17 (4) (2015) 445–455 . 
+[26] T. Liu, F. Saldanha-da Gama, S. Wang, et al., Robust stochastic facility location: Sen- 
+sitivity analysis and exact solution, INFORMS J. Comput. 34 (5) (2022) 2776–2803 . 
+[27] H.O. Mete, Z.B. Zabinsky, Stochastic optimization of medical supply location and 
+distribution in disaster management, Int. J. Prod. Econ. 126 (1) (2010) 76–84 . 
+[28] Y. Hu, C.W. Chan, J. Dong, Prediction-Driven Surge Planning with Ap- 
+plication to Emergency Department Nurse Staﬃng, Manage. Sci. (2024) . 
+https://doi.org/10.1287/mnsc.2021.02781 
+[29] Q.S. Zhou, T.L. Olsen, Inventory rotation of medical supplies for emergency re- 
+sponse, Eur. J. Oper. Res. 257 (3) (2017) 810–821 . 
+[30] Q.S. Zhou, T.L. Olsen, Rotating the medical supplies for emergency response: A 
+simulation based approach, Int. J. Prod. Econ. 196 (2018) 1–11 . 
+[31] F. Liu, J.S. Song, J.D. Tong, Building supply chain resilience through virtual stock- 
+pile pooling, Prod. Oper. Manage. 25 (10) (2016) 1745–1762 . 
+[32] C. Zhang, T. Ayer, C.C. White, et al., Inventory sharing for perishable products: 
+Application to platelet inventory management in hospital blood banks, Oper. Res. 
+71 (5) (2023) 1756–1776 . 
+[33] C. Zhang, T. Ayer, C.C. White, Truncated balancing policy for perishable inventory 
+management: combating high shortage penalties, Manuf. Serv. Oper. Manage. 25 
+(6) (2023) 2352–2370 . 
+[34] Y. Ye, W. Jiao, H. Yan, Managing relief inventories responding to natural disasters: 
+Gaps between practice and literature, Prod. Oper. Manage. 29 (4) (2020) 807–832 . 
+[35] F. Liu, T.R. Lewis, J.S. Song, et al., Long-term partnership for achieving eﬃcient 
+capacity allocation, Oper. Res. 67 (4) (2019) 984–1001 . 
+[36] X. Wang, Y. Fan, L. Liang, et al., Augmenting ﬁxed framework agreements in hu- 
+manitarian logistics with a bonus contract, Prod. Oper. Manage. 28 (8) (2019) 
+1921–1938 . 
+[37] S.S. Srinivas, R.R. Marathe, Moving towards “mobile warehouse ”: Last-mile logis- 
+tics during COVID-19 and beyond, Transp. Res. Interdiscip.Perspect. 10 (2021) 
+100339 . 
+[38] G. Zhang, N. Jia, N. Zhu, et al., Robust drone selective routing in humanitarian 
+transportation network assessment, Eur. J. Oper. Res. 305 (1) (2023) 400–428 . 
+[39] P. Guo, F. Liu, Y. Wang, Pre-positioning and deployment of reserved inventories in a 
+supply network: Structural properties, Prod. Oper. Manage. 29 (4) (2020) 893–906 . 
+[40] J. Uichanco, A model for prepositioning emergency relief items before a typhoon 
+with an uncertain trajectory, Manuf. Serv. Oper. Manage. 24 (2) (2022) 766–790 . 
+[41] K. Liu, C. Liu, X. Xiang, et al., Testing facility location and dynamic capacity plan- 
+ning for pandemics with demand uncertainty, Eur. J. Oper. Res. 304 (1) (2023) 
+150–168 . 
+[42] S.Y. Gao, D. Simchi-Levi, C.P. Teo, et al., Disruption risk mitigation in supply 
+chains: The risk exposure index revisited, Oper. Res. 67 (3) (2019) 831–852 . 
+[43] D. Simchi-Levi, Three scenarios to guide your global supply chain recov- 
+ery, MIT Sloan Manage. Rev. 13 (2020) . https://sloanreview.mit.edu/article/ 
+three-scenarios-to-guide-your-global-supply-chain-recovery/ 
+[44] J.M. Stauﬀer, S. Kumar, Impact of incorporating returns into pre-disaster deploy- 
+ments for rapid-onset predictable disasters, Prod. Oper. Manage. 30 (2) (2021) 
+451–474 . 
+[45] C. Zhang, A. Atasu, T. Ayer, et al., Truthful mechanisms for medical surplus product 
+allocation, Manuf. Serv. Oper. Manage. 22 (4) (2020) 735–753 . 
+[46] D. Ivanov, Lean resilience: Aura (active usage of resilience assets) framework for 
+post-COVID-19 supply chain management, Int. J. Logist. Manage. 33 (4) (2022) 
+1196–1217 . 
+[47] D. Ivanov, B. Sokolov, W. Chen, et al., A control approach to scheduling ﬂexibly 
+conﬁgurable jobs with dynamic structural-logical constraints, IISE Trans. 53 (1) 
+(2021) 21–38 . 
+[48] A.M. Campbell, P.C. Jones, Prepositioning supplies in preparation for disasters, 
+Eur. J. Oper. Res. 209 (2) (2011) 156–165 . 
+[49] J. Holguín-Veras, N. Pérez, M. Jaller, et al., On the appropriate objective function 
+for post-disaster humanitarian logistics models, J. Oper. Manage. 31 (5) (2013) 
+262–280 . 
+[50] L.N. Van Wassenhove, Humanitarian aid logistics: Supply chain management in 
+high gear, J. Oper. Res. Soc. 57 (5) (2006) 475–489 . 
+[51] L. Huang, J.S. Song, J. Tong, Supply chain planning for random demand surges: 
+Reactive capacity and safety stock, Manuf. Serv. Oper. Manage. 18 (4) (2016) 
+509–524 . 
+[52] O. Berman, D. Krass, M.B. Menezes, Facility reliability issues in network p-median 
+problems: Strategic centralization and co-location eﬀects, Oper. Res. 55 (2) (2007) 
+332–350 . 
+[53] Y. An, B. Zeng, Y. Zhang, et al., Reliable p-median facility location problem: 
+Two-stage robust models and algorithms, Transp. Res. Part B Methodol. 64 (2014) 
+54–72 . 
+[54] B. Balcik, D. Ak, Supplier selection for framework agreements in humanitarian 
+relief, Prod. Oper. Manage. 23 (6) (2014) 1028–1041 . 
+[55] Z. Shen, M. Dessouky, F. Ordóñez, Perishable inventory management system with 
+a minimum volume constraint, J. Oper. Res. Soc. 62 (12) (2011) 2063–2082 . 
+[56] M. Besiou, L.N. Van Wassenhove, Humanitarian operations: a world of opportunity 
+for relevant and impactful research, Manuf. Serv. Oper. Manage. 22 (1) (2020) 
+135–145 . 
+[57] J. Holguín-Veras, J. Amaya-Leal, V. Cantillo, et al., Econometric estimation of de- 
+privation cost functions: A contingent valuation experiment, J. Oper. Manage. 45 
+(2016) 44–56 . 
+[58] M. Eftekhar, J.-S. Song, S. Webster, Prepositioning and local purchasing for emer- 
+gency operations under budget, demand, and supply uncertainty, Manuf. Serv. 
+Oper. Manage. 24 (1) (2022) 315–332 . 
+[59] E. Grass, K.A. Fischer, Two-stage stochastic programming in disaster management: 
+A literature survey, Surv. Oper. Res. Manage.Sci. 21 (2) (2016) 85–100 . 
+[60] B. Balcik, S. Silvestri, M.-È. Rancourt, et al., Collaborative prepositioning net- 
+work design for regional disaster response, Prod. Oper. Manage. 28 (10) (2019) 
+2431–2455 . 
+[61] B. Morgan, 10 Examples of How COVID-19 Forced Business Transformation, 2020 . 
+https://www.forbes.com/sites/blakemorgan/2020/05/01/10-examples-of-how- 
+covid-19-forced-business-transformation/?sh = 110581cd1be3 
+[62] M.K. Li, M.S. Sodhi, C.S. Tang, et al., Preparedness with a system integrating in- 
+ventory, capacity, and capability for future pandemics and other disasters, Prod. 
+Oper. Manage. 32 (2) (2023) 564–583 . 
+[63] A. Chaturvedi, V. Martínez-de Albéniz, Safety stock, excess capacity or diversiﬁca- 
+tion: Trade-oﬀs under supply and demand uncertainty, Prod. Oper. Manage. 25 (1) 
+(2016) 77–95 . 
+[64] G. Allon, J.A. Van Mieghem, Global dual sourcing: Tailored base-surge allocation 
+to near-and oﬀshore production, Manage. Sci. 56 (1) (2010) 110–124 . 
+[65] G. Janakiraman, S. Seshadri, A. Sheopuri, Analysis of tailored base-surge policies 
+in dual sourcing inventory systems, Manage. Sci. 61 (7) (2015) 1547–1561 . 
+[66] J. Rodríguez-Pereira, B. Balcik, M.-È. Rancourt, et al., A cost-sharing mechanism 
+for multi-country partnerships in disaster preparedness, Prod. Oper. Manage. 30 
+(12) (2021) 4541–4565 . 
+[67] X. Wang, F. Li, L. Liang, et al., Pre-purchasing with option contract and coordina- 
+tion in a relief supply chain, Int. J. Prod. Econ. 167 (2015) 170–176 . 
+[68] S. Hu, Z.S. Dong, Supplier selection and pre-positioning strategy in humanitarian 
+relief, Omega 83 (2019) 287–298 . 
+[69] J. Li, X. Luo, Q. Wang, et al., Supply chain coordination through capacity reserva- 
+tion contract and quantity ﬂexibility contract, Omega 99 (2021) 102195 . 
+[70] Y. Gao, Z. Feng, S. Zhang, Managing supply chain resilience in the era of VUCA, 
+Front. Eng. Manage. 8 (3) (2021) 465–470 . 
+[71] X. Xu, S.P. Sethi, S.-H. Chung, et al., Reforming global supply chain management 
+under pandemics: The GREAT-3Rs framework, Prod. Oper. Manage. 32 (2) (2023) 
+524–546 . 
+[72] S.C. Graves, B.T. Tomlin, S.P. Willems, Supply chain challenges in the post–Covid 
+Era, Prod. Oper. Manage. 31 (12) (2022) 4319–4332 . 
+[73] A. Chaturvedi, V. Martínez-de Albéniz, Optimal procurement design in the presence 
+of supply risk, Manuf. Serv. Oper. Manage. 13 (2) (2011) 227–243 . 
+[74] L. Gao, Long-term contracting: The role of private information in dynamic supply 
+risk management, Prod. Oper. Manage. 24 (10) (2015) 1570–1579 . 
+[75] G. Xing, Z. Chen, Y. Zhong, et al., Mitigating supply risk with limited informa- 
+tion: Emergency supply and responsive pricing, Prod. Oper. Manage. (2022) 1–21, 
+doi: doi.org/10.1111/poms.13840 . 
+462
+
+Y.Guo,F.Liu,J.-S.Songetal. FundamentalResearch5(2025)450–463
+[76] L. Dong, Y. Qiu, F. Xu, Blockchain-enabled deep-tier supply chain ﬁnance, Manuf. 
+Serv. Oper. Manage. 25 (6) (2023) 2021–2037 . 
+[77] J.-S. Song, L. Xiao, H. Zhang, Optimal dual-sourcing policies for backlogging 
+and lost-sales inventory systems with uncertain lead times and order track- 
+ing, Available at SSRN 4183683 (2022). https://papers.ssrn.com/sol3/papers. 
+cfm?abstract_id = 4183683 . 
+[78] K. Bimpikis, D. Fearing, A. Tahbaz-Salehi, Multisourcing and miscoordination in 
+supply chain networks, Oper. Res. 66 (4) (2018) 1023–1039 . 
+[79] A. Federgruen, N. Yang, Selecting a portfolio of suppliers under demand and supply 
+risks, Oper. Res. 56 (4) (2008) 916–936 . 
+[80] A. Federgruen, N. Yang, Optimal supply diversiﬁcation under general supply risks, 
+Oper. Res. 57 (6) (2009) 1451–1468 . 
+[81] Z. Hua, Y. Yu, W. Zhang, et al., Structural properties of the optimal policy 
+for dual-sourcing systems with general lead times, IIE Trans. 47 (8) (2015) 
+841–850 . 
+[82] X. Shan, T. Li, S.P. Sethi, A responsive-pricing retailer sourcing from competing 
+suppliers facing disruptions, Manuf. Serv. Oper. Manage. 24 (1) (2022) 196–213 . 
+[83] E. Ang, D.A. Iancu, R. Swinney, Disruption risk and optimal sourcing in multitier 
+supply networks, Manage. Sci. 63 (8) (2017) 2397–2419 . 
+[84] B. Hu, D. Kostamis, Managing supply disruptions when sourcing from reliable and 
+unreliable suppliers, Prod. Oper. Manage. 24 (5) (2015) 808–820 . 
+[85] Z. Khojasteh-Ghamari, Supplier selection in multiple sourcing: A proactive ap- 
+proach to manage the supply chain risk, Int. J. Integ. Supply Manage. 13 (1) (2020) 
+54–73 . 
+[86] N. Freeman, J. Mittenthal, B. Keskin, et al., Sourcing strategies for a capacitated 
+ﬁrm subject to supply and demand uncertainty, Omega 77 (2018) 127–142 . 
+[87] K. Xue, Y. Li, X. Zhen, et al., Managing the supply disruption risk: Option contract 
+or order commitment contract? Ann. Oper. Res. 291 (1) (2020) 985–1026 . 
+[88] X. Xiong, Y. Li, W. Yang, et al., Data-driven robust dual-sourcing inventory man- 
+agement under purchase price and demand uncertainties, Transp. Res. Part E Lo- 
+gist.Transp. Rev. 160 (2022) 102671 . 
+[89] J.-S. Song, L. Xiao, H. Zhang, et al., Smart policies for multisource inventory sys- 
+tems and general tandem queues with order tracking and expediting, Oper. Res. 70 
+(4) (2022) 2421–2438 . 
+[90] N. Jain, K. Girotra, S. Netessine, Recovering global supply chains from sourcing 
+interruptions: The role of sourcing strategy, Manuf. Serv. Oper. Manage. 24 (2) 
+(2022) 846–863 . 
+[91] T. Fujimoto, Y.W. Park, Balancing supply chain competitiveness and robustness 
+through “virtual dual sourcing ”: Lessons from the great east Japan Earthquake, 
+Int. J. Prod. Econ. 147 (2014) 429–436 . 
+[92] J.-S. Song, Y. Zhang, Stock or print? Impact of 3-D printing on spare parts logistics, 
+Manage. Sci. 66 (9) (2020) 3860–3878 . 
+[93] M. Yao, S. Minner, Review of multi-supplier inventory models in sup- 
+ply chain management: An update, Available at SSRN 2995134 (2017). 
+http://dx.doi.org/10.2139/ssrn.2995134 . 
+[94] B. Charoenwong, M. Han, J. Wu, Trade and foreign economic policy uncertainty 
+in supply chain networks: Who comes home? Manuf. Serv. Oper. Manage. 25 (1) 
+(2023) 126–147 . 
+[95] K. Goldschmidt, M. Kremer, D.J. Thomas, et al., Strategic sourcing under severe 
+disruption risk: Learning failures and under-diversiﬁcation bias, Manuf. Serv. Oper. 
+Manage. 23 (4) (2021) 761–780 . 
+[96] B. Dong, W. Tang, C. Zhou, et al., Is dual sourcing a better choice? The impact 
+of reliability improvement and contract manufacturer encroachment, Transp. Res. 
+Part E Logist.Transp. Rev. 149 (2021) 102275 . 
+[97] J. Svoboda, S. Minner, M. Yao, Typology and literature review on multiple supplier 
+inventory control models, Eur. J. Oper. Res. 293 (1) (2021) 1–23 . 
+[98] J. Sun, J.A. Van Mieghem, Robust dual sourcing inventory management: Optimality 
+of capped dual index policies and smoothing, Manuf. Serv. Oper. Manage. 21 (4) 
+(2019) 912–931 . 
+[99] A. Federgruen, Z. Liu, L. Lu, Dual sourcing: Creating and utilizing ﬂexible capacities 
+with a second supply source, Prod. Oper. Manage. 31 (7) (2022) 2789–2805 . 
+[100] D.E. Whitney, J. Luo, D.A. Heller, The beneﬁts and constraints of temporary sourc- 
+ing diversiﬁcation in supply chain disruption and recovery, J. Purchasing Supply 
+Manage. 20 (4) (2014) 238–250 . 
+[101] S. Saghaﬁan, M.P. Van Oyen, Compensating for dynamic supply disruptions: 
+Backup ﬂexibility design, Oper. Res. 64 (2) (2016) 390–405 . 
+[102] F. Lücker, R.W. Seifert, Building up resilience in a pharmaceutical supply chain 
+through inventory, dual sourcing and agility capacity, Omega 73 (2017) 114–124 . 
+[103] F. Lücker, R.W. Seifert, I. Biçer, Roles of inventory and reserve capacity in mit- 
+igating supply chain disruption risk, Int. J. Prod. Res. 57 (4) (2019) 1238–
+1249 . 
+[104] M. Rozhkov, D. Ivanov, J. Blackhurst, et al., Adapting supply chain operations in 
+anticipation of and during the COVID-19 pandemic, Omega 110 (2022) 102635 . 
+[105] N. Craig, N. DeHoratius, A. Raman, The impact of supplier inventory service level 
+on retailer demand, Manuf. Serv. Oper. Manage. 18 (4) (2016) 461–474 . 
+[106] Handﬁeld, B. Robert, Krause, et al., Avoid the pitfalls in supplier development, 
+Sloan Manage. Rev. 41 (2) (2000) 37–49 . 
+[107] S.-H. Kim, M.A. Cohen, S. Netessine, et al., Contracting for infrequent restoration 
+and recovery of mission-critical systems, Manage. Sci. 56 (9) (2010) 1551–1567 . 
+[108] J. Jia, H. Zhao, Mitigating the us drug shortages through Pareto-improving con- 
+tracts, Prod. Oper. Manage. 26 (8) (2017) 1463–1480 . 
+[109] S.J. Carson, M. Ghosh, An integrated power and eﬃciency model of contrac- 
+tual channel governance: Theory and empirical evidence, J. Mark. 83 (4) (2019) 
+101–120 . 
+[110] R. Ibrahim, S.-H. Kim, J. Tong, Eliciting human judgment for prediction algorithms, 
+Manage. Sci. 67 (4) (2021) 2314–2325 . 
+[111] M. Balakrishnan, K. Ferreira, J. Tong, Improving human-algorithm collaboration: 
+Causes and mitigation of over-and under-adherence, Available at SSRN 4298669 
+(2022). https://papers.ssrn.com/sol3/papers.cfm?abstract_id = 4298669 . 
+[112] Y. Hong, S. Wang, Impacts of cutting-edge artiﬁcial intelligence on economic re- 
+search paradigm, Bull. Chin. Acad. Sci. (Chinese Version) 38 (3) (2023) 353–357 . 
+[113] F. Liu, Z. Chen, S. Wang, Globalized distributionally robust counterpart, INFORMS 
+J. Comput. 35 (5) (2023) 1120–1142 . 
+[114] C. Tang, B. Tomlin, The power of ﬂexibility for mitigating supply chain risks, Int. 
+J. Prod. Econ. 116 (1) (2008) 12–27 . 
+[115] B. Tomlin, On the value of mitigation and contingency strategies for managing 
+supply chain disruption risks, Manage. Sci. 52 (5) (2006) 639–657 . 
+Author proﬁle 
+Ying Guo (BRID: 08595.00.60256) is a lecturer at the Shandong Normal University. She 
+is mainly engaged in research on supply chain management, emergency management, and 
+inventory strategies. 
+Fang Liu is a professor at Durham University Business School, Durham University. Her re- 
+search specializes in supply chain management, humanitarian operations, and mechanism 
+design. 
+463

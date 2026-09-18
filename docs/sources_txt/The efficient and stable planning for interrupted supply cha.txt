@@ -1,0 +1,1369 @@
+Omega 115 (2023) 102775 
+Contents lists available at ScienceDirect 
+Omega 
+journal homepage: www.elsevier.com/locate/omega 
+The eﬃcient and stable planning for interrupted supply chain with 
+dual-sourcing strategy: a robust optimization approach considering 
+decision maker’s risk attitude ✩ 
+Bing Han a , b , ∗, Ying Zhang a , b , Song Wang a , b , Yongshin Park c 
+a School of Maritime Economics and Management, Dalian Maritime University, Dalian 116 0 0 0, China 
+b Collaborative Innovation Centre for Transport Studies, Dalian Maritime University, Dalian 116 0 0 0, China 
+c Department of Marketing, Operations, and Analytics, Bill Munday School of Business, St. Edward’s University, Austin TX 78704, USA 
+a r t i c l e i n f o 
+Article history: 
+Received 19 January 2022 
+Accepted 26 September 2022 
+Available online 28 September 2022 
+Keywords: 
+Supply disruptions 
+Dual-sourcing 
+Risk attitude 
+Robust optimization 
+Dual-objective programming 
+a b s t r a c t 
+In the face of the complex market environment and the in-depth development of globalization, ensuring 
+the supply chain’s stability and cost leadership by developing a differentiated dual-source procurement 
+strategy is extremely important. The present study contemplates the supply chain as the research object. 
+It also considers disruption uncertainty and decision-makers’ risk attitudes. To minimize costs and short- 
+ages, we build a dual-objective robust optimization model for a dual-sourcing strategy under interrup- 
+tion risk. The authors aim to explore eﬃcient and robust planning under supply disruption uncertainty 
+in dual-sourcing strategies by different risk attitudes. The research employs the augmented ε-constraint 
+method to solve the proposed model by transforming the model into a single-objective mixed-integer 
+programming model. Additionally, our study uses enterprise examples to prove the feasibility and ef- 
+fectiveness of the model. Moreover, it conducts risk attitude analysis, dual objective function trade-off
+analysis, and superiority analysis of procurement strategies. Finally, we put forward some management 
+insights to provide a new decision-making idea for real supply chain enterprises in the case of supply 
+interruption risk. 
+©2 0 2 2 Elsevier Ltd. All rights reserved. 
+1. Introduction 
+The supply chain enterprise’s uncertain internal factors, unpre- 
+dictable external events, and unpredictable business environment 
+lead to supply interruption, bringing economic losses and dam- 
+aging the enterprise’s reputation. Dual-sourcing is a practical and 
+cost-effective approach to mitigate interruption risk in the supply 
+chain by reducing shortages of minimal economic cost [1] , which 
+refers to selecting two suppliers in supply chain procurement to 
+share the interruption risk [2] . Decision-makers need to carry out 
+relatively effective and stable order planning, which is the key 
+to implementing a dual-sourcing strategy under the risk of sup- 
+ply interruption. In addition, different risk attitudes of decision- 
+makers may affect ordering plans. Therefore, this study explores 
+eﬃcient and robust ordering planning in dual-sourcing strategies 
+by decision-makers with different risk attitudes under supply dis- 
+ruption uncertainty. 
+✩ Area: Supply Chain Management. This manuscript was processed by Associate 
+Editor Battaia. 
+∗ Corresponding author. 
+E-mail addresses: hanbing0610@163.com (B. Han), zhangying79977@163.com (Y. 
+Zhang), wangsong08082021@163.com (S. Wang), ypark1@stedwards.edu (Y. Park) . 
+Mitigation strategies for supply interruption must establish ﬂex- 
+ibility to adapt to supply chain changes; one approach is dual- 
+sourcing [2–7] . A well-known example is Nokia and Ericsson up- 
+stream supply factory outage incident [8] . After this disruption, 
+Nokia designed a quick ﬁx, using a backup supplier to produce the 
+chips in just ﬁve days. Meanwhile, Ericsson eliminated backup sup- 
+pliers to save costs before this disruption, so it endured a huge loss 
+and withdrew from the mobile phone production market. Further, 
+this example also tells us how to purchase from the primary and 
+backup suppliers, which must be considered in dual-sourcing re- 
+search. 
+Decision-makers’ risk attitude signiﬁcantly impacts dual-source 
+subscription planning [4 , 9 , 10] . A risk-neutral decision-maker will 
+ultimately adopt the dual-sourcing strategy [10] . As the decision- 
+maker becomes risk-averse, the allocation of orders to the leading 
+supplier will be reduced [4] . Risk attitudes are variable and occur 
+on a continuum ranging from risk avoidance through risk neutral- 
+ity to risk preference. However, because the research above focuses 
+on using dual-sourcing tactics from a single risk attitude, it is cru- 
+cial to examine how changes in decision makers’ risk attitudes af- 
+fect their purchase decisions. 
+https://doi.org/10.1016/j.omega.2022.102775 
+0305-0483/© 2022 Elsevier Ltd. All rights reserved. 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Additionally, implementing economically and effectively a dual- 
+sourcing strategy for supply outages is the research direction of 
+many scholars [1 , 5 , 11–14] . Silbermayr and Minner [13] are con- 
+cerned about all costs in the supply chain to adopt the dual-source 
+ordering strategy effectively. Also, some studies on dual-sourcing 
+strategy use game theory [14] or a real-option method [1] to in- 
+vestigate how to effectively dual-source ordering at the risk of dis- 
+ruption. However, suppose the dual-sourcing strategy is only eco- 
+nomically and effectively adopted. In that case, it is often easy to 
+ignore the diﬃculties in implementing the strategy caused by the 
+interruption, such as uncertainty of interruption and shortage of 
+demand the market will endure. As a result, we must consider how 
+to eﬃciently balance costs and the scarcity of downstream demand 
+in the supply chain caused by disruption, as well as how to suc- 
+cessfully implement a dual-sourcing strategy in the face of various 
+disruption concerns. 
+Our study examines how to perform an eﬃcient and stable 
+dual-source subscription program with different decision-makers 
+risk attitudes under supply disruption uncertainty. First, we con- 
+struct a dual-objective robust optimization model for dual-sourcing 
+planning and express the uncertain interruption probability as an 
+interval [3] . The conservatism parameter in a robust model, in a 
+sense, indicates decision-makers’ attitudes about risk. Second, we 
+apply and analyze the model using the real enterprise data. We 
+conﬁrm the viability of the dual-sourcing strategy, examine the 
+suggested model’s eﬃcacy in cost and market shortfall balancing, 
+and investigate the model’s stability under uncertainty and the im- 
+pact of the decision maker’s risk attitude on the strategy. Third, 
+we discuss the feasibility and applicability of the proposed model 
+and summarize the full text and prospects. The model eﬃciently 
+conducts dual-sourcing planning under disruption uncertainty and 
+different risk attitudes, which is relatively novel in dual-sourcing 
+research. 
+The rest of the paper is developed as follows. Section 2 brieﬂy 
+reviews the relevant literature. Section 3 starts with the prob- 
+lem statement and constructs a dual-objective robust optimiza- 
+tion model for dual-sourcing strategy under the supply interrup- 
+tion risk and uses the augmented ε-constraint method to deal 
+with this model. Section 4 carries on the numerical example anal- 
+ysis and obtains the practical and managerial insights. Further, 
+Section 5 discusses the feasibility and practicability of the model 
+proposed. Finally, Section 6 concludes the paper. 
+2. Literature Review 
+In the case of supply disruptions, dual-sourcing is a complex 
+problem [3] , which is solved by considering different aspects with 
+various objectives. This section reviews some research literature on 
+dual-sourcing around supplier reliability, outage scenario settings, 
+risk attitudes, a comparative study on objectives and robust meth- 
+ods, and additional supplements on dual-sourcing with an uncer- 
+tainty of supply disruptions. 
+In the dual-sourcing proposed by Gupta et al. [15] , the expected 
+total market output decreases with supplier reliability, affecting 
+supplier choice. Manufacturers pick the lower-cost supplier over 
+the higher-cost supplier in the case of two suppliers with equiv- 
+alent reliability, but for two suppliers with varying reliability is 
+the opposite [14] . According to speciﬁc research, such as [16] , the 
+buyer can affect supply reliability by offering incentives to lower 
+the risk of supply interruption, like promoting the contract’s en- 
+dogenous and exogenous activities of dual procurement. Supplier 
+reliability is often correlated with the probability of supply disrup- 
+tions. Zhu and Fu [60] proposed that an unreliable supplier tends 
+to have a greater probability of disruption. 
+Shu et al. [11] showed that in a dual-sourcing model with ser- 
+vice constraints, the retailer’s optimal decision is inﬂuenced by 
+the joint outage probability of primary and standby suppliers. Xue 
+et al. [6] used the all-or-nothing type of disruption; the supplier 
+cannot provide any order once an interruption occurs. Meanwhile, 
+Silbermayr and Minner [13] assumed that interrupts have on/off
+cycles and that the cycles are exponentially distributed. Simul- 
+taneously, much literature has set outage probability parameters. 
+Schmitt and Snyder [17] set the probability of interruption and 
+demonstrated that a medium probability of interruption causes 
+the single-period model to underestimate the impact of inter- 
+ruption risk, resulting in a signiﬁcant increase in cost. Similarly, 
+Ledari et al. [18] considered two suppliers with a certain prob- 
+ability of interruption. In contrast, Chen et al. [19] conjectured 
+that interruption has recoverability. They deﬁned “interruption”
+as the failure of suppliers to deliver orders fully, including non- 
+delivery, which will initially lead to a massive loss of production 
+capacity; however, the level of production capacity will eventually 
+improve. 
+Li and Li [9] found that in the risk-neutral case, the total order 
+quantity has no relation to the procurement cost and the reliability 
+of reliable and unreliable suppliers, respectively. The risk attitude 
+in economics and ﬁnance is quoted here through VaR and CVaR 
+modeling or utility function modeling [10] . Using the expected util- 
+ity function, Giri [4] studied the ordering strategy of risk-averse 
+retailers and found that an increase in risk aversion reduces the 
+optimal order quantity but increases the safety inventory. Mean- 
+while, Sawik [20] took conditional risk value at risk measures and 
+compared risk-neutral and risk-averse solutions that optimize sup- 
+ply chains’ average and worst-case performance. Furthermore, risk- 
+averse decision-makers tend to adopt a more “conservative” policy 
+and obtain a larger order quantity by setting appropriate service 
+level restrictions [60] . 
+Robust optimization is an emerging concept gradually devel- 
+oped in recent decades; it is a kind of uncertain optimization 
+method closely related to the robust control concepts [21–25] . 
+Scenario-based and interval data robust optimization methods are 
+the most widely used [26–30] . In particular, the interval robust 
+optimization method can reﬂect decision makers’ risk attitude in 
+managing uncertainty when it is not highly dependent on the 
+occurrence probability of nominal scenarios [31–34] . Jabbarzadeh 
+et al. [31] expressed a time-dependent conservative value in the in- 
+terval data robustness model, based on which the decision maker’s 
+risk attitude can be reﬂected. In the robust model established by 
+José Alem and Morabito [32] , the risk value assumed is determined 
+by the decision-makers’ risk preference. Zhu et al. [33] estab- 
+lished numerous intervals based on uncertain objectives, and the 
+decision-makers’ risk preferences determined the order of these in- 
+tervals. 
+Additionally, robust optimization is an excellent method for 
+studying the inﬂuence of supply-side/demand-side uncertainty on 
+the supply chain [35–41] . Jabbarzadeh et al. [36] proposed a hybrid 
+robust stochastic optimization model for designing a supply chain 
+resilient to supply, demand, and facility interruptions. Later, Jab- 
+barzadeh et al. [35] established a robust model for common supply 
+interruptions and demand changes. In addition, Mirzapour Al-e- 
+hashem et al. [42] proposed a robust multi-objective mixed-integer 
+nonlinear programming model to deal with demand and cost un- 
+certainty. Meanwhile, Lu et al. [37] solved the problem of location 
+design of reliable facilities by applying distributionally robust op- 
+timization. The purpose is to minimize the expected cost with a 
+given marginal probability of outages in the worst-case distribution 
+while allowing the outage associated with uncertain joint distribu- 
+tion. The robust models developed by Goli et al. [43] , Mirzapour 
+Al-e-hashem et al. [42] , and Alinezhad et al. [44] are customer- 
+focused and dual-objective planning cost-strategies in which max- 
+imizing customer satisfaction involves minimizing demand short- 
+age. While the dual-objective robust approach put forth by Tirko- 
+2
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Fig. 1. Schematic structure of the proposed dual-sourcing in the supply chain. 
+laee et al. [45] aims to minimize cost and maximize supply relia- 
+bility. 
+An augmented ε-constraint method combined with a robust op- 
+timization model can transform dual-objective problems with non- 
+linear problems into linear models, which are easy to solve [26 , 31] . 
+Jabbarzadeh et al. [31] applied the augmented ε-constraint method 
+to study the impact of decision makers’ risk preferences and delay 
+strategies on economic and environmental goals under uncertain 
+demand. A dual-objective robust optimization model proposed by 
+Sun et al. [26] discusses the location—traﬃc–allocation emergency 
+logistics problem under the uncertainties of casualties, the number 
+of relief supplies, and transportation time. 
+In Table 1 , we summarize the characteristics of procurement lit- 
+erature under disruption and related models, and our paper can 
+be distinguished from previous work in the following ways. First, 
+in contrast to other research, we set supplier reliability to the de- 
+gree of change in the probability of interruption: the more signif- 
+icant the change, the less reliable the supplier. So reliability and 
+outage probability fuse to better represent supply uncertainty and 
+study stable dual-sourcing in uncertainty sets. Furthermore, unlike 
+earlier studies on single risk attitudes, we considered the impact 
+of various modiﬁcations in decision-makers’ risk attitudes on dual- 
+sourcing strategies. We also perfectly captured the risk attitude us- 
+ing the robust optimization method. Lastly, we suggested a reli- 
+able procedure for creating a dual-objective reliable dual-sourcing 
+model that reduces costs and shortages. Our approach is pretty in- 
+novative in the area of dual-sourcing studies. 
+The main contributions of this paper are as follows. Initially, 
+a dual-objective dual-sourcing model based on a robust optimiza- 
+tion method is established to minimize costs and shortages. This 
+method yields optimal order allocation results that satisfy various 
+uncertainty sets. In addition, the robust method identiﬁes differ- 
+ent risk attitudes, making it simple to research how diverse risk 
+attitudes affect the outcomes of order allocation. Ultimately, our 
+proposed model is implemented in a real study case, which is ap- 
+plicable and feasible. 
+3. Model formulation and solution 
+3.1. Problem formulation 
+3.1.1. Problem deﬁnition 
+Purchasing is an essential process for the supply side and is 
+related to the demand side [48] . Dual-sourcing is considered in 
+the supply chain ( Fig. 1 ): a manufacturing supply chain has one 
+manufacturer, multiple demand markets, and two suppliers, one of 
+which is a relatively cheap but independent main supply, and the 
+other is an expensive but dependent backup supply. Considering 
+the process of purchasing, production, and inventory, our goal is 
+to minimize the total cost and market shortage quantity to solve 
+Table 1 
+Characteristics of procurement literature under disruption and related models. 
+References Elements of dual-sourcing research Objective \ s Method 
+Reliability Interrupt setting Decision makers’ attitudes to risk 
+Gupta et al. [15] Exogenous All-or-nothing - Proﬁt Game theory 
+Zeng and He [14] Related to outage probability Outage probability - Proﬁt Game theory 
+Zhu et al. [46] Exogenous Outage probability Risk neutral Proﬁt Proﬁt decision model 
+Shu et al. [11] Exogenous Outage probability - Proﬁt Proﬁt decision model 
+Schmitt and Snyder [17] Exogenous All-or-nothing - Cost Newsvendor model 
+Ledari et al. [18] Exogenous Outage probability - Proﬁt Newsvendor policy model 
+Giri [4] Exogenous Quantiﬁed by an exponential 
+utility function 
+Risk aversion Cost Cost decision model 
+Mirzapour Al-e-hashem et al. [42] - - - Cost; Shortage quantity Robust method 
+Sawik [20] Exogenous Outage probability Risk neutral, risk-averse Cost; Customer service Level Stochastic Mixed integer 
+programming approach 
+Zhu et al. [33] Exogenous Outage probability - Cost Cost decision model 
+Li and Li [9] Related to outage probability Outage probability Risk aversion Cost Cost decision model 
+He et al. [1] Exogenous Outage probability - Proﬁt Real option method 
+Han et al. [47] Exogenous Outage probability - Proﬁt Real option method 
+The present paper Degree of change for outage probability Outage probability Various changes in risk attitude Cost; Shortage quantity Interval robust optimization 
+method 
+3 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+order quantity from two suppliers, respectively. Meanwhile, we set 
+the following assumptions. 
+(1) Only one product is selected, one component in the manufac- 
+turer’s procurement and product; other products and compo- 
+nents meet the demand. 
+(2) All products can be delivered to the demand market. 
+(3) The loss rate of the two suppliers during regular operation is 
+zero. 
+(4) The purchasing period is the same as the production cycle: 
+sourcing at the beginning of the period and producing and de- 
+livering before the end of the period. 
+(5) The initial inventory level of components and products is zero 
+in the ﬁrst cycle. 
+(6) The backup supply is more dependent but more expensive than 
+the main supply. The former has less production constraint and 
+interruption probability than the latter, but the latter has higher 
+procurement and ﬁxed order costs. 
+3.1.2. Notation description 
+The following notations( Table 2 ) are deﬁned for formulating the 
+proposed model. 
+3.1.3. Formulation of the normal scenario model 
+min z 1 = 
+T ∑  
+t 
+2 ∑  
+i 
+λit g it + 
+T ∑  
+t 
+2 ∑  
+i 
+c it x it + R ( P b t ) + R (C b t ) 
++ 
+T ∑  
+t 
+P M t e t (1) 
+min z 2 = 
+T ∑  
+t 
+S P jt (2) 
+subject to: 
+C b t+1 = 
+2 ∑  
+i 
+x it p it + C b t − kP M jt , ∀ t ∈ T −1 , j ∈ J, (3) 
+P b t = C b t + 
+2 ∑  
+i 
+x it p it −
+J ∑  
+j 
+P M jt −
+J ∑  
+j 
+D jt , ∀ t ∈ T , (4) 
+T ∑  
+t 
+2 ∑  
+i 
+λit x it = 
+T ∑  
+t 
+J ∑  
+j 
+D jt , (5) 
+J ∑  
+j 
+P M jt = V t · γt , ∀ t ∈ T , (6) 
+T ∑  
+t 
+( Q it − x it ) ≥ 0 , ∀ i ∈ { 1 , 2 } , (7) 
+2 ∑  
+i 
+x it + C b t ≤ C H t , ∀ t ∈ T , (8) 
+J ∑  
+j 
+P M jt + P b t ≤ P H t , ∀ t ∈ T , (9) 
+S P j(t+1) = 
+{
+−P b t , P b t < 0 , 
+0 , otherwise , 
+∀ t ∈ T , j ∈ J, (10) 
+x it ≥ 0 and integer, ∀ t ∈ T , (11) 
+p it ∈ [ 0 , 1 ] , ∀ t ∈ T , (12) 
+R ( P b t ) = max 
+( 
+P b t · P h t , 
+J ∑  
+j 
+2 ∑  
+i 
+p it a jt S P jt 
+) 
+, ∀ t ∈ T , (13) 
+R (C b t ) = max 
+( 
+T ∑  
+t 
+C b t · C h t , 
+J ∑  
+j 
+2 ∑  
+i 
+p it a jt S P jt 
+) 
+, ∀ t ∈ T . (14) 
+We consider two objective functions in the model, one of which 
+minimizes the total cost, and the other minimizes storage quantity. 
+Total cost includes purchasing, component and production, storage, 
+and product cost; they are presented in detail in Eq. (1) . The mono- 
+mial in Eq. (1) is in the order of ﬁxed order price, per order cost, 
+stockholding/storage cost of components, stockholding/storage cost 
+of products, and product cost. Eq. (13) represents the stockhold- 
+ing/storage cost of products, and Eq. (14) represents the stockhold- 
+ing/storage cost of components. In Eq. (13) , the ﬁrst expression 
+in max (·) represents the production cost, and the second expres- 
+sion is the shortage cost. When the production quantity is non- 
+negative (the shortfall quantity is equal to 0), there is no shortage, 
+and Eq. (13) can reﬂect either the inventory cost or the shortage 
+cost. Since the production quantity is negative, it indicates a mar- 
+ket shortage. The same is true for Eq. (14) for inventory/shortage 
+costs of components. Eq. (2) represents minimizing total storage 
+quantity. 
+Constraint (3) is the component inventory level balance for- 
+mula. The starting component inventory for a given period is the 
+sum of the starting component inventory for the prior period plus 
+the number of purchased components less the number of compo- 
+nents needed to make the product. Constraint (4) indicates the 
+inventory balance constraint at the stockholding level of prod- 
+ucts. Similarly, the initial stock of a product in a particular cycle 
+equals the initial inventory of a product in the preceding cycle plus 
+the number of purchased components minus the number of com- 
+ponents required to produce products and the number of prod- 
+ucts required by the market. Meanwhile, constraint (5) is sourcing 
+quantity on-demand at the market; the quantity purchased at the 
+time of interruption equals the market demand. Constraint (6) rep- 
+resents that production quantity depends on the manufacturer’s 
+production capacity and the manufacturing load rate. Constraint 
+(7) states that the purchased quantity cannot exceed the manufac- 
+turer’s capacity limit. Constraint (8) means that the quantity pur- 
+chased plus the opening inventory cannot exceed the warehouse 
+capacity of the component. And similarly, constraint (9) shows that 
+the product produced plus the beginning inventory cannot exceed 
+the product’s storage capacity. Constraint (10) enforces the stor- 
+age constraint in every market. The shortage depends on whether 
+the product inventory exceeds 0. If the product inventory is less 
+than 0, it indicates a shortage of the number of items the mar- 
+ket requires. On the contrary, if the product inventory exceeds 0, 
+the shortage quantity is 0. Moreover, constraint (11) guarantees the 
+sourcing quantity of supply i is not less than zero and takes the in- 
+teger. Constraint (12) deﬁnes the value of interrupt probability to 
+be between 0 and 1. 
+The dual-sourcing model is a complex nonlinear programming 
+problem derived from Eq. (13) and Eq. (14) . The inventory/shortage 
+cost is handled following Bertsimas and Thiele [49] , and the model 
+is then changed into a bi-objective mixed-integer programming 
+model. 
+min z 1 = 
+T ∑  
+t 
+2 ∑  
+i 
+λit g it + 
+T ∑  
+t 
+2 ∑  
+i 
+c it x it + f 1 
+t + f 2 
+t + 
+T ∑  
+t 
+P M jt e t (15) 
+objective function (2) , subject to: 
+C b t+1 = C b 1 + 
+t ∑  
+n =1 
+( 
+2 ∑  
+i 
+x in p it − kP M jn 
+) 
+, ∀ j, t = 1 , 2 , ··· , T −1 , 
+(16) 
+4 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+f 1 
+t ≥ P h t · P b t , ∀ t ∈ T , (17) 
+f 1 
+t ≥
+J ∑  
+j 
+2 ∑  
+i 
+p it a jt S P jt , ∀ t ∈ T , (18) 
+f 2 
+t ≥ C h t · C b t , ∀ t ∈ T , (19) 
+f 2 
+t ≥
+J ∑  
+j 
+2 ∑  
+i 
+p it a jt S P jt , ∀ t ∈ T , (20) 
+constraint (4) , (5) , (6) , (7) , (8) , (9) , (10) , (11) , (12) . 
+Among them, Objective (1) becomes Objective (15) , and Con- 
+straint (16) is obtained by iterative processing of Constraint (3) . In 
+addition, Constraint (17) and Constraint (18) are obtained by pro- 
+cessing Eq. (13) , and Constraint (19) and Constraint (20) are ob- 
+tained by processing Eq. (14) . 
+3.2. Uncertain scenario model and model solution 
+The interruption probability is highly uncertain considering the 
+real-world situation, which leads to a typical scenario model com- 
+plex called the uncertain scenario model. We solve this complex, 
+uncertain scenario model using the interval robust optimization 
+method based on Bertsimas and Sim [50] . This method can obtain 
+a robust solution under uncertain interruption probability and use 
+conservativeness /Gamma1to represent the decision maker’s risk attitude, 
+according to Jabbarzadeh et al. [31] . 
+3.2.1. Tackling uncertain interrupt probability 
+We assume that the interruption probability p it is 
+in [ ¯p it − ˆ p it , ¯p it + ˆ p it ] , in which ¯p it reﬂects the interrupt proba- 
+bility value in the normal scenario and ˆ p it indicates the deviation 
+of interrupt probability between the uncertain scenario and nor- 
+mal scenario. Hence, the uncertain scenario model is as follows. 
+min z 1 = 
+T ∑  
+t 
+2 ∑  
+i 
+λit g it + 
+T ∑  
+t 
+2 ∑  
+i 
+c it x it + 
+T ∑  
+t 
+f 1 
+t + 
+T ∑  
+t 
+f 2 
+t + 
+T ∑  
+t 
+P M jt e t 
+(21) 
+objective function (2) , subject to: 
+C b t+1 = C b 1 + 
+t ∑  
+n =1 
+( 
+2 ∑  
+i 
+x in p it − kP M jn 
+) 
++ 
+J ∑  
+j 
+2 ∑  
+i 
+( 
+q it /Gamma1it + 
+t ∑  
+n =1 
+r int 
+) 
+, ∀ j, t = 1 , ··· , T −1 , (22) 
+P b t = C b t + 
+2 ∑  
+i 
+x it ¯p it −
+J ∑  
+j 
+P M jt −
+J ∑  
+j 
+D jt 
++ 
+J ∑  
+j 
+2 ∑  
+i 
+( 
+q it /Gamma1it + 
+t ∑  
+n =1 
+r int 
+) 
+, ∀ t ∈ T , (23) 
+J ∑  
+j 
+2 ∑  
+i 
+( 
+¯p it a jt S P jt + q it /Gamma1it + 
+t ∑  
+n =1 
+r int 
+) 
+≤ f 1 
+t , ∀ t ∈ T , (24) 
+J ∑  
+j 
+2 ∑  
+i 
+( 
+¯p it a jt S P jt + q it /Gamma1it + 
+t ∑  
+n =1 
+r int 
+) 
+≤ f 2 
+t , ∀ t ∈ T , (25) 
+q it + r it ≥ ˆ p it x t , ∀ i ∈ { 1 , 2 } , ∀ t ∈ T , ∀ n ≤ t, (26) 
+q it , r it ≥ 0 , ∀ i ∈ { 1 , 2 } , ∀ t ∈ T , ∀ n ≤ t, (27) 
+constraints (5) , (6) , (7) , (8) , (9) , (10) , (11) , (12) , (17) , (19) . 
+Note that, p it = ¯p it + ˆ p it · q it represents the outage 
+probability with interval range, and q it ∈ P = {| q in | ≤ 1 
+∀ n ≥ 0 , 
+∑ t 
+n =1 | q in | ≤ /Gamma1it ∀ t ≥ 0 } . Eq. (22) , Eq. (23) , Eq. (24) , 
+Eq. (25) are robust counterparts of Eq. (16) , Eq. (4) , Eq. (18) , 
+Eq. (20) , respectively. Moreover, q it , r int deﬁne the robust model’s 
+conservativeness and boundary of uncertain interrupt probability, 
+respectively. This model limits /Gamma1it in [ 0 , t ] , in which decision- 
+makers can rely on their risk attitude to choose. Then the value 
+of /Gamma1it determines the probability of the corresponding constraint 
+to be infeasible, and it is 1 − /Phi1( /Gamma1−1 √ 
+| J| ) . The element of /Phi1(·) is the 
+cumulative distribution function of a standard normal random 
+variable. 
+3.2.2. Objective function 
+The solution to dual or multiple objective programming prob- 
+lems is to obtain the most preferred solution, the Pareto-optimal 
+solution, instead of the optimal solution. Generally, multi-objective 
+mathematical programming problem requires the weighting and 
+ε-constraint method [31 , 51] . The augmented ε-constraint method 
+proposed by Mavrotas [51] provides complete implementation 
+codes and an interactive approach based on the ε-constraint 
+method, which not only improves the model’s solvability but also 
+averts the appearance of weak Pareto-optimal. 
+According to the augmented ε-constraint method, we regard 
+the minimizing cost objective function as the primary function and 
+transform the minimizing storage quantity function into the con- 
+straint possessing the upper limit ε. The last transforming model 
+is as follows. 
+min z 1 = 
+T ∑  
+t 
+2 ∑  
+i 
+λit g it + 
+T ∑  
+t 
+2 ∑  
+i 
+c it x it + 
+T ∑  
+t 
+f 1 
+t + 
+T ∑  
+t 
+f 2 
+t 
++ 
+T ∑  
+t 
+P M jt e t − ep s × ( s/ω ) (28) 
+subject to: 
+T ∑  
+t 
+J ∑  
+j 
+S P jt + s = ε, (29) 
+constraints (5) , (6) , (7) , (8) , (9) , (10) , (11) , (12) , (17) , (19) , (22) , (23) , 
+(24) , (25) , (26) , (27) . 
+To select the most preferred Pareto-optimal solution among all 
+the solutions under the decision-makers’ risk attitude, we use a 
+fuzzy approach following Demir et al. [52] and Esmaili et al. [53] : 
+αl 
+i = 
+⎧ 
+⎪ ⎨ 
+⎪ ⎩ 
+1 , f l 
+i ≤ f min 
+i 
+f max 
+i − f l 
+i 
+f max 
+i − f min 
+i 
+, f min 
+i ≤ f l 
+i ≤ f max 
+i 
+0 , f l 
+i ≥ f max 
+i 
+. (30) 
+f l 
+i shows the value of the i -th objective function in l -th Pareto- 
+optimal solution. αl 
+i represents the value of membership function 
+of f l 
+i . The overall membership function (in other word, the overall 
+degree of optimality) for l -th Pareto-optimal solution was deﬁned 
+as the total value of balanced purchasing (TVBP): 
+T V B P l = 
+n ∑  
+i =1 
+w i αl 
+i , (31) 
+5 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Fig. 2. Pareto frontier in a normal scenario. 
+where w i represents the weights of the importance for the i -th ob- 
+jective function. The most preferred solution refers to the Pareto 
+solution with the highest TVBP. 
+4. Model application and analysis 
+4.1. Example description 
+To test the feasibility and effectiveness of the proposed robust 
+model, we take an information transmission equipment manufac- 
+turer’s production and rough sourcing data in China. Moreover, we 
+combine some studies with setting-related parameters. The enter- 
+prise should pass the requirements, procurement, production and 
+delivery process, and procurement stage for each order. According 
+to the production plan, this process determines the procurement 
+and material types levels in a production planning cycle based on 
+the order or demand of a supplier to the source material. However, 
+the company is prone to supply interruption due to changes in the 
+market structure and technological innovation. For this reason, this 
+study designed a dual-source procurement strategy to reduce the 
+cost and shortage loss caused by the interruption. 
+The enterprise’s dual-sourcing problem is to obtain the pre- 
+ferred solution of order assignment under the constraints of capac- 
+ity, resources, and inventory. There are two available suppliers: the 
+main supply and the backup supply. Related parameters are in the 
+appendix, among which the main supply is relatively cheap and 
+more variable on disruption, whereas the backup supply is more 
+expensive and less variable on disruption. The period of sourcing 
+is 12 months. 
+4.2. The result of normal scenario 
+In solving the speciﬁc probability of supply disruption on the 
+normal scenario model by the augmented ε-constraint method, we 
+obtain the Pareto frontier point ( Fig. 2 ) and the TVBP correspond- 
+ing to the different overall membership function values ( Table 3 ). 
+Fig. 2 shows that the total cost and shortage quantity are in- 
+versely proportional. Meanwhile, Table 3 illustrates the TVBP corre- 
+sponding to the different weights for the total cost objective func- 
+tion. A weight of 0.4 or 0.5 indicates that the TVBP rises and then 
+decreases in the third period, and a weight of 0.6 denotes that the 
+TVBP changes from the sixth period. Nevertheless, the inﬂection 
+point of the former is greater than the latter, indicating that the 
+degree of optimality of the Pareto-optimal solution is worse, with 
+more concern about the total cost of decision-makers. 
+We take the weight equal to 0.4, which can obtain the preferred 
+Pareto-optimal solution ( z 1 = 218772 , z 2 = 6778 ) and order alloca- 
+Fig. 3. The probability distribution of violating constraints in four scenarios. 
+tion values of the preferred Pareto-optimal solution, as shown in 
+Table 4 . 
+4.3. Analysis of the impacts of suppliers’ reliability and 
+decision-maker’s risk attitude 
+Based on the literature review, suppliers’ reliability affects the 
+allocation for dual-sourcing. Thus we set the variability of interrup- 
+tion probability to represent the reliability of suppliers: the greater 
+the variability, the more unreliable the supplier. To study the inﬂu- 
+ence of various decision-makers’ risk attitudes and variability of 
+interruption probability on two objective functions, we select four 
+risk attitudes and four variabilities for the analysis. The degree of 
+change of interruption probability is calculated as follows. 
+ˆ p it = γ ¯p it (32) 
+Note that ¯p it is interruption probability on the normal scenario, 
+and γ is the variability of interruption probability. Based on liter- 
+ature [32 , 54 , 55] , γ equal 5%, 10%, 15%, 20%, separately, and we set 
+/Gamma1it time-related function that reﬂects decision-makers’ attitudes 
+for risk. Thus, the more extensive the value /Gamma1it , the more conser- 
+vative the risk attitude on decision-makers. The four situations are 
+as follows. 
+Scenario Ⅰ . /Gamma1it = 0 . 1 + 0 . 05 t, 
+Scenario Ⅱ . /Gamma1it = 0 . 5 , 
+Scenario Ⅲ . /Gamma1it = 0 . 5 + 0 . 5 t, 
+Scenario Ⅳ . /Gamma1it = t. 
+The conservativeness of scenarios Ⅱ , Ⅲ , and Ⅳ is increasing, 
+and the conservativeness of scenario Ⅰ is larger than scenario Ⅱ af- 
+ter the ninth period. Fig. 3 shows the probability distribution of 
+violating constraints of these four scenarios, in which risk attitude 
+is of great conservativeness with increasing conservative interrup- 
+tion probability, thus decreasing the probability of violation of con- 
+straints. The probability of violating the constraint in scenario Ⅰ 
+and Ⅱ is more signiﬁcant (0.5), and the probability of violating the 
+constraint in scenario Ⅰ before the eighth cycle is the largest. In 
+addition, the probability of violating the constraint in scenario Ⅲ 
+and Ⅳ , which are more conservative, tends to decrease, and that of 
+scenario Ⅳ , which is the most conservative, decreases to 0 in the 
+last three cycles. Hence, the conservative degree of risk attitude in 
+scenario Ⅲ and Ⅳ will not violate the constraints. The reality is in- 
+deed the case. When a decision-maker needs to choose from two 
+suppliers, he or she must consider the following. If the two sup- 
+pliers are at risk of interruption, the greater is the probability of 
+interruption. Thus, their attitude will be more damaging based on 
+their production conditions, with the most negligible loss to pur- 
+chase parts from suppliers. 
+6 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Table 2 
+Nomenclature; list of indices, parameters, and decision variables. 
+Indices 
+J Set of multiple demand markets, j ∈ J
+T Set of the period of sourcing, t ∈ T 
+I Set of the two suppliers, i ∈ I = { 1 , 2 } , 1 refers to the main supplier, 2 refers to the backup supplier 
+Parameters 
+p it The interrupt probability of supply i in the period of t 
+D jt Demand for products at the demand market j in the period of t , which is a random variable subject to a cumulative distribution function of F ( D jt ) 
+c it Per order price of supply i in the period of t 
+g it Fix order price of supply i in the period of t 
+Q it Production constraint of supply i in the period of t 
+C h t stockholding cost of components in manufacturer in the period of t 
+P h t stockholding cost of products in manufacturer in the period of t 
+a jt Storage cost of products at the demand market j in the period of t 
+V t The production capacity of the manufacturer in period t 
+γt The manufacturer’s production load rate in period t 
+e t Product cost in the period of t 
+k The proportion for a component to per unit product 
+P H t stockholding capacity of products in manufacturer in the period of t 
+C H t stockholding capacity of components in manufacturer in the period of t 
+Decision variables 
+x it Purchasing quantity of supply i in the period of t
+C b t Inventory level of components at the beginning of the period t
+P b t Inventory level of products at the beginning of the period t
+S P jt Storage quantity of product at the demand market j in the period of t
+P M jt Production quantity to product for the demand market j in the period of t
+λit λit = { 1 , purchasing product s to supply i in the peroid t 
+0 , otherwise 
+Table 3 
+The TVBP corresponding to different overall membership function values. 
+z 1 z 2 w 1 = 0 . 4 w 1 = 0 . 5 w 1 = 0 . 6 
+0 224456 2597 0.613 0.517 0.42 
+1 220274 4687 0.705 0.652 0.598 
+2 218772 6778 0.705 0.673 0.641 
+3 217815 8869 0.688 0.672 0.656 
+4 217031 10960 0.664 0.663 0.663 
+5 216328 13050 0.638 0.651 0.665 
+6 215761 15141 0.607 0.634 0.66 
+7 215207 17232 0.576 0.615 0.655 
+8 214692 19323 0.543 0.595 0.648 
+9 214237 21413 0.508 0.573 0.638 
+10 213790 23504 0.474 0.55 0.627 
+11 213406 25595 0.436 0.525 0.613 
+12 213008 27684 0.4 0.5 0.6 
+Table 4 
+Order allocation values of the preferred Pareto-optimal solution during different t. 
+1 2 3 4 5 6 7 8 9 10 11 12 
+Main supply 0 0 0 1133 0 0 0 0 0 0 0 2167 
+Backup supply 220 0 785 0 709 0 0 0 0 0 0 1007 
+To compare the robust method and certain probability method 
+under the uncertainty of decision-maker’s risk attitude and the 
+inﬂuence of suppliers’ reliability on differences, we calculate the 
+main objective’s difference between the robust method and the 
+particular method for the four risk attitudes with variable degree 
+of the four main interruption probability scenarios. These are ro- 
+bust objective functions relative to the nominal scenario of the 
+main difference ( Fig. 4 ). 
+Fig. 4 shows that the robustness model can better save cost, and 
+cost-saving is increasingly evident as suppliers’ reliability is poorer. 
+However, it is not true that the robustness model performs better 
+the more conservative the decision-makers are. As shown in Fig. 4 , 
+the cost savings in scenario II, which is less cautious, are more 
+signiﬁcant than those in scenario IV, which is the most conserva- 
+tive. Furthermore, the robustness model performs better when the 
+supply chain interruption is less predictable. Nevertheless, when 
+supply is stopped, the conservative stance of decision-makers will 
+result in higher costs. Therefore, when supply is disrupted, it is 
+preferable to purchase from two sources while maintaining a rea- 
+sonably neutral risk attitude. 
+To further study the robust performance of the proposed model, 
+we compare the operating eﬃciency and results of the robust 
+model and certain probability models under different interrupt 
+uncertainty sets. We randomly generated 50 normally distributed 
+samples with the expected value of ¯p it from the previous section 
+and a standard deviation of 0.005. According to the study of Sun 
+et al. [26] , Lotﬁ et al. [56] , and Kara et al. [57] , we compared the 
+number of feasible solutions and the cost target value between the 
+robust model and the deterministic probability model under differ- 
+ent supplier reliability and decision-makers’ risk attitudes. Table 5 
+shows the speciﬁc results. 
+In Table 5 , the robust model is better than the deterministic 
+model in terms of the number of feasible solutions and the size 
+of the cost target, and our proposed model has good robust per- 
+formance. Among the 50 samples, the deterministic model can 
+only solve 20 of them, while the robust model can obtain feasi- 
+ble solutions in all different uncertainty sets. In the best or worst 
+case, the robust model is more cost-effective than the determinis- 
+tic model. For example, the best optimization outcomes can save 
+7633 units of cost and the poorest can save 927 units of cost when 
+the supplier reliability is 10% and the decision maker’s attitude is 
+0.1 + 0.05t. Another observation is that the robust model performs 
+better under higher uncertainty (less reliable suppliers) and a rel- 
+atively neutral risk attitude. 
+4.4. Analysis on balance between cost and storage 
+To analyze the balance between two objective functions, the 
+comparison of the TVBP is used here. If when the variability of in- 
+terruption probability equals 15%, /Gamma1it is 0 . 5 + 0 . 5 t, and the weight 
+for the total cost objective function is equal to 0.4, 0.5, and 0.6, 
+respectively ( Figs. 5 , 6 , and 7 ). 
+Fig. 5 indicates the TVBP declines in the second period, regard- 
+less of the weight: the lesser the weight, the more prominent the 
+trend of decline. In other words, less attention paid to the cost 
+causes a more obvious decreasing trend of the optimal Pareto solu- 
+7 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Fig. 4. Difference value of robust primary objective in different risk attitudes and variable case. 
+Table 5 
+Robust model is compared with deterministic probability model. 
+Suppliers’ reliability 
+Decision-maker’s 
+risk attitude 
+Feasible solutions 
+number 
+Average of main 
+objective values Standard deviation 
+Best optimization 
+results 
+Worst optimization 
+result 
+5% /Gamma1it = 0 . 1 + 0 . 05 t 50 217929.38 64.05 6611 866 
+/Gamma1it = 0 . 5 50 217039.68 51.40 6609 966 
+/Gamma1it = 0 . 5 + 0 . 5 t 50 217931.34 52.79 6613 847 
+/Gamma1it = t 50 217931.76 53.61 6635 894 
+10% /Gamma1it = 0 . 1 + 0 . 05 t 50 216930.46 49.17 7633 927 
+/Gamma1it = 0 . 5 50 216050.4 54.77 7599 1097 
+/Gamma1it = 0 . 5 + 0 . 5 t 50 216933.88 55.75 7633 963 
+/Gamma1it = t 50 216950.24 50.50 7618 962 
+15% /Gamma1it = 0 . 1 + 0 . 05 t 50 215945.78 52.44 8384 1028 
+/Gamma1it = 0 . 5 50 215042.68 40.64 8423 1167 
+/Gamma1it = 0 . 5 + 0 . 5 t 50 215920.2 54.37 8651 1049 
+/Gamma1it = t 50 215942.38 55.37 8603 990 
+20% /Gamma1it = 0 . 1 + 0 . 05 t 50 215436.32 59.38 8630 1007 
+/Gamma1it = 0 . 5 50 215010.94 43.05 9329 1203 
+/Gamma1it = 0 . 5 + 0 . 5 t 50 215735.92 45.37 8626 986 
+/Gamma1it = t 50 215611 48.14 8615 987 
+Certain probability model 20 224456.4 50.87 - - 
+Fig. 5. TVBP corresponding to different weights. 
+tion obtained by the dual-objective function. Moreover, minimizing 
+costs as the main goal is a wise choice. 
+Fig. 6 shows the inﬂuence of different risk conservative degrees 
+on the TVBP. The TVBP is between 55% and 70%, but the conserva- 
+Fig. 6. TVBP corresponding to different decision-makers’ attitudes on risk. 
+tive situation of the four risk attitudes has a greater impact on the 
+TVBP with little difference. However, when w equals 0.6, the value 
+of TVBP is more stable in the four risk attitudes. That is, decision- 
+makers with different risk attitudes may adopt the same trade-off
+when making cost minimization as the primary goal. 
+8 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Fig. 7. TVBP corresponding to different variability of interruption probability. 
+Fig. 7 shows that interruption risk variability has a great inﬂu- 
+ence on TVBP. When the interruption risk variability is 5%, the op- 
+timality of the Pareto-optimal solution is the best. Moreover, if the 
+weight is 0.4, TVBP can be close to 0.9. Therefore, when the vari- 
+ability in interruption risk increases gradually, the corresponding 
+TVBP will keep decreasing. As supplier reliability becomes much 
+worse, the optimality of the Pareto-optimal solution is also much 
+worse. Additionally, when the interruption variability is small, the 
+greatest TVBP is in w 1 = 0 . 4 , and when the interrupt variability is 
+large, the best weight is 0.6. Thus, When two suppliers are rela- 
+tively reliable, reducing the cost of the supply chain must be the 
+primary purpose of gaining the supply chain cost advantage. 
+4.5. Analysis of the strengths of dual-sourcing strategy 
+In this part, an analysis of the advantages of dual-source pro- 
+curement is conducted to study. Thus, a comparative analysis of 
+the one-sourcing and dual-source procurement strategies is con- 
+ducted here. The degree of risk conservativeness of the decision- 
+maker selected here is /Gamma1it = 0 . 1 + 0 . 05 t. The model in the previous 
+chapter can solve the objective function value of the dual-source 
+procurement strategy, and the model that one-source procurement 
+strategy can be solved by a robust model subject to the following 
+constraints: 
+x 2 t = 0 ∀ t ∈ T . (33) 
+Fig. 8 presents the Pareto frontier point data chart correspond- 
+ing to each interruption uncertain degree of the dual-sourcing 
+method and the non-use dual-source procurement strategy. 
+In Fig. 8 , the dual-sourcing strategy (as opposed to the single- 
+source strategy) signiﬁcantly reduces cost and market storage in 
+the supply chain under the condition of interruption probability of 
+various variabilities. Additionally, saved cost value is not affected 
+by variability and tends to continuously go up, showing that dual- 
+sourcing has a higher risk tolerance level to save cost and performs 
+well in terms of meeting customer demand. Cost reduction is more 
+signiﬁcant than the reduction in market scarcity. In other words, 
+the dual-sourcing strategy takes reducing expenditure as the pri- 
+mary goal and solves the problems of product shortage down- 
+stream of the supply chain as much as possible in case of supply 
+interruption, which proves that dual-source is a desirable method 
+from an economic point of view. 
+5. Discussion 
+In this paper, a dual-objective robust optimization model for 
+dual sourcing strategy on supply interruption risk is established 
+to prove the stability advantage of the robust method and the 
+economic advantage of dual-source procurement. First, we ﬁnd 
+that the more prominent unreliability supplier and risk-neutral 
+decision-maker can save more money by adopting the results of 
+the robust technique under different interrupt variability and pol- 
+icymakers’ conservative cost estimates. Second, the global opti- 
+mal values of the Pareto-optimal solution under different inter- 
+ruption variability, cost, and shortage weight conditions are ana- 
+lyzed. Therefore, for reliable suppliers, decision-makers may attach 
+more importance to the shortage minimization goal downstream 
+of the supply chain, but in contrast, they attach more importance 
+to the total cost goal. Finally, by comparing the Pareto solutions of 
+dual-source procurement strategy and single-source procurement 
+strategy, it is proved that the dual-source procurement has a pro- 
+nounced effect on mitigating the interruption risk. 
+To reﬂect the general applicability of the method proposed in 
+this paper, we introduce the data value of He et al. [1] into our 
+model and analyze its dual-sourcing advantages and robust per- 
+formance. Regarding capacity limits, production costs, and inven- 
+tory capacity, we set them following the paper of Doganis and 
+Sarimveis [58] and Javanmard and Kianehkandi [59] . Hence, we can 
+obtain the comparison value on single-sourcing and dual-sourcing 
+with different variability and the cost value required to save per 
+unit market shortage in Fig. 9 . Besides, the TVBP increment con- 
+cerning different scenarios and different target weights relative to 
+the nominal scenario is in Fig. 10 . 
+Fig. 9 shows dual-source procurement under the interrupt prob- 
+ability of different variability. Compared with monophyletic pro- 
+curement cost savings, dual-source procurement shows an eco- 
+nomic advantage. With the increase in outage probability, the cost- 
+saving is relatively more, but the cost of compensating for the 
+shortage is increasing. It shows that a double-source purchase has 
+more economic advantage but does worse in satisfying the mar- 
+ket than a monophyletic purchase under the condition of unreli- 
+able suppliers. In a word, in a supply chain with the risk of supply 
+interruption, obtaining the products needed for production from 
+dual suppliers with different production capabilities and reliabil- 
+ity is more practical. It is necessary to compensate for the market 
+shortage and maximize the economic loss caused by customer sat- 
+isfaction. 
+Fig. 10 shows the value increment of TVBP of different scenar- 
+ios and target weights relative to the certain interruption proba- 
+bility. The four interruption variabilities of 5%, 10%, 15%, and 20% 
+are numbered 1, 2, 3, and 4, respectively. The four risk attitudes 
+are numbered 1, 2, 3, and 4, respectively. Thus 16 different sce- 
+narios are obtained by combination. The cost target weights are 
+0.4, 0.5, and 0.6, respectively. This ﬁgure integrates the variability, 
+interruption probability, and target weight in the previous section 
+to compare the robust and deterministic methods. In Fig. 10 , the 
+TVBP and the cost of the target weight increase as the interrupt 
+probability grow. No matter which interruption is variable, the cost 
+reaches the maximum in the second risk attitude. When the unre- 
+liability of suppliers is greater and decision-makers’ risk attitude 
+is neutral, robust approaches yield better beneﬁts in the supply 
+chain. In addition, when the weight is 0.6, the result of the ro- 
+bust model is always better than that of the deterministic model. 
+Therefore, the robust method in the supply chain with a dual- 
+source procurement mode can better achieve enterprises’ supply 
+risk management objectives from an economic perspective. 
+Although many researchers are concerned about supplier relia- 
+bility [14 , 15] , supplier outage scene [6 , 11] , and decision-makers’ at- 
+titude to risk [9 , 10] . The comprehensive consideration of these di- 
+rections needs further in-depth research. Therefore, our study cre- 
+atively uses a robust optimization method, which is different from 
+other dual-sourcinng research that ﬁxes the interruption probabil- 
+ity to a particular value [1 , 14 , 20] . Hence, the proposed robust so- 
+9
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Fig. 8. Comparison of dual-source procurement and single-source procurement strategies under different interruption probability variability. 
+Fig. 9. The comparison value of single-source procurement and dual-source pro- 
+curement with different variability and the cost value required to save per unit 
+market shortage. 
+Fig. 10. The TVBP increment with respect to different scenarios and different target 
+weights relative to nominal scenario. 
+lution is suitable for a certain range of uncertain outage proba- 
+bility and reﬂects the decision maker’s risk attitude. The advan- 
+tages and application scenarios of the dual-sourcing strategy are 
+explored comprehensively. It provides new thinking and method 
+for supply chain enterprises to make decisions under supply inter- 
+ruption risk. 
+6. Conclusion and future research 
+Although supply chain management frequently discusses dual- 
+source procurement, it is not yet well known how an eﬃcient and 
+reliable dual-source subscription program with various decision- 
+makers’ risk attitudes may be created in the face of supply disrup- 
+tion concerns. As a result, our paper rise in response to the proper 
+time and conditions. First, we build a dual-sourcing robust opti- 
+mization model to reduce costs and shortages and use the interval 
+robust optimization method to obtain the robust correspondence 
+mode. Using the augmented ε-constraint method, we rewrite the 
+shortage objective function to obtain a single-objective function in 
+the form of constraints. Additionally, we conducted reliability, risk 
+attitude, dual-target, and dual-sourcing advantage analysis based 
+on a real case. The model performs robustly and eﬃciently under 
+different uncertainties (unreliable suppliers) and different decision- 
+maker attitudes. Finally, we discuss the broad applicability and fea- 
+sibility. Some ﬁndings are drawn through analysis and discussion, 
+which are summarized as follows: (1) Dual-sourcing strategy based 
+on a robust method takes into account of the equilibrium of cost 
+and market shortage to achieve eﬃcient and successful decision- 
+making, and our method can adapt to various uncertainties and 
+has excellent robustness. (2) Our method is more effective at less 
+reliable suppliers. (3) Though our method can make effective or- 
+dering plans under different decision-maker risk attitudes, more 
+eﬃcient and stable results can be achieved under a risk-neutral at- 
+titude. The above conclusions also prove that it is meaningful and 
+wise to consider disruption uncertainty and various risk attitudes 
+as dual-sourcing research. 
+10 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+Future research can be extended to the entire supply chain, 
+considering the beneﬁts of suppliers, the game between retail- 
+ers/manufacturers and suppliers, and other perspectives to explore 
+the impact of supply interruption on procurement strategies. The 
+future research direction of this work can also include extending 
+the proposed model for multiple types of products, more than two 
+sources of supply, and more levels of supply chains. Additionally, 
+the research on the robustness and generalization ability of the 
+model is attractive, promising, and meaningful. Future research can 
+explore the relationship between model robustness and generaliza- 
+tion, such as what threshold the robust model reaches will make 
+the model produce poor generalization. 
+Data Availability Statement 
+The data that support the ﬁndings of this study are available 
+from the corresponding author, upon reasonable request. 
+Declarations of competing interest 
+None. 
+CRediT authorship contribution statement 
+Bing Han: Conceptualization, Methodology, Software, Formal 
+analysis. Ying Zhang: Data curation, Writing – original draft, Inves- 
+tigation. Song Wang: Visualization, Investigation. Yongshin Park: 
+Supervision. 
+Data Availability 
+No data was used for the research described in the article. 
+Acknowledgments 
+This work was supported by the National Natural Science Foun- 
+dation of China (Grant No.72173013), the State Key Program of Na- 
+tional Natural Science of China (Grant No.71831002), and the Pro- 
+gram for Innovative Research Team at the Ministry of Education of 
+China (IRT_17R13). 
+Appendix 
+Table A.1 
+Table A. 1 
+Example variable data table. 
+Purchasing cycle 1 2 3 4 5 6 7 8 9 10 11 12 
+Production demand D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+D ∼N 
+(500,5) 
+production load rate 95% 95% 95% 95% 95% 95% 95% 95% 95% 95% 95% 95% 
+Order price(Main 
+supply) 
+0.504 0.52 0.504 0.52 0.504 0.52 0.504 0.52 0.504 0.52 0.504 0.52 
+Order price(Backup 
+supply) 
+0.72 0.78 0.72 0.78 0.72 0.78 0.72 0.78 0.72 0.78 0.72 0.78 
+Order ﬁxed price 
+(Main supply) 
+2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 
+Order ﬁxed price 
+(Backup supply) 
+4 4 4 4 4 4 4 4 4 4 4 4 
+Capacity limit (Main 
+supply) 
+250 300 250 300 250 300 250 300 250 300 250 300 
+Capacity limit (Backup 
+supply) 
+350 300 350 300 350 300 350 300 350 300 350 300 
+Parts inventory 
+holding cost 
+0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 
+Product inventory 
+holding cost 
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 
+Product shortage cost 2 2 2.5 2 2 2.5 2 2 2.5 2 2 2.5 
+Production capacity 500 470 400 423 398 373 348 389 298 273 280 250 
+Cost of production 1 1 1 1 1 1 1 1 1 1 1 1 
+Production ratio 1 1 1 1 1 1 1 1 1 1 1 1 
+Parts inventory 
+capacity 
+220 290 311 212 312 312 212 312 312 312 312 312 
+Product inventory 
+capacity 
+220 290 311 212 312 312 212 312 312 312 312 312 
+Probability of Outage 
+of Nominal Scene 
+(Main supply) 
+0.002 0.0012 0.0015 0.001 0.0013 0.0015 0.002 0.0012 0.0015 0.002 0.0012 0.0015 
+Probability of Outage 
+of Nominal Scene 
+(Backup supply) 
+0.0001 0.0009 0.0009 0.0001 0.0009 0.0009 0.0001 0.0009 0.0009 0.001 0.0009 0.0009 
+11 
+
+B. Han, Y. Zhang, S. Wang et al. Omega 115 (2023) 102775 
+References 
+[1] He J, Alayifard F, Iyanov D, Jahani H. A real-option approach to mitigate dis- 
+ruption risk in the supply chain. Omega Int J Manag Sci 2019;88:133–49 . 
+[2] Chopra S, Reinhardt G, Mohan U. The importance of decoupling recurrent and 
+disruption risks in a supply chain. Nav Res Logist 2007;54:544–55 . 
+[3] Snyder LV, Atan Z, Peng P, Rong Y, Schmitt AJ, Sinsoysal B. OR/MS models for 
+supply chain disruptions: a review. IIE Trans 2015;48:89–109 . 
+[4] Giri BC. Managing inventory with two suppliers under yield uncertainty and 
+risk aversion. Int J Prod Econ 2011;133:80–5 . 
+[5] Chen Y, Liu LY, Shi V, Zhang YB, Zhu J. The optimization of a virtual dual 
+production-inventory system under dynamic supply disruption risk. Complex- 
+ity 2020;2020:12. doi: 10.1155/2020/7067502 . 
+[6] Xue KL, Li YJ, Zhen XP, Wang W. Managing the supply disruption risk: option 
+contract or order commitment contract? Ann Oper Res 2020;291:985–1026 . 
+[7] Hong YS, Huh WT, Kang C. Sourcing assemble-to-order inventories under sup- 
+plier risk uncertainty. Omega Int J Manag Sci 2017;66:1–14 . 
+[8] Latour A. Trial by ﬁre: a blaze in albuquerque sets off major crisis for cellphone 
+giants. Wall Str J 20 01;1(29):20 01 . 
+[9] Li X, Li YJ. On the loss-averse dual-sourcing problem under supply disruption. 
+Comput Oper Res 2018;100:301–13 . 
+[10] Su P, Liu SG. Dual sourcing in managing operational and disruption risks in 
+contract manufacturing. Int J Prod Res 2015;53:291–306 . 
+[11] Shu T, Yang XR, Chen S, Wang SY, Lai KK, Yang HL. Retailers’ order strate- 
+gies in transshipments in disruption risks of supply chains. J Syst Sci Complex 
+2018;31:1273–301 . 
+[12] Lauton F, Rothkopf A, Pibernik R. The value of entrant manufacturers: a study 
+of competition and risk for donor-funded procurement of essential medicines. 
+Eur J Oper Res 2019;272:292–312 . 
+[13] Silbermayr L, Minner S. A multiple sourcing inventory model under disruption 
+risk. Int J Prod Econ 2014;149:37–46 . 
+[14] Zeng NM, He Q. Dual sourcing strategy for high-tech manufacturer under sup- 
+ply risk and capacity constraint. IEEE Access 2019;7:42672–82 . 
+[15] Gupta V, He B, Sethi SP. Contingent sourcing under supply disruption and 
+competition. Int J Prod Res 2015;53:3006–27 . 
+[16] Tang SY, Gurnani H, Gupta D. Managing disruptions in decentralized sup- 
+ply chains with endogenous supply process reliability. Prod Oper Manag 
+2014;23:1198–211 . 
+[17] Schmitt AJ, Snyder LV. Inﬁnite-horizon models for inventory control under 
+yield uncertainty and disruptions. Comput Oper Res 2012;39:850–62 . 
+[18] Ledari AM, Pasandideh SHR, Koupaei MN. A new newsvendor policy model for 
+dual-sourcing supply chains by considering disruption risk and special order. J 
+Intell Manuf 2018;29:237–44 . 
+[19] Chen M, Xia YS, Wang XL. Managing supply uncertainties through bayesian 
+information update. IEEE Trans Autom Sci Eng 2010;7:24–36 . 
+[20] Sawik T. Joint supplier selection and scheduling of customer orders under dis- 
+ruption risks: single vs. dual sourcing. Omega Int J Manag Sci 2014;43:83–95 . 
+[21] Bertsimas D, Brown DB, Caramanis C. Theory and applications of robust opti- 
+mization. SIAM Rev 2011;53:464–501 . 
+[22] Ben-Tal A, Ghaoui L, Nemirovski A. Robust optimization(Princeton series in ap- 
+plied mathematics). Princeton University Press; 2009 . 
+[23] Groetzner P, Werner R. Multiobjective optimization under uncertainty: a mul- 
+tiobjective robust (relative) regret approach. Eur J Oper Res 2022;296:101–15 . 
+[24] Ozmen A, Kropat E, Weber GW. Robust optimization in spline regression mod- 
+els for multi-model regulatory networks under polyhedral uncertainty. Opti- 
+mization 2017;66:2135–55 . 
+[25] Lotﬁ R, Kheiri K, Sadeghi A, Tirkolaee EB. An extended robust mathemati- 
+cal model to project the course of COVID-19 epidemic in Iran. Ann Oper Res 
+2022:1–25. doi: 10.1007/s10479-021-04490-6 . 
+[26] Sun H, Wang Y, Xue Y. A bi-objective robust optimization model for disas- 
+ter response planning under uncertainties. Comput Ind Eng 2021;155:107213. 
+doi: 10.1016/j.cie.2021.107213 . 
+[27] Khalilpourazari S, Khalilpourazary S, Ciftcioglu AO, Weber GW. Designing en- 
+ergy-eﬃcient high-precision multi-pass turning processes via robust optimiza- 
+tion and artiﬁcial intelligence. J Intell Manuf 2021;32:1621–47 . 
+[28] Kara G, Pisciella P, Tomasgard A, Farahmand H. The impact of uncertainty and 
+time structure on optimal ﬂexibility scheduling in active distribution networks. 
+IEEE Access 2021;9:82966–78 . 
+[29] Khalilpourazari S, Pasandideh SHR. Designing emergency ﬂood evacuation 
+plans using robust optimization and artiﬁcial intelligence. J Comb Optim 
+2021;41:640–77 . 
+[30] Khalilpourazari S, Mirzazadeh A, Weber GW, Pasandideh SHR. A robust fuzzy 
+approach for constrained multi-product economic production quantity with 
+imperfect items and rework process. Optimization 2020;69:63–90 . 
+[31] Jabbarzadeh A, Haughton M, Pourmehdi F. A robust optimization model for 
+eﬃcient and green supply chain planning with postponement strategy. Int J 
+Prod Econ 2019;214:266–83 . 
+[32] José Alem D, Morabito R. Production planning in furniture settings via robust 
+optimization. Comput Oper Res 2012;39:139–50 . 
+[33] Zhu B, Hui J, Zhang F, He L. An interval programming approach for multi-pe- 
+riod and multi-product aggregate production planning by considering the de- 
+cision maker’s preference. Int J Fuzzy Syst 2018;20:1015–26 . 
+[34] Lotﬁ R, Sheikhi Z, Amra M, AliBakhshi M, Weber GW. Robust optimization of 
+risk-aware, resilient and sustainable closed-loop supply chain network design 
+with Lagrange relaxation and ﬁx-and-optimize. Int J Logist Res Appl 2020:1–
+41. doi: 10.1080/13675567.2021.2017418 . 
+[35] Jabbarzadeh A, Fahimnia B, Sheu JB. An enhanced robustness approach for 
+managing supply and demand uncertainties. Int J Prod Econ 2017;183:620–31 . 
+[36] Jabbarzadeh A, Fahimnia B, Sheu JB, Moghadam HS. Designing a supply chain 
+resilient to major disruptions and supply/demand interruptions. Transp Res 
+Part B Methodol 2016;94:121–49 . 
+[37] Lu M, Ran L, Shen ZJM. Reliable facility location design under uncertain corre- 
+lated disruptions. Manuf Serv Oper Manag 2015;17:445–55 . 
+[38] Ozceylan E, Paksoy T. Fuzzy multi-objective linear programming ap- 
+proach for optimising a closed-loop supply chain network. Int J Prod Res 
+2013;51:2443–61 . 
+[39] Tirkolaee EB, Dashtian Z, Weber GW, Tomaskova H, Soltani M, Mousavi NS. 
+An integrated decision-making approach for green supplier selection in an 
+agri-food supply chain: threshold of robustness worthiness. Mathematics 
+2021;9:1304. doi: 10.3390/math9111304 . 
+[40] Lotﬁ R, Kargar B, Gharehbaghi A, Weber GW. Viable medical waste chain net- 
+work design by considering risk and robustness. Environ Sci Pollut R 2021:1–
+16. doi: 10.1007/s11356- 021- 16727- 9 . 
+[41] Sangaiah AK, Tirkolaee EB, Goli A, Dehnavi-Arani S. Robust optimization and 
+mixed-integer linear programming model for LNG supply chain planning prob- 
+lem. Soft Comput 2020;24:7885–905 . 
+[42] Mirzapour Al-e-hashem SMJ, Malekly H, Aryanezhad MB. A multi-objective 
+robust optimization model for multi-product multi-site aggregate production 
+planning in a supply chain under uncertainty. Int J Prod Econ 2011;134:28–
+42 . 
+[43] Goli A, Tirkolaee EB, Malmir B, Bian GB, Sangaiah AK. A multi-objective in- 
+vasive weed optimization algorithm for robust aggregate production planning 
+under uncertain seasonal demand. Computing 2019;101:499–529 . 
+[44] Alinezhad M, Mahdavi I, Hematian M, Tirkolaee EB. A fuzzy multi-objective 
+optimization model for sustainable closed-loop supply chain network design 
+in food industries. Environ Dev Sustain 2021;6:8779–806 . 
+[45] Tirkolaee EB, Goli A, Faridnia A, Soltani M, Weber GW. Multi-objective opti- 
+mization for the reliable pollution-routing problem with cross-dock selection 
+using Pareto-based algorithms. J Clean Prod 2020;276:122927. doi: 10.1016/j. 
+jclepro.2020.122927 . 
+[46] Zhu LJ, Zhang YM, Ren XH. A newsvendor problem with two suppliers under 
+dual-channel supply chain and supply disruption. In: 2016 13th International 
+Conference on Service Systems And Service Management. IEEE; 2016. p. 1–5 . 
+[47] Han JJ, Xiang J, Zhang JL, Hua GW. Dual sourcing problem with real option. In: 
+Proceedings of the IEEE international conference on systems, man, and cyber- 
+netics. IEEE; 2016. p. 481–6 . 
+[48] Fu Q, Lee CY, Teo CP. Procurement management using option contracts: ran- 
+dom spot price and the portfolio effect. IIE Trans 2010;42:793–811 . 
+[49] Bertsimas D, Thiele A. A robust optimization approach to inventory theory. 
+Oper Res 2006;54:150–68 . 
+[50] Bertsimas D, Sim M. The price of robustness. Oper Res 2004;52:35–53 . 
+[51] Mavrotas G. Effective implementation of the ε-constraint method in 
+multi-objective mathematical programming problems. Appl Math Comput 
+2009;213:455–65 . 
+[52] Demir E, Bektas T, Laporte G. The bi-objective pollution-routing problem. Eur 
+J Oper Res 2014;232:464–78 . 
+[53] Esmaili M, Amjady N, Shayanfar HA. Multi-objective congestion man- 
+agement by modiﬁed augmented epsilon-constraint method. Appl Energy 
+2011;88:755–66 . 
+[54] Adida E, Perakis G. A robust optimization approach to dynamic pricing and 
+inventory control with no backorders. Math Program 2005;107:97–129 . 
+[55] Alem D, Curcio E, Amorim P, Almada-Lobo B. A computational study of the 
+general lot-sizing and scheduling model under demand uncertainty via robust 
+and stochastic approaches. Comput Oper Res 2018;90:125–41 . 
+[56] Lotﬁ R, Mardani N, Weber GW. Robust bi-level programming for renewable 
+energy location. Int J Energy Res 2021;45:7521–34 . 
+[57] Kara G, Ozmen A, Weber GW. Stability advances in robust portfolio optimiza- 
+tion under parallelepiped uncertainty. Cent Eur J Oper Res 2019;27:241–61 . 
+[58] Doganis P, Sarimveis H. Optimal scheduling in a yogurt production line based 
+on mixed integer linear programming. J Food Eng 2007;80:445–53 . 
+[59] Javanmard H, Kianehkandi. Optimal scheduling in a milk production line based 
+on mixed integer linear programming. In: ICEMT 2011. Shanghai, PEOPLES R 
+CHINA; 2011. p. 318–23 . 
+[60] Zhu JJ, Fu SC. Ordering Decision-Making Model for a Dual Sourcing Sup- 
+ply Chain with Disruptions. In: LISS 2012. Springer, Berlin, Heidelberg; 2013. 
+p. 395–400 . 
+12 

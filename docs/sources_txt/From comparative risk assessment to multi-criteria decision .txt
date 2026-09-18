@@ -1,0 +1,2244 @@
+From comparative risk assessment to multi-criteria decision analysis and
+adaptive management: Recent developments and applications
+I. Linkov a,⁎, F.K. Satterstrom b, G. Kiker c, C. Batchelor d, T. Bridges d, E. Ferguson d
+a Intertox Inc., 83 Winchester Street, Suite 1, Brookline, MA 02446, USA
+b Cambridge Environmental Inc., 58 Charles Street, Cambridge, MA 02141, USA
+c University of Florida, Gaineville, FL 32611, USA
+d U.S. Army Engineer Research and Development Center , Environmental Laboratory, 3909 Halls Ferry Rd, Vicksburg, MS 39180, USA
+Available online 14 August 2006
+Abstract
+Environmental risk assessment and decision-making strategies over the last several decades have become increasingly more sophisticated,
+information-intensive, and complex, including such approaches as expert judgment, cost –benefit analysis, and toxicological risk assessment. One
+tool that has been used to support environmental decision-making is comparative risk assessment (CRA), but CRA lacks a structured method for
+arriving at an optimal project alternative. Multi-criteria decision analysis (MCDA) provides better-supported techniques for the comparison of
+project alternatives based on decision matrices, and it also provides structured methods for the incorporation of project stakeholders' opinions i n
+the ranking of alternatives. We argue that the inherent uncertainty in our ability to predict ecosystem evolution and response to different
+management policies requires shifting from optimization-based management to an adaptive management paradigm. This paper brings together a
+multidisciplinary review of existing decision-making approaches at regulatory agencies in the United States and Europe and synthesizes state-of-
+the-art research in CRA, MCDA, and adaptive management methods applicable to environmental remediation and restoration projects. We
+propose a basic decision analytic framework that couples MCDA with adaptive management and its public participation and stakeholder value
+elicitation methods, and we demonstrate application of the framework to a realistic case study based on contaminated sediment management issues
+in the New York/New Jersey Harbor.
+© 2006 Elsevier Ltd. All rights reserved.
+Keywords: Comparative risk assessment; Decision analysis; Adaptive management; Risk analysis; Sediments
+1. Introduction: comparative risk assessment and evolving
+decision analysis methodologies
+Risk management of environmental projects requires balanc-
+ing scientific findings with multi-faceted input from many
+stakeholders with different values and objectives. In such
+instances, systematic decision analysis tools are an appropriate
+method to solve complex technical and behavioral issues
+(McDaniels, 1999 ). Regardless of the specific project, risk
+managers typically have four types of information that are used to
+make decisions: 1) the results of modeling and monitoring studies,
+2) risk analysis, 3) cost or cost –benefit analysis, and 4)
+stakeholder preferences (Fig. 1a). These four types of information
+range from extremely quantitative to extremely qualitative, and
+structured information about stakeholder preferences may not be
+presented to decision-makers at all. In cases where the decision-
+maker does receive information on stakeholder preferences, the
+information may be handled in a subjective manner that
+exacerbates the difficulty of defending the decision process as
+reliable or fair. Moreover, where structured approaches to
+combining the four categories of information are employed,
+they may be perceived as lacking the flexibility to adapt to
+localized concerns or faithfully represent minority viewpoints. A
+systematic method of combining quantitative and qualitative
+inputs from scientific studies of risk, cost and cost –benefit
+analyses, and stakeholder views has yet to be fully developed for
+environmental decision-making. As a result, decision-makers
+often do not optimally use all available and useful information in
+choosing between identified project alternatives.
+In response to these decision-making challenges, some
+regulatory agencies and environmental managers have moved
+toward more integrative decision analytic processes, such as
+comparative risk assessment (CRA) or multi-criteria decision
+Environment International 32 (2006) 1072 – 1093
+www.elsevier.com/locate/envint
+⁎ Corresponding author. Tel.: +1 617 233 9869.
+E-mail address: ilinkov@intertox.com (I. Linkov).
+0160-4120/$ - see front matter © 2006 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.envint.2006.06.013
+
+analysis (MCDA). These methods are designed to raise
+awareness of the trade-offs that must be made among competing
+project objectives, help compare alternatives that are dramat-
+ically different in their potential impacts or outcomes, and
+synthesize a wider variety of information ( Fig. 1 b).
+Comparative risk analysis has been most commonly applied
+within the realm of policy analysis. Andrews et al. (2004) , for
+example, distinguish between CRA use at macro and micro
+scales. At the macro scale, programmatic CRA has helped to
+characterize regional and national environmental priorities by
+comparing the multi-dimensional risks associated with policy
+alternatives. U.S. government agencies at various levels have
+logged significant experience with policy-oriented, macro-level
+CRA. International CRA applications are reviewed in Tal and
+Linkov (2004) and in Linkov and Ramadan (2004). At smaller
+scales, so-called micro-CRA studies have compared interrelated
+risks involving specific policy choices, such as chemical versus
+microbial disease risks in drinking water. In these micro-scale
+applications, the CRAs often have specific objectives within the
+broader goal of evaluating and comparing possible alternatives
+and their risks. Bridges et al. (2005) discuss micro-scale
+applications of CRA in more detail.
+Central to CRA is the construction of a two-dimensional
+decision matrix that contains project alternatives' scores on
+various criteria. However, CRA lacks a structured method for
+combining performance on criteria to identify an optimal project
+alternative. MCDA methods and tools, on the other hand, do
+provide a systematic approach for integrating risk levels,
+uncertainty and valuation. MCDA helps decision-makers
+evaluate and choose among alternatives based on multiple
+criteria using systematic analysis that overcomes the limitations
+of unstructured individual or group decision-making. Although
+almost all decision analysis methodologies share similar steps
+of organization in the construction of the decision matrix (often
+the end result of the CRA process), there are many MCDA
+methodologies which each synthesize the matrix information
+and rank the alternatives by different means ( Yoe, 2002). Yet,
+taken by themselves, few MCDA approaches are specifically
+designed to incorporate multiple stakeholder perspectives or
+competing value systems.
+Fortunately, MCDA tools can be naturally linked with an
+adaptive management paradigm. Adaptive management explic-
+itly acknowledges the uncertainty in managers' knowledge of a
+system. As a consequence of this uncertainty, adaptive
+management holds that no single best policy can be selected,
+but rather a set of alternatives should be dynamically tracked to
+gain information about the effects of different courses of action.
+Adaptive management concepts were introduced more than
+20 years ago, but their implementation to date has been
+primarily limited to a few large-scale projects in long-term
+natural resource management, where uncertainty is so over-
+whelming that optimization is not possible. Even though
+managers of smaller projects are confronted with the same
+problems and often have to go through the frustrating
+experience of changing their management strategy when it
+fails, our review shows that the field of environmental
+management is far from accepting and using adaptive
+management approaches. Although adaptive management is
+recognized and even recommended by many state and
+government agencies, adaptive management applications vary
+widely in their implementation of the concept and there is no
+framework that robustly incorporates adaptive management in
+environmental practice.
+In this paper, we review regulatory policies and case studies
+of MCDA applications and successful adaptive management
+implementation across a wide range of projects and application
+areas. Our review indicates a need to integrate adaptive
+management with a set of decision-making tools that will
+allow it to build on current optimization-based management
+approaches. We are thus proposing a solution in which we
+Fig. 1. Current (a) and evolving (b) decision-making processes for contaminated sediment management.
+1073I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+choose a strong adaptive management framework, for which
+there exist many support tools in the literature, and integrate it
+with multi-criteria decision analysis as a best method for dealing
+with uncertainty when selecting a management option. The two
+methods complement each other and form a comprehensive
+management framework.
+2. Comparative risk assessment application to New Y ork/
+New Jersey Harbor
+We have taken the New York/New Jersey Harbor as a case
+study to illustrate an environmental management problem that
+could benefit from combined MCDA/adaptive management
+application. A decision scenario for the harbor is presented in
+Fig. 2 . The harbor faces contaminated sediment management
+issues — several million cubic meters of sediments must be
+dredged each year to maintain navigation channels for harbor
+access ( Wakeman and Themelis, 2001 ). Due to long-term
+human use of the harbor area, significant contaminant
+concentrations have been recorded in certain areas. Additional
+challenges have been created by the restriction of ocean disposal
+to only clean sediments, as well as plans for deepening existing
+channels to allow increased access for larger vessels. For these
+reasons, decision-makers elected to systematically explore
+additional sediment management options and their associated
+costs and risks.
+A comparative screening-level risk assessment ( Driscoll
+et al., 2002 ) was developed for generalized areas within the
+Fig. 2. (a) Example decision criteria for the New York/New Jersey Harbor. Blue box: NY/NJ Dredged Material Management Plan (USACE, 1999) and Expert Opinion;
+red boxes: Driscoll et al. (2002); (b) example decision matrix for the New York/New Jersey Harbor. An ⁎ beside a criteria value denotes an estimated value of 0 where
+Driscoll et al. (2002) provided a rating of “not applicable”.
+1074 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+harbor. Eight sediment management alternatives (including no
+action) were identified for consideration and assessed according
+to their performance on the criteria of human health risk and
+ecological risk: Confined Aquatic Disposal (CAD) refers to
+placing the sediments within a pit or depression on the bottom
+of a water body and capping the contaminated sediments with
+clean sediment; a Confined Disposal Facility (CDF) is a diked
+area where dredged material is placed and stored; Landfill refers
+to placement at a landfill site; and Cement Lock and
+Manufactured Soil refer to treatment or processing techniques
+that are applied to prepare the material for storage or subsequent
+beneficial uses ( Fig. 2 ). To evaluate human health risk, three
+criteria were selected: the number of complete human exposure
+pathways, the maximum cancer risk calculated from all the
+pathways, and fish chemical-of-concern (COC) concentration.
+To evaluate ecological risk, two similar criteria were selected:
+the number of complete exposure pathways and the maximum
+calculated hazard quotient from all the pathways. The estimated
+cost in dollars per cubic yard was used as a cost criterion. Cost
+estimates were derived from expert interviews as well as
+estimates from the Dredged Material Management Plan
+(DMMP) for the Port of New York and New Jersey ( USACE,
+1999). In the example developed here, the impacted area (i.e .
+the amount of land required to manage the contamination)
+divided by the overall project capacity, an additional measure of
+cost, was expected to be inversely correlated with public
+acceptance. Fig. 2b provides the quantitative estimates for these
+criteria to parameterize the decision matrix (for greater detail,
+see Kiker and Bridges, submitted for publication ).
+The result of CRA is usually a qualitative examination of the
+decision matrix. For example, the conclusions of Driscoll et al.
+(2002) include: “the extent of the impacted area … is
+substantially greater for the near-shore and upland CDFs than
+for the island CDF; ”“ risk from the island CDF is greater than
+other placement and treatment alternatives; ” and “relative risk
+for exposure to the undiluted sediment of the no-action
+alternative exceeds the relative risk of all other alternatives. ”
+Even though these conclusions may be indeed useful, they do
+not provide integration across multiple criteria and multiple
+alternatives. The rest of this paper presents decision support
+tools for higher-level integration of criteria and alternatives.
+3. MCDA methods and tools
+In contrast to CRA, MCDA provides a more fully developed
+approach to environmental management ( Table 1). Whereas a
+decision matrix marks the endpoint for CRA, it is only an
+intermediate product of MCDA. After matrix generation,
+different MCDA methods require different types of value
+information and follow various optimization algorithms. A
+detailed analysis of the theoretical foundations of these methods
+and their comparative strengths and weaknesses is presented in
+Belton and Stewart (2002). Some techniques rank options, some
+identify a single optimal alternative, some provide an
+incomplete ranking, and others differentiate between acceptable
+and unacceptable alternatives.
+Table 2 summarizes a number of current, sophisticated
+MCDA methods. Multi-attribute utility theory (MAUT) and the
+analytical hierarchy process (AHP) are more complex methods
+that use optimization algorithms, whereas outranking eschews
+optimization in favor of a dominance approach. The optimiza-
+tion approaches employ numerical scores to quantify the merit
+of each option on a single scale. Scores are developed from the
+performance of alternatives with respect to individual criteria
+and aggregated into an overall score. Individual scores may be
+simply summed or averaged, or a weighting mechanism can be
+used to favor some criteria more heavily than others. The goal of
+MAUT is to find a simple expression for the net benefits of a
+decision. Through the use of utility or value functions, the
+MAUT method transforms diverse criteria, such as those shown
+Table 1
+Comparison of decision process elements for ad hoc decision-making, comparative risk assessment, and multi-criteria decision analysis
+Elements of decision process Ad hoc decision-making Comparative risk assessment Multi-criteria decision analysis
+Define problems Stakeholder input limited or
+non-existent. Therefore,
+stakeholder concerns may not
+be addressed by alternatives.
+Stakeholder input collected after the
+problem is defined by decision-makers
+and experts. Problem definition is
+possibly refined based on stakeholder input.
+Stakeholder input incorporated at beginning
+of problem formulation stage. Often provides
+higher stakeholder agreement on problem
+definition. Thus, proposed solutions have a
+better chance at satisfying all stakeholders.
+Generate alternatives Alternatives are chosen by
+decision-maker usually from
+pre-existing choices with
+some expert input.
+Alternatives are generated through
+formal involvement of experts in more
+site-specific manner.
+Alternatives are generated through
+involvement of all stakeholders including
+experts.
+Involvement of all stakeholders increases
+likelihood of novel alternative generation.
+Formulate criteria by which
+to judge alternatives
+Criteria by which to judge
+alternatives are often not
+explicitly considered and
+defined.
+Criteria and sub-criteria are often defined. Criteria and sub-criteria hierarchies
+are developed based on expert and
+stakeholder judgment.
+Gather value judgments
+on relative importance
+of criteria
+Non-quantitative criteria
+valuation weighted by
+decision-maker
+Quantitative criteria weights are sometimes
+formulated by the decision-maker, but in a
+poorly justified manner.
+Quantitative criteria weights are obtained
+from decision-makers and stakeholders.
+Rank/select final
+alternatives
+Alternative often chosen
+based on implicit weights
+in an opaque manner.
+Alternative chosen by aggregation of
+criteria scores through weight of evidence
+discussions or qualitative considerations.
+Alternative chosen by systematic, well-
+defined algorithms using criteria scores
+and weights.
+1075I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+in Fig. 2 , into one common scale of utility or value. MAUT
+relies on the assumptions that the decision-maker is rational
+(preferring more utility to less utility, for example), that the
+decision-maker has perfect knowledge, and that the decision-
+maker is consistent in his judgments. The goal of decision-
+makers in this process is to maximize utility or value. Because
+poor scores on criteria can be compensated for by high scores on
+other criteria, MAUT is part of a group of MCDA techniques
+known as “compensatory” methods.
+Similar to MAUT, AHP aggregates various facets of the
+decision problem using a single optimization function known as
+the objective function. The goal of AHP is to select the
+alternative that results in the greatest value of the objective
+function. Like MAUT, AHP is a compensatory optimization
+approach. However, AHP uses a quantitative comparison
+method that is based on pair-wise comparisons of decision
+criteria rather than utility or weighting functions. All individual
+criteria must be paired against all others and the results
+compiled in matrix form. For example, in examining the choices
+in the remediation of contaminated sediments, the decision-
+maker would answer questions such as, “With respect to the
+selection of a sediment alternative, which is more important:
+public acceptability or cost? ” The user uses a numerical scale to
+compare the choices, and AHP moves systematically through
+all pair-wise comparisons of criteria and alternatives. The AHP
+technique thus relies on the supposition that humans are more
+capable of making relative judgments than absolute judgments.
+Consequently, the rationality assumption in AHP is more
+relaxed than in MAUT.
+Unlike MAUT and AHP , outranking is based on the principle
+that one alternative may have a degree of dominance over another
+(Kangas et al., 2001 ). Dominance occurs when one option
+performs better than another on at least one criterion and no
+worse than the other on all criteria (ODPM, 2004). However, out-
+ranking techniques do not presuppose that a single best alternative
+can be identified. Outranking models compare the performance of
+two (or more) alternatives at a time, initially in terms of each
+criterion, to identify the extent to which a preference for one over
+the other can be asserted. Outranking techniques then aggregate the
+preference information across all relevant criteria and seek to
+establish the strength of evidence favoring selection of one
+alternative over another. For example, an outranking technique
+may entail favoring the alternative that performs the best on the
+greatest number of criteria. Thus , outranking techniques allow
+inferior performance on some criteria to be compensated for by
+superior performance on others. They do not necessarily, however,
+take into account the magnitude of relative under-performance in a
+criterion versus the magnitude of over-performance in another
+Table 2
+Comparison of critical elements, strengths and weaknesses of several advanced MCDA methods: MAUT, AHP , and outranking
+(after ODPM, 2004; Larichev and Olson, 2001 )
+Method Important elements Strengths Weaknesses
+Multi-attribute
+utility theory
+Expression of overall performance of an alternative
+in a single, non-monetary number representing the
+utility of that alternative
+Easier to compare alternatives whose overall
+scores are expressed as single numbers
+Maximization of utility may not
+be important to decision-makers
+Criteria weights often obtained by directly
+surveying stakeholders
+Choice of an alternative can be transparent if
+highest scoring alternative is chosen
+Criteria weights obtained through
+less rigorous stakeholder surveys
+may not accurately reflect
+stakeholders' true preferences
+Theoretically sound — based on
+utilitarian philosophy
+Rigorous stakeholder preference
+elicitations are expensive
+Many people prefer to express net utility in
+non-monetary terms
+Analytical
+hierarchy
+process
+Criteria weights and scores are based on
+pairwise comparisons of criteria and
+alternatives, respectively
+Surveying pairwise comparisons is
+easy to implement
+The weights obtained from
+pairwise comparison are strongly
+criticized for not reflecting people's
+true preferences
+Mathematical procedures can
+yield illogical results.
+For example, rankings developed
+through AHP are sometimes
+not transitive
+Outranking One option outranks another if: “it outperforms
+the other on enough criteria of sufficient importance
+(as reflected by the sum of criteria weights) ” and
+it “is not outperformed by the other in the sense
+of recording a significantly inferior performance
+on any one criterion ”
+Does not require the reduction of all
+criteria to a single unit
+Does not always take into account
+whether over-performance on one
+criterion can make up for under-
+performance on another
+Allows options to be classified as “incomparable” Explicit consideration of possibility that very
+poor performance on a single criterion may
+eliminate an alternative from consideration, even
+if that criterion's performance is compensated
+for by very good performance
+on other criteria
+The algorithms used in outranking
+are often relatively complex and not
+well understood by decision-makers
+1076 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+criterion. Therefore, outranking models are known as “partially
+compensatory”. Outranking techniques are most appropriate when
+criteria metrics are not easily aggregated, measurement scales vary
+over wide ranges, and units are incommensurate or incomparable
+(Seager, 2004).
+4. MCDA applications in environmental management
+Our non-exhaustive review of recent literature ( Table 3 )
+shows that MCDA has been used to support decision-making in
+contaminated site management and related areas. In this section
+we summarize decision analysis applications published in
+English language journals over the last 10 years that were
+located through Internet and library database searches (for
+greater detail, see Linkov et al., 2004, 2003). MCDA techniques
+have been applied to optimize policy selection in the
+remediation of contaminated sites, the reduction of contami-
+nants entering aquatic ecosystems, the optimization of water
+and coastal resources, and the management of other resources.
+In some of these studies, the researchers have explicitly taken
+into account the opinions of local community groups and other
+stakeholders through focus groups, surveys, and other techni-
+ques and formally integrated these opinions into the decision
+process. Many papers reviewed in this section conclude that
+application of MCDA methods provides a significant improve-
+ment in the decision process and public acceptance of the
+suggested remedial or abatement policy.
+4.1. Remediation of contaminated sediments and aquatic
+ecosystems
+MCDA has been applied to the remediation of sediments and
+aquatic systems. MAUT, for example, has been used in radioactive
+site management (Arvai and Gregory, 2003; Gallego et al., 2004;
+Ríos-Insua et al., 2002) and has also been utilized in the Superfund
+cleanup process ( Grelk, 1997; Grelk et al., 1998; Parnell et al.,
+2001). Wakeman (2003) uses the simple multi-attribute rating
+technique (SMART) to analyze alternatives for dredging contam-
+inated sediments at a Superfund site in Montana. Pavlou and
+Stansbury (1998)apply a formal analysis of the trade-off between
+environmental risk reduction and cost to contaminated sediment
+disposal, andStansbury et al. (1999)later augment the use of risk–
+cost trade-off analysis with fuzzy set theory and composite
+programming.Rogers et al. (2004) employ an outranking method
+to incorporate stakeholder values into the process of selecting one
+of a group of novel technological alternatives for sediment
+management. Apostolakis and his colleagues (Apostolakis, 2001;
+Bonano et al., 2000; Accorsi et al., 1999a,b ) developed a
+methodology that uses AHP , influence diagrams, MAUT, and
+risk assessment techniques to integrate the results of advanced
+impact evaluation techniques with stakeholder preferences.
+4.2. Reduction of contaminants introduced into aquatic ecosystems
+In addition to being used in the remediation of contaminated
+sites, MCDA techniques have been used in attempts to reduce
+the amount of pollution entering aquatic ecosystems. Doley et
+al. (2001) use models and cost-effectiveness analysis to find an
+optimal way to reduce nitrogen discharge into the Potomac
+River. Wladis et al. (1999) evaluate alternative emission control
+scenarios for NO x,S O 2, and NH 3, considering how these
+pollutants affect groundwater. Kholghi (2001) and Ganoulis
+(2003) apply MCDA to decide how to manage wastewater in
+North America and the Mediterranean, respectively. Kholgi
+uses MAUT to decide among alternatives, while Ganoulis
+illustrates the use of a distance technique through a case study.
+Outranking has also been used to prioritize wastewater projects
+(Al-Rashdan et al., 1999 ) and to find an optimal wastewater
+treatment system ( V an Moeffaert, 2002).
+4.3. Allocation of water and coastal resources
+MCDA techniques have been extensively used to help
+balance the sometimes conflicting demands of environmental
+conservation and business development with regards to water
+allocation and coastal development. MAUT-based methods
+have been applied to compare current and alternative water
+control plans in the Missouri River ( Prato, 2003 ), while Ni,
+Borthwick, and Qin use AHP to determine the optimal length
+and location for a coastline reclamation project ( Ni et al., 2002;
+Qin et al., 2002 ). Other MCDA methods, including distance
+techniques such compromise programming and game theory,
+have also been used ( Mimi and Sawalhi, 2003 ). Analyses of
+water bodies in the United States ( Bella et al., 1996 ), Europe
+(Özelkan and Duckstein, 1996), and South Africa (Joubert et al.,
+1997) have examined water uses such as consumption,
+recreation, conservation, and power generation, while a number
+of other analyses (Gregory and Failing, 2002; Hämäläinen et al.,
+2001; Marttunen and Hämäläinen, 1995; Gregory and Wellman,
+2001; McDaniels, 1999; Gregory et al., 2001; Whitaker and
+Focht, 2001) seek to optimize water use planning using MAUT,
+AHP , and other MCDA techniques eliciting user opinions to
+determine alternatives, criteria, and criteria values.
+4.4. Management of other resources
+MCDA has also been used to manage wetlands, coral reefs,
+and fisheries. Herath (2004) uses AHP to decide how many
+wetlands in Australia should be created to increase nature-based
+tourism. When faced with deciding whether to increase tourism
+at coral reefs, Fernandes et al. (1999) also use AHP techniques,
+while Brown et al. (2001) use stakeholder workshops to elicit
+stakeholder opinions and a less-quantitative trade-off analysis to
+select a management option for Buccoo Reef Marine Park in
+Tobago. In two papers ( Mardle et al., 2004; Soma, 2003 ), AHP
+analysis involving stakeholder opinion is also applied to fishery
+management. McDaniels (1995) uses a MAUT approach to
+select among alternatives for a commercial fishery in the
+context of conflicting long-term objectives for salmon man-
+agement. Similarly, Mardle and Pascoe (2002) use MAUT in
+fishery management while Gurocak and Whittlesey (1998) use a
+combination of fuzzy set theory and if –then rules. Merritt
+(2001) uses AHP to identify the optimal allocation of funds for
+research into fish stocks.
+1077I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Table 3
+MCDA applications for contaminated site management and related areas
+Area Method Decision context Funding agency Citation
+Remediation of contaminated
+sediments and aquatic ecosystems.
+Risk–cost trade-off analysis, fuzzy
+set theory, composite programming
+Disposal of dredged materials USACE and University of Nebraska Stansbury et al., 1999
+Risk–cost trade-off analysis Disposal of dredged materials URS Greiner Inc.; University of
+Nebraska–Lincoln
+Pavlou and Stansbury, 1998
+SMART Choosing a remedial action alternative at
+Superfund Site
+USACE Wakeman, 2003
+MAUT Remediation of aquatic ecosystems contaminated
+by radionuclides using MOIRA
+EC projects Ríos-Insua et al., 2002;
+Gallego et al., 2004
+MAUT Remediation of mixed-waste subsurface disposal site DOE Grelk, 1997; Grelk et al., 1998;
+Parnell et al., 2001
+Outranking (PROMETHEE) Selecting novel technological alternatives for
+sediment management
+Dartmouth College and the University
+of New Hampshire
+Rogers et al., 2004
+MAUT Identifying radioactive waste cleanup priorities at DOE sites DOE/NSF Arvai and Gregory, 2003
+AHP , MAUT Questionnaires DOE Apostolakis, 2001;
+Bonano et al., 2000;
+Accorsi et al., 1999a,b
+Reduction of contaminants
+introduced into aquatic ecosystems
+Cost-effectiveness analysis Optimizing method to reduce nitrogen discharge to
+the Potomac River by 40%
+SAIC Doley et al., 2001
+Cost–benefit analysis Protection of groundwater through choosing from
+among various alternatives for reducing sulfur dioxide,
+nitrogen oxides, and ammonia airborne emissions
+Environment and Climate Program,
+European Union
+Wladis et al., 1999
+MAUT Wastewater planning management. Agricultural University of Tehran, Iran Kholghi, 2001
+Outranking (ELECTRE), distance
+(compromise programming)
+Wastewater recycling and reuse in the Mediterranean Aristotle University, Greece Ganoulis, 2003
+Fuzzy outranking (NAIADE) Choosing a sustainable wastewater treatment system
+in Surahammar, Sweden
+Swedish Foundation for
+Strategic Environmental Research
+V an Moeffaert, 2002
+Outranking (PROMETHEE) Prioritization of wastewater projects in Jordan Staffordshire University, UK Al-Rashdan et al., 1999
+Elicitation of criteria from
+stakeholders
+Determining the effects of a proposed 30% reduction
+in nitrogen loading to the Neuse Estuary in
+North Carolina
+University of North Carolina Borsuk et al., 2001
+Optimization of water
+and coastal resources
+Outranking (PROMETHEE-I, II;
+GAIA; MCQA-I, II, III), distance
+(compromise programming;
+cooperative game theory)
+Pick optimal use of Danube region between
+Vienna and Slovakian border from choices like
+hydroelectric station and a national park
+NSF and USACE Özelkan and Duckstein, 1996
+Distance (compromise
+programming) and
+outranking (ELECTRE III)
+Water allocation in the Upper Rio Grande USACE, NSF, US –Hungarian
+Joint Research and Technology Fund
+Bella et al., 1996
+Distance Allocating waters of Jordan River basin to
+bordering nations
+Birzeit University, Palestine Mimi and Sawalhi, 2003
+MAUT Consideration expansion of water supply to
+Cape Town, South Africa, at the expense
+of regional mountain flora
+University of Cape Town Joubert et al., 1997
+MAUT Selection of management alternative Missouri River University of Missouri –Columbia Prato, 2003
+AHP , sensitivity analysis, MAUT Optimizing the extent and location of a reclaimed coastline Chinese government, John Swire
+and Sons, University College Oxford
+Ni et al., 2002;
+Qin et al., 2002
+1078 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+MAUT Designing a water quality monitoring network for
+a river system
+National Cheng-Kung University, Taiwan Ning and Chang, 2002
+Outranking (PROMETHEE) Choosing the extent of groundwater protection
+versus economic development in an area of Elbe
+River in Germany
+UFZ Center for Environmental
+Research, Germany
+Klauer et al., 2002
+MAUT Water use planning University of British Columbia,
+Compass Resource Management
+Gregory and Failing, 2002
+MAUT + AHP Regulation of water flow in a Lake –River system Academy of Finland Hämäläinen et al., 2001
+AHP and MAUT/SMART Environmental impact assessment of 2 water
+development projects on a Finnish river
+Finnish Environmental Agency,
+Helsinki University of Technology
+Marttunen and
+Hämäläinen, 1995
+MAUT Consensus building for water resource management
+in Oregon
+NSF, USEPA, Carnegie Mellon University Gregory and Wellman, 2001
+Committee consensus Water management in British Columbia B.C. Hydro, Social Sciences and
+Humanities Research Council of
+Canada, NSF
+McDaniels, 1999;
+Gregory et al., 2001
+Mental modeling Watershed management USEPA Whitaker and Focht, 2001 ;
+Focht et al., 1999
+Prioritization of sites/areas for
+industrial/military activity
+AHP + GIS Land condition assessment for allocation of
+military training areas
+US Army Engineering Research
+and Development Center
+Mendoza et al., 2002
+AHP + GIS Selection of boundaries for national Park International Institute for Geoinformation
+Science and Earth Observation,
+the Netherlands
+Sharifi et al., 2002
+PROMETHEE Waste management activities in Canada Natural Sciences and Engineering
+Research Council of Canada
+V aillancourt and Waaub, 2002
+ELECTRE + GIS Land management: develop a land suitability
+map for housing in Switzerland
+Swiss National Foundation for
+Research (FNRS)
+Joerin and Musy, 2000
+MAUT + GIS Selection of park boundaries DOE Keisler and Sundell, 1997
+Natural resource planning AHP Natural park management USDA Forest Services Schmoldt et al., 1994;
+Peterson et al., 1994;
+Schmoldt et al., 2001
+MAUT Management of spruce budworm in Canadian forests National Science and Engineering
+Research Council of Canada
+Levy et al., 2000
+MAUT Improvement of habitat suitability measurements Finnish Forest Research Instyitute Store and Kangas, 2001
+AHP Environmental vulnerability assessment for
+Mid-Atlantic Region
+US EPA/DOE Tran et al., 2002
+Stakeholder involvement MAUT Risk attitudes by farmers in Spain EU; Spanish Government Gomez-Limon et al., in press
+MAUT Air-Quality V aluation in Korea Korea University Kwak et al., 2001
+PROMETHEE Sustaining exploitation of Renewable Energy Sources National Technical University of Athens Georgopoulou et al., 1998
+Management of other
+resources
+AHP Determining how to allocate funds for research
+into fisheries
+Alaska Department of Fish and Game Merritt, 2001
+MAUT Fisheries management Fisheries and Oceans Canada McDaniels, 1995
+Fuzzy set theory and if –then rules Analyzing plan to increase salmon population
+in Columbia River
+Washington State University Gurocak and Whittlesey,
+1998
+MAUT Estimating fishery fleet size for the North Sea EU Mardle and Pascoe, 2002
+AHP Developing better management strategies for the
+Wonga Wetlands on the Murray River in Australia
+La Trobe University, Australia Herath, 2004
+AHP Managing a coral reef East W est Center and WWF The Netherlands Fernandes et al., 1999
+Trade-off analysis Choosing among four development scenarios in
+for the Buccoo Reef Marine Park in Tobago
+UK Deparment for International
+Development
+Brown et al., 2001
+AHP Analyzing priorities in fishery management European Commission Mardle et al., 2004
+AHP Fishery management in Trinidad and Tobago Food and Agriculture Organization of the
+United Nations
+Soma, 2003
+1079I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+5. Adaptive management and environmental decision-making
+The MCDA methods and tools discussed above can be used to
+support environmental decisions in traditional management
+schemes, but we see their strength when coupled with adaptive
+management. In traditional management (Fig. 3a), goals are set and
+different management strategies are considered. One management
+strategy is selected as the optimal one, and once it is implemented,
+its performance may not be monitored closely. At some point, the
+strategy will likely be evaluated, and if it is perceived to have failed
+a different one will be installed in its place. The goals themselves
+are not often reconsidered, and in this framework any change in the
+management strategy or admission of uncertainty about the system
+being managed is prone to be interpreted as failure.
+Adaptive management stands in contrast to existing environ-
+mental management methods. Adaptive management acknowl-
+edges that uncertainty is inherent in any natural system, and it seeks
+to minimize this uncertainty by learning about the system being
+managed. Its basic process is straightforward: when managing any
+system, one chooses a management action, monitors the effects of
+the action, and adjusts the action based on the monitoring results.
+There are two types of adaptive management: passive (Fig. 3b) and
+active (Fig. 3c). Both processes begin with setting goals, modeling
+the system, and selecting and implementing a management stra-
+tegy. Passive adaptive management involves implementing one
+management strategy at a time, whereas in active adaptive
+management multiple experimental alternatives are examined in
+contrast to a control to isolate factors which affect the system. The
+managed ecosystem is then monitored to collect as much infor-
+mation as possible about the effects of the management strategy on
+the system. Ideally, the results of the monitoring affect model
+estimation and parameter values, and the management strategy is
+evaluated and adjusted as a result. During the adaptive manage-
+ment process, in contrast to traditional management, change is
+welcome, learning is emphasized, and even goals and objectives
+for the project may be revisited and revised.
+The recent publicationAdaptive Management for Water Resour-
+ces Project Planning (NRC, 2004) provides a comprehensive
+framework for the entire adaptiv e management process. In our
+review, we use the six elements of adaptive management laid out by
+the National Research Council (NRC, of the United States National
+Academy of Sciences) to summarize multiple studies where ele-
+ments of adaptive management were applied. This section intro-
+duces these elements and presents a few important studies that
+could help with understanding theframework we propose later in
+this paper. Papers are drawn from a wide range of application areas,
+from fisheries to wildlife management to forest, terrestrial, and
+aquatic ecosystems. Readers are encouraged to consult the accom-
+panying tables (where papers are laid out by application area— see
+Table 4for government applications,Table 5for applications in the
+literature, andTable 6 for review papers) as well as our full review
+(Satterstrom et al., 2006) for more details. Although the majority of
+examples are drawn from North American literature, the adaptive
+management approach is applicable in all locations.
+5.1. Management objectives which are regularly revisited and
+accordingly revised
+The first key element of adaptive management is a regular
+review of a project's objectives. Stakeholders must agree on what
+the basic objectives are, and the project's objectives should be
+reviewed when new information becomes available. Interestingly,
+Fig. 3. (a) Traditional management; (b) passive adaptive management; (c) active adaptive management.
+1080 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+few adaptive management papers discuss the updating and revision
+of objectives as new information is acquired. Many, in fact, take it
+for granted that their objectives are static goals. The NRC explicitly
+incorporates this step in its framework for the remediation of
+contaminated Navy sites (NRC, 2003).
+5.2. A model of the system(s) being managed
+Modeling tools are integral to many adaptive management
+processes. They provide a basis for understanding why change
+occurs in the environment being managed and can also be used to
+predict the possible effects of different strategies (such asBearlin et
+al., 2002, who uses a stochastic population model for trout cod
+while choosing an adaptive management strategy for their
+reintroduction). Quantitative mathematical models are preferred,
+but because adaptive managers often deal with substantially
+uncertain situations, conceptual models are still useful (for example,
+Thom, 1997, 2000). Our review indicates that modeling is one of
+the more widely used components of the adaptive management
+process. Nevertheless, models often address ecological processes
+only; integrated models that explicitly incorporate decision
+alternatives as well as costs and social considerations are still rare.
+5.3. A range of management choices
+An active adaptive management process includes the generation
+of a range of management choices. Implementing multiple stra-
+tegies simultaneously, along with a control, is conceptually similar
+to a scientific experiment, albeit with less straightforward results.
+Although our review shows that examples of passive adaptive
+management centered around a single policy dominate the lite-
+rature, there are a few good examples of the active method. In an
+important early paper,Walters and Hilborn (1978)discuss adaptive
+management in the context of the optimization of harvesting poli-
+cies for exploited wild populations. More recently, Allison et al.
+(2004) model and evaluate multiple options as they come to a
+conclusion about logging road deactivation in order to manage
+landslide risk and ecological health.
+5.4. Monitoring and evaluation of outcomes
+Once a manager has generated and implemented a range of
+options, monitoring and evaluation are required to determine
+which option performs the best. This is by far the most heavily
+emphasized aspect of adaptive management. Many monitoring
+frameworks have been developed, covering either specific types of
+areas such as multinational large marine ecosystems (LMEs)
+(Duda and Sherman, 2002) or protected areas in general (Parrish
+et al., 2003), and ranging from simple data collection to sophis-
+ticated statistical methods (Sit and Taylor, 1998).
+5.5. A mechanism(s) for incorporating learning into future
+decisions
+Because the central idea of adaptive management is to reduce
+uncertainty about the system being managed, learning is an
+important goal for any project. Kiker et al. (2001) emphasize
+that current knowledge is insufficient for Everglades restora-
+tion, and they advance adaptive management as a way to
+promote holistic understanding useful to decision-makers and
+political representatives. Many other authors also espouse
+learning as an objective: for example, McDaniels and Gregory
+(2004) recommend that learning be a goal of the management
+decision process.
+5.6. A collaborative structure for stakeholder participation and
+learning
+An important element of adaptive management is the
+inclusion of stakeholders. All affected parties, including the
+public, industry, scientists, and government agencies, need to
+feel represented and need to gain information through the
+process. Many case studies have shown that stakeholder
+involvement is essential to adaptive management ( Gunderson,
+1999; Gilmour et al., 1999; Shindler and Aldred Cheek, 1999 ).
+Active adaptive management could easily be seen as environ-
+mental experimentation, and it is therefore important for
+decision-makers to keep stakeholders – especially the public –
+informed not only of its goals, but also of the problems it faces
+and its methods for addressing them. When management fails to
+incorporate stakeholders into decisions, distrust and political
+tension result.
+6. Emergence of adaptive management in regulatory
+agencies
+Regulatory agencies in the United States and around the
+world recommend adaptive management, but agencies often
+implement or emphasize only specific elements of the process.
+The EPA, for instance, has implemented adaptive management
+in many projects. Among the most notable are the Mississippi
+River Basin project, which utilizes models and monitoring quite
+heavily as it attempts to reduce the uncertainties surrounding the
+biochemical mechanisms of hypoxia ( EPA, 1999a, 2001b), and
+the Lake Superior Lakewide Management Plan ( EPA, 2002 ),
+which calls for a less structured periodic refining of manage-
+ment strategies based on new information and public input.
+These EPA examples show the range of possible variability
+between adaptive management projects — whereas the
+Mississippi River Basin project emphasizes the modeling and
+monitoring aspects of adaptive management but lacks stake-
+holder involvement, the Lake Superior project does exactly the
+opposite, soliciting public input but not emphasizing modeling
+or monitoring.
+The National Oceanic and Atmospheric Administration
+(NOAA) uses adaptive management, especially in its coastal
+management and coastal habitat restoration activities ( NOAA,
+2004c). The adaptive management process implemented in
+these cases is passive, involving iterations of a five-step cycle:
+plan, act, monitor, evaluate, and adjust ( NOAA, 2004a). NOAA
+emphasizes the monitoring and evaluation elements of adaptive
+management. Sutinen (2000) developed a monitoring and
+assessment framework for the agency, but the degree to which
+its projects include other aspects, such as modeling or
+1081I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Table 4
+Government application and guidance documents
+Agency Topic Methods/tools Application area Elements of AM Citation(s)
+123456
+Environmental
+Protection
+Agency
+Total maximum daily loads (TMDLs) for
+pollutants in the environment
+Follow-up monitoring and evaluation TMDLs for sediments,
+pathogens
+▪ ▪ EPA, 1999b, 2001a
+Watershed management guide for tribes Implementation monitoring, validation monitoring,
+effectiveness monitoring
+Watershed
+management
+▪ ▪ EPA, 2000
+Management of contaminated or hazardous
+sites, including brownfields
+Sustainable development, monitoring framework Hazardous site
+management
+▪ ▪ ▪ EPA, 1999a
+Integrated assessment of hypoxia in the northern
+Gulf of Mexico
+Models to interpret change in hydrologic and
+ecological systems
+Coastal and marine
+ecosystems
+▪▪ ▪ EPA, 1999a, 2001b
+Lake Superior Lakewide Management
+Plan (LaMP), 2000
+Extensive stakeholder involvement in LaMPs Lake management ▪ ▪▪ EPA, 2002
+The “Triad” methodology for hazardous site
+management, applied specifically to brownfields
+Systematic project planning, dynamic work plan strategies,
+and real-time measurement in service of a pre-fabricated
+decision support matrix
+Hazardous site
+management
+▪ ▪ ▪▪ ▪ EPA, 2003
+Department of the
+Interior
+DOI's departmental manual Adaptive management required of all bureau heads NEPA compliance ▪ DOI, 2004
+Southeastern adaptive management group, better
+integration between research and management
+Ecological and statistical theory, analytical and
+decision-support tools, and institutional arrangements
+Adaptive management
+group
+▪▪ SEAMG, 2004
+The Bureau of Land Management's land use
+authorizations for oil and gas programs
+Emphasis on monitoring Land use ▪ BLM, 2003
+Restoration and enhancement of 42 miles of
+fish habitat in California while simultaneously
+supporting hydroelectricity generation
+Detailed monitoring Watershed
+management
+▪▪ ▪ ▪ ▪ USBR, 2001
+Management of mercury contamination of
+Sacramento River Watershed
+Offsets, modeling, monitoring TMDLs, watershed
+management
+▪ ▪ ▪▪ USGS, 2004
+National Marine
+Fisheries Service
+Socioeconomic and governance-related human
+dimensions of managing large marine ecosystems
+Interaction matrices Coastal and marine
+ecosystems
+▪▪ Sutinen, 2000
+Coastal restoration and management guidance; case
+study in Rhode Island marsh restoration
+Well-formulated objectives and detailed
+monitoring, system-development matrix
+Coastal and marine
+ecosystems
+▪ ▪ ▪ ▪ NOAA, 2004a,b,c
+Department of
+Energy
+Land use planning and process framework Learning through monitoring Land use ▪ ▪ DOE, 1996
+Modernizing NEPA implementation Learning through monitoring NEPA ▪ ▪ DOE, 2003
+Adaptive management of salmon and
+hydroelectricity in the Columbia River basin
+Models and computing power Hydropower ▪ ▪ ▪▪▪ DOE, 2002
+Adaptive management of hydroelectricity in general Expedited hydropower license issuance under the
+condition that adaptive management be used at the site
+Hydropower ▪ FERC, 2000
+Department of
+Agriculture
+Monitoring Implementation monitoring, baseline monitoring,
+validation monitoring, effectiveness monitoring
+Natural resource
+conservation
+▪ USDA, 2003
+USDA Forest
+Service
+Use of new decision-making techniques in
+adaptively managing the Bent Creek Experimental
+Forest in Asheville, NC
+Multi-criteria decision analysis — analytical
+hierarchy process
+Forest and terrestrial
+ecosystems
+▪▪▪ Rauscher et al., 2000
+California Coastal
+Commission
+Performance evaluation for wetland
+mitigation projects
+Passive adaptive management, well-defined
+monitoring program
+Coastal and marine
+ecosystems
+▪▪ CCC, 1995
+United States
+Navy
+Application of adaptive management to the
+environmental cleanup of Navy facilities
+V arious analytical tools for evaluating remedy
+effectiveness and need for change
+Remediation ▪▪▪▪▪▪ NRC, 2003
+1082 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+United States
+Army Corps
+of Engineers
+Use of ecological models and adaptive management
+in restoration of coastal ecosystems
+System-development matrix Coastal and marine
+ecosystems
+▪ ▪ ▪ ▪ ▪ Thom, 1997, 2000
+Decision-making framework for United States
+Army Corps of Engineers ecosystem
+restoration projects
+Model-building; alternative restoration designs as
+“bet-hedging” strategy; multi-attribute decision analysis
+General adaptive
+management
+▪▪ ▪▪ Pastorok et al., 1997
+Guidance for monitoring within adaptive management
+framework for the United States Army Corps of Engineers
+Framework for monitoring in adaptive management General adaptive
+management
+▪▪ USACE, 2003a,b
+Fisheries and
+Oceans
+Canada
+Socioeconomic framework for ecosystem-based
+fisheries management
+Institutional analysis and development framework Fisheries ▪ ▪ Rudd, 2004
+Health Canada Adaptive management of emissions trading as part
+of mitigation measures for greenhouse gases
+Stakeholder involvement and learning Climate change
+management
+▪ CCHO, 2000
+Adaptive management in the guise of a health and air
+quality risk management framework
+Stakeholder involvement at every step Air quality risk
+assessment
+▪▪ ▪ Health Canada, 2003
+Environment
+Canada
+The ecosystem approach to natural resource management Acknowledging uncertainty, learning about system Biodiversity
+conservation
+▪ Environment Canada,
+2004a
+Environmental assessment best practice guide for
+wildlife at risk In Canada
+Precautionary principle Wildlife management ▪▪▪ Environment Canada,
+2004b
+Canadian national wildlife disease strategy Adaptive risk assessment and problem
+response framework
+Wildlife management ▪ ▪ ▪ Environment Canada,
+2004c
+British Columbia
+Forest Service
+Framework and mechanics for adaptive management
+of forest ecosystems
+Framework for running adaptive management
+workshops; solutions to common barriers
+Forest and terrestrial
+ecosystems
+▪ ▪ ▪▪▪▪ Nyberg, 1999
+Examples of case studies in which the BCFS is
+applying adaptive management in the field
+Management experiments to learn more about
+managed system
+Forest and terrestrial
+ecosystems
+▪▪ BCFS, 2000
+British Columbia
+Ministry of
+Forests
+Reasons to implement adaptive management, problems
+with adaptive management, and tools for
+adaptive management of forests in British Columbia
+Workshops, decision analysis, project design teams Forest and terrestrial
+ecosystems
+▪▪▪▪▪▪ Taylor et al., 1997
+British Columbia
+Ministry of
+Sustainable
+Resource
+Management
+Land and resource management plan for the North
+Coast of British Columbia
+Usage of up-to-date information and implementation
+of adaptive management
+Forest and terrestrial
+ecosystems
+▪ ▪▪ BCMSRM, 2004
+World Wildlife
+Federation
+Problems with the European Union Common Fisheries
+Policy and suggestions for fixing them
+Ecosystem-based management and the
+precautionary principle
+Fisheries ▪ WWF, 2001a
+Adaptive management and example applications
+in conservation
+Adaptive management definition and framework General Adaptive
+Management
+▪▪▪▪▪ WWF, 2001b
+Six Adaptive Management Criteria:
+1. Management objectives that are regularly revisited and accordingly revised.
+2. A model(s) of the system being managed.
+3. A range of management choices.
+4. Monitoring and evaluation of outcomes.
+5. A mechanism(s) for incorporating learning into future decisions.
+6. A collaborative structure for stakeholder participation and learning.
+Meaning of symbols:
+▪ = discussed in detail/demonstrated/performed in paper or case study reviewed by paper.
+▪ = mentioned or recommended but not explicitly carried out.
+1083I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Table 5
+Adaptive management application papers
+Application
+area
+Topic Methods/tools Funding agencies Elements of AM Citation
+1 23456
+Fisheries Importance of learning in the risk management
+process with a case study involving water use
+for fisheries and hydroelectric power in Canada
+Treating learning as an objective in
+collaborative stakeholder groups
+University of British Columbia;
+Decision Research
+▪▪ ▪▪ McDaniels and
+Gregory, 2004
+Cooperation between small-scale users and
+management agencies in salmon management
+in British Columbia
+Data sharing, building institutional
+capacity
+Simon Fraser University ▪ ▪ Pinkerton, 1999
+Prevention of shocks to developing fishery
+populations through adaptive management
+Adequate monitoring of biological and
+economic fishery data
+University of Washington;
+South Pacific Commission, New Caledonia
+▪▪▪ Hilborn and
+Sibert, 1988
+Simulation of adaptive management strategies for the
+reintroduction of trout cod
+Stochastic population model,
+simulated monitoring uncertainty
+Cooperative Research Center
+for Freshwater Ecology
+▪ ▪▪▪ ▪▪ Bearlin et al., 2002
+Simulating active vs. passive adaptive fisheries
+management in the Philippines
+Ecological modeling software Bedford Institute of
+Oceanography, Canada
+▪▪▪ Bundy, 2004
+The Decision Analysis and Adaptive
+Management (DAAM) Project and the Lake Erie
+walleye and yellow perch fisheries
+Decision analysis to rank management
+alternatives and quantify uncertainty;
+adaptive management to reduce uncertainty
+University of Guelph, Ontario ▪▪▪▪▪ Nudds et al.,
+2003
+Coastal and
+marine
+ecosystems
+Wetland and finfish restoration Restoration success index, passive
+adaptive management with thresholds
+for enacting pre-planned corrective measures
+Public Service Electric and Gas Company ▪▪ Weinstein et al.,
+1997
+Restoration of salt hay farm wetlands on the
+Delaware River Estuary
+Evaluation of alternative channel
+construction techniques
+American Society of Civil
+Engineers
+▪ ▪▪ Weishar and Teal,
+1998
+Management of economic, environmental, social,
+and political aspects of large marine ecosystems
+Five-module assessment and
+management methodology
+Coastal and marine ecosystems ▪▪ Duda and
+Sherman, 2002
+Forest and
+terrestrial
+ecosystems
+Modeling and selection of management plan for
+forest in west-central Alberta, Canada
+Computer simulation of forest
+management scenarios
+Alberta Health and Wellness;
+Millar Western Forest
+Products; Environment Canada; West Fraser
+Mills; Alberta Environment
+▪▪▪▪ ▪ van Damme et al.,
+2003
+Decision-making related to forest road
+deactivation in unstable terrain
+Risk analysis Forest Renewal British Columbia ▪▪▪ Allison et al.,
+2004
+The need to consider pathogens, pests, and diseases
+in the adaptive management of forests
+Computer modeling of pathogen
+distribution
+National Research Foundation;
+Human Resource and
+Industrial Program; South
+African Forestry Industry
+▪ van Staden
+et al., 2004
+New system of environmental evaluation and
+its application in the Southern Appalachians
+Novel environmental valuation system National Science Foundation; Environmental
+Protection Agency
+▪▪▪ ▪ ▪ Norton and
+Steinemann, 2001
+Management of oaks and pines in the Wisconsin
+Necedah National Wildlife Refuge
+Adaptive management framework University of Wisconsin;
+Necedah National
+Wildlife Refuge
+▪ ▪▪▪ ▪ ▪ Haney and
+Power, 1996
+Evaluation of management of Costa Rican and
+Nicaraguan forests
+Focus on the need for adaptive
+management
+CA TIE/FINIDA Research Fund; Center for
+International Forestry Research
+▪▪▪ McGinley and
+Finegan, 2003
+Ecosystem model-building for management of Southern
+bottomland hardwood forests
+Delphi method of surveying experts USDA Forest Service;
+Alabama Agricultural Experiment Station
+▪ Bliss et al.,
+1997
+Florida
+Everglades
+Adaptive management as a way to obtain the
+knowledge necessary for Everglades restoration
+Ecological learning University of Florida ▪ ▪▪ Kiker et al.,
+2001
+Adaptive management in the Central and
+Southern Florida Project Comprehensive Review Study,
+a plan for restoration of the Florida Everglades
+Review University of California at Berkeley
+School of Law
+▪▪▪▪ V oss, 2000
+1084 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Use of risk assessment and adaptive management in the
+Everglades and South Florida ecosystems and the
+Central and Southern Florida Project Comprehensive
+Review Study
+Risk-based conceptual model University of Miami; United States Geological
+Society; South Florida Water Management
+District; Harwell Gentile and Associates
+▪ ▪▪ Gentile et al.,
+2001
+Rivers, other
+freshwater
+areas, and
+estuaries
+Implementation of local watershed council
+management practices through adaptive management
+Community-based conservation Science to Achieve Results Graduate
+Fellowship, United States Environmental
+Protection Agency
+▪ ▪ ▪▪ ▪ Habron, 2003
+Assessment of information needed for environmental
+flow allocation, Lachlan River, New South
+Wales, Australia
+Assessment of information needs for adaptive
+management
+Macquarie University; Land and Water
+Resources Research and Development
+Corporation Project MQU6
+▪ Hillman and
+Brierly, 2002
+Gaps that hinder groundwater resource management
+in New Zealand
+Case study New Zealand Ministry of the Environment ▪▪ ▪ Lowry et al., 2003
+Application of the Plan for Analyzing and Testing
+Hypotheses (PA TH) to the management of Snake
+River basin salmon stocks
+Interagency collaboration, development of
+common data sets, reduction of uncertainty
+Bonneville Power Administration ▪▪ ▪ ▪▪ Marmorek and
+Peters, 2001
+Wildlife
+management
+Applying adaptive management to regulating
+waterfowl harvest
+Passive and active adaptation algorithms United States Fish and Wildlife Service;
+United States Geological Survey
+▪▪ Johnson and
+Williams, 1999
+Adaptive management of the species kokako to
+determine the effects of pests on population density
+V ariation of pest populations, monitoring of
+experimental and control areas, statistical
+analyses
+Department of Conservation, New Zealand;
+Foundation for Research, Science, and
+Technology, New Zealand
+▪▪ ▪ Innes et al., 1999
+Conservation of biodiversity during natural gas
+exploration in Peru
+Adaptive management with comprehensive
+monitoring
+Smithsonian Institution;
+Shell International Limited
+▪ ▪ ▪▪▪ Dallmeier et al.,
+2002
+Integration of adaptive management strategies into
+habitat conservation plans
+Incentives for adaptive management in HCPs Washington Department of Natural Resources;
+Washington Department of Fish and Wildlife
+▪▪▪▪ Wilhere, 2002
+Framework for conservation of biodiversity using
+adaptive management to develop knowledge and skills
+V arious protection and management, law and
+policy, education and awareness, and incentive-
+changing strategies
+Foundations of Success;
+Wildlife Conservation Society
+▪▪ ▪▪ Salafsky et al.,
+2002
+Remediation Modeling of rehabilitation of Cooum River,
+Chennai, India
+Conceptual model building through workshops Madras –Waterloo University Linkage
+Program; CUC-AIT
+▪▪▪ ▪ Bunch and
+Dudycha, 2004
+Restoration of damaged wetlands at San Diego Bay Focus on mitigation compliance San Diego State University ▪▪▪ Zedler, 1997
+General
+adaptive
+management
+Models of optimization for harvesting policies for
+exploited populations
+Theoretical adaptive optimization techniques National Research Council,
+Canada; Environment Canada; International
+Institute for Applied Systems Analysis
+▪ ▪ ▪▪ Walters and
+Hilborn, 1978
+Gaps in the science base needed for ecological
+management, including gaps in adaptive
+management
+Incentivizing cooperation USDA Forest Service; Natural Resources
+Conservation Service; OMB; EPA; NOAA;
+US Army Corps of Engineers;
+US Department of Interior; Office of Science
+and Technology Policy
+▪▪ ▪ Szaro et al., 1998
+Principles of public involvement in
+adaptive management
+Six propositions for integrating citizens into
+adaptive management
+People and Natural Resources Program of the
+Pacific Northwest Research Station, USDA
+Forest Service
+▪ Shindler and
+Aldred Cheek,
+1999
+Case studies of adaptive management related
+to land use, water quality, and recreational access
+Software for policy option analysis Macquarie University; Wyong Shire Council;
+University of Sydney
+▪▪ ▪ ▪ Gilmour et al.,
+1999
+Framework for adaptive ecological management
+and lessons learned from prior adaptive
+management attempts
+Adaptive management framework
+from Nyberg, 1999
+Society for Ecological Restoration International ▪ ▪▪▪▪ Murray and
+Marmorek, 2003
+1085I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Table 6
+Adaptive management review papers
+Application area Topic Methods/tools Funding agencies Elements of AM Citation
+1 23456
+Fisheries Use of adaptive management to reduce uncertainty in
+fishery management and experiences with the
+Atlantic Canada groundfishery
+Review of case studies Natural Sciences and
+Engineering Research
+Council of Canada
+▪▪ ▪ ▪ Charles, 1998
+Discussion of gap between experimental marine ecology
+and fishery management; adaptive management as tool
+to bridge gap
+Review Presidential Chair in Science
+(Chile); Pew Charitable Fund
+Fellowship
+▪ ▪▪▪ Castilla, 2000
+Coastal and marine
+ecosystems
+Formal integration of adaptive management in coastal
+restoration through the Coastal Wetlands Planning,
+Protection, and Restoration
+Act (CWPPRA)
+Reviews CWPPRA Louisiana Department of
+Natural Resources
+▪▪▪ Steyer and
+Llewellyn, 2000
+Forest and terrestrial
+ecosystems
+Relationship between forests, agroforestry, biodiversity
+and using adaptive management to balance the three
+Six key elements to biodiversity
+preservation in forests
+The World Conservation
+Union
+▪ McNeeley, 2004
+Decision support systems for federal forests
+in the United States
+Decision support system software USDA Forest Service ▪▪ ▪ Rauscher, 1999
+Florida Everglades Uncertainty and the need for flexibility in adaptive Florida
+Everglades management
+Stakeholder flexibility John D. and Catherine T.
+MacArthur Foundation;
+Sustainable Everglades
+Initiative
+▪ Gunderson,
+1999
+Rivers, other
+freshwater areas,
+and estuaries
+Gaps in knowledge about salinity management for
+freshwater biota
+Review Murray –Darling Basin
+Commission; National
+Action Plan Non-regional
+Foundation Funding
+▪ James et al.,
+2003
+Evaluation of estuary management through the
+National Estuary Program
+National Estuary Program's Management
+Conference process
+NOAA ▪▪ Imperial et al.,
+1993
+Problems with implementing adaptive management
+in riparian ecosystems
+Review/synthesis discusses challenges in each area Natural Sciences and
+Engineering Research
+Council, Canada
+▪▪▪ ▪ Walters, 1997
+Adaptive co-management for freshwater resource
+management
+Involving multiple groups as decision-makers
+with co-management
+FORMAS, the Swedish
+Research Council for
+Environment, Agricultural
+Sciences and Spatial Planning.
+▪ ▪ Folke, 2003
+Wildlife
+management
+Integration of wildlife management and research
+through adaptive management
+Hypothetico-deductive science,
+learning as an objective
+North Carolina State University;
+Colorado Division of Wildlife;
+National Biological Service;
+Utah State University;
+United States Forest Service;
+University of Guelph; Missouri
+Department of Conservation
+▪ ▪ ▪▪ Lancia et al.,
+1996
+Use of adaptive management in managing
+human–carnivore interaction
+Behavior modification; isolation of humans
+from carnivores
+Conservation International;
+Wildlife Conservation Society
+▪ ▪ Treves and
+Karanth, 2003
+General adaptive
+management
+Review of twenty-seven methodologies for assessment
+of management of protected areas
+Collection of quantitative data from monitoring and
+qualitative data from scoring by managers and stakeholders
+WWF/IUCN Forest
+Innovations Project
+▪ Hockings, 2003
+Framework for assessing the effectiveness of management
+of protected areas
+“Measures of Success ” framework developed by
+The Nature Conservancy and its partners
+The Nature Conservancy ▪ Parrish et al.,
+2003
+Adaptive management as a decision-making approach
+for resource management agencies
+Experiments utilizing similar small ecosystems United States
+Geological Survey
+▪ ▪▪▪ ▪ ▪ Johnson, 1999
+1086 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+revisitation of objectives, can be limited. NOAA has used
+adaptive management in projects such as shore restoration in the
+Pacific Northwest, the restoration of native plant species in a
+Rhode Island marsh, and also in larger projects such as the
+Louisiana coastal wetlands, where there is again an emphasis on
+learning through monitoring ( NOAA, 2004b ).
+Adaptive management is also working its way into other US
+agencies and departments. Although the Department of
+Energy's NEPA Task Force report “Modernizing NEPA
+Implementation” (DOE, 2003 ) finds that the department could
+employ adaptive management to a much greater extent, the
+DOE already uses it in managing the environmental effects of
+hydroelectricity production. One example is the adaptive
+management plan for balancing salmon conservation with
+electricity production in the Columbia River basin of Washing-
+ton state ( DOE, 1998), which emphasizes the use and continual
+refinement of advanced mathematical models. More generally,
+the Federal Energy Regulatory Commission (FERC) may
+choose to expedite license issuance for power plant construction
+under the condition that adaptive management be used at the
+site ( FERC, 2000 ).
+V arying elements of adaptive management have been
+implemented in Canada as well. Fisheries and Oceans Canada
+has advanced a socioeconomic framework for ecosystem-based
+fisheries management ( Rudd, 2004 ), and Environment Canada
+has recommended adaptive management in general to compen-
+sate for humans' lack of complete understanding of complex
+ecosystems ( Environment Canada, 2004a ). It is on the
+provincial level, though, where we see the greatest use of
+adaptive management. British Columbia has thorough guides to
+adaptive management published locally ( Nyberg, 1999; Taylor
+et al., 1997 ), and the British Columbia Forest Service is
+currently implementing many pilot adaptive management
+projects, including adaptive management of livestock grazing,
+riverbanks and streambanks, forest recreation sites, and grizzly
+bear habitat, among others ( BCFS, 2000 ).
+Many international agencies and organizations also call for
+the use of adaptive management in environmental policy. In the
+European Union, the Commission of the European Communi-
+ties and the World Wildlife Federation both recognize adaptive
+management as a potential solution for managing over-
+harvested fisheries stocks ( CEC, 2001; WWF, 2001a ). The
+Biodiversity Support Program has published a general guide to
+adaptive management that explicitly relates adaptive manage-
+ment to the scientific method and emphasizes learning and
+reducing uncertainty ( WWF, 2001b). Additionally, the RAND
+Corporation ( Lempert et al., 2003 ) recommends computer
+modeling and adaptive management in general as a way to help
+conduct long-term policy analysis.
+7. Integration of adaptive management with multi-criteria
+decision analysis
+As we have stated in our review, unlike traditional
+management schemes designed to find and follow the optimal
+remedial strategy, adaptive management acknowledges our
+inability to predict system evolution in response to changing
+physical environments and social pressures. Our review
+indicates that the concept of adaptive management is well
+respected in academia, and many government agencies have
+recommended it for application. Yet even though many papers
+acknowledge that effective environmental decision-making
+requires considering the environmental, ecological, technolog-
+ical, economic, and socio-political factors relevant to evaluating
+and selecting a management alternative, these factors are rarely
+considered in concert and decisions are often driven by just one
+aspect of the problem. The quantitative tools and methods for
+implementing adaptive management strategies are not system-
+atized, and no framework is available for integration and
+organization of the people, processes, and tools required to
+make structured and defensible environmental management
+decisions.
+We believe that a combination of adaptive management and
+MCDA will provide a powerful framework for a wide range of
+environmental management problems. It will allow both
+structured, clear decisions to be made and also the adjustment
+of those decisions based on their performance. The MCDA
+framework proposed in Linkov et al. (2004) and in many other
+papers incorporates feedback loops between each step of the
+process that leads to the selection of an alternative. Adoption of
+adaptive management views will allow an iterative application
+of the MCDA framework and, once an alternative is chosen,
+adding a feedback loop will allow the re-ranking of alternatives
+as well as goals and criteria weightings.
+A general decision framework ( Fig. 4) is intended to provide
+a road map to the environmental decision-making process.
+Having the right combination of people is the first essential
+element in the decision process. The activity and involvement
+levels of three basic groups of people (decision-makers,
+scientists and engineers, and stakeholders) are symbolized in
+Fig. 4 by dark lines for direct involvement and dotted lines for
+less direct involvement. While the actual membership and the
+function of these three groups may overlap or vary, the roles of
+each are essential in maximizing the utility of human input into
+the decision process. Each group has its own way of viewing the
+world, its own method of envisioning solutions, and its own
+societal responsibility. Policy- and decision-makers spend most
+of their effort defining the problem's context and the overall
+constraints on the decision. In addition, they may be responsible
+for the final decision and subsequent policy implementation.
+Stakeholders may help define the problem, but they contribute
+the most in helping to formulate performance criteria and
+contributing value judgments for weighting the various success
+criteria. Depending on the problem and regulatory context,
+stakeholders may have some responsibility in ranking and
+selecting the final option. Scientists and engineers have the most
+focused role in that they provide the measurements or
+estimations of the desired criteria that determine the success
+of various alternatives. While they may take a secondary role as
+stakeholders or decision-makers, their primary role is, to the
+best of their abilities, to provide the technical input necessary
+for the decision process.
+The decision-making process is in the center of the figure.
+While it is reasonable to expect that the process may vary in
+1087I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+specific details among regulatory programs and project types,
+emphasis should be given to designing an adaptive management
+structure so that participants can modify aspects of the project to
+suit local concerns while still producing a structure that provides
+the required outputs. The process depicted in Fig. 4 follows two
+basic activities: 1) generating management alternatives, success
+criteria, and value judgments and 2) ranking the alternatives by
+applying value weights. The first part of the process generates
+and defines choices, performance levels, and preferences. The
+latter section methodically prunes non-feasible alternatives by
+first applying screening mechanisms (for example, overall cost,
+technical feasibility, or general societal acceptance) followed by
+a more detailed ranking of the remaining options by decision
+analytical techniques (AHP , MAUT, or outranking) that utilize
+the various criteria levels generated by environmental tools,
+monitoring, or stake-holder surveys.
+As shown in Fig. 4 , the tools used within group decision-
+making and scientific research are essential elements of the
+overall decision process. As with the involvement of different
+groups of people, tool applicability is symbolized by solid lines
+(direct or high utility) and dotted lines (indirect or lower utility).
+Decision analysis tools help to generate and map preferences of
+stakeholder groups as well as individual value judgments into
+organized structures that can be linked with the other technical
+tools from risk analysis, modeling and monitoring, and cost
+estimations. Decision analysis software can also provide useful
+graphical techniques and visualization methods to express the
+gathered information in understandable formats. When changes
+occur in the requirements or the decision process, decision
+analysis tools can respond efficiently to reprocess and iterate
+with the new inputs. The framework depicted in Fig. 4 provides
+a focused role for the detailed scientific and engineering efforts
+invested in experimentation, environmental monitoring, and
+modeling that provide the rigorous and defendable details for
+evaluating criteria performance under various alternatives. This
+integration of decision tools and scientific and engineering tools
+allows each to have a unique and valuable role in the decision
+process without attempting to apply either type of tool beyond
+its intended scope.
+As with most other decision processes reviewed, it is
+assumed that the framework in Fig. 4 is iterative at each phase
+and can be cycled through many times in the course of complex
+decision-making. A first-pass effort may efficiently point out
+challenges that may occur, key stakeholders to be included, or
+modeling studies that should be initiated. As these challenges
+become more apparent one iterates again through the frame-
+work to explore and adapt the process to address the more subtle
+aspects of the decision, with each iteration giving an indication
+of additional details that would benefit the overall decision
+process.
+8. Application of MCDA/adaptive management framework
+to New Y ork/New Jersey Harbor
+The New York/New Jersey Harbor case study is a good
+example application of the combined multi-criteria decision
+analysis and adaptive management framework. The compara-
+tive risk assessment presented above covered the first three
+steps of the process identified in Fig. 4 (that is, problem
+formulation and alternative generation, criteria identification,
+Fig. 4. Adaptive decision framework. Solid lines represent direct involvement for people or utilization of tools; dashed lines represent less direct involvement or utilization.
+1088 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+and evaluating performance of alternatives on the criteria). As
+we noted earlier, the fourth step (gathering value judgments on
+the relative importance of each criterion) is addressed only
+qualitatively within a CRA framework.
+Kiker and Bridges (submitted for publication) present an
+example MCDA assessment of this NY/NJ case. Criterium
+Decision Plus software ( InfoHarvest, 2004 )w a su s e dt o
+implement a SMART/MAUT approach to quantitatively incor-
+porate stakeholder value judgments on criteria along with
+technical measures for specific criteria weighting. V alue judg-
+ments on the importance of the seven decision criteria were
+elicited from a group of individuals experienced in the area of
+dredged material assessment and management in the US EP A, US
+Army Corps of Engineers and Academia using a “swing”
+weighting technique (discussed in more detail in Kiker and
+Bridges, submitted for publication ). Fig. 5 a shows an example
+ranking of five alternatives fromKiker and Bridges (submitted for
+publication) from one set of surveyed weights. The contained
+aquatic disposal (CAD) alternative is the most preferable because
+of its comparatively low cost and human health and ecological
+risks. A landfill is ranked second due to its relatively good risk
+reduction and public acceptability.Kiker and Bridges (submitted
+for publication) present more discussion on the results and their
+sensitivity to changing weights and value judgments.
+In this framework, adaptive management considerations which
+call for a change in management strategy do not require expensive
+reevaluation of the whole decision model. For example, the cost
+of CAD operation may increase with time, and the relative safety
+of the CAD cell may become lower when it is getting close to its
+capacity. In this situation, revised cost and risk data can be easily
+incorporated into the decision model and tested for potential
+change in overall ranking given a variety of decision-relevant
+scenarios. These various conditions could relate to uncertainties in
+monitored data, stakeholder weights or values, or various “what-
+if” style scenarios. Fig. 5 b shows a different criteria weighting
+scheme that results from the same decision model, but with
+different cost and risk data. The second scheme shows a different
+rank ordering of the management strategies, this time with a
+landfill topping the list. This example shows that under some
+criteria weights, monitoring values, and stakeholder valuations,
+rankings may change. InFig. 5b, while the exact ranking changes,
+the upper three alternatives remain unchanged. This additional
+information may allow decision-makers and stakeholders to plan
+adaptively towards several generally-favored alternatives while
+discarding others that do not have consistently higher rankings
+over a variety of conditions. Thus, the MCDA structure, encom-
+passing risk-based and other decision-relevant criteria, could
+efficiently assist the decision-makers as they construct adaptive
+strategies for monitoring and managing the contaminated
+sediments in the Harbor.
+9. Discussion/conclusion
+We are not the first to propose an integration of decision
+analysis methods with adaptive management. For example,
+Rauscher et al. (2000) propose a combination of the analytical
+hierarchy process and adaptive management. Pastorok et al.
+(1997) develop a decision-making framework combined with
+Fig. 5. Comparison of sediment management alternative scores when criteria weightings or related information change.
+1089I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+monitoring and adaptive management. Additionally,Nudds et al.
+(2003) with the University of Guelph Decision Analysis and
+Adaptive Management Project are applying a combination of
+methods to the management of yellow perch and walleye in Lake
+Erie. Their system emphasizes decision analysis, placing adaptive
+management in its service as a method to reduce the uncertainty
+present in decision calculations. Our proposed method, on the
+other hand, uses adaptive management as an overall planning and
+procedural framework, and we recommend decision analysis to
+help make structured, logical decisions concerning management
+options. We believe that our method will prove most fruitful, and
+we believe that our current review provides the most rigorous and
+justifiable foundation to date for successful application of the
+combined concept for environmental management of a wide
+range of projects. Using adaptive management and multi-criteria
+decision analysis gives structure to the decision-making process
+and allows the manager to learn about the system being managed
+and modify the management strategy based on new knowledge.
+Such a framework could be of great assistance to managers,
+saving them both time and resources as it helps them to understand
+the trade-offs involved between different management alterna-
+tives and to make justified, informed decisions.
+Acknowledgements
+The authors are grateful to Drs. Seager, Ganoulis, Cooke,
+Small, V alverde, Y oe, Sullivan, and Gardner for useful sugges-
+tions. Support for this study was provided by the USACE Dred-
+ging Operations and Environmental Research (DOER) (GAK, IL,
+FKS, CB, TSB) and NOAA through the Cooperative Institute for
+Coastal and Estuarine Environmental Technology (IL). Permission
+was granted by the Chief of Engineers to publish this material.
+References
+Accorsi R, Apostolakis GE, Zio E. Prioritizing stakeholder concerns in
+environmental risk management. J Risk Res 1999a;2(1):11 –29.
+Accorsi R, Zio E, Apostolakis GE. Developing utility functions for
+environmental decision-making. Prog Nucl. Energy 1999b;34(4):387 –411.
+Allison C, Sidle RC, Tait D. Application of decision analysis to forest road
+deactivation in unstable terrain. Environ Manage 2004;33:173 –85.
+Al-Rashdan D, Al-Kloub B, Dean A, Al-Shemmeri TT. Environmental impact
+assessment and ranking the environmental projects in Jordan. Eur J Oper Res
+1999;18:30–45.
+Andrews CJ, Apul DS, Linkov I. Comparative risk assessment: past experience,
+current trends and future directions. In: Linkov I, Ramadan A, editors.
+Comparative Risk Assessment and Environmental Decision Making.
+Amsterdam: Kluwer; 2004.
+Apostolakis GE. Expert judgment resolution in technically-intensive policy
+disputes. In: Linkov I, Palma-Oliveira J, editors. Assessment and management
+of environmental risks: cost-efficient methods and applications. Proceedings of
+the NA TO Advanced Research WorkshopBoston, MA, USA: Kluwer
+Academic Publishers; 2001. p. 211–20.
+Arvai J, Gregory R. Testing alternative decision approaches for identifying cleanup
+priorities at contaminated sites. Environ Sci Technol 2003;37(8):1469–76.
+Bearlin AR, Schreiber ESG, Nicol SJ, Starfield AM, Todd CR. Identifying the
+weakest link: simulating adaptive management of the reintroduction of a
+threatened fish. Can J Fish Aquat Sci 2002;59:1709 –16.
+Bella A, Duckstein L, Szidarovszky F. A multicriterion analysis of the water
+allocation conflict in the upper Rio Grande River basin. Appl Math Comput
+1996;77:245–65.
+Belton V , Stewart T. Multiple Criteria Decision Analysis: an integrated
+approach. Boston, MA, USA: Kluwer Academic Publishers; 2002.
+Bliss JC, Jones SB, Stanturf JA, Burke MK, Hamner CM. Creating a knowledge
+base for management of Southern bottomland hardwood ecosystems. USDA
+Forest Service, Southern Research Station, General Technical Report SRS-
+017; 1997. Available at http://www.srs.fs.usda.gov/pubs/viewpub.jsp?
+index=2203. Accessed 22 July 2004.
+Bonano EJ, Apostolakis GE, Salter PF, Ghassemi A, Jennings S. Application
+of risk assessment and decision analysis to the evaluation, ranking and
+selection of environmental remediation alternatives. J Hazard Mater 2000;
+71:35–57.
+Borsuk M, Clemen RL, Maguire LA, Reckhow K. Stakeholder values and scientific
+modeling in the Neuse River watershed. Group Decis Negot 2001;10:355–73.
+Bridges T, Kiker G, Cura J, Apul D, Linkov I. Towards using comparative risk
+assessment to manage contaminated sediments. In: Levner E, Linkov I,
+Proth JM, editors. Strategic Management of Marine Ecosystems. Amster-
+dam: Springer; 2005.
+British Columbia Forest Service (BCFS); 2000. http://www.for.gov.bc.ca/hfp/
+amhome/am_case_studies.htm. Accessed 17 September 2004.
+British Columbia Ministry of Sustainable Resource Management (BCMSRM).
+North Coast land and resource management plan: final recommenda-
+tions; 2004. http://srmwww.gov.bc.ca/ske/lrmp/ncoast/docs/NCLRMP_
+Recommendations_Draft_4.pdf. Accessed 28 September 2004.
+Bunch MJ, Dudycha DJ. Linking conceptual and simulation models of the
+Cooum River: collaborative dev elopment of a GIS-based DSS for
+environmental management. Comput Environ Urban Syst 2004;28:247 –64.
+Bundy A. The ecological effects of fishing and implications for coastal
+management in San Miguel Bay, the Philippines. Coast Manage 2004;
+32:25–38.
+Brown K, Adger NW, Tompkins E, Bacon P , Shim D, Y oung K. Trade-off
+analysis for marine protected area management. Ecol Econ 2001;37:417–34.
+Bureau of Land Management; 2003. http://www.mt.blm.gov/oilgas/policy/
+im2003-234.pdf. Accessed 28 September 2004.
+Castilla JC. Roles of experimental marine ecology in coastal management and
+conservation. J Exp Mar Biol Ecol 2000;250:3 –21.
+CCC. Procedural Guidance For Evaluating Wetland Mitigation Projects In
+California's Coastal Zone, California Coastal Commission, September; 1995.
+http://www.coastal.ca.gov/weteval/wetitle.html.
+CCHO, Health Canada. Climate Change and Health Economic Advisory Panel’s
+Final Report on Health Impacts of the Greenhouse Gases Mitigation
+Measures; 2000. http://www.hc-sc.gc.ca/hecs-sesc/ccho/publications/
+greenhouse_gases/toc.htm. Accessed 17 September 2004.
+Charles A T. Living with uncertainty in fisheries: analytical methods, management
+priorities and the Canadian groundfishery experience. Fish Res 1998;37:
+37–50.
+Commission of the European Communities (CEC). Green Paper on the Future of
+the Common Fisheries Policy; 2001. http://europa.eu.int/eur-lex/en/com/
+gpr/2001/com2001_0135en01.pdf. Accessed 17 September 2004.
+Dallmeier F, Alonso A, Jones M. Planning an adaptive management process for
+biodiversity conservation and resource development in the Camisea River
+basin. Environ Monit Assess 2002;76(1):1 –17.
+DOE. Comprehensive Land-Use Planning Process Guide; 1996. http://www.sc.
+doe.gov/SC-80/pdf_file/gpg33.pdf. Accessed 20 September 2004.
+DOE. Adaptive Management Platform for Natural Resources in the Columbia River
+Basin; 2002. http://www.pnl.gov/main/publications/external/technical_reports/
+PNNL-13875.pdf. Accessed 28 September 2004.
+DOE. The NEPA Task Force Report to the Council on Environmental Quality:
+Modernizing NEPA Imp lementation; 2003. http://ceq.eh.doe.gov/ntf/report/
+finalreport.pdf. Accessed 20 September 2004.
+DOI. Departmental Manual; 2004. http://elips.doi.gov/elips/release/3614.htmand
+http://elips.doi.gov/elips/release/3611.htm. Accessed 29 September 2004.
+Doley TM, Benelmoouffok D, Deschaine LM. Decision support for optimal
+watershed load allocation. Paper presented at the Society for Modeling and
+Simulation International Conference Seattle, USA; 2001. Apr 22 –26.
+Driscoll SBK, Wickwire TW, Cura JJ, V orhees DJ, Butler CL, Moore DW, et al.
+A comparative screening-level ecological and human health risk assessment
+for dredged material management alternatives in New York/New Jersey
+harbor. Hum Ecol Risk Assess 2002;8: 603 –26.
+1090 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Duda A, Sherman K. A new imperative for improving management of large
+marine ecosystems. Ocean Coast Manag 2002;45:797 –833.
+Environment Canada; 2004a. http://www.bco.ec.gc.ca/en/primers/ecosystem.
+cfm. Accessed 17 September 2004.
+Environment Canada. Environmental Assessment Best Practice Guide for
+Wildlife at Risk in Canada; 2004b. http://www.cwsscf.ec.gc.ca/publications/
+AbstractTemplate.cfm?lang=e&id=1059. Accessed 17 September 2004.
+Environment Canada. Canada’s National Wildlife Disease Strategy; 2004c.http://
+www.cws-scf.ec.gc.ca/cnwds/draft11.pdf.A c c e s s e d2 0S e p t e m b e r2 0 0 4 .
+EPA. Integrated Assessment of Hypoxia in the Northern Gulf of Mexico; 1999a.
+http://www.epa.gov/msbasin/ia/index.html. Accessed 17 September 2004.
+EPA. Protocol for Developing Sediment TMDLs; 1999b. http://www.epa.gov/
+owow/tmdl/sediment/pdf/sediment.pdf. Accessed 23 September 2004.
+EPA. Watershed Analysis and Management Guide for Tribes— Step 5: Adaptive
+Management; 2000. http://www.epa.gov/owow/watershed/wacademy/wam/
+step5.html. Accessed 17 September 2004.
+EPA. Protocol for Developing Pathogen TMDLs; 2001a. http://www.epa.gov/
+owow/tmdl/pathogen_all.pdf. Accessed 23 September 2004.
+EPA. Action Plan for Reducing, Mitigating, and Controlling Hypoxia in the
+Northern Gulf of Mexico; 2001b. http://www.epa.gov/msbasin/actionplan.
+htm. Accessed 29 September 2004.
+EPA. Lake Superior Lakewide Management Plan (LaMP) 2000; 2002. http://
+www.epa.gov/glnpo/lakesuperior/lamp2000/. Accessed 17 September 2004.
+EPA. Using Dynamic Filed Activities for On-Site Decision Making: A Guide for
+Project Managers; 2003. http://www.epa.gov/sup erfund/programs/dfa/
+download/guidance/40r03002.pdf. Accessed 3 February 2006.
+Fernandes L, Ridgley M, van't Hof T. Multiple criteria analysis integrates
+economic, ecological and social objectives for coral reef managers. Coral
+Reefs 1999;18(4):393–402.
+FERC. Interagency Task Force Report on Improving the Studies Process in
+FERC Licensing; 2000. http://www.nmfs.noaa.gov/habitat/habitatprotection/
+studies_final.pdf. Accessed 20 September 2004.
+Focht W, DeShong T, Wood J, Whitaker K. A protocol for the elicitation of
+stakeholders' concerns and preferences for incorporation into policy
+dialogue. Proceedings of the Third Workshop in the Environmental Policy
+and Economics Workshop Series: Economic Research and Policy
+Concerning Water Use and Watershed Management. Washington, USA:
+US EPA; 1999. p. 1 –24.
+Folke C. Freshwater for resilience: a shift in thinking. Phil Trans R Soc Lond
+2003;358:2027–36.
+Gallego E, Jiménez A, Mateos A, Sazykina T, Ríos-Insua S. Application of
+Multiattribute Analysis (MAA) to search for optimum remedial strategies for
+contaminated lakes with the MOIRA system. Paper presented at the 11th
+annual meeting of the International Radiation Protection Association; 2004.
+Madrid, Spain, May 23 –28.
+Ganoulis J. Evaluating alternative strategies for wastewater recycling and reuse
+in the Mediterranean area. Water Sci Technol Water Supply 2003;3(4): 11–9.
+Gentile JH, Harwell MA, Cropper Jr W, Harwell CC, DeAngelis D, Davis S, et
+al. Ecological conceptual models: a framework and case study on ecosystem
+management for South Florida sustainability. Sci Tot Environ 2001;
+274:231–53.
+Georgopoulou E, Sarafidis Y , Diakoulaki D. Design and implementation of a
+group DSS for sustaining renewable energies exploitation. Eur J Oper Res
+1998;109:483–500.
+Gilmour A, Walkerden G, Scandol J. Adaptive management of the water cycle
+on the urban fringe: three Australian case studies. Conserv Ecol 1999;
+3(1):11. Available at http://www.consecol.org/vol3/iss1/art11. Accessed
+14 July 2004.
+Gomez-Limon JA, Arriaza M, Riesgo L. An MCDM analysis of agricultural risk
+aversion. Eur J Oper Res; in press.
+Gregory R, Failing L. Using decision analysis to encourage sound deliberation:
+water use planning in British Columbia, Canada. Professional practice; 2002.
+p. 492–9.
+Gregory R, Wellman K. Bringing stakeholder values into environmental policy
+choices: a community-based estuary case study. Ecol Econ 2001;39:37 –52.
+Gregory R, McDaniels T, Fields D. Decision aiding, not dispute resolution:
+creating insights through structured environmental decisions. J Policy Anal
+Manag 2001;20(3):415–32.
+Grelk, BJ. A CERCLA-based decision support system for environmental
+remediation strategy selection [thesis]. Department of the Air Force, Air
+Force Institute of Technology; 1997.
+Grelk B, Kloeber JM, Jackson JA, Deckro RF, Parnell GS. Quantifying
+CERCLA using site decision maker values. Remediation 1998;8(2):87–105.
+Gunderson L. Resilience, flexibility and adaptive management — antidotes for
+spurious certitude? Conserv Ecol 1999;3(1):7. Available at http://www.
+consecol.org/vol3/iss1/art7. Accessed 14 July 2004.
+Gurocak ER, Whittlesey NK. Multiple criteria decision making: a case study of
+the Columbia River salmon recovery plan. Environ Resour Econ 1998;12
+(4):479–95.
+Habron G. Role of adaptive management for watershed councils. Environ
+Manage 2003;3(11):29–41.
+Hämäläinen RP , Kettunen E, Ehtamo H, Marttunen M. Evaluating a framework
+for multi-stakeholder decision support in water resources management.
+Group Decis Negot 2001;10(4):331 –53.
+Haney A, Power RL. Adaptive management for sound ecosystem management.
+Environ Manage 1996;20(6):879 –86.
+Health Canada. Environment Canada Performance Report for the period ending
+March 31, 2003; 2003. http://www.ec.gc.ca/dpr/2003/en/c4d.htm.
+Herath G. Incorporating community objectives in improved wetland manage-
+ment: the use of the analytic hierarchy process. J Environ Manag 2004;70
+(3):263–73.
+Hilborn R, Sibert J. Adaptive management of developing fisheries. Mar Policy
+1988;12:112–21.
+Hillman M, Brierly G. Information needs for environmental flow allocation: a
+case study from the Lachlan River, New South Wales, Australia. Ann Assoc
+Am Geogr 2002;92:617 –30.
+Hockings M. Systems for assessing the effectiveness of management in
+protected areas. Bioscience 2003;53:823 –32.
+Imperial MB, Hennessey T, Robadue Jr D. The evolution of adaptive
+management for estuarine ecosystems: the National Estuary Program and
+its precursors. Ocean Coast Manag 1993;20:147 –80.
+InfoHarvest. Criterium Decision Plus Software V ersion 3.0. www.infoharvest.
+com; 2004.
+Innes J, Hay R, Flux I, Bradfield P , Speed H, Jansen P . Successful recovery of
+North Island kokako Callaeas cinerea wilsoni populations, by adaptive
+management. Biol Conserv 1999;87(2):201 –14.
+James KR, Cant B, Ryan T. Responses of freshwater biota to rising salinity
+levels and implications for saline water management: a review. Aust J Bot
+2003;51:703–13.
+Joerin F, Musy A. Land management with GIS and multicriteria analysis. Int
+Trans Oper Res 2000;7:67 –78.
+Johnson BL. Introduction to the special feature: adaptive management —
+scientifically sound, socially challenged? Conserv Ecol 1999;3(1):10.
+Available at http://www.consecol.org/vol3/iss1/art10. Accessed 14 July
+2004.
+Johnson F, Williams K. Protocol and practice in the adaptive management of
+waterfowl harvests. Conserv Ecol 1999;3(1):8. Available at http://www.
+consecol.org/vol3/iss1/art8. Accessed 14 July 2004.
+Joubert AR, Leiman A, de Klerk HM, Katua S, Aggenbach JC. Fynbos
+(fine bush) vegetation and the supply of water: a comparison of multi-
+criteria decision analysis and cost –benefit analysis. Ecol Econ 1997;22:
+123–40.
+Kangas J, Kangas A, Leskinen P , Pykalainen J. MCDM methods in strategic
+planning of forestry on state-owned lands in Finland: applications and
+experiences. J Multi Criteria Decis Anal 2001;10:257 –71.
+Keisler JM, Sundell RC. Combining multi-attribute utility and geographic
+information for boundary decisions: an application to park planning. GIDA
+1997;1(2):101–18.
+Kholghi M. Multi-criterion decision-making tools for wastewater planning
+management. J Agric Sci Technol 2001;3:281 –6.
+Kiker CF, Milon JW, Hodges AW. Adaptive learning for science-based policy:
+the Everglades restoration. Ecol Econ 2001;37:403 –16.
+Kiker, GA, Bridges, TS. Integrating Comparative Risk Assessments with Multi-
+Criteria Decision Analysis for Dredged Material Management in New York/
+New Jersey Harbor. Integrated Environmental Assessment and Manage-
+ment; submitted for publication.
+1091I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Klauer B, Drechsler M, Messner F. Multi-criteria analysis more under
+uncertainty with IANUS — method and empirical results. UFZ discussion
+GmbH. Germany: Leipzig; 2002.
+Kwak SJ, Yoo SH, Kim TY . A constructive approach to air-quality valuation in
+Korea. Ecol Econ 2001;38:327 –44.
+Lancia RA, Braun CE, Collopy MW, Dueser RD. ARM! for the future: adaptive
+resource management in the wildlife profession. Wildl Soc Bull
+1996;24:436–42.
+Larichev OI, Olson DL. Multiple criteria analysis in strategic siting problems.
+Boston, USA: Kluwer Academic Publishers; 2001.
+Lempert R, Popper S, Bankes SC. Shaping the Next One Hundred Y ears: New
+Methods for Quantitative, Long-Term Policy Analysis; 2003. http://www.
+rand.org/publications/MR/MR1626/. Accessed 28 September 2004.
+Levy J, Hipel K, Kilgour DM. Using environmental indicators to quantify the
+robustness of policy alternatives to uncertainty. Ecol Model 2000;130:
+79–86.
+Linkov I, V arghese A, Jamil S, Seager TP , Kiker G, Bridges T. Multi-criteria
+decision analysis: framework for applications in remedial planning for
+contaminated sites. In: Linkov I, Ramadan A, editors. Comparative Risk
+Assessment and Environmental Decision Making. Amsterdam: Kluwer;
+2004. p. 15 –54.
+Lowry TS, Bright JC, Close ME, Robb CA, White PA, Cameron SG.
+Management gaps analysis: a case study of groundwater resource
+management in New Zealand. Water Resour Dev 2003;19:579 –92.
+Mardle S, Pascoe S. Modeling the effects of trade-offs between long and short-
+term objectives in fisheries management. J Environ Manag 2002;65:
+49–62.
+Mardle S, Pascoe S, Herrero I. Management objective importance in fisheries:
+an evaluation using the analytic hierarchy process (AHP). Environ Manag
+2004;33(1):1–11.
+Marmorek D, Peters C. Finding a PA TH toward scientific collaboration: insights
+from the Columbia River Basin. Conserv Ecol 2001;5(2):8. Available at
+http://www.consecol.org/vol5/iss2/art8. Accessed 9 February 2005.
+Marttunen M, Hämäläinen RP . Decision analysis interviews in environmental
+impact assessment. Eur J Oper Res 1995;87(3):551 –63.
+McDaniels TL. Using judgment in resource management: an analysis of a
+fisheries management decision. Oper Res 1995;43(3):415 –26.
+McDaniels T. A decision analysis of the Tatshenshini-Alsek Wilderness
+Preservation alternatives. J Environ Manag 1999;19(3):498 –510.
+McDaniels TL, Gregory R. Learning as an objective within a structured risk
+management decision process. Environ Sci Technol 2004;38:1921 –6.
+McGinley K, Finegan B. The ecological sustainability of tropical forest
+management: evaluation of the national forest management standards of
+Costa Rica and Nicaragua, with emphasis on the need for adaptive
+management. For Pol Econ 2003;5(4):421 –31.
+McNeeley JA. Nature vs. nurture: managing relationships between forests,
+agroforestry and wild biodiversity. Agrofor Syst 2004;61:155 –65.
+Mendoza GA, Anderson AB (US Army ERDC), Gertner GZ. Integrating multi-
+criteria analysis and GIS for land condition assessment: Part 2 — allocation
+of military training areas. GIDA 2002;6(1):17 –30.
+Merritt M. Strategic plan for salmon research in the Kuskokwim River drainage.
+Special publication, vol. 01-07. Alaska Department of Fish and Game,
+Division of Sport Fish; 2001.
+Mimi ZA, Sawalhi BI. A decision tool for allocating the waters of the Jordan
+River Basin between all riparian parties. Water Resour Manag 2003;
+17:447–61.
+Murray C, Marmorek D. Adaptive management and ecological restoration. In:
+Friederici P , editor. Ecological Restoration of Southwestern Ponderosa Pine
+Forests: A Sourcebook for Research and Application. Washington, DC:
+Island Press; 2003. p. 417 –28.
+Ni JR, Borthwick AGL, Qin HP . Integrated approach to determining
+postreclamation coastlines. J Environ Eng 2002;128(6):543 –51.
+Ning SK, Chang N. Multi-objective, decision-based assessment of a water
+quality monitoring network in a river system. J Environ Monit 2002;4:121–6.
+NRC (National Research Council). Environmental Cleanup at Navy Facilities.
+Committee on Environmental Remediation at Naval Facilities, Water
+Science and Technology Board, Division on Earth and Life Studies.
+Washington, DC: National Academies Press; 2003.
+Nyberg B. An Introductory Guide to Adaptive Management for Project Leaders
+and Participants, Forest Practices Branch, British Columbia Forest Service;
+1999.
+NOAA. Coastal Restoration — Adaptive Management; 2004a. http://www.csc.
+noaa.gov/coastal/management/management.htm. Accessed 17 September
+2004.
+NOAA. Coastal Restoration — Innovative and Successful Monitoring and
+Adaptive Management Approaches; 2004b. http://www.csc.noaa.gov/
+coastal/management/monitor.htm. Accessed 17 September 2004.
+NOAA. Landscape Characterization and Restoration (LCR) Program — Habitat
+Restoration; 2004c. http://www.csc.noaa.gov/lcr/text/confsumm.html .
+Accessed 29 September 2004.
+Norton BG, Steinemann AC. Environmental values and adaptive management.
+Environ V alues 2001;10(4):473–506.
+Nudds T, Jiao Y , Crawford S, Reid K, McCann K, Yang W. The DAAM Project—
+Decision Analysis and Adaptive Management (DAAM) Systems for
+Great Lakes Fisheries: The Lake Erie Walleye and Y ellow Perch Fisheries
+Project Background and Work Plan; 2003. http://www.ocfa.on.ca/PICS/
+DAAM_backgrounder_2003_11_26.pdf . Accessed 9 February 2005.
+ODPM (Office of the Deputy Prime Minister). DLTR multi-criteria decision
+analysis manual; 2004. Available at http://www.odpm.gov.uk/stellent/
+groups/odpm_about/documents/page/odpm_about_608524-02.hcsp.
+Özelkan EC, Duckstein L. Analyzing water resources alternatives and handling
+criteria by multi criterion decision techniques. J Environ Manag 1996;48
+(1):69–96.
+Parrish JD, Braun DP , Unnasch RS. Are we conserving what we say we are?
+Measuring ecological integrity with in protected areas. Bioscience
+2003;53:851–60.
+Parnell GS, Frimpon M, Barnes J, Kloeber Jr JM, Deckro RF, Jackson JA.
+Safety risk analysis of an innovative environmental technology. Risk Anal
+2001;21(1):143–55.
+Pastorok RA, McDonald A, Sampson JR, Wilber P . An ecological decision
+framework for environmental restoration projects. Ecol Eng 1997;9:89–107.
+Pavlou SP , Stansbury JS. Risk-cost trade off considerations for contaminated
+sediment disposal. Hum Ecol Risk Assess 1998;4(4):991 –1002.
+Peterson D, Silsbee D, Schmoldt D. A case study of resources management
+planning with multiple objectives and projects. Environ Manage 1994;18(5):
+729–42.
+Pinkerton E. Factors in overcoming barriers to implementing co-management in
+British Columbia salmon fisheries. Conserv Ecol 1999;3(2):2. Available at
+http://www.consecol.org/vol3/iss2/art2. Accessed 15 July 2004.
+Prato T. Multiple attribute evaluation of ecosystem management for the Missouri
+River. Ecol Econ 2003;45:297 –309.
+Qin HP , Ni JR, Borthwick AGL. Harmonized optimal postreclamation coastline
+for Deep Bay, China. J Environ Eng 2002;128(6):552 –61.
+Rauscher HM. Ecosystem management decision support for federal forests in
+the United States: a review. For Ecol Manag 1999;114:173 –97.
+Rauscher HM, Lloyd FT, Loftis DL, Twery MJ. A practical decision-analysis
+process for forest ecosystem management. Comput Electron Agric 2000;27:
+195–226.
+Rogers SH, Seager TP , Gardner KH. Combining expert judgment and
+stakeholder values with Promethee: a case study in contaminated sediments
+management. In: Linkov I, Bakr Ramadan A, editors. Comparative risk
+assessment and environmental decision making. Boston, MA, USA: Kluwer
+Academic Publishers; 2004. p. 305 –22.
+Ríos-Insua S, Gallego E, Mateos A, Jiménez A. A decision support system for
+ranking countermeasures for radionuclide contaminated aquatic ecosystems:
+The MOIRA project; 2002. p. 283 –97.
+Rudd MA. An institutional framework for designing and monitoring ecosystem-
+based fisheries management policy experiments. Ecol Econ 2004;48:
+109–24.
+Salafsky N, Margoluis R, Redford KH, Robinson JG. Improving the practice of
+conservation: a conceptual framework and research agenda for conservation
+science. Conserv Biol 2002;16(6):1469 –79.
+Satterstrom K, Linkov I, Kiker G, Ferguson E, Bridges T. Multi-criteria decision
+analysis and adaptive management: a review and framework for application
+to superfund sites. In: Macey GP , Cannon J, editors. Reclaiming the Land:
+Rethinking Superfund Institutions, Methods, and Practices. Springer; 2006.
+1092 I. Linkov et al. / Environment International 32 (2006) 1072 –1093
+
+Schmoldt D, Peterson D, Silsbee D. Developing inventory and monitoring
+programs based on multiple objectives. Environ Manage 1994;18(5):
+707–27.
+Schmoldt D, Mendoza GA, Kangas J. Past developments and future directions
+for the AHP in natural resources. The Analytic Hierarchy Process in Natural
+Resource and Environmental Decision Making; 2001. p. 289 –305.
+Seager TP . Understanding industrial ecology and the multiple dimensions of
+sustainability. In: O'Brien, Gere Engineers, editors. Strategic environmental
+management. New Y ork, NY , USA: John Wiley and Sons; 2004.
+Sharifi MA, V an Den Toorn W, Emmanuel M. International Institute for
+Geoinformation Science and Earth Observation; 2002.
+Shindler B, Aldred Cheek K. Integrating citizens in adaptive management: a
+propositional analysis. Conserv Ecol 1999;3(1):9. Available at http://www.
+consecol.org/vol3/iss1/art9. Accessed 14 July 2004.
+Sit V , Taylor B, editors. Statistical Methods for Adaptive Management Studies.
+Land Management Handbook. British Columbia Ministry of Forests
+Research Program; 1998.
+Soma K. How to involve stakeholders in fisheries management — a country
+case study in Trinidad and Tobago. Mar Policy 2003;27:47 –58.
+Southeastern Adaptive Management Group (SEAMG); 2004. http://cars.er.usgs.
+gov/SEAMG/seamg.html. Accessed 28 September 2004.
+Stansbury J, Member PE, Bogardi I, Stakhiv EZ. Risk-cost optimization under
+uncertainty for dredged material disposal. J Water Resour Plann Manage
+1999;125(6):342–51.
+Steyer GD, Llewellyn DW. Coastal wetlands planning, protection, and
+restoration act: a programmatic application of adaptive management. Ecol
+Eng 2000;15:385–95.
+Store R, Kangas J. Integrating spatial multi-criteria evaluation and expert
+knowledge for GIS-based habitat suitability modeling. Landsc Urban Plan
+2001;55:79–93.
+Sutinen JG, editor. A Framework for Monitoring and Assessing Socioeconomics
+and Governance of Large Marine Ecosystems, NOAA Technical Memoran-
+dum NMFS-NE-158; 2000.
+Szaro RC, Berc J, Cameron S, Cordle S, Crosby M, Martin L, et al. The
+ecosystem approach: science and information management issues, gaps and
+needs. Landsc Urban Plan 1998;40(1 –3):89–101.
+Tal A, Linkov I. The role of comparative risk assessment in addressing
+environmental security in the Middle East. Risk Anal 2004;24:1243.
+Taylor B, Kremsater L, Ellis, R. Adaptive Management of Forests in British
+Columbia, British Columbia Ministry of Forests, Forest Practices Branch;
+1997. Available at http://www.for.gov.bc.ca/hfp/amhome/am_publications.
+htm. Accessed 20 July 2004.
+Thom RH. System-development matrix for adaptive management of coastal
+ecosystem restoration projects. Ecol Eng 1997;8:219 –32.
+Thom RH. Adaptive management of coastal ecosystem restoration projects.
+Ecol Eng 2000;15:365 –72.
+Tran L, Knight CG, O ’Neill R, Smith E, Ritters K, Wickham J. Environmental
+assessment fuzzy decision analysis for integrated environmental vulnera-
+bility assessment of the mid-Atlantic region. Environ Manage 2002;29
+(6):845–59.
+Treves A, Karanth KU. Human-carnivore conflict and perspectives on carnivore
+management worldwide. Conserv Biol 2003;17(6):1491 –9.
+USACE (US Army Corps of Engineers). Dredged material management plan for
+the Port of New Y ork and New Jersey. Draft implementation report; 1999.
+Available at http://www.nan.usace.army.mi l/business/prjlinks/dmmp/
+9909imprpt/draftimprpt.pdf.
+USACE (US Army Corps of Engineers). USACE environmental operating
+principles and implementation guidance; 2003a. Available at http://www.hq.
+usace.army.mil/CEPA/7%20Environ%20Prin%20web%20site/Page1.html.
+USACE (US Army Corps of Engineers). Planning civil works projects under the
+environmental operating principles. Circular 1105-2-404; 2003b. Available
+at http://www.usace.army.mil/inet/usace-docs/eng-circulars/ec1105-2-404/
+entire.pdf.
+USBR. Draft Battle Creek Salmon and Steelhead Restoration Project Adaptive
+Management Plan; 2001. http://www.usbr.gov/mp/regional/battlecreek/
+docs/AMP_PublicReview-clean.pdf. Accessed 28 September 2004.
+USDA. Monitoring; 2003. http://policy.nrcs.usda.gov/scripts/lpsiis.dll/H/
+H_190_610_B_35.htm. Accessed 20 September 2004.
+US DOE (US Department of Energy). Guidelines for risk-based prioritization of
+DOE activities. US Department of Energy; 1998. DOE-DP-STD-3023-98.
+US DOE (US Department of Energy). Subject: use of risk-based end states.
+Initiated by Office of Environmental Management; 2003. Policy DOE P 455.1.
+USGS. Developing an Adaptive Management Approach Using Offsets for
+Reducing Mercury Loadings to the Sacramento River Watershed; 2004.
+http://geography.wr.usgs.gov/science/mercury-tmdl.html. Accessed 20 Sep-
+tember 2004.
+van Damme L, Russell JS, Doyon F, Duinker PN, Gooding T, Hirsch K, et al.
+The development and application of a decision support system for
+sustainable forest management on the Boreal Plain. J Environ Eng Sci
+2003;2:S23–4.
+V an Moeffaert D, 2002. Multi-Criteria Decision Aid in Sustainable Urban Water
+Management [masters thesis]. Stockholm, Sweden: Royal Institute of
+Technology.
+van Staden V , Erasmus BFN, Roux J, Wingfield MJ, van Jaarsveld AS.
+Modelling the spatial distribution of two important South African plantation
+forestry pathogens. For Ecol Manage 2004;187:61 –73.
+V aillancourt K, Waaub JP . Environmental site evaluation of waste management
+facilities embedded into EUGENE model: a multicriteria approach. Eur J
+Oper Res 2002;139:436 –48.
+V oss Michael. The central and southern Florida project comprehensive review
+study: restoring the everglades. Ecol Law Q 2000;27:751 –70.
+Wakeman JB. Decision analysis based upon implementability of the action
+alternatives at Milltown Dam; 2003. 4 Apr, Email to Igor Linkov.
+Wakeman TH, Themelis NJ. A basin-wide approach to dredged material
+management in New Y ork/New Jersey Harbor. J Hazard Mater 2001;85:1–13.
+Walters C. Challenges in adaptive management of riparian and coastal
+ecosystems. Conserv Ecol 1997;1(2):1. Available at http://www.consecol.
+org/vol1/iss2/art1. Accessed 14 July 2004.
+Walters CJ, Hilborn R. Ecological optimization and adaptive management. Ann
+Rev Ecol Syst 1978;9:157 –88.
+Weinstein MP , Balletto JH, Teal JM, Ludwig DF. Success criteria and adaptive
+management for a large-scale wetland restoration project. Wetlands Ecol
+Manag 1997;4:111–27.
+Weishar LL, Teal JM. The role of adaptive management in the restoration of
+degraded diked salt hay farm wetlands. Proceedings of the ASCE Wetlands
+Engineering & River Restoration Conference, Denver, CO; 1998.
+Whitaker K, Focht W. Expert modeling of environmental impacts. Okla Polit
+2001;10:179–86.
+Wilhere GF. Adaptive management in habitat conservation plans. Conserv Biol
+2002;16:20–9.
+Wladis D, Rosén L, Kros H. Risk-based decision analysis of atmospheric
+emission alternatives to reduce ground water degradation on the European
+scale. Ground Water 1999;37(6):818 –26.
+WWF. Put Environment at the Heart of European Fisheries Policy: WWF
+Manifesto for the Review of the EU Common Fisheries Policy; 2001a. http://
+www.panda.org/downloads/marine/manifesto_1.pdf. Accessed 17 Septem-
+ber 2004.
+WWF. Adaptive Management: A Tool for Conservation Practitioners; 2001b.
+http://effectivempa.noaa.gov/docs/adaptive.pdf . Accessed 20 September
+2004.
+Y oe C. Trade-off analysis planning and procedures guidebook. Prepared for
+Institute for Water Resources, U.S. Army Corps of Engineers; 2002.
+1093I. Linkov et al. / Environment International 32 (2006) 1072 –1093

@@ -4,6 +4,7 @@
 Ты — senior Python-разработчик. Финальная волна ядра: проверки ограничений, точка входа run_plan, сохранение/загрузка планов, экспорт. От этой волны зависит критерий 4 (ограничения стандартного плана) и 19–20 (функциональность контура).
 
 ## Обязательное чтение
+0. i_workstreams/ORCHESTRATOR_DECISIONS.md — решения D1–D7 (ОБЯЗАТЕЛЬНЫ; особенно D1, D3.4 — адаптер scenario_parameters, D4.2 — полный passed-список constraint_checks).
 1. Контракты `00_contracts/` (все три + units §6, §9, §11).
 2. `docs/CALCULATION_RULES.md` §13–14, `docs/CASE_RULES.md` §8 (что считается неисполнимым планом), `docs/STRESS_PROTOCOL.md`.
 3. `data/constraints.csv` — реестр hard-ограничений CASE_INPUT.
