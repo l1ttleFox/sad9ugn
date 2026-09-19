@@ -1,6 +1,6 @@
 {
-  "plan_id": "S10_MIT_R02",
-  "scenario_id": "BASE",
+  "plan_id": "FINAL_MIT_R01",
+  "scenario_id": "MANDATORY_STRESS",
   "decisions": {
     "supply_orders": [
       {
@@ -201,7 +201,7 @@
       {
         "source_id": "B",
         "period": "2036-09",
-        "ordered_volume_t": 7.502
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "A",
@@ -211,7 +211,7 @@
       {
         "source_id": "B",
         "period": "2036-10",
-        "ordered_volume_t": 0.147
+        "ordered_volume_t": 3.105
       },
       {
         "source_id": "A",
@@ -241,7 +241,7 @@
       {
         "source_id": "B",
         "period": "2037-01",
-        "ordered_volume_t": 0.28
+        "ordered_volume_t": 0.3
       },
       {
         "source_id": "A",
@@ -251,7 +251,7 @@
       {
         "source_id": "B",
         "period": "2037-02",
-        "ordered_volume_t": 0.192
+        "ordered_volume_t": 0.227
       },
       {
         "source_id": "A",
@@ -281,20 +281,20 @@
       {
         "source_id": "B",
         "period": "2037-05",
+        "ordered_volume_t": 0.194
+      },
+      {
+        "source_id": "A",
+        "period": "2037-06",
+        "ordered_volume_t": 15.833
+      },
+      {
+        "source_id": "B",
+        "period": "2037-06",
         "ordered_volume_t": 0.193
       },
       {
         "source_id": "A",
-        "period": "2037-06",
-        "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "B",
-        "period": "2037-06",
-        "ordered_volume_t": 0.192
-      },
-      {
-        "source_id": "A",
         "period": "2037-07",
         "ordered_volume_t": 15.833
       },
@@ -321,7 +321,7 @@
       {
         "source_id": "B",
         "period": "2037-09",
-        "ordered_volume_t": 3.882
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "A",
@@ -331,7 +331,7 @@
       {
         "source_id": "B",
         "period": "2037-10",
-        "ordered_volume_t": 5.192
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "A",
@@ -339,9 +339,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2037-11",
+        "ordered_volume_t": 1.583
+      },
+      {
         "source_id": "D",
         "period": "2037-11",
-        "ordered_volume_t": 10.0
+        "ordered_volume_t": 9.557
       },
       {
         "source_id": "A",
@@ -349,9 +354,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
+        "source_id": "B",
         "period": "2037-12",
-        "ordered_volume_t": 0.385
+        "ordered_volume_t": 8.317
       },
       {
         "source_id": "A",
@@ -359,9 +364,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-01",
+        "ordered_volume_t": 2.789
+      },
+      {
         "source_id": "D",
         "period": "2038-01",
-        "ordered_volume_t": 5.357
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -369,9 +379,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-02",
+        "ordered_volume_t": 7.961
+      },
+      {
         "source_id": "D",
         "period": "2038-02",
-        "ordered_volume_t": 5.257
+        "ordered_volume_t": 0.464
       },
       {
         "source_id": "A",
@@ -379,9 +394,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-03",
+        "ordered_volume_t": 2.9
+      },
+      {
         "source_id": "D",
         "period": "2038-03",
-        "ordered_volume_t": 5.254
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -389,9 +409,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-04",
+        "ordered_volume_t": 7.85
+      },
+      {
         "source_id": "D",
         "period": "2038-04",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 0.777
       },
       {
         "source_id": "A",
@@ -399,9 +424,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-05",
+        "ordered_volume_t": 2.914
+      },
+      {
         "source_id": "D",
         "period": "2038-05",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -409,9 +439,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-06",
+        "ordered_volume_t": 7.836
+      },
+      {
         "source_id": "D",
         "period": "2038-06",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 0.93
       },
       {
         "source_id": "A",
@@ -419,9 +454,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-07",
+        "ordered_volume_t": 2.916
+      },
+      {
         "source_id": "D",
         "period": "2038-07",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -429,9 +469,14 @@
         "ordered_volume_t": 15.833
       },
       {
+        "source_id": "B",
+        "period": "2038-08",
+        "ordered_volume_t": 7.834
+      },
+      {
         "source_id": "D",
         "period": "2038-08",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 0.999
       },
       {
         "source_id": "A",
@@ -446,7 +491,7 @@
       {
         "source_id": "D",
         "period": "2038-09",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -461,7 +506,7 @@
       {
         "source_id": "D",
         "period": "2038-10",
-        "ordered_volume_t": 5.253
+        "ordered_volume_t": 1.031
       },
       {
         "source_id": "A",
@@ -471,7 +516,7 @@
       {
         "source_id": "B",
         "period": "2038-11",
-        "ordered_volume_t": 3.12
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
@@ -486,12 +531,12 @@
       {
         "source_id": "B",
         "period": "2038-12",
-        "ordered_volume_t": 8.547
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2038-12",
-        "ordered_volume_t": 2.54
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -501,12 +546,12 @@
       {
         "source_id": "B",
         "period": "2039-01",
-        "ordered_volume_t": 3.12
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-01",
-        "ordered_volume_t": 8.133
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -516,12 +561,12 @@
       {
         "source_id": "B",
         "period": "2039-02",
-        "ordered_volume_t": 8.547
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-02",
-        "ordered_volume_t": 2.617
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -531,12 +576,12 @@
       {
         "source_id": "B",
         "period": "2039-03",
-        "ordered_volume_t": 3.12
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-03",
-        "ordered_volume_t": 8.039
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -546,12 +591,12 @@
       {
         "source_id": "B",
         "period": "2039-04",
-        "ordered_volume_t": 8.547
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-04",
-        "ordered_volume_t": 2.61
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -561,12 +606,12 @@
       {
         "source_id": "B",
         "period": "2039-05",
-        "ordered_volume_t": 3.12
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-05",
-        "ordered_volume_t": 8.037
+        "ordered_volume_t": 9.668
       },
       {
         "source_id": "A",
@@ -576,12 +621,12 @@
       {
         "source_id": "B",
         "period": "2039-06",
-        "ordered_volume_t": 8.547
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-06",
-        "ordered_volume_t": 2.61
+        "ordered_volume_t": 8.557
       },
       {
         "source_id": "A",
@@ -591,12 +636,12 @@
       {
         "source_id": "B",
         "period": "2039-07",
-        "ordered_volume_t": 3.12
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-07",
-        "ordered_volume_t": 8.037
+        "ordered_volume_t": 8.471
       },
       {
         "source_id": "A",
@@ -606,12 +651,12 @@
       {
         "source_id": "B",
         "period": "2039-08",
-        "ordered_volume_t": 8.547
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-08",
-        "ordered_volume_t": 2.61
+        "ordered_volume_t": 8.183
       },
       {
         "source_id": "A",
@@ -621,12 +666,12 @@
       {
         "source_id": "B",
         "period": "2039-09",
-        "ordered_volume_t": 9.023
+        "ordered_volume_t": 9.167
       },
       {
         "source_id": "D",
         "period": "2039-09",
-        "ordered_volume_t": 8.037
+        "ordered_volume_t": 8.161
       },
       {
         "source_id": "A",
@@ -641,7 +686,7 @@
       {
         "source_id": "D",
         "period": "2039-10",
-        "ordered_volume_t": 2.61
+        "ordered_volume_t": 8.086
       },
       {
         "source_id": "A",
@@ -656,7 +701,7 @@
       {
         "source_id": "D",
         "period": "2039-11",
-        "ordered_volume_t": 8.037
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "A",
@@ -671,7 +716,7 @@
       {
         "source_id": "D",
         "period": "2039-12",
-        "ordered_volume_t": 7.824
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -681,7 +726,7 @@
       {
         "source_id": "D",
         "period": "2040-01",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -691,7 +736,7 @@
       {
         "source_id": "D",
         "period": "2040-02",
-        "ordered_volume_t": 7.894
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -701,7 +746,7 @@
       {
         "source_id": "D",
         "period": "2040-03",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -711,7 +756,7 @@
       {
         "source_id": "D",
         "period": "2040-04",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -721,7 +766,7 @@
       {
         "source_id": "D",
         "period": "2040-05",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -731,7 +776,7 @@
       {
         "source_id": "D",
         "period": "2040-06",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -741,7 +786,7 @@
       {
         "source_id": "D",
         "period": "2040-07",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
@@ -751,77 +796,32 @@
       {
         "source_id": "D",
         "period": "2040-08",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "D",
         "period": "2040-09",
-        "ordered_volume_t": 7.895
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "D",
         "period": "2040-10",
-        "ordered_volume_t": 7.895
-      },
-      {
-        "source_id": "B",
-        "period": "2037-09",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2037-10",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2037-11",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2037-12",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2038-01",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2038-02",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2038-03",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2038-04",
-        "ordered_volume_t": 4.4167
+        "ordered_volume_t": 10.0
       },
       {
         "source_id": "B",
         "period": "2038-05",
-        "ordered_volume_t": 4.4167
+        "ordered_volume_t": 6.2527
       },
       {
         "source_id": "B",
         "period": "2038-06",
-        "ordered_volume_t": 4.4167
+        "ordered_volume_t": 1.3307
       },
       {
         "source_id": "B",
         "period": "2038-07",
-        "ordered_volume_t": 4.4167
-      },
-      {
-        "source_id": "B",
-        "period": "2038-08",
-        "ordered_volume_t": 4.4167
+        "ordered_volume_t": 2.4167
       }
     ],
     "capacity_reservations": [
@@ -931,7 +931,7 @@
     "inventory_policy": {
       "initial_inventory_t": 65.0,
       "reserve_mode": "physical",
-      "target_month_end_inventory_t": 55.1,
+      "target_month_end_inventory_t": 62.3,
       "initial_inventory_source": {
         "source_id": "A",
         "order_period": "2034-01",
@@ -1018,7 +1018,14 @@
       "unit": "т",
       "rationale_ru": "оперативный буфер сверх 45-дневного резерва (внутригодовая неравномерность, месячная дискретизация)",
       "scope": "inventory_policy"
+    },
+    {
+      "id": "TD-WP2-W2-FINAL",
+      "value": "S10 ISRU base",
+      "unit": "стратегия",
+      "rationale_ru": "Финальный выбор по сверенным числам ядра: ноль hard-нарушений, лучший совокупный результат BASE/STRESS и CAPEX headroom 370 млн.",
+      "scope": "FINAL"
     }
   ],
-  "version": "wave1-draft-1.0"
+  "version": "wave2-final-1.0"
 }

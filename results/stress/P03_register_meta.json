@@ -1,13 +1,20 @@
 {
- "case_input_sha256": "c2e9004476cbf7e83f9413ec8d4c8bae",
- "repo_commit": "4304dab99333542d1ebf3f5022c50cc9b8be5758",
- "plan_id": "S10",
- "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
- "plan_note": "S10, до FINAL",
+ "case_input_sha256": "51b9a338d831ca860b78dae7460ec5f0",
+ "repo_commit": "f38e4e952472de2a248676e3ddede2792056a11e",
+ "plan_id": "FINAL_BASE+FINAL_STRESS",
+ "plan_files": {
+  "BASE": "results/plans/FINAL_BASE.json",
+  "MANDATORY_STRESS": "results/plans/FINAL_STRESS.json"
+ },
+ "plan_sha256": {
+  "FINAL_BASE.json": "89207ec60899018003e7883d31e7598c75a590c1fb9871328f316dd7a68d3318",
+  "FINAL_STRESS.json": "71090ba3fa91e9751d11b827cfc17a90d209e383682e9225b5eb1d18f98d31ff"
+ },
+ "plan_note": "FINAL (WP2 wave2-final-1.0, стратегия S10 «ISRU base»)",
  "scenario_id": "risk_register",
  "engine_version": "0.3.0-wave3",
  "contract_version": "1.0",
- "generated_at": "2026-09-19T08:04:55+00:00",
+ "generated_at": "2026-09-19T14:54:39+00:00",
  "random_seed": null,
  "deterministic": true,
  "protocol": "P03/register",

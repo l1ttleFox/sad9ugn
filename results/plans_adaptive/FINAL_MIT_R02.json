@@ -1,5 +1,5 @@
 {
-  "plan_id": "S10_MIT_R01",
+  "plan_id": "FINAL_MIT_R02",
   "scenario_id": "BASE",
   "decisions": {
     "supply_orders": [
@@ -339,19 +339,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
-        "period": "2037-11",
-        "ordered_volume_t": 10.0
-      },
-      {
         "source_id": "A",
         "period": "2037-12",
         "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "D",
-        "period": "2037-12",
-        "ordered_volume_t": 0.385
       },
       {
         "source_id": "A",
@@ -359,19 +349,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
-        "period": "2038-01",
-        "ordered_volume_t": 5.357
-      },
-      {
         "source_id": "A",
         "period": "2038-02",
         "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "D",
-        "period": "2038-02",
-        "ordered_volume_t": 5.257
       },
       {
         "source_id": "A",
@@ -379,19 +359,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
-        "period": "2038-03",
-        "ordered_volume_t": 5.254
-      },
-      {
         "source_id": "A",
         "period": "2038-04",
         "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "D",
-        "period": "2038-04",
-        "ordered_volume_t": 5.253
       },
       {
         "source_id": "A",
@@ -399,19 +369,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
-        "period": "2038-05",
-        "ordered_volume_t": 5.253
-      },
-      {
         "source_id": "A",
         "period": "2038-06",
         "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "D",
-        "period": "2038-06",
-        "ordered_volume_t": 5.253
       },
       {
         "source_id": "A",
@@ -419,19 +379,9 @@
         "ordered_volume_t": 15.833
       },
       {
-        "source_id": "D",
-        "period": "2038-07",
-        "ordered_volume_t": 5.253
-      },
-      {
         "source_id": "A",
         "period": "2038-08",
         "ordered_volume_t": 15.833
-      },
-      {
-        "source_id": "D",
-        "period": "2038-08",
-        "ordered_volume_t": 5.253
       },
       {
         "source_id": "A",
@@ -444,11 +394,6 @@
         "ordered_volume_t": 9.167
       },
       {
-        "source_id": "D",
-        "period": "2038-09",
-        "ordered_volume_t": 5.253
-      },
-      {
         "source_id": "A",
         "period": "2038-10",
         "ordered_volume_t": 15.833
@@ -457,11 +402,6 @@
         "source_id": "B",
         "period": "2038-10",
         "ordered_volume_t": 9.167
-      },
-      {
-        "source_id": "D",
-        "period": "2038-10",
-        "ordered_volume_t": 5.253
       },
       {
         "source_id": "A",
@@ -766,62 +706,47 @@
       {
         "source_id": "B",
         "period": "2037-09",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 5.2847
       },
       {
         "source_id": "B",
         "period": "2037-10",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 3.9747
       },
       {
         "source_id": "B",
         "period": "2037-11",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2037-12",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-01",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-02",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-03",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-04",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-05",
-        "ordered_volume_t": 0.6667
-      },
-      {
-        "source_id": "B",
-        "period": "2038-06",
-        "ordered_volume_t": 0.6667
-      },
-      {
-        "source_id": "B",
-        "period": "2038-07",
-        "ordered_volume_t": 0.6667
-      },
-      {
-        "source_id": "B",
-        "period": "2038-08",
-        "ordered_volume_t": 0.6667
+        "ordered_volume_t": 1.7407
       }
     ],
     "capacity_reservations": [
@@ -1018,7 +943,14 @@
       "unit": "т",
       "rationale_ru": "оперативный буфер сверх 45-дневного резерва (внутригодовая неравномерность, месячная дискретизация)",
       "scope": "inventory_policy"
+    },
+    {
+      "id": "TD-WP2-W2-FINAL",
+      "value": "S10 ISRU base",
+      "unit": "стратегия",
+      "rationale_ru": "Финальный выбор по сверенным числам ядра: ноль hard-нарушений, лучший совокупный результат BASE/STRESS и CAPEX headroom 370 млн.",
+      "scope": "FINAL"
     }
   ],
-  "version": "wave1-draft-1.0"
+  "version": "wave2-final-1.0"
 }

@@ -1,5 +1,5 @@
 {
-  "plan_id": "S10_MIT_R03",
+  "plan_id": "FINAL_MIT_R04",
   "scenario_id": "BASE",
   "decisions": {
     "supply_orders": [
@@ -765,63 +765,13 @@
       },
       {
         "source_id": "B",
-        "period": "2037-09",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2037-10",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2037-11",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2037-12",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-01",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-02",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-03",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
         "period": "2038-04",
-        "ordered_volume_t": 0.75
+        "ordered_volume_t": 9.1667
       },
       {
         "source_id": "B",
         "period": "2038-05",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-06",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-07",
-        "ordered_volume_t": 0.75
-      },
-      {
-        "source_id": "B",
-        "period": "2038-08",
-        "ordered_volume_t": 0.75
+        "ordered_volume_t": 8.8333
       }
     ],
     "capacity_reservations": [
@@ -1018,7 +968,14 @@
       "unit": "т",
       "rationale_ru": "оперативный буфер сверх 45-дневного резерва (внутригодовая неравномерность, месячная дискретизация)",
       "scope": "inventory_policy"
+    },
+    {
+      "id": "TD-WP2-W2-FINAL",
+      "value": "S10 ISRU base",
+      "unit": "стратегия",
+      "rationale_ru": "Финальный выбор по сверенным числам ядра: ноль hard-нарушений, лучший совокупный результат BASE/STRESS и CAPEX headroom 370 млн.",
+      "scope": "FINAL"
     }
   ],
-  "version": "wave1-draft-1.0"
+  "version": "wave2-final-1.0"
 }

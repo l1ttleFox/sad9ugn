@@ -1,6 +1,6 @@
 {
   "scenario_id": "TEAM_MMOD",
-  "plan_id": "S10_MIT_R04",
+  "plan_id": "FINAL_MIT_R04",
   "units": {
     "volumes": "t",
     "capacity": "t/year",
@@ -16,7 +16,7 @@
   "timestep": "monthly",
   "discount_rate": 0.1,
   "discount_t0": 2035,
-  "generated_at": "2026-09-19T08:07:09+00:00",
+  "generated_at": "2026-09-19T14:38:41+00:00",
   "random_seed": null,
   "scenario_journal": [
     "[TEAM_MMOD] шок запаса 2038-07: потеря 25% запаса",
