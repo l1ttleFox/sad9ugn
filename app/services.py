@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import csv
-import hashlib
 import importlib
 import tempfile
 from dataclasses import asdict, is_dataclass
@@ -23,10 +22,18 @@ ROOT = Path(__file__).resolve().parents[1]
 USE_ENGINE = True  # При наличии опубликованного src/engine используется ядро; иначе демо-моки.
 EXPORT_TABLES = ("yearly_balance", "source_schedule", "inventory_trace",
                  "financial_breakdown", "constraint_checks", "risk_register")
+TEAM_SCENARIO_DIRS = (
+    ROOT / "configs" / "team",
+    ROOT / "ai_workstreams" / "WP3_stress_risk" / "configs" / "team",
+)
 
 
 def available_scenarios() -> tuple[str, ...]:
-    team = tuple(p.stem for p in (ROOT / "configs" / "team").glob("TEAM_*.yaml"))
+    team = tuple(dict.fromkeys(
+        path.stem
+        for directory in TEAM_SCENARIO_DIRS
+        for path in sorted(directory.glob("TEAM_*.yaml"))
+    ))
     base = ("BASE", "MANDATORY_STRESS") if engine_available() else SCENARIOS
     return base + tuple(x for x in team if x not in base)
 
@@ -134,7 +141,11 @@ def _scenario_path(scenario_id: str) -> Path:
         return ROOT / "configs" / "base.yaml"
     if scenario_id == "MANDATORY_STRESS":
         return ROOT / "configs" / "mandatory_stress.yaml"
-    return ROOT / "configs" / "team" / f"{scenario_id}.yaml"
+    for directory in TEAM_SCENARIO_DIRS:
+        path = directory / f"{scenario_id}.yaml"
+        if path.exists():
+            return path
+    raise ValueError(f"Сценарий {scenario_id}: файл конфигурации TEAM_* не найден.")
 
 
 @lru_cache(maxsize=1)
@@ -151,7 +162,11 @@ def _run_core_cached(scenario_id: str, plan_json: str):
         path = Path(folder) / "plan.json"
         path.write_text(plan_json, encoding="utf-8")
         core_plan = engine.load_plan(str(path))
-        return engine.run_plan(_load_case_cached(), core_plan, scenario)
+        case = _load_case_cached()
+        if scenario.scenario_parameters:
+            case, adapted_plan = engine.apply_scenario_parameters(case, scenario, core_plan)
+            core_plan = adapted_plan or core_plan
+        return engine.run_plan(case, core_plan, scenario)
 
 
 def _result_dict(result) -> dict:
@@ -170,9 +185,11 @@ def _result_dict(result) -> dict:
         return data
     if not all(key in data for key in ("deliveries", "inventory", "service", "costs", "meta")):
         raise ValueError("RunResult ядра не содержит обязательные разделы контракта.")
-    checks = data.get("constraint_checks")
+    checks = data.get("checks")
     if checks is None:
-        checks = [{**item, "passed": False} for item in data.get("violations", [])]
+        checks = data.get("constraint_checks")
+    if checks is None:
+        raise ValueError("RunResult ядра не содержит полного списка constraint_checks (поле checks).")
     return {"scenario_id": data["scenario_id"], "plan_id": data["plan_id"],
             "monthly_balance": data["inventory"]["monthly_balance"],
             "yearly_balance": data["service"]["yearly_balance"],
@@ -264,6 +281,8 @@ def list_saved_plans() -> list[dict]:
         return []
     found = []
     for path in sorted(directory.glob("*.json")):
+        if path.name.endswith("_contracts.json"):
+            continue
         try:
             plan = load_plan_json(path.read_bytes())
             found.append({"file": path.name, "plan_id": plan["plan_id"],
@@ -273,7 +292,48 @@ def list_saved_plans() -> list[dict]:
     return found
 
 
-def save_plan_to_catalog(plan: dict, name: str) -> str:
+def _safe_plan_stem(name: str) -> str:
+    stem = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "_", name.strip()).strip(" .")
+    return stem[:80] or "plan"
+
+
+def _resolve_catalog_path(filename: str) -> Path:
+    if filename.startswith("wp2::"):
+        directory = (ROOT / "ai_workstreams" / "WP2_strategy_economics" / "plans").resolve()
+        relative = filename.removeprefix("wp2::")
+    else:
+        directory = (ROOT / "results" / "plans").resolve()
+        relative = filename
+    path = (directory / relative).resolve()
+    if path.parent != directory or path.suffix.lower() != ".json":
+        raise ValueError("Имя плана: недопустимый путь к файлу.")
+    return path
+
+
+def contracts_json(plan_id: str, contracts: list[dict]) -> bytes:
+    def json_value(value):
+        if hasattr(value, "item"):
+            try:
+                value = value.item()
+            except (TypeError, ValueError):
+                pass
+        if isinstance(value, float) and not math.isfinite(value):
+            return None
+        if value is None or isinstance(value, (str, int, float, bool)):
+            return value
+        return str(value)
+
+    cleaned = []
+    for row in contracts:
+        cleaned.append({
+            str(key): json_value(value)
+            for key, value in row.items()
+        })
+    payload = {"plan_id": plan_id, "version": "1.0", "contracts": cleaned}
+    return (json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")
+
+
+def save_plan_to_catalog(plan: dict, name: str, contracts: list[dict] | None = None) -> str:
     if not name.strip():
         raise ValueError("Имя сохранения: укажите название плана.")
     prepared = deepcopy(plan)
@@ -281,25 +341,92 @@ def save_plan_to_catalog(plan: dict, name: str) -> str:
     payload = save_plan_json(prepared)
     directory = ROOT / "results" / "plans"
     directory.mkdir(parents=True, exist_ok=True)
-    safe_stem = re.sub(r"[^A-Za-z0-9_-]", "_", name.strip()).strip("_")[:48] or "plan"
-    digest = hashlib.sha256(name.strip().encode("utf-8")).hexdigest()[:8]
-    path = directory / f"{safe_stem}_{digest}.json"
-    path.write_bytes(payload)
+    safe_stem = _safe_plan_stem(name)
+    path = directory / f"{safe_stem}.json"
+    if engine_available():
+        engine = importlib.import_module("src.engine")
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / "plan.json"
+            source.write_bytes(payload)
+            engine.save_plan(engine.load_plan(str(source)), str(path))
+    else:
+        path.write_bytes(payload)
+    if contracts is not None:
+        (directory / f"{safe_stem}_contracts.json").write_bytes(
+            contracts_json(prepared["plan_id"], contracts)
+        )
     return path.name
 
 
 def load_plan_from_catalog(filename: str) -> dict:
-    directory = (ROOT / "results" / "plans").resolve()
-    path = (directory / filename).resolve()
-    if path.parent != directory or path.suffix.lower() != ".json":
-        raise ValueError("Имя плана: недопустимый путь к файлу.")
+    path = _resolve_catalog_path(filename)
     if not path.exists():
         raise ValueError(f"Файл плана {filename} не найден.")
+    if engine_available():
+        engine = importlib.import_module("src.engine")
+        return asdict(engine.load_saved_plan(str(path)))
     return load_plan_json(path.read_bytes())
 
 
+def load_contracts_from_catalog(filename: str) -> list[dict]:
+    path = _resolve_catalog_path(filename)
+    if filename.startswith("wp2::"):
+        return []
+    contracts_path = path.with_name(f"{path.stem}_contracts.json")
+    if not contracts_path.exists():
+        return []
+    try:
+        payload = json.loads(contracts_path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"Реестр договоров {contracts_path.name}: неверный JSON ({exc}).") from exc
+    rows = payload.get("contracts") if isinstance(payload, dict) else None
+    if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
+        raise ValueError(f"Реестр договоров {contracts_path.name}: поле contracts должно быть списком объектов.")
+    return rows
+
+
 def final_plan_files() -> list[dict]:
-    return [item for item in list_saved_plans() if "FINAL" in item["plan_id"].upper()]
+    finals = [
+        {
+            **item,
+            "label": (
+                f"FINAL STRESS — {item['plan_id']}"
+                if item["scenario_id"] == "MANDATORY_STRESS"
+                else f"FINAL BASE — {item['plan_id']}"
+            ),
+        }
+        for item in list_saved_plans()
+        if "FINAL" in item["plan_id"].upper() or "FINAL" in item["file"].upper()
+    ]
+    if finals:
+        return finals
+    wp2_dir = ROOT / "ai_workstreams" / "WP2_strategy_economics" / "plans"
+    candidates = sorted(wp2_dir.glob("*FINAL*.json"))
+    fallback = False
+    if not candidates and (wp2_dir / "S10.json").exists():
+        candidates = [wp2_dir / "S10.json"]
+        fallback = True
+    found = []
+    for path in candidates:
+        try:
+            plan = load_plan_json(path.read_bytes())
+        except ValueError:
+            continue
+        found.append({
+            "file": f"wp2::{path.name}",
+            "plan_id": plan["plan_id"],
+            "scenario_id": plan["scenario_id"],
+            "label": (
+                f"{plan['plan_id']} (до публикации FINAL)"
+                if fallback
+                else (
+                    f"FINAL STRESS — {plan['plan_id']}"
+                    if plan["scenario_id"] == "MANDATORY_STRESS"
+                    else f"FINAL BASE — {plan['plan_id']}"
+                )
+            ),
+        })
+    return found
 
 
 def apply_decision_rows(plan: dict, section: str, rows: list[dict]) -> dict:

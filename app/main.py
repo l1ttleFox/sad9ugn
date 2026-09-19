@@ -8,8 +8,9 @@ import pandas as pd
 import streamlit as st
 
 from app.services import (apply_decision_rows, available_scenarios, chart_thresholds, clear_result_cache,
-                           constraint_catalog, default_plan, engine_available, final_plan_files,
-                           list_saved_plans, load_plan_from_catalog, save_plan_to_catalog,
+                           constraint_catalog, contracts_json, default_plan, engine_available, final_plan_files,
+                           list_saved_plans, load_contracts_from_catalog, load_plan_from_catalog,
+                           save_plan_to_catalog,
                            export_core_archive, geo_effect, run_geo_scenario,
                       export_csv_zip, get_run_result, load_plan_json,
                       save_plan_json, source_catalog, storage_catalog, validate_plan,
@@ -21,6 +22,10 @@ st.set_page_config(page_title="Топливный космоконтур 2035", 
 SCENARIO_LABELS = {"BASE": "Базовый", "MANDATORY_STRESS": "Обязательный стресс",
                    "TEAM_RESEARCH": "Исследовательский (синтетический)"}
 PAGES = ("Обзор", "Графики", "План и контракты", "Ограничения", "Сценарии", "Риски", "Сохранение")
+CONTRACT_COLUMNS = [
+    "Контрагент", "Канал", "Объём, т", "Начало", "Конец", "Срок поставки",
+    "Резервирование, т/год", "TOP, доля", "Оплата", "Правила пересмотра",
+]
 
 
 def frame(rows: list[dict]) -> pd.DataFrame:
@@ -40,7 +45,9 @@ def metric(label: str, value: float, unit: str, fmt: str = ",.1f") -> None:
 
 def overview(result: dict) -> None:
     st.header("Обзор")
-    st.caption(f"Сценарий: {SCENARIO_LABELS.get(result['scenario_id'], result['scenario_id'])} · расчёт: {result['meta']['engine_version']} · все числа синтетические")
+    mode = "расчёт ядра" if result["meta"]["engine_version"] != "MOCK" else "синтетический демо-набор"
+    st.caption(f"Сценарий: {SCENARIO_LABELS.get(result['scenario_id'], result['scenario_id'])} · "
+               f"версия: {result['meta']['engine_version']} · {mode}")
     years = result["yearly_balance"]
     summary = overview_summary(result)
     cols = st.columns(4)
@@ -61,11 +68,16 @@ def overview(result: dict) -> None:
 
 def graphs(result: dict, base: dict, stress: dict) -> None:
     st.header("Графики")
-    st.caption("Синтетические показатели; пороги и ёмкости подписаны в единицах CASE_INPUT.")
+    st.caption("Показатели текущего расчёта; пороги и ёмкости подписаны в единицах CASE_INPUT.")
     source = frame(result["source_schedule"])
-    supply = source.pivot_table(index="period", columns="source_id", values="actual_delivery_t", aggfunc="sum")
     st.subheader("Поставки по каналам, т/месяц")
-    st.bar_chart(supply, stack=True)
+    if source.empty:
+        st.info("В плане пока нет заказов или резервирования: график поставок пуст.")
+    else:
+        supply = source.pivot_table(
+            index="period", columns="source_id", values="actual_delivery_t", aggfunc="sum"
+        )
+        st.bar_chart(supply, stack=True)
     balance = frame(result["monthly_balance"]).set_index("period")
     st.subheader("Спрос и обслуженный спрос, т/месяц")
     st.line_chart(balance[["demand_total_t", "served_total_t"]].rename(
@@ -226,7 +238,7 @@ def plan_page(plan: dict) -> None:
         else:
             decisions["emergency_contract"] = None
     st.subheader("Реестр контрактов")
-    st.caption("Рабочий реестр оператора; условия договора хранятся в этой сессии и не входят в plan_format.json.")
+    st.caption("Условия не входят в plan_format.json и сохраняются рядом отдельным файлом <plan_id>_contracts.json.")
     st.session_state.contracts = st.data_editor(st.session_state.contracts, num_rows="dynamic",
         use_container_width=True, hide_index=True, key="contracts_editor")
     st.caption("Мощности и сроки из CASE_INPUT")
@@ -311,26 +323,35 @@ def risks(result: dict) -> None:
     st.header("Риски")
     if result["meta"]["engine_version"] == "MOCK":
         st.warning("Реестр ниже — синтетическая заглушка. Вероятности не оценены.")
-    table(result.get("risk_register", []), {"risk_id": "Риск", "scenario_id": "Сценарий",
-        "consequence_t": "Последствие, т", "consequence_mln": "Последствие, млн у.е.",
-        "consequence_sl": "Изменение SL, доля", "probability_basis_ru": "Основание вероятности"})
+    rows = result.get("risk_register", [])
+    if rows:
+        table(rows, {"risk_id": "Риск", "scenario_id": "Сценарий",
+            "consequence_t": "Последствие, т", "consequence_mln": "Последствие, млн у.е.",
+            "consequence_sl": "Изменение SL, доля", "probability_basis_ru": "Основание вероятности"})
+    else:
+        st.info("В текущем результате реестр рисков пуст. TEAM_*-сценарии доступны для отдельных прогонов.")
 
 
 def persistence(result: dict, plan: dict) -> None:
     st.header("Сохранение")
-    st.caption("План сохраняется в JSON. Выгрузка результата содержит конверт export.schema.json и шесть CSV.")
+    st.caption("План сохраняется по plan_format.json, реестр договоров — отдельным <plan_id>_contracts.json.")
     try:
         payload = save_plan_json(plan)
         st.download_button("Скачать план JSON", payload, file_name=f"{plan['plan_id']}.json",
                            mime="application/json")
+        contract_payload = contracts_json(plan["plan_id"], st.session_state.contracts.to_dict(orient="records"))
+        st.download_button("Скачать реестр договоров JSON", contract_payload,
+                           file_name=f"{plan['plan_id']}_contracts.json", mime="application/json")
     except ValueError as exc:
         st.error(str(exc))
     st.subheader("Каталог сохранённых планов")
     save_name = st.text_input("Сохранить как", value=plan["plan_id"])
     if st.button("Сохранить в каталог"):
         try:
-            filename = save_plan_to_catalog(plan, save_name)
-            st.success(f"План сохранён: {filename}")
+            filename = save_plan_to_catalog(
+                plan, save_name, st.session_state.contracts.to_dict(orient="records")
+            )
+            st.success(f"План и реестр договоров сохранены рядом: {filename}")
         except (ValueError, OSError) as exc:
             st.error(str(exc))
     saved = list_saved_plans()
@@ -340,6 +361,9 @@ def persistence(result: dict, plan: dict) -> None:
         if st.button("Открыть выбранный план"):
             try:
                 st.session_state.plan = load_plan_from_catalog(choice["file"])
+                st.session_state.contracts = pd.DataFrame(
+                    load_contracts_from_catalog(choice["file"]), columns=CONTRACT_COLUMNS
+                )
                 st.session_state.loaded_scenario_id = st.session_state.plan["scenario_id"]
                 st.rerun()
             except (ValueError, OSError) as exc:
@@ -376,9 +400,7 @@ if "plan" not in st.session_state:
 if "loaded_scenario_id" in st.session_state:
     st.session_state.scenario_id = st.session_state.pop("loaded_scenario_id")
 if "contracts" not in st.session_state:
-    st.session_state.contracts = pd.DataFrame(columns=[
-        "Контрагент", "Канал", "Объём, т", "Начало", "Конец", "Срок поставки",
-        "Резервирование, т/год", "TOP, доля", "Оплата", "Правила пересмотра"])
+    st.session_state.contracts = pd.DataFrame(columns=CONTRACT_COLUMNS)
 
 st.sidebar.title("Топливный космоконтур 2035")
 page = st.sidebar.radio("Раздел", PAGES)
@@ -390,11 +412,14 @@ else:
     st.sidebar.warning("🧪 ДЕМО: синтетические данные, не результаты стратегии")
 finals = final_plan_files()
 if finals:
-    st.sidebar.caption("Готовые планы")
+    st.sidebar.caption("Демонстрационные планы")
     for item in finals:
-        if st.sidebar.button(f"Загрузить {item['plan_id']}", key=f"final_{item['file']}"):
+        if st.sidebar.button(f"Загрузить {item['label']}", key=f"final_{item['file']}"):
             try:
                 st.session_state.plan = load_plan_from_catalog(item["file"])
+                st.session_state.contracts = pd.DataFrame(
+                    load_contracts_from_catalog(item["file"]), columns=CONTRACT_COLUMNS
+                )
                 st.session_state.loaded_scenario_id = st.session_state.plan["scenario_id"]
                 st.rerun()
             except (ValueError, OSError) as exc:
