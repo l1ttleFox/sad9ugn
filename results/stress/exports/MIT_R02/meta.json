@@ -1,0 +1,27 @@
+{
+  "scenario_id": "TEAM_ISRU_DELAY",
+  "plan_id": "S10_MIT_R02",
+  "units": {
+    "volumes": "t",
+    "capacity": "t/year",
+    "money": "mln units (constant 2035 prices)",
+    "prices": "mln units/t",
+    "shares": "0..1",
+    "period": "YYYY or YYYY-MM",
+    "holding_cost": "mln units/(t*year)"
+  },
+  "assumptions_reference": "ai_workstreams/00_contracts/units_and_conventions.md",
+  "engine_version": "0.3.0-wave3",
+  "contract_version": "1.0",
+  "timestep": "monthly",
+  "discount_rate": 0.1,
+  "discount_t0": 2035,
+  "generated_at": "2026-09-19T02:27:45+00:00",
+  "random_seed": null,
+  "scenario_journal": [
+    "[TEAM_ISRU_DELAY] ввод канала 'D': 2038-01 → 2039-01",
+    "[TEAM_ISRU_DELAY] фактическая доля канала 'D' (Lunar-ISRU) в 2038: → 0.0",
+    "[TEAM_ISRU_DELAY] фактическая доля канала 'D' (Lunar-ISRU) в 2039: → 1.0",
+    "[TEAM_ISRU_DELAY] фактическая доля канала 'D' (Lunar-ISRU) в 2040: → 1.0"
+  ]
+}

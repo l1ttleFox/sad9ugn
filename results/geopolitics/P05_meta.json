@@ -1,0 +1,26 @@
+{
+ "case_input_sha256": "483b10ba99563d4a52564fc01d46f65b",
+ "repo_commit": "f89c5f431cfbcf6dd273a1e32fd20110e745f79a",
+ "plan_id": "S10",
+ "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
+ "plan_note": "S10, до FINAL",
+ "scenario_id": "P05_geopolitics",
+ "engine_version": "0.3.0-wave3",
+ "contract_version": "1.0",
+ "generated_at": "2026-09-19T02:27:45+00:00",
+ "random_seed": null,
+ "deterministic": true,
+ "protocol": "P05",
+ "restoration_ok": true,
+ "no_double_count_ok": true,
+ "file_hashes_before": {
+  "data\\supply_sources.csv": "311f37a5587fa1617d61681d678ead52f119fbc78a06746029054132961ac8e5",
+  "configs\\base.yaml": "993aa5f878daf6437e6905d74d0649a82b580030ef3a008677b8a33b8f59b04a",
+  "configs\\mandatory_stress.yaml": "60f3f1d3241828b1d34c0583b4b1b38006e9ba42e45119d1010031151a59508b"
+ },
+ "file_hashes_after": {
+  "data\\supply_sources.csv": "311f37a5587fa1617d61681d678ead52f119fbc78a06746029054132961ac8e5",
+  "configs\\base.yaml": "993aa5f878daf6437e6905d74d0649a82b580030ef3a008677b8a33b8f59b04a",
+  "configs\\mandatory_stress.yaml": "60f3f1d3241828b1d34c0583b4b1b38006e9ba42e45119d1010031151a59508b"
+ }
+}

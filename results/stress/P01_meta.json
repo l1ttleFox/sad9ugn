@@ -1,0 +1,22 @@
+{
+ "case_input_sha256": "483b10ba99563d4a52564fc01d46f65b",
+ "repo_commit": "f89c5f431cfbcf6dd273a1e32fd20110e745f79a",
+ "plan_id": "S10",
+ "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
+ "plan_note": "S10, до FINAL",
+ "scenario_id": "BASE+MANDATORY_STRESS+4_factors",
+ "engine_version": "0.3.0-wave3",
+ "contract_version": "1.0",
+ "generated_at": "2026-09-19T02:27:38+00:00",
+ "random_seed": null,
+ "deterministic": true,
+ "protocol": "P01",
+ "factors": {
+  "F1": "demand x1.15 (2038-2040, total+critical)",
+  "F2": "variable price A/B x1.25 (2038-2039)",
+  "F3": "actual delivery share D 0.55/0.75/1.0 (2038/2039/2040)",
+  "F4": "loss ceiling 0.02 from 2038"
+ },
+ "isru_no_reliability_ok": true,
+ "note": "промежуточные факторные сценарии — TEAM_ASSUMPTION (исследовательская декомпозиция CASE_INPUT-стресса); F4 сохраняет id MANDATORY_STRESS, т.к. STRESS_LOSS_LIMIT по constraints.csv применяется только к этому сценарию"
+}

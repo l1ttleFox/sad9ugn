@@ -1,0 +1,56 @@
+{
+ "event_id": "geo_channel_a_tariff",
+ "module": "TEAM_GEO_CHANNEL_A (P05, бонус)",
+ "channel": {
+  "source_id": "A",
+  "name": "Earth-Core"
+ },
+ "price_type": "variable (агрегированная переменная цена канала)",
+ "original_price_mln_per_t": 6.2,
+ "multiplier": 1.2,
+ "new_price_mln_per_t": {
+  "2038": 7.44,
+  "2039": 7.44
+ },
+ "period": "2038-01..2039-12",
+ "application": "variable_price_multiplier сценария — ровно один раз; price-override в scenario_parameters YAML дублирует событие и НЕ применяется (предотвращение двойного начёта; баг конфига — REPORT_wave2 §Баги)",
+ "reservation_rate_changed": false,
+ "capex_changed": false,
+ "other_channels_changed": false,
+ "case_input_version_sha256": {
+  "data\\supply_sources.csv": "311f37a5587fa1617d61681d678ead52f119fbc78a06746029054132961ac8e5",
+  "configs\\base.yaml": "993aa5f878daf6437e6905d74d0649a82b580030ef3a008677b8a33b8f59b04a",
+  "configs\\mandatory_stress.yaml": "60f3f1d3241828b1d34c0583b4b1b38006e9ba42e45119d1010031151a59508b"
+ },
+ "input_diff": {
+  "effective_price_mln_per_t": {
+   "A/2035": {
+    "before": 6.2,
+    "after": 6.2
+   },
+   "A/2036": {
+    "before": 6.2,
+    "after": 6.2
+   },
+   "A/2037": {
+    "before": 6.2,
+    "after": 6.2
+   },
+   "A/2038": {
+    "before": 6.2,
+    "after": 7.44
+   },
+   "A/2039": {
+    "before": 6.2,
+    "after": 7.44
+   },
+   "A/2040": {
+    "before": 6.2,
+    "after": 6.2
+   }
+  }
+ },
+ "plan_id": "S10",
+ "plan_note": "S10, до FINAL",
+ "status": "TEAM_ASSUMPTION (условный бонусный сценарий, не прогноз)"
+}

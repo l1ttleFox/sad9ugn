@@ -1,0 +1,45 @@
+{
+ "base": {
+  "total_mln": 11674.93,
+  "pv_mln": 9297.57,
+  "shortage_t": 49.509,
+  "min_sl_total": 0.7777,
+  "violations": 45
+ },
+ "geo": {
+  "total_mln": 12146.12,
+  "pv_mln": 9635.49,
+  "shortage_t": 49.509,
+  "min_sl_total": 0.7777,
+  "violations": 45,
+  "new_violations_vs_base": 0
+ },
+ "mandatory": {
+  "total_mln": 12503.68,
+  "pv_mln": 9888.66,
+  "shortage_t": 224.6,
+  "min_sl_total": 0.7777
+ },
+ "combined": {
+  "total_mln": 13092.66,
+  "pv_mln": 10311.06,
+  "shortage_t": 224.6,
+  "min_sl_total": 0.7777,
+  "price_A_2038": 9.3,
+  "no_double_count_ok": true
+ },
+ "delta_geo_vs_base": {
+  "d_total_mln": 471.19,
+  "d_pv_mln": 337.92,
+  "d_shortage_t": 0.0,
+  "d_sl": 0.0,
+  "delta_provider_A_revenue_mln": 471.2
+ },
+ "restoration": {
+  "yearly_identical": true,
+  "finance_identical": true,
+  "price_A_restored": 6.2,
+  "file_hashes_identical": true,
+  "ok": true
+ }
+}

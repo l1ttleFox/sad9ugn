@@ -1,0 +1,15 @@
+{
+ "case_input_sha256": "483b10ba99563d4a52564fc01d46f65b",
+ "repo_commit": "f89c5f431cfbcf6dd273a1e32fd20110e745f79a",
+ "plan_id": "S10",
+ "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
+ "plan_note": "S10, до FINAL",
+ "scenario_id": "risk_register",
+ "engine_version": "0.3.0-wave3",
+ "contract_version": "1.0",
+ "generated_at": "2026-09-19T02:27:44+00:00",
+ "random_seed": null,
+ "deterministic": true,
+ "protocol": "P03/register",
+ "note": "вероятности не назначаются: сценарный подход (STRESS_PROTOCOL) — тяжесть без частоты"
+}
