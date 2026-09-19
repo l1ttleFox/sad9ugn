@@ -211,6 +211,11 @@ def calculate_deliveries(case: CaseData, plan: Plan) -> DeliveriesResult:
 
         # Ограничение отбора: заказ в месяце ≤ зарезервированная мощность года / 12.
         rsv_year = reserved.get((source_id, year), 0.0)
+        # Сценарное снижение мощности канала (адаптер D3.4, capacity_override):
+        # физический отбор не может превышать действующую мощность года.
+        cap_override = case.capacity_override.get((source_id, year))
+        if cap_override is not None:
+            rsv_year = min(rsv_year, cap_override)
         start_month = reserve_start_month.get((source_id, year), 1)
         monthly_limit = (rsv_year / 12.0) if month_no >= start_month else 0.0
         effective_volume = volume

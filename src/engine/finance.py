@@ -163,6 +163,10 @@ def _ordered_by_year(case: CaseData, plan: Plan) -> dict[tuple[str, int], float]
         year = HORIZON_START_YEAR + idx // 12
         month_no = idx % 12 + 1
         rsv = reserved.get((source_id, year), 0.0)
+        # Сценарное снижение мощности (адаптер D3.4) — как в deliveries.py.
+        cap_ov = case.capacity_override.get((source_id, year))
+        if cap_ov is not None:
+            rsv = min(rsv, cap_ov)
         sm = start_months.get((source_id, year), 1)
         limit = (rsv / 12.0) if month_no >= sm else 0.0
         effective = min(volume, limit)  # излишек CAPACITY_EXCEEDED не отбирается
