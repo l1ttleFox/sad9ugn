@@ -1,113 +1,25 @@
 {
  "series_BASE": {
-  "base_signature": [
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-08"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2038-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2038-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-08"
-   ]
-  ],
+  "plan_id": "FINAL_BASE",
+  "control_signature": [],
+  "control_clean": true,
   "broken_nodes": 1320,
   "total_nodes": 1331,
+  "feasible": {
+   "feasible_nodes": 11,
+   "by_demand": [
+    1.0
+   ],
+   "by_share": [
+    1.0
+   ],
+   "price_is_breaking_axis": false
+  },
   "min_norm": 1.0,
   "min_nodes": [
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.0,
     "priceA_mult": 1.0,
     "shareD": 0.9,
@@ -120,6 +32,7 @@
    },
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.0,
     "priceA_mult": 1.05,
     "shareD": 0.9,
@@ -132,6 +45,7 @@
    },
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
@@ -140,10 +54,11 @@
     "new_violations": 4,
     "first_new_rules": "RESERVE_45D",
     "min_sl_total": 0.9709,
-    "shortage_t": 11.91
+    "shortage_t": 11.9
    },
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 0.9,
@@ -152,10 +67,11 @@
     "new_violations": 5,
     "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
     "min_sl_total": 0.9293,
-    "shortage_t": 34.01
+    "shortage_t": 34.0
    },
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.05,
     "shareD": 1.0,
@@ -164,10 +80,11 @@
     "new_violations": 4,
     "first_new_rules": "RESERVE_45D",
     "min_sl_total": 0.9709,
-    "shortage_t": 11.91
+    "shortage_t": 11.9
    },
    {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.05,
     "shareD": 0.9,
@@ -176,12 +93,13 @@
     "new_violations": 5,
     "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
     "min_sl_total": 0.9293,
-    "shortage_t": 34.01
+    "shortage_t": 34.0
    }
   ],
   "first_by_rule": {
    "RESERVE_45D": {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.0,
     "priceA_mult": 1.0,
     "shareD": 0.9,
@@ -194,6 +112,7 @@
    },
    "BASE_TOTAL_SERVICE": {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 0.9,
@@ -202,10 +121,11 @@
     "new_violations": 5,
     "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
     "min_sl_total": 0.9293,
-    "shortage_t": 34.01
+    "shortage_t": 34.0
    },
    "BASE_CRITICAL_SERVICE": {
     "series": "BASE",
+    "plan_id": "FINAL_BASE",
     "demand_mult": 1.3,
     "priceA_mult": 1.0,
     "shareD": 0.4,
@@ -214,247 +134,124 @@
     "new_violations": 13,
     "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
     "min_sl_total": 0.6582,
-    "shortage_t": 492.03
+    "shortage_t": 492.02
    }
   }
  },
  "series_MANDATORY_STRESS": {
-  "base_signature": [
-   [
-    "BASE_TOTAL_SERVICE",
-    "2038"
-   ],
-   [
-    "BASE_TOTAL_SERVICE",
-    "2039"
-   ],
-   [
-    "BASE_TOTAL_SERVICE",
-    "2040"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-08"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2035-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2038-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2038-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2039-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2040-08"
-   ],
-   [
-    "RESERVE_45D",
-    "2039"
-   ],
-   [
-    "RESERVE_45D",
-    "2040"
-   ]
-  ],
-  "broken_nodes": 1320,
+  "plan_id": "FINAL_STRESS",
+  "control_signature": [],
+  "control_clean": true,
+  "broken_nodes": 1298,
   "total_nodes": 1331,
+  "feasible": {
+   "feasible_nodes": 33,
+   "by_demand": [
+    1.0
+   ],
+   "by_share": [
+    1.0,
+    0.9,
+    0.8
+   ],
+   "price_is_breaking_axis": false
+  },
   "min_norm": 1.0,
   "min_nodes": [
    {
     "series": "MANDATORY_STRESS",
-    "demand_mult": 1.0,
-    "priceA_mult": 1.0,
-    "shareD": 0.9,
-    "norm": 1.0,
-    "broken": "true",
-    "new_violations": 0,
-    "first_new_rules": "",
-    "min_sl_total": 0.8485,
-    "shortage_t": 140.07
-   },
-   {
-    "series": "MANDATORY_STRESS",
-    "demand_mult": 1.0,
-    "priceA_mult": 1.05,
-    "shareD": 0.9,
-    "norm": 1.0,
-    "broken": "true",
-    "new_violations": 0,
-    "first_new_rules": "",
-    "min_sl_total": 0.8485,
-    "shortage_t": 140.07
-   },
-   {
-    "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 2,
-    "first_new_rules": "RESERVE_45D",
-    "min_sl_total": 0.8082,
-    "shortage_t": 207.4
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.895,
+    "shortage_t": 49.46
    },
    {
     "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 2,
-    "first_new_rules": "RESERVE_45D",
-    "min_sl_total": 0.8081,
-    "shortage_t": 216.77
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.8698,
+    "shortage_t": 61.32
    },
    {
     "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.05,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 2,
-    "first_new_rules": "RESERVE_45D",
-    "min_sl_total": 0.8082,
-    "shortage_t": 207.4
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.895,
+    "shortage_t": 49.46
    },
    {
     "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.05,
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 2,
-    "first_new_rules": "RESERVE_45D",
-    "min_sl_total": 0.8081,
-    "shortage_t": 216.77
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.8698,
+    "shortage_t": 61.32
    }
   ],
   "first_by_rule": {
-   "RESERVE_45D": {
+   "BASE_TOTAL_SERVICE": {
     "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 2,
-    "first_new_rules": "RESERVE_45D",
-    "min_sl_total": 0.8082,
-    "shortage_t": 207.4
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.895,
+    "shortage_t": 49.46
+   },
+   "RESERVE_45D": {
+    "series": "MANDATORY_STRESS",
+    "plan_id": "FINAL_STRESS",
+    "demand_mult": 1.05,
+    "priceA_mult": 1.0,
+    "shareD": 1.0,
+    "norm": 1.0,
+    "broken": "true",
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.895,
+    "shortage_t": 49.46
    },
    "BASE_CRITICAL_SERVICE": {
     "series": "MANDATORY_STRESS",
-    "demand_mult": 1.15,
+    "plan_id": "FINAL_STRESS",
+    "demand_mult": 1.25,
     "priceA_mult": 1.0,
-    "shareD": 1.0,
-    "norm": 3.0,
+    "shareD": 0.5,
+    "norm": 5.0,
     "broken": "true",
-    "new_violations": 5,
+    "new_violations": 11,
     "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
-    "min_sl_total": 0.6985,
-    "shortage_t": 360.8
-   },
-   "BASE_TOTAL_SERVICE": {
-    "series": "MANDATORY_STRESS",
-    "demand_mult": 1.15,
-    "priceA_mult": 1.0,
-    "shareD": 1.0,
-    "norm": 3.0,
-    "broken": "true",
-    "new_violations": 5,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
-    "min_sl_total": 0.6985,
-    "shortage_t": 360.8
+    "min_sl_total": 0.6344,
+    "shortage_t": 446.14
    }
   }
- }
+ },
+ "note": "цена A не является ломающей осью: физические лимиты (SL, резерв 45д, CAPEX, мощность) от цены не зависят, OPEX-бюджет кейсом не задан — граница по цене отсутствует честно, а не не найдена"
 }

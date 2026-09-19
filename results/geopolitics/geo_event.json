@@ -13,14 +13,15 @@
   "2039": 7.44
  },
  "period": "2038-01..2039-12",
- "application": "variable_price_multiplier сценария — ровно один раз; price-override в scenario_parameters YAML дублирует событие и НЕ применяется (предотвращение двойного начёта; баг конфига — REPORT_wave2 §Баги)",
+ "application": "variable_price_multiplier сценария — ровно один раз (D8.4: дублирующий плоский price override удалён из YAML оркестратором; scenario_parameters содержит только скалярную метадату `event:`, адаптер D3.4 журналирует её как не-override)",
+ "single_application_ok": true,
  "reservation_rate_changed": false,
  "capex_changed": false,
  "other_channels_changed": false,
  "case_input_version_sha256": {
-  "data\\supply_sources.csv": "182139c4870402024f540d0f010b4396db2fad77bf5a35449e04cbe584ef0977",
-  "configs\\base.yaml": "f16f46e3b291365051543f7ef9874f4ed5a295beb589af1c095e78b706bcac3a",
-  "configs\\mandatory_stress.yaml": "312b097486d7940c92f70f9180b5d32141d27f1a9a7294f166f6bfeb5ca6a7f7"
+  "data/supply_sources.csv": "182139c4870402024f540d0f010b4396db2fad77bf5a35449e04cbe584ef0977",
+  "configs/base.yaml": "f16f46e3b291365051543f7ef9874f4ed5a295beb589af1c095e78b706bcac3a",
+  "configs/mandatory_stress.yaml": "312b097486d7940c92f70f9180b5d32141d27f1a9a7294f166f6bfeb5ca6a7f7"
  },
  "input_diff": {
   "effective_price_mln_per_t": {
@@ -50,7 +51,8 @@
    }
   }
  },
- "plan_id": "S10",
- "plan_note": "S10, до FINAL",
+ "plan_id": "FINAL_BASE",
+ "plan_note": "FINAL (WP2 wave2-final-1.0, стратегия S10)",
+ "combined_plan_id": "FINAL_STRESS",
  "status": "TEAM_ASSUMPTION (условный бонусный сценарий, не прогноз)"
 }

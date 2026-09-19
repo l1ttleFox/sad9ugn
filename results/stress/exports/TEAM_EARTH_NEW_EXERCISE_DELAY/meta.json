@@ -1,6 +1,6 @@
 {
   "scenario_id": "TEAM_EARTH_NEW_EXERCISE_DELAY",
-  "plan_id": "S10",
+  "plan_id": "FINAL_BASE",
   "units": {
     "volumes": "t",
     "capacity": "t/year",
@@ -16,9 +16,9 @@
   "timestep": "monthly",
   "discount_rate": 0.1,
   "discount_t0": 2035,
-  "generated_at": "2026-09-19T08:07:09+00:00",
+  "generated_at": "2026-09-19T14:38:41+00:00",
   "random_seed": null,
   "scenario_journal": [
-    "[TEAM_EARTH_NEW_EXERCISE_DELAY] override 'plan_investment_shift': в плане 'S10' нет инвестиции 'EARTH_NEW' с действием 'exercise_option' — не применён (no-op)"
+    "[TEAM_EARTH_NEW_EXERCISE_DELAY] override 'plan_investment_shift': в плане 'FINAL_BASE' нет инвестиции 'EARTH_NEW' с действием 'exercise_option' — не применён (no-op)"
   ]
 }

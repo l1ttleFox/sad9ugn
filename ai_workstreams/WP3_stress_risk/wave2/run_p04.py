@@ -1,27 +1,34 @@
-"""P04 — reverse stress: grid-поиск ломающей комбинации
+"""P04 — reverse stress на FINAL-планах: grid-поиск ломающей комбинации
 (множитель спроса × множитель цены A × фактическая доля D).
 
 Сетка (протокол P04): спрос 1.00–1.50 шаг 0.05 (общий и критический
 одновременно, D3.1); цена A 1.00–1.50 шаг 0.05; доля D 1.00–0.00 шаг 0.10
-(2038–2040). Полный 3D-перебор 11×11×11 = 1331 узел (~2 с на ядре).
+(2038–2040). Полный 3D-перебор 11×11×11 = 1331 узел на серию.
+
+Серии (отдельно, REFRESH п.4):
+  BASE — фиксированный FINAL_BASE, контроль BASE (0 hard-нарушений, SL=1.0);
+  MANDATORY_STRESS — фиксированный FINAL_STRESS, контроль mandatory
+  (0 hard-нарушений, SL=1.0): дополнительные множители применяются ПОВЕРХ
+  CASE_INPUT-параметров mandatory (спрос 2038–2040 ×1.15×dm, цены A/B
+  2038–39 ×1.25×pm, доля D = min(0.55/0.75/1.0, ds)).
 
 Критерий «сломан»: появление НОВОГО нарушения (rule_id, period) сверх
-BASE-подписи плана S10 ИЛИ min SL_total ниже BASE. Минимальная комбинация —
-по норме max(|Δdemand|/0.05, |Δprice|/0.05, |Δshare|/0.10); показываем все
-узлы, равные минимуму. Норма — способ упорядочения сетки, не вероятность.
+подписи контроля ИЛИ min SL_total ниже контроля. Цена НЕ считается
+физическим триггером: если ограничение зависит только от расходов, а
+OPEX-бюджет кейсом не задан, ломающей оси по цене нет (фиксируем честно).
 
-Серия на MANDATORY_STRESS — отдельная (явное имя): те же оси поверх
-параметров mandatory (не подменяя их): множители спроса/цены A применяются
-ДОПОЛНИТЕЛЬНО к CASE_INPUT-множителям mandatory (2038+ спрос ×1.15×dm,
-цены A/B 2038–39 ×1.25×pm), доля D 2038/2039 = min(0.55/0.75, ds).
+Минимальная комбинация — по норме max(|Δdemand|/0.05, |Δprice|/0.05,
+|Δshare|/0.10); показываем все узлы, равные минимуму. Норма — способ
+упорядочения сетки, не вероятность.
 
 Выход: results/stress/P04_grid_base.csv, P04_grid_mandatory.csv,
-P04_summary.md.
+P04_summary.json, P04_meta.json.
 """
 
 from __future__ import annotations
 
 import os
+import sys
 
 from wp3lib import (
     RESULTS,
@@ -33,6 +40,7 @@ from wp3lib import (
     min_sl_total,
     run_plan,
     shortage_of,
+    stress_plan,
     violation_signature,
     write_csv,
     write_json,
@@ -68,7 +76,7 @@ def make_scenario_mandatory(dm: float, pm: float, ds: float) -> Scenario:
     """Поверх MANDATORY_STRESS: дополнительные множители × CASE_INPUT.
 
     Спрос 2038–2040: 1.15×dm (2035–2037: dm — сетка исследует и ранние годы).
-    Цена A 2038–2039: 1.25×pm, 2040: pm; B: как mandatory (1.25 2038–39).
+    Цена A 2038–2039: 1.25×pm, прочие годы: pm; B: как mandatory (1.25 2038–39).
     Доля D: min(CASE_INPUT 0.55/0.75/1.0, ds) — дополнительный шок не может
     увеличить поставку выше mandatory-доли (исследуем ухудшение).
     """
@@ -97,9 +105,8 @@ def make_scenario_mandatory(dm: float, pm: float, ds: float) -> Scenario:
     )
 
 
-def scan(series: str, make_sc, base_sig, base_sl) -> list[dict]:
+def scan(series: str, make_sc, plan, base_sig, base_sl) -> list[dict]:
     case = base_case()
-    plan = base_plan()
     rows = []
     for dm in DEM:
         for pm in PRC:
@@ -110,6 +117,7 @@ def scan(series: str, make_sc, base_sig, base_sl) -> list[dict]:
                 broken = bool(new) or min_sl_total(r) < base_sl - 1e-9
                 rows.append({
                     "series": series,
+                    "plan_id": plan.plan_id,
                     "demand_mult": dm, "priceA_mult": pm, "shareD": ds,
                     "norm": round(norm(dm, pm, ds), 2),
                     "broken": "true" if broken else "false",
@@ -131,20 +139,30 @@ def minima(rows: list[dict]) -> list[dict]:
 
 def main() -> None:
     case = base_case()
-    plan = base_plan()
-    r_base = run_plan(case, plan, base_scenario())
+    plan_base = base_plan()       # FINAL_BASE
+    plan_stress = stress_plan()   # FINAL_STRESS
+
+    r_base = run_plan(case, plan_base, base_scenario())
     base_sig = violation_signature(r_base)
     base_sl = min_sl_total(r_base)
+    if base_sig:
+        print(
+            f"БЛОКЕР: FINAL BASE имеет hard-нарушения {sorted(base_sig)} — "
+            "reverse stress не имеет чистой базы, эскалация WP2.",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
 
-    r_mand = run_plan(case, plan, mandatory_scenario())
+    r_mand = run_plan(case, plan_stress, mandatory_scenario())
     mand_sig = violation_signature(r_mand)
     mand_sl = min_sl_total(r_mand)
 
-    rows_base = scan("BASE", make_scenario_base, base_sig, base_sl)
+    rows_base = scan("BASE", make_scenario_base, plan_base, base_sig, base_sl)
     write_csv(os.path.join(OUT, "P04_grid_base.csv"),
               list(rows_base[0].keys()), rows_base)
 
-    rows_mand = scan("MANDATORY_STRESS", make_scenario_mandatory, mand_sig, mand_sl)
+    rows_mand = scan("MANDATORY_STRESS", make_scenario_mandatory, plan_stress,
+                     mand_sig, mand_sl)
     write_csv(os.path.join(OUT, "P04_grid_mandatory.csv"),
               list(rows_mand[0].keys()), rows_mand)
 
@@ -162,28 +180,54 @@ def main() -> None:
                         out[rule] = r
         return out
 
+    def feasible_summary(rows):
+        ok = [r for r in rows if r["broken"] == "false"]
+        return {
+            "feasible_nodes": len(ok),
+            "by_demand": sorted({r["demand_mult"] for r in ok}),
+            "by_share": sorted({r["shareD"] for r in ok}, reverse=True),
+            "price_is_breaking_axis": any(
+                r["broken"] == "true"
+                and r["first_new_rules"]
+                and r["demand_mult"] == 1.0 and r["shareD"] == 1.0
+                for r in rows
+            ),
+        }
+
     summary = {
         "series_BASE": {
-            "base_signature": sorted(base_sig)[:60],
+            "plan_id": plan_base.plan_id,
+            "control_signature": sorted(base_sig)[:60],
+            "control_clean": len(base_sig) == 0,
             "broken_nodes": sum(1 for r in rows_base if r["broken"] == "true"),
             "total_nodes": len(rows_base),
+            "feasible": feasible_summary(rows_base),
             "min_norm": min_base[0]["norm"] if min_base else None,
             "min_nodes": min_base,
             "first_by_rule": {k: v for k, v in first_by_rule(rows_base).items()},
         },
         "series_MANDATORY_STRESS": {
-            "base_signature": sorted(mand_sig)[:60],
+            "plan_id": plan_stress.plan_id,
+            "control_signature": sorted(mand_sig)[:60],
+            "control_clean": len(mand_sig) == 0,
             "broken_nodes": sum(1 for r in rows_mand if r["broken"] == "true"),
             "total_nodes": len(rows_mand),
+            "feasible": feasible_summary(rows_mand),
             "min_norm": min_mand[0]["norm"] if min_mand else None,
             "min_nodes": min_mand,
             "first_by_rule": {k: v for k, v in first_by_rule(rows_mand).items()},
         },
+        "note": "цена A не является ломающей осью: физические лимиты (SL, "
+                "резерв 45д, CAPEX, мощность) от цены не зависят, OPEX-бюджет "
+                "кейсом не задан — граница по цене отсутствует честно, а не "
+                "не найдена",
     }
     write_json(os.path.join(OUT, "P04_summary.json"), summary)
     write_json(os.path.join(OUT, "P04_meta.json"), meta_block(
-        "P04_reverse_stress_grid", plan.plan_id,
+        "P04_reverse_stress_grid", f"{plan_base.plan_id}+{plan_stress.plan_id}",
         extra={"protocol": "P04",
+               "series": {"BASE": plan_base.plan_id,
+                          "MANDATORY_STRESS": plan_stress.plan_id},
                "axes": {"demand": "1.00-1.50 step 0.05 (total+critical)",
                         "priceA": "1.00-1.50 step 0.05",
                         "shareD": "1.00-0.00 step 0.10 (2038-2040)"},
@@ -191,15 +235,16 @@ def main() -> None:
                "broken_criterion": "новое (rule_id, period) сверх подписи "
                                      "контроля ИЛИ min SL_total ниже контроля"}))
 
-    print(f"BASE серия: сломано {summary['series_BASE']['broken_nodes']}"
-          f"/{len(rows_base)}; минимальная норма {summary['series_BASE']['min_norm']}")
+    print(f"BASE серия ({plan_base.plan_id}): сломано "
+          f"{summary['series_BASE']['broken_nodes']}/{len(rows_base)}; "
+          f"минимальная норма {summary['series_BASE']['min_norm']}")
     for r in min_base[:12]:
         print(f"  d={r['demand_mult']} p={r['priceA_mult']} s={r['shareD']} "
               f"→ {r['first_new_rules']} (SL={r['min_sl_total']}, "
               f"short={r['shortage_t']} т)")
-    print(f"MANDATORY серия: сломано {summary['series_MANDATORY_STRESS']['broken_nodes']}"
-          f"/{len(rows_mand)}; минимальная норма "
-          f"{summary['series_MANDATORY_STRESS']['min_norm']}")
+    print(f"MANDATORY серия ({plan_stress.plan_id}): сломано "
+          f"{summary['series_MANDATORY_STRESS']['broken_nodes']}/{len(rows_mand)}; "
+          f"минимальная норма {summary['series_MANDATORY_STRESS']['min_norm']}")
     for r in min_mand[:12]:
         print(f"  d={r['demand_mult']} p={r['priceA_mult']} s={r['shareD']} "
               f"→ {r['first_new_rules']} (SL={r['min_sl_total']}, "

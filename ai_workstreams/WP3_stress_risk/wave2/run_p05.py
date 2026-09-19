@@ -1,30 +1,31 @@
-"""P05 — геополитический бонус: TEAM_GEO_CHANNEL_A как работающий модуль.
+"""P05 — геополитический бонус на FINAL-планах: TEAM_GEO_CHANNEL_A как
+работающий модуль.
 
-Цикл модуля (prompt_wave2.md п.5, протокол P05):
+Цикл модуля (prompt_wave2.md п.5, протокол P05, REFRESH п.6):
   1. event: коэффициент 1.20 к агрегированной переменной цене канала A
      (6.2 → 7.44 млн/т) в 2038–2039 — применяется ОДИН раз через
-     variable_price_multiplier (price-override в scenario_parameters
-     дублирует событие и игнорируется — см. wp3lib: предотвращение
-     двойного начёта, баг конфигов зафиксирован в REPORT_wave2);
-  2. пересчёт того же плана S10 → Δ расходов/PV/SL/нарушений;
+     variable_price_multiplier (D8.4: дублирующий плоский price override
+     удалён из YAML оркестратором; в scenario_parameters остаётся только
+     скалярная метадата `event:`, адаптер journals её как не-override);
+  2. пересчёт того же плана FINAL_BASE → Δ расходов/PV/SL/нарушений;
   3. экспорт параметров события (results/geopolitics/geo_event.json):
      event_id, канал, исходная цена, коэффициент, новые цены по годам,
      период, версия данных, input diff;
   4. восстановление контрольных цен: повторный прогон BASE после события
-     = исходные числа (побайтово) + цена A снова 6.2 + sha256 исходных
-     файлов data/supply_sources.csv и configs/*.yaml не изменился;
+     = исходные числа (побайтово по yearly_balance/financial_breakdown)
+     + цена A снова 6.2 + sha256 исходных файлов data/supply_sources.csv
+     и configs/*.yaml не изменился;
   5. стороны эффекта: заказчик (ΔPV), провайдер A (Δ выручки канала A).
 
 Combined: TEAM_GEO_A_MANDATORY_COMBINED — явно объявленный отдельный
 сценарий (P05 §Сочетание): спрос/D/потолок как в mandatory; цена A
 2038–2039 = 6.2 × 1.25 × 1.20 = 9.30 (ровно один раз каждый шок),
-B = 8.9 × 1.25. Правило «эффект не начисляется дважды» проверяется
-арифметикой множителей и отсутствием двойного применения в журнале.
+B = 8.9 × 1.25. Прогоняется на FINAL_STRESS (план стресс-среды).
+Правило «эффект не начисляется дважды» проверяется арифметикой
+множителей и сравнением с mandatory/geo по отдельности.
 
 Выход: results/geopolitics/*.csv/json.
 """
-
-from __future__ import annotations
 
 import hashlib
 import os
@@ -42,6 +43,7 @@ from wp3lib import (
     pv_of,
     run_plan,
     shortage_of,
+    stress_plan,
     team_scenario,
     total_cost_of,
     violation_signature,
@@ -61,8 +63,11 @@ FILES_TO_HASH = [
 
 
 def file_hashes() -> dict[str, str]:
+    # нормализация LF/CRLF (D8.5): хеш защищает содержимое, а не платформенный
+    # формат окончаний строк
     return {
-        os.path.relpath(p, REPO): hashlib.sha256(open(p, "rb").read()).hexdigest()
+        os.path.relpath(p, REPO).replace("\\", "/"):
+            hashlib.sha256(open(p, "rb").read().replace(b"\r\n", b"\n")).hexdigest()
         for p in FILES_TO_HASH
     }
 
@@ -110,24 +115,26 @@ def channel_payments(r, plan, source_id: str) -> dict[int, float]:
 def main() -> None:
     hashes_before = file_hashes()
     case = base_case()
-    plan = base_plan()
+    plan = base_plan()          # FINAL_BASE
+    plan_s = stress_plan()      # FINAL_STRESS (для combined)
 
     # --- 1. контроль BASE (до события) ---
     r_before = run_plan(case, plan, base_scenario())
     price_a_before = case.source("A").variable_cost_mln_per_t
 
-    # --- 2. гео-событие ---
+    # --- 2. гео-событие (ОДИН раз через variable_price_multiplier, D8.4) ---
     sc_geo = team_scenario("TEAM_GEO_CHANNEL_A")
-    # однократное применение: только variable_price_multiplier (2038–2039 ×1.2)
-    r_geo = run_plan(case, plan, Scenario(
-        scenario_id=sc_geo.scenario_id,
-        status=sc_geo.status,
-        label_ru=sc_geo.label_ru,
-        variable_price_multiplier=sc_geo.variable_price_multiplier,
-        notes=list(sc_geo.notes),
-    ))
+    from wp3lib import run_team
+    r_geo, _, journal_geo = run_team(case, plan, sc_geo)
     price_a_eff = {y: r_geo.case.effective_price_mln_per_t[("A", y)]
                    for y in range(2035, 2041)}
+    # однократность: 6.2 × 1.2 = 7.44, не 8.928
+    single_application_ok = (
+        abs(price_a_eff[2038] - 6.2 * 1.2) < 1e-9
+        and abs(price_a_eff[2039] - 6.2 * 1.2) < 1e-9
+        and abs(price_a_eff[2037] - 6.2) < 1e-9
+        and abs(price_a_eff[2040] - 6.2) < 1e-9
+    )
 
     # --- 3. восстановление контрольных цен ---
     r_restored = run_plan(base_case(), base_plan(), base_scenario())
@@ -160,7 +167,7 @@ def main() -> None:
     delta_provider = round(sum(p["delta_provider_A_mln"] for p in parties), 2)
     delta_pv = round(pv_of(r_geo) - pv_of(r_before), 2)
 
-    # --- 5. combined (явно объявленный, отдельный сценарий) ---
+    # --- 5. combined (явно объявленный, отдельный сценарий, FINAL_STRESS) ---
     sc_m = mandatory_scenario()
     combined = Scenario(
         scenario_id="TEAM_GEO_A_MANDATORY_COMBINED",
@@ -176,11 +183,12 @@ def main() -> None:
         notes=[
             "COMBINED: mandatory ×1.25 и geo ×1.20 применены к цене A 2038-2039 "
             "РОВНО ПО ОДНОМУ РАЗУ (6.2×1.25×1.20=9.30); B только ×1.25; "
-            "спрос/D/потолок — из MANDATORY_STRESS (CASE_INPUT, без изменений)",
+            "спрос/D/потолок — из MANDATORY_STRESS (CASE_INPUT, без изменений); "
+            "план — FINAL_STRESS",
         ],
     )
-    r_mand = run_plan(case, plan, sc_m)
-    r_comb = run_plan(case, plan, combined)
+    r_mand = run_plan(case, plan_s, sc_m)
+    r_comb = run_plan(case, plan_s, combined)
 
     # правило «не начисляется дважды»: цена A 2038 = 9.30, не 11.16
     price_ok = abs(r_comb.case.effective_price_mln_per_t[("A", 2038)] - 6.2 * 1.5) < 1e-9
@@ -201,6 +209,7 @@ def main() -> None:
               ["run"] + list(finance_row(r_before)[0].keys()), fin_rows)
 
     summary = {
+        "plans": {"BASE/geo": plan.plan_id, "MANDATORY/combined": plan_s.plan_id},
         "base": {"total_mln": round(total_cost_of(r_before), 2),
                  "pv_mln": round(pv_of(r_before), 2),
                  "shortage_t": round(shortage_of(r_before), 3),
@@ -212,23 +221,26 @@ def main() -> None:
                 "min_sl_total": round(min_sl_total(r_geo), 4),
                 "violations": len(violation_signature(r_geo)),
                 "new_violations_vs_base": len(
-                    violation_signature(r_geo) - violation_signature(r_before))},
+                    violation_signature(r_geo) - violation_signature(r_before)),
+                "single_application_ok": single_application_ok},
         "mandatory": {"total_mln": round(total_cost_of(r_mand), 2),
                       "pv_mln": round(pv_of(r_mand), 2),
                       "shortage_t": round(shortage_of(r_mand), 3),
-                      "min_sl_total": round(min_sl_total(r_mand), 4)},
+                      "min_sl_total": round(min_sl_total(r_mand), 4),
+                      "violations": len(violation_signature(r_mand))},
         "combined": {"total_mln": round(total_cost_of(r_comb), 2),
                      "pv_mln": round(pv_of(r_comb), 2),
                      "shortage_t": round(shortage_of(r_comb), 3),
                      "min_sl_total": round(min_sl_total(r_comb), 4),
+                     "violations": len(violation_signature(r_comb)),
                      "price_A_2038": round(
                          r_comb.case.effective_price_mln_per_t[("A", 2038)], 4),
                      "no_double_count_ok": price_ok},
         "delta_geo_vs_base": {
             "d_total_mln": round(total_cost_of(r_geo) - total_cost_of(r_before), 2),
             "d_pv_mln": delta_pv,
-            "d_shortage_t": 0.0,
-            "d_sl": 0.0,
+            "d_shortage_t": round(shortage_of(r_geo) - shortage_of(r_before), 3),
+            "d_sl": round(min_sl_total(r_geo) - min_sl_total(r_before), 4),
             "delta_provider_A_revenue_mln": delta_provider,
         },
         "restoration": {
@@ -251,10 +263,12 @@ def main() -> None:
         "multiplier": 1.2,
         "new_price_mln_per_t": {"2038": 7.44, "2039": 7.44},
         "period": "2038-01..2039-12",
-        "application": ("variable_price_multiplier сценария — ровно один раз; "
-                        "price-override в scenario_parameters YAML дублирует "
-                        "событие и НЕ применяется (предотвращение двойного "
-                        "начёта; баг конфига — REPORT_wave2 §Баги)"),
+        "application": ("variable_price_multiplier сценария — ровно один раз "
+                        "(D8.4: дублирующий плоский price override удалён из "
+                        "YAML оркестратором; scenario_parameters содержит "
+                        "только скалярную метадату `event:`, адаптер D3.4 "
+                        "журналирует её как не-override)"),
+        "single_application_ok": single_application_ok,
         "reservation_rate_changed": False,
         "capex_changed": False,
         "other_channels_changed": False,
@@ -268,24 +282,28 @@ def main() -> None:
             }
         },
         "plan_id": plan.plan_id,
-        "plan_note": "S10, до FINAL",
+        "plan_note": "FINAL (WP2 wave2-final-1.0, стратегия S10)",
+        "combined_plan_id": plan_s.plan_id,
         "status": "TEAM_ASSUMPTION (условный бонусный сценарий, не прогноз)",
     })
 
     write_json(os.path.join(OUT, "P05_meta.json"), meta_block(
-        "P05_geopolitics", plan.plan_id,
+        "P05_geopolitics", f"{plan.plan_id}+{plan_s.plan_id}",
         extra={"protocol": "P05", "restoration_ok": restoration_ok,
+               "single_application_ok": single_application_ok,
                "no_double_count_ok": price_ok,
                "file_hashes_before": hashes_before,
                "file_hashes_after": hashes_after}))
 
-    print("P05 гео-модуль:")
-    print(f"  BASE: total={summary['base']['total_mln']}, PV={summary['base']['pv_mln']}")
+    print("P05 гео-модуль (FINAL):")
+    print(f"  BASE ({plan.plan_id}): total={summary['base']['total_mln']}, "
+          f"PV={summary['base']['pv_mln']}")
     print(f"  GEO : total={summary['geo']['total_mln']}, PV={summary['geo']['pv_mln']} "
           f"(ΔPV={delta_pv:+.1f} млн, Δпоставщика A={delta_provider:+.1f} млн, "
           f"SL/shortage не меняются, новых нарушений="
-          f"{summary['geo']['new_violations_vs_base']})")
-    print(f"  MAND: total={summary['mandatory']['total_mln']}, "
+          f"{summary['geo']['new_violations_vs_base']}, "
+          f"однократность={single_application_ok})")
+    print(f"  MAND ({plan_s.plan_id}): total={summary['mandatory']['total_mln']}, "
           f"PV={summary['mandatory']['pv_mln']}")
     print(f"  COMB: total={summary['combined']['total_mln']}, "
           f"PV={summary['combined']['pv_mln']}, цена A 2038="

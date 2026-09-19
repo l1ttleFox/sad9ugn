@@ -1,16 +1,22 @@
-"""Общая библиотека WP3 волны 2: загрузка входов, прогон сценариев, утилиты.
+"""Общая библиотека WP3 волны 2 (повторный прогон на FINAL-планах).
 
-Правила (prompt_wave2.md, STRESS_PROTOCOL, решения D3):
+Правила (prompt_wave2.md, STRESS_PROTOCOL, решения D3/D8,
+REFRESH_WP3_AFTER_FINAL.md):
 - ядро, CASE_INPUT (data/**, configs/base.yaml, configs/mandatory_stress.yaml)
-  НЕ изменяются;
-- FINAL-планы WP2 не опубликованы → рабочий план S10.json («на S10, до FINAL»);
-- один и тот же план для BASE и всех исследовательских прогонов (P01 §1);
+  и FINAL-планы WP2 НЕ изменяются;
+- BASE-контроль: results/plans/FINAL_BASE.json (план BASE-среды);
+- MANDATORY_STRESS: results/plans/FINAL_STRESS.json (план стресс-среды —
+  TD-01 demand-chasing пересчитан под стрессовый профиль WP2);
+- фиксированные стресс-исследования (P02, P04) — на НЕИЗМЕННОМ FINAL_BASE
+  (P01/P02 §1: один и тот же план для BASE и исследовательского прогона);
 - TEAM-сценарии — через адаптер ядра apply_scenario_parameters (D3.4);
+  R01 (COMBINED) — единственный сценарий поверх MANDATORY_STRESS,
+  прогоняется на FINAL_STRESS;
 - для R05/R10 (TEAM_PRICE_SPIKE_E / TEAM_GEO_CHANNEL_A) цена применяется
-  ОДИН раз: в YAML событие продублировано (variable_price_multiplier +
-  price-override в scenario_parameters) — одновременное применение обоих
-  блоков даёт двойной начёт (баг конфигов WP3 волны 1, зафиксирован в
-  REPORT_wave2). Используется год-точный блок variable_price_multiplier.
+  ОДИН раз через variable_price_multiplier: двойной плоский price override
+  удалён из YAML решением оркестратора D8.4;
+- INVENTORY_SHOCK_APPLIED — информационное событие (D8.3), не входит
+  в hard-нарушения для ранжирования риска.
 """
 
 from __future__ import annotations
@@ -46,21 +52,27 @@ from engine.models import (  # noqa: E402
 )
 
 DATA_DIR = os.path.join(REPO, "data")
-PLAN_PATH = os.path.join(
-    REPO, "ai_workstreams", "WP2_strategy_economics", "plans", "S10.json"
-)
+PLANS_DIR = os.path.join(REPO, "results", "plans")
+PLAN_PATH = os.path.join(PLANS_DIR, "FINAL_BASE.json")
+PLAN_STRESS_PATH = os.path.join(PLANS_DIR, "FINAL_STRESS.json")
 TEAM_DIR = os.path.join(REPO, "ai_workstreams", "WP3_stress_risk", "configs", "team")
 RESULTS = os.path.join(REPO, "results")
 
-PLAN_LABEL = "S10, до FINAL"
+PLAN_LABEL = "FINAL (WP2 wave2-final-1.0, стратегия S10 «ISRU base»)"
 WORKING_PLAN_NOTE = (
-    "FINAL-планы WP2 (results/plans/FINAL_*.json) на момент расчёта не "
-    "опубликованы — все результаты помечены «на S10, до FINAL»"
+    "Расчёты выполнены на FINAL-планах WP2: BASE-контроль — "
+    "results/plans/FINAL_BASE.json, MANDATORY_STRESS — "
+    "results/plans/FINAL_STRESS.json (стратегия S10; два операционных "
+    "плана одной стратегии под среды BASE и MANDATORY_STRESS)"
 )
 
-# Сценарии-ценовые события: применяем ТОЛЬКО variable_price_multiplier
-# (один раз); price-override в scenario_parameters игнорируем — иначе
-# двойной начёт (см. docstring).
+# Информационные записи, исключаемые из hard-нарушений при ранжировании
+# риска (D8.3): INVENTORY_SHOCK_APPLIED фиксирует факт применения шока,
+# а не нарушение ограничения CASE_INPUT.
+INFO_RULE_IDS = {"INVENTORY_SHOCK_APPLIED"}
+
+# Сценарии-ценовые события: цена применяется ОДИН раз через
+# variable_price_multiplier (D8.4: плоский price-override удалён из YAML).
 PRICE_EVENT_SCENARIOS = {"TEAM_PRICE_SPIKE_E", "TEAM_GEO_CHANNEL_A"}
 
 
@@ -69,7 +81,13 @@ def base_case() -> CaseData:
 
 
 def base_plan() -> Plan:
+    """FINAL_BASE — план BASE-среды (контроль P01/P02/P03/P04/P05)."""
     return load_plan(PLAN_PATH)
+
+
+def stress_plan() -> Plan:
+    """FINAL_STRESS — план стресс-среды (MANDATORY_STRESS, R01 COMBINED)."""
+    return load_plan(PLAN_STRESS_PATH)
 
 
 def base_scenario() -> Scenario:
@@ -89,29 +107,11 @@ def run_team(
 ) -> tuple[RunResult, Optional[Plan], list[str]]:
     """Прогон TEAM-сценария через адаптер ядра D3.4.
 
-    Для ценовых событий (R05/R10) — прогон без scenario_parameters
-    (множитель уже задан год-точным блоком variable_price_multiplier,
-    однократное применение). Возвращает (result, действующий план, журнал).
+    Для ценовых событий (R05/R10) YAML после D8.4 содержит только
+    variable_price_multiplier (scenario_parameters — скалярная метадата
+    `event:`), поэтому прогон идёт штатным run_plan: множитель применяется
+    ровно один раз. Возвращает (result, действующий план, журнал).
     """
-    if scenario.scenario_id in PRICE_EVENT_SCENARIOS:
-        clean = Scenario(
-            scenario_id=scenario.scenario_id,
-            status=scenario.status,
-            label_ru=scenario.label_ru,
-            demand_multiplier=scenario.demand_multiplier,
-            critical_demand_multiplier=scenario.critical_demand_multiplier,
-            variable_price_multiplier=scenario.variable_price_multiplier,
-            actual_delivery_share=scenario.actual_delivery_share,
-            loss_ceiling=scenario.loss_ceiling,
-            notes=list(scenario.notes),
-        )
-        r = run_plan(case, plan, clean)
-        journal = [
-            f"[{scenario.scenario_id}] однократное применение события через "
-            f"variable_price_multiplier (price-override в scenario_parameters "
-            f"проигнорирован: дублирует множитель — предотвращён двойной начёт)"
-        ]
-        return r, plan, journal
     if scenario.scenario_parameters:
         case2, plan2 = apply_scenario_parameters(case, scenario, plan)
         r = run_plan(case2, plan2 or plan, scenario)
@@ -151,14 +151,28 @@ def min_sl_crit(result: RunResult) -> float:
 
 
 def violation_signature(result: RunResult) -> set[tuple[str, str]]:
-    """Множество (rule_id, period) нарушенных проверок из checks."""
-    return {(c.rule_id, c.period) for c in result.checks if not c.passed}
+    """Множество (rule_id, period) нарушенных проверок из checks
+    (без информационных записей INFO_RULE_IDS — D8.3)."""
+    return {
+        (c.rule_id, c.period)
+        for c in result.checks
+        if not c.passed and c.rule_id not in INFO_RULE_IDS
+    }
+
+
+def info_signature(result: RunResult) -> set[tuple[str, str]]:
+    """Информационные записи (INVENTORY_SHOCK_APPLIED и т.п.) отдельно."""
+    return {
+        (c.rule_id, c.period)
+        for c in result.checks
+        if not c.passed and c.rule_id in INFO_RULE_IDS
+    }
 
 
 def new_violations(
     result: RunResult, base: RunResult
 ) -> list[tuple[str, str]]:
-    """НОВЫЕ нарушения относительно базового прогона (сортированы)."""
+    """НОВЫЕ hard-нарушения относительно базового прогона (сортированы)."""
     return sorted(violation_signature(result) - violation_signature(base))
 
 
@@ -179,7 +193,8 @@ def finance_row(result: RunResult) -> list[dict[str, Any]]:
 
 
 # ---------------------------------------------------------------------------
-# Конструирование сценариев и адаптивных планов (копии, CASE_INPUT не меняется)
+# Конструирование сценариев и адаптивных планов (копии, FINAL-планы и
+# CASE_INPUT не меняются)
 # ---------------------------------------------------------------------------
 
 def demand_scenario(sid: str, mult: dict[int, float]) -> Scenario:
@@ -243,6 +258,43 @@ def add_orders(plan: Plan, orders: list[tuple[str, str, float]]) -> Plan:
     return plan
 
 
+def scale_channel_year_orders(
+    plan: Plan, source_id: str, year: int, factor: float
+) -> Plan:
+    """Масштабировать заказы канала за год (копия плана) — для мер вида
+    «срезать недоступный объём A и заместить его B» (R08)."""
+    for o in plan.decisions.supply_orders:
+        if o.source_id == source_id and o.period.startswith(str(year)):
+            o.ordered_volume_t = round(o.ordered_volume_t * factor, 4)
+    return plan
+
+
+def reduce_channel_year_orders(
+    plan: Plan, source_id: str, year: int, cut_t: float
+) -> Plan:
+    """Уменьшить годовые заказы канала на cut_t (пропорционально месяцам)."""
+    total = sum(
+        o.ordered_volume_t for o in plan.decisions.supply_orders
+        if o.source_id == source_id and o.period.startswith(str(year))
+        and o.ordered_volume_t > 0
+    )
+    if total <= 0:
+        return plan
+    factor = max(0.0, (total - cut_t) / total)
+    return scale_channel_year_orders(plan, source_id, year, factor)
+
+
+def remove_channel_year_orders(
+    plan: Plan, source_id: str, year: int
+) -> Plan:
+    """Полностью снять заказы канала за год (недоступный канал — R02)."""
+    plan.decisions.supply_orders = [
+        o for o in plan.decisions.supply_orders
+        if not (o.source_id == source_id and o.period.startswith(str(year)))
+    ]
+    return plan
+
+
 def set_reservation(
     plan: Plan, source_id: str, year: int, capacity: float
 ) -> Plan:
@@ -286,6 +338,13 @@ def _fmt(v: Any) -> str:
     return str(v)
 
 
+def file_sha256(path: str) -> str:
+    import hashlib
+
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
 def meta_block(scenario_id: str, plan_id: str, extra: Optional[dict] = None) -> dict:
     import subprocess
     from datetime import datetime, timezone
@@ -297,7 +356,14 @@ def meta_block(scenario_id: str, plan_id: str, extra: Optional[dict] = None) -> 
         "case_input_sha256": _dir_sha(),
         "repo_commit": sha,
         "plan_id": plan_id,
-        "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
+        "plan_files": {
+            "BASE": "results/plans/FINAL_BASE.json",
+            "MANDATORY_STRESS": "results/plans/FINAL_STRESS.json",
+        },
+        "plan_sha256": {
+            "FINAL_BASE.json": file_sha256(PLAN_PATH),
+            "FINAL_STRESS.json": file_sha256(PLAN_STRESS_PATH),
+        },
         "plan_note": PLAN_LABEL,
         "scenario_id": scenario_id,
         "engine_version": "0.3.0-wave3",
@@ -325,4 +391,5 @@ def _dir_sha() -> str:
         h.update(cfg.encode())
         h.update(open(p, "rb").read())
     h.update(open(PLAN_PATH, "rb").read())
+    h.update(open(PLAN_STRESS_PATH, "rb").read())
     return h.hexdigest()[:32]

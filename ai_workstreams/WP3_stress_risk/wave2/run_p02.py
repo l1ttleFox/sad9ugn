@@ -1,6 +1,6 @@
-"""P02 — чувствительность плана S10 (один план, BASE-контроль).
+"""P02 — чувствительность FINAL-плана (один план FINAL_BASE, BASE-контроль).
 
-Оси (протокол P02 + prompt_wave2.md п.2):
+Оси (протокол P02 + prompt_wave2.md п.2 + REFRESH_WP3_AFTER_FINAL.md п.3):
   1. low/high demand (data/demand.csv; критический спрос — постоянная
      внутригодовая доля, решение D3.1: множитель критического = множитель
      общего);
@@ -9,13 +9,17 @@
      0.55/0.75 — CASE_INPUT только внутри mandatory);
   4. ставка PV 0.05/0.15 (пост-обработка financial_breakdown: физика от
      ставки не зависит, TA-06; ядро не меняется);
-  5. lead time C 18/24 мес — в плане S10 канал C НЕ используется
-     (нет EARTH_NEW) → эффект нулевой, фиксируется честно.
+  5. lead time C 18/24 мес — в FINAL-плане канал C НЕ используется
+     (стратегия S10: A/B/D, нет EARTH_NEW) → эффект нулевой, фиксируется
+     честно; ось не применяется.
 
 Tornado: Δtotal, ΔPV(r=0.10), Δshortage, Δmin SL_total, Δнарушений (новые
 относительно BASE-подписи). Reverse-пороги: бинарный поиск (шаг 0.01)
-первого значения оси, где появляется НОВОЕ нарушение или падает сервис;
-для оси цены — проверка отсутствия физической границы (P02 §«Результат»).
+первого значения оси, где появляется НОВОЕ нарушение или падает сервис.
+
+ВАЖНО (REFRESH п.3): порог определяется относительно ЧИСТОГО, выполнимого
+FINAL BASE. FINAL BASE имеет 0 hard-нарушений (проверяется явно; если бы
+имел — это блокер и эскалация WP2, а не база для reverse stress).
 
 Выход: results/stress/P02_*.csv
 """
@@ -23,6 +27,7 @@ Tornado: Δtotal, ΔPV(r=0.10), Δshortage, Δmin SL_total, Δнарушений
 from __future__ import annotations
 
 import os
+import sys
 
 from wp3lib import (
     RESULTS,
@@ -35,7 +40,6 @@ from wp3lib import (
     meta_block,
     min_sl_crit,
     min_sl_total,
-    new_violations,
     price_mult_scenario,
     pv_of,
     run_plan,
@@ -75,6 +79,16 @@ def main() -> None:
     base_sig = violation_signature(r_base)
     m_base = metrics(r_base, base_sig)
 
+    # БЛОКЕР-ПРОВЕРКА: FINAL BASE обязан быть чистым (0 hard-нарушений).
+    if base_sig:
+        print(
+            "БЛОКЕР: FINAL BASE имеет hard-нарушения "
+            f"({sorted(base_sig)}). Reverse-пороги не имеют базы — "
+            "эскалация WP2 (REFRESH_WP3_AFTER_FINAL.md п.3).",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
+
     runs: dict[str, tuple[object, dict]] = {}
 
     # 1. low/high demand
@@ -98,7 +112,7 @@ def main() -> None:
         runs[tag] = (r, m_base)
 
     # 4. ставка — пост-обработка (отдельные прогоны не нужны)
-    # 5. lead time C — не применим к S10 (нет канала C в плане)
+    # 5. lead time C — не применим к FINAL (нет канала C в плане)
 
     # --- tornado-таблица ---
     tornado = []
@@ -138,14 +152,15 @@ def main() -> None:
     write_csv(os.path.join(OUT, "P02_discount_rate.csv"),
               list(rate_rows[0].keys()), rate_rows)
 
-    # lead time C
+    # lead time C — не применим к FINAL-плану (нет канала C)
     write_csv(os.path.join(OUT, "P02_lead_time_C.csv"),
               ["factor", "variants", "effect", "reason"],
               [{"factor": "lead time C", "variants": "18/24 мес",
                 "effect": "0 (нет влияния)",
-                "reason": "план S10 не использует канал C (нет инвестиции "
-                          "EARTH_NEW, заказов и резервов C) — чувствительность "
-                          "не применима к данному плану"}])
+                "reason": "FINAL-план (стратегия S10) не использует канал C "
+                          "(нет инвестиции EARTH_NEW, заказов и резервов C) — "
+                          "чувствительность не применима к данному плану; "
+                          "ось 18/24 мес не рассчитывается"}])
 
     # --- reverse-пороги (бинарный поиск, шаг 0.01) ---
     thresholds = []
@@ -196,7 +211,8 @@ def main() -> None:
                                    sorted(violation_signature(r_p) - base_sig)[:6])
                          if x_p is not None else
                          "физические лимиты от цены не зависят — границы нет "
-                         "(P02 §Результат); цена влияет только на PV"),
+                         "(P02 §Результат); OPEX-бюджет кейсом не задан, цена "
+                         "влияет только на PV"),
         "min_sl_total": round(min_sl_total(r_p), 4) if r_p is not None else "",
     })
 
@@ -253,13 +269,14 @@ def main() -> None:
     write_json(os.path.join(OUT, "P02_meta.json"), meta_block(
         "P02_sensitivity", plan.plan_id,
         extra={"protocol": "P02", "base_signature_size": len(base_sig),
+               "base_clean": len(base_sig) == 0,
                "thresholds": thresholds,
                "note": "порог = первое значение оси, где появляется НОВОЕ "
                        "нарушение (rule_id, period) сверх BASE-подписи или "
-                       "min SL_total хуже BASE; BASE-подпись S10 содержит 45 "
-                       "нарушений из-за нерешённой конвенции лимита отбора "
-                       "(WP1 REPORT_wave3, вопрос 1) — пороги измеряют "
-                       "ДОПОЛНИТЕЛЬНУЮ неустойчивость плана"}))
+                       "min SL_total хуже BASE; FINAL BASE чист (0 hard-нарушений, "
+                       "SL=1.0/1.0) —reverse-пороги измеряют запас прочности "
+                       "выполнимого финального плана (D8 устранил ложные "
+                       "CAPACITY_EXCEEDED старой конвенции лимита отбора)"}))
 
     print("P02 tornado:")
     for row in tornado:

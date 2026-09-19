@@ -5,20 +5,20 @@ BASE_TOTAL_SERVICE,2036,true,1,0.97,0,hard,constraints.csv,SL_total 2036: 1.0000
 BASE_CRITICAL_SERVICE,2036,true,1,0.99,0,hard,constraints.csv,SL_critical 2036: 1.0000 ≥ 0.99 (сценарий не BASE — ориентир устойчивости)
 BASE_TOTAL_SERVICE,2037,true,1,0.97,0,hard,constraints.csv,SL_total 2037: 1.0000 ≥ 0.97 (сценарий не BASE — ориентир устойчивости)
 BASE_CRITICAL_SERVICE,2037,true,1,0.99,0,hard,constraints.csv,SL_critical 2037: 1.0000 ≥ 0.99 (сценарий не BASE — ориентир устойчивости)
-BASE_TOTAL_SERVICE,2038,false,0.9429393343,0.97,0.0270606657,hard,constraints.csv,SL_total 2038: 0.9429 < 0.97 (сценарий не BASE — ориентир устойчивости)
+BASE_TOTAL_SERVICE,2038,true,1,0.97,0,hard,constraints.csv,SL_total 2038: 1.0000 ≥ 0.97 (сценарий не BASE — ориентир устойчивости)
 BASE_CRITICAL_SERVICE,2038,true,1,0.99,0,hard,constraints.csv,SL_critical 2038: 1.0000 ≥ 0.99 (сценарий не BASE — ориентир устойчивости)
-BASE_TOTAL_SERVICE,2039,false,0.848592663,0.97,0.121407337,hard,constraints.csv,SL_total 2039: 0.8486 < 0.97 (сценарий не BASE — ориентир устойчивости)
+BASE_TOTAL_SERVICE,2039,true,1,0.97,0,hard,constraints.csv,SL_total 2039: 1.0000 ≥ 0.97 (сценарий не BASE — ориентир устойчивости)
 BASE_CRITICAL_SERVICE,2039,true,1,0.99,0,hard,constraints.csv,SL_critical 2039: 1.0000 ≥ 0.99 (сценарий не BASE — ориентир устойчивости)
-BASE_TOTAL_SERVICE,2040,false,0.8694091594,0.97,0.1005908406,hard,constraints.csv,SL_total 2040: 0.8694 < 0.97 (сценарий не BASE — ориентир устойчивости)
+BASE_TOTAL_SERVICE,2040,true,1,0.97,0,hard,constraints.csv,SL_total 2040: 1.0000 ≥ 0.97 (сценарий не BASE — ориентир устойчивости)
 BASE_CRITICAL_SERVICE,2040,true,1,0.99,0,hard,constraints.csv,SL_critical 2040: 1.0000 ≥ 0.99 (сценарий не BASE — ориентир устойчивости)
 CAPEX_2037,2035-2037,true,1430,1800,0,hard,constraints.csv,CAPEX до 2037-12: 1430.0 млн ≤ 1800 млн
 CAPEX_2040,2035-2040,true,1430,2800,0,hard,constraints.csv,CAPEX до 2040-12: 1430.0 млн ≤ 2800 млн
 RESERVE_45D,2035,true,65,12.32876712,0,hard,constraints.csv,Резерв 45 дн. 2035: запас на 01.01 = 65.00 т ≥ требуемых 12.33 т
 RESERVE_45D,2036,true,25.99967,17.26027397,0,hard,constraints.csv,Резерв 45 дн. 2036: запас на 01.01 = 26.00 т ≥ требуемых 17.26 т
 RESERVE_45D,2037,true,33.011257,23.42465753,0,hard,constraints.csv,Резерв 45 дн. 2037: запас на 01.01 = 33.01 т ≥ требуемых 23.42 т
-RESERVE_45D,2038,true,40.166657,35.44520548,0,hard,constraints.csv,Резерв 45 дн. 2038: запас на 01.01 = 40.17 т ≥ требуемых 35.45 т
-RESERVE_45D,2039,false,0,45.36986301,45.36986301,hard,constraints.csv,Резерв 45 дн. 2039: запас на 01.01 = 0.00 т < требуемых 45.37 т
-RESERVE_45D,2040,false,0,55.29452055,55.29452055,hard,constraints.csv,Резерв 45 дн. 2040: запас на 01.01 = 0.00 т < требуемых 55.29 т
+RESERVE_45D,2038,true,44.790497,35.44520548,0,hard,constraints.csv,Резерв 45 дн. 2038: запас на 01.01 = 44.79 т ≥ требуемых 35.45 т
+RESERVE_45D,2039,true,50.0318342,45.36986301,0,hard,constraints.csv,Резерв 45 дн. 2039: запас на 01.01 = 50.03 т ≥ требуемых 45.37 т
+RESERVE_45D,2040,true,60.7762002,55.29452055,0,hard,constraints.csv,Резерв 45 дн. 2040: запас на 01.01 = 60.78 т ≥ требуемых 55.29 т
 EMERGENCY_BASE_STREAK,2035-2040,true,0,2,0,hard,constraints.csv,Emergency как базовый канал: максимальная серия 0 год(а) (лимит 2); базовые годы: нет
 STRESS_LOSS_LIMIT,2038,true,0.012,0.02,0,hard,constraints.csv,Потери/throughput 2038: 0.0120 ≤ 0.02
 STRESS_LOSS_LIMIT,2039,true,0.012,0.02,0,hard,constraints.csv,Потери/throughput 2039: 0.0120 ≤ 0.02
@@ -40,4 +40,4 @@ CAPACITY_EXCEEDED,2039,true,120,120,0,hard,internal,Резерв канала 'D
 CAPACITY_EXCEEDED,2040,true,120,120,0,hard,internal,Резерв канала 'D' на 2040: 120 т/год ≤ мощности 120 т/год
 ISRU_WITHOUT_CAPEX,2037-11,true,0,0,0,hard,internal,Канал 'D': инвестиция 'LUNAR_ISRU' (fund_capex) присутствует в плане
 ISRU_FIRST_YEAR_RELIABILITY,2038,true,0,0.78,0,soft,internal,План не заявляет надёжность канала D 2038 выше 0.78 (CASE_INPUT)
-NEGATIVE_INVENTORY,2035-2040,true,0,0,0,hard,internal,Минимальный запас на конец месяца за горизонт: 0.0000 т (≥ 0 — отрицательного запаса нет)
+NEGATIVE_INVENTORY,2035-2040,true,25.99967,0,0,hard,internal,Минимальный запас на конец месяца за горизонт: 25.9997 т (≥ 0 — отрицательного запаса нет)

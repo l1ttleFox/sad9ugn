@@ -1,5 +1,16 @@
-"""P01 — обязательный стресс: BASE vs MANDATORY_STRESS + декомпозиция
-на 4 промежуточных сценария по одному фактору (prompt_wave2.md п.1).
+"""P01 — обязательный стресс на FINAL-планах: BASE vs MANDATORY_STRESS
++ декомпозиция на 4 изолированных фактора (prompt_wave2.md п.1,
+REFRESH_WP3_AFTER_FINAL.md п.2).
+
+Схема прогонов (решение WP2: стратегия S10, два операционных плана):
+  BASE              — FINAL_BASE  + configs/base.yaml;
+  MANDATORY_STRESS  — FINAL_STRESS + configs/mandatory_stress.yaml
+                      (TD-01 demand-chasing пересчитан WP2 под стресс-профиль);
+  MANDATORY_ON_FIXED_BASE (справочно) — FINAL_BASE + mandatory_stress.yaml:
+                      цена отсутствия адаптации заказов (STRESS_PROTOCOL §84:
+                      адаптация показывается явно, отдельным планом);
+  F1–F4             — изолированные факторы на НЕИЗМЕННОМ FINAL_BASE
+                      (декомпозиция «какие эффекты вызваны чем»).
 
 Факторы (по configs/mandatory_stress.yaml, CASE_INPUT — не меняется):
   F1 спрос ×1.15 (2038–2040, общий и критический);
@@ -8,9 +19,10 @@
   F4 потолок losses/throughput ≤ 0.02 с 2038.
 
 Проверка: 55%/75% — фактические доли, НЕ умножены на reliability
-(критерий приёмки 1): actual/planned для D по месяцам 2038/2039 == 0.55/0.75.
+(критерий приёмки 1): actual/planned для D по годам 2038/2039/2040 ==
+0.55/0.75/1.00 в прогоне MANDATORY_STRESS (FINAL_STRESS).
 
-Выход: results/stress/P01_*.csv/json + P01_summary.md.
+Выход: results/stress/P01_*.csv/json.
 """
 
 from __future__ import annotations
@@ -30,6 +42,7 @@ from wp3lib import (
     pv_of,
     run_plan,
     shortage_of,
+    stress_plan,
     total_cost_of,
     violation_signature,
     write_csv,
@@ -86,6 +99,7 @@ def summary_row(name: str, r) -> dict:
     return {
         "scenario": name,
         "scenario_id": r.scenario_id,
+        "plan_id": r.plan_id,
         "total_mln": round(total_cost_of(r), 2),
         "pv_mln": round(pv_of(r), 2),
         "shortage_t": round(shortage_of(r), 2),
@@ -99,14 +113,21 @@ def summary_row(name: str, r) -> dict:
 
 def main() -> None:
     case = base_case()
-    plan = base_plan()
+    plan_base = base_plan()        # FINAL_BASE
+    plan_stress = stress_plan()    # FINAL_STRESS
 
-    r_base = run_plan(case, plan, base_scenario())
-    r_stress = run_plan(case, plan, mandatory_scenario())
+    r_base = run_plan(case, plan_base, base_scenario())
+    r_stress = run_plan(case, plan_stress, mandatory_scenario())
+    # справочно: mandatory на НЕадаптированном плане (цена адаптации TD-01)
+    r_mand_fixed = run_plan(case, plan_base, mandatory_scenario())
 
-    runs = {"BASE": r_base, "MANDATORY_STRESS": r_stress}
+    runs = {
+        "BASE": r_base,
+        "MANDATORY_STRESS": r_stress,
+        "MANDATORY_ON_FIXED_BASE": r_mand_fixed,
+    }
     for name, sc in factor_scenarios().items():
-        runs[name] = run_plan(case, plan, sc)
+        runs[name] = run_plan(case, plan_base, sc)
 
     # --- годовая таблица BASE vs STRESS vs факторы ---
     yearly_rows = []
@@ -154,6 +175,8 @@ def main() -> None:
     )
 
     # --- КРИТЕРИЙ 1: ISRU 55/75 не умножены на reliability ---
+    # Доказательство — в прогоне MANDATORY_STRESS (FINAL_STRESS):
+    # actual/planned D за год == share из yaml без reliability.
     rel_checks = []
     for year, share in ((2038, 0.55), (2039, 0.75), (2040, 1.0)):
         planned = sum(
@@ -193,9 +216,15 @@ def main() -> None:
         os.path.join(OUT, "P01_meta.json"),
         meta_block(
             "BASE+MANDATORY_STRESS+4_factors",
-            plan.plan_id,
+            f"{plan_base.plan_id}+{plan_stress.plan_id}",
             extra={
                 "protocol": "P01",
+                "plans": {
+                    "BASE": plan_base.plan_id,
+                    "MANDATORY_STRESS": plan_stress.plan_id,
+                    "factors_F1_F4": plan_base.plan_id,
+                    "MANDATORY_ON_FIXED_BASE": plan_base.plan_id,
+                },
                 "factors": {
                     "F1": "demand x1.15 (2038-2040, total+critical)",
                     "F2": "variable price A/B x1.25 (2038-2039)",
@@ -204,17 +233,20 @@ def main() -> None:
                 },
                 "isru_no_reliability_ok": ok_all,
                 "note": "промежуточные факторные сценарии — TEAM_ASSUMPTION "
-                        "(исследовательская декомпозиция CASE_INPUT-стресса); "
-                        "F4 сохраняет id MANDATORY_STRESS, т.к. STRESS_LOSS_LIMIT "
-                        "по constraints.csv применяется только к этому сценарию",
+                        "(исследовательская декомпозиция CASE_INPUT-стресса на "
+                        "неизменном FINAL_BASE); F4 сохраняет id MANDATORY_STRESS, "
+                        "т.к. STRESS_LOSS_LIMIT по constraints.csv применяется "
+                        "только к этому сценарию; MANDATORY_ON_FIXED_BASE — "
+                        "справочный прогон mandatory на неадаптированном плане "
+                        "(цена отсутствия адаптации TD-01)",
             },
         ),
     )
 
     # --- консольная таблица ---
     print("P01 summary:")
-    hdr = ["scenario", "total_mln", "pv_mln", "shortage_t", "min_sl_total",
-           "min_sl_critical", "violations", "loss_ceiling_failed"]
+    hdr = ["scenario", "plan_id", "total_mln", "pv_mln", "shortage_t",
+           "min_sl_total", "min_sl_critical", "violations", "loss_ceiling_failed"]
     print(" | ".join(hdr))
     for s in summary:
         print(" | ".join(str(s[h]) for h in hdr))

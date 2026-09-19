@@ -1,16 +1,29 @@
 {
- "case_input_sha256": "c2e9004476cbf7e83f9413ec8d4c8bae",
- "repo_commit": "4304dab99333542d1ebf3f5022c50cc9b8be5758",
- "plan_id": "S10",
- "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
- "plan_note": "S10, до FINAL",
+ "case_input_sha256": "51b9a338d831ca860b78dae7460ec5f0",
+ "repo_commit": "f38e4e952472de2a248676e3ddede2792056a11e",
+ "plan_id": "FINAL_BASE+FINAL_STRESS",
+ "plan_files": {
+  "BASE": "results/plans/FINAL_BASE.json",
+  "MANDATORY_STRESS": "results/plans/FINAL_STRESS.json"
+ },
+ "plan_sha256": {
+  "FINAL_BASE.json": "89207ec60899018003e7883d31e7598c75a590c1fb9871328f316dd7a68d3318",
+  "FINAL_STRESS.json": "71090ba3fa91e9751d11b827cfc17a90d209e383682e9225b5eb1d18f98d31ff"
+ },
+ "plan_note": "FINAL (WP2 wave2-final-1.0, стратегия S10 «ISRU base»)",
  "scenario_id": "BASE+MANDATORY_STRESS+4_factors",
  "engine_version": "0.3.0-wave3",
  "contract_version": "1.0",
- "generated_at": "2026-09-19T08:07:07+00:00",
+ "generated_at": "2026-09-19T14:38:31+00:00",
  "random_seed": null,
  "deterministic": true,
  "protocol": "P01",
+ "plans": {
+  "BASE": "FINAL_BASE",
+  "MANDATORY_STRESS": "FINAL_STRESS",
+  "factors_F1_F4": "FINAL_BASE",
+  "MANDATORY_ON_FIXED_BASE": "FINAL_BASE"
+ },
  "factors": {
   "F1": "demand x1.15 (2038-2040, total+critical)",
   "F2": "variable price A/B x1.25 (2038-2039)",
@@ -18,5 +31,5 @@
   "F4": "loss ceiling 0.02 from 2038"
  },
  "isru_no_reliability_ok": true,
- "note": "промежуточные факторные сценарии — TEAM_ASSUMPTION (исследовательская декомпозиция CASE_INPUT-стресса); F4 сохраняет id MANDATORY_STRESS, т.к. STRESS_LOSS_LIMIT по constraints.csv применяется только к этому сценарию"
+ "note": "промежуточные факторные сценарии — TEAM_ASSUMPTION (исследовательская декомпозиция CASE_INPUT-стресса на неизменном FINAL_BASE); F4 сохраняет id MANDATORY_STRESS, т.к. STRESS_LOSS_LIMIT по constraints.csv применяется только к этому сценарию; MANDATORY_ON_FIXED_BASE — справочный прогон mandatory на неадаптированном плане (цена отсутствия адаптации TD-01)"
 }
