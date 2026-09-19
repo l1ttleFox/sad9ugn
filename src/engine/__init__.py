@@ -19,6 +19,7 @@ from .models import (
     CaseData,
     CaseLoadError,
     ComparisonResult,
+    ConstraintCheck,
     ConstraintRow,
     CostResult,
     DeliveriesResult,
@@ -48,7 +49,7 @@ from .models import (
 )
 from .loader import load_case, load_plan, load_scenario, plan_from_dict
 from .validator import validate_case, validate_plan
-from .scenario import apply_scenario
+from .scenario import apply_scenario, apply_scenario_parameters
 from .deliveries import (
     all_periods,
     calculate_deliveries,
@@ -65,10 +66,10 @@ from .inventory import (
     zbo_start_index,
 )
 from .finance import calculate_costs
-from .constraints import check_constraints
+from .constraints import check_all, check_constraints
 from .risks import evaluate_risks
 from .compare import compare_scenarios
-from .persistence import save_plan, load_saved_plan
+from .persistence import plan_to_dict, save_plan, load_saved_plan
 from .export import export_results
 
 __all__ = [
@@ -83,13 +84,16 @@ __all__ = [
     "validate_plan",
     # расчёт
     "apply_scenario",
+    "apply_scenario_parameters",
     "calculate_deliveries",
     "calculate_inventory",
     "calculate_service",
     "calculate_costs",
     "check_constraints",
+    "check_all",
     "evaluate_risks",
     "compare_scenarios",
+    "plan_to_dict",
     "save_plan",
     "load_saved_plan",
     "export_results",
@@ -114,6 +118,7 @@ __all__ = [
     "RiskReport",
     "RiskEntry",
     "ComparisonResult",
+    "ConstraintCheck",
     "RunResult",
     "RunMeta",
     "MonthBalance",
@@ -134,19 +139,47 @@ def run_plan(case: CaseData, plan: Plan, scenario: Scenario) -> RunResult:
 
     Используется UI (WP4), тестами и экспортом ЕДИНООБРАЗНО.
 
-    Волна 1: финансовый блок (costs) и полное ограничение (check_constraints)
-    ещё не реализованы — в результат включаются нарушения расчётного контура
-    (CAPACITY_EXCEEDED, LEAD_TIME_VIOLATION, STORAGE_OVERFLOW), costs пуст.
+    Волна 3 — полный конвейер:
+    - apply_scenario (множители спроса/цен/долей поставки);
+    - calculate_deliveries → calculate_inventory → calculate_service →
+      calculate_costs;
+    - check_all: ПОЛНЫЙ реестр проверок (passed=true и false, D4.2) в
+      RunResult.checks; в RunResult.violations — только нарушения
+      (расчётный контур + ограничения);
+    - RunResult.case — действующий (сценарный) набор данных прогона
+      (экспорт берёт из него scenario_journal адаптера D3.4).
+
+    Адаптер scenario_parameters (D3.4) вызывается ДО run_plan
+    (apply_scenario_parameters возвращает копию case/plan) — run_plan
+    принимает уже адаптированные входы; журнал override сохраняется
+    в effective_case.scenario_journal (deepcopy в apply_scenario).
     """
     effective_case = apply_scenario(case, scenario)
 
     deliveries = calculate_deliveries(effective_case, plan)
     inventory = calculate_inventory(effective_case, plan, deliveries)
     service = calculate_service(effective_case, inventory)
+    costs = calculate_costs(effective_case, plan, deliveries, inventory)
+
+    # Полный реестр проверок (D4.2): passed=true и false.
+    checks = check_all(
+        effective_case, plan, deliveries, inventory, service, costs
+    )
 
     violations: list[Violation] = []
     violations.extend(deliveries.violations)
     violations.extend(inventory.violations)
+    # Нарушения ограничений: добавляем не дублируя записи расчётного контура.
+    seen: set[tuple[str, str]] = {(v.rule_id, v.period) for v in violations}
+    for c in checks:
+        if not c.passed and (c.rule_id, c.period) not in seen:
+            violations.append(
+                Violation(
+                    rule_id=c.rule_id, period=c.period, actual=c.actual,
+                    limit=c.limit, excess=c.excess, message_ru=c.message_ru,
+                )
+            )
+            seen.add((c.rule_id, c.period))
 
     meta = RunMeta(
         generated_at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -158,7 +191,9 @@ def run_plan(case: CaseData, plan: Plan, scenario: Scenario) -> RunResult:
         deliveries=deliveries,
         inventory=inventory,
         service=service,
-        costs=CostResult(),
+        costs=costs,
         violations=violations,
         meta=meta,
+        checks=checks,
+        case=effective_case,
     )

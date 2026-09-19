@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 # Версия ядра и версия контракта (фиксируются в meta результата).
-ENGINE_VERSION = "0.1.0-wave1"
+ENGINE_VERSION = "0.3.0-wave3"
 CONTRACT_VERSION = "1.0"
 
 # Горизонт планирования: 72 месячных периода 2035-01 … 2040-12.
@@ -156,6 +156,19 @@ class CaseData:
     loss_ceiling: dict[str, Any] = field(default_factory=dict)
     # Идентификатор применённого сценария (BASE по умолчанию).
     scenario_id: str = "BASE"
+    # Переопределения параметров CASE_INPUT-копии (адаптер D3.4, волна 3).
+    # storage_loss_override: {storage_id: [(period_start, period_end, rate), ...]}.
+    storage_loss_override: dict[str, list[tuple[str, str, float]]] = field(default_factory=dict)
+    # inventory_shocks: [{'period': 'YYYY-MM', 'share': float, 'base': str}, ...].
+    inventory_shocks: list[dict[str, Any]] = field(default_factory=list)
+    # capacity_override: {(source_id, год): т/год} — сценарное снижение мощности.
+    capacity_override: dict[tuple[str, int], float] = field(default_factory=dict)
+    # Переопределение фактических долей поставки (адаптер D3.4):
+    # {(source_id, год): доля}. Применяется ПОСЛЕ множителей сценария
+    # (apply_scenario) — TEAM_ISRU_DELAY и аналоги.
+    actual_delivery_share_override: dict[tuple[str, int], float] = field(default_factory=dict)
+    # Журнал применения override (русские строки: параметр, исходное → новое).
+    scenario_journal: list[str] = field(default_factory=list)
 
     def source(self, source_id: str) -> SupplySource:
         """Канал по идентификатору; ошибка — на русском."""
@@ -197,6 +210,9 @@ class Scenario:
     actual_delivery_share: dict[str, Any] = field(default_factory=lambda: {"default": 1.0})
     loss_ceiling: dict[str, Any] = field(default_factory=lambda: {"enabled": False})
     notes: list[str] = field(default_factory=list)
+    # Расширенное поле TEAM-сценариев WP3 (решение D3.4): override параметров
+    # CASE_INPUT-копии; применяется адаптером apply_scenario_parameters.
+    scenario_parameters: dict[str, Any] = field(default_factory=dict)
 
     @staticmethod
     def base() -> "Scenario":
@@ -321,6 +337,27 @@ class Violation:
 
 
 @dataclass
+class ConstraintCheck:
+    """Элемент constraint_checks (result_format.json): полный реестр проверок —
+    и пройденных, и нарушенных (решение оркестратора D4.2).
+
+    passed=True — проверка пройдена (excess=0); passed=False — нарушение
+    (параллельно попадает в violations). source: 'constraints.csv' — проверка
+    из реестра CASE_INPUT; 'internal' — внутреннее правило расчёта.
+    """
+
+    rule_id: str
+    period: str
+    passed: bool
+    actual: float
+    limit: float
+    message_ru: str
+    excess: float = 0.0
+    severity: str = "hard"
+    source: str = "constraints.csv"
+
+
+@dataclass
 class MonthBalance:
     """Помесячный материальный баланс (элемент monthly_balance)."""
 
@@ -425,7 +462,11 @@ class ServiceResult:
 
 @dataclass
 class FinancialRow:
-    """Годовая строка financial_breakdown (заполняется в волне 2)."""
+    """Годовая строка financial_breakdown (волна 2).
+
+    cost_per_served_t_mln = None при served_total_t = 0 (деление на ноль
+    запрещено; prompt_wave2.md п.7 — None, не 0).
+    """
 
     year: int
     capex_mln: float = 0.0
@@ -437,7 +478,7 @@ class FinancialRow:
     fixed_opex_mln: float = 0.0
     total_mln: float = 0.0
     discounted_mln: float = 0.0
-    cost_per_served_t_mln: float = 0.0
+    cost_per_served_t_mln: Optional[float] = None
 
 
 @dataclass
@@ -501,3 +542,7 @@ class RunResult:
     risks: RiskReport = field(default_factory=RiskReport)
     comparison: Optional[ComparisonResult] = None
     meta: RunMeta = field(default_factory=RunMeta)
+    # Полный список проверок (passed=true и false) — D4.2, constraint_checks.
+    checks: list[ConstraintCheck] = field(default_factory=list)
+    # Действующий (возможно, адаптированный) набор данных прогона.
+    case: Optional[CaseData] = None

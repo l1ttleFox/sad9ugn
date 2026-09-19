@@ -323,6 +323,14 @@ def load_scenario(config_path: str) -> Scenario:
         raise CaseLoadError(f"Файл '{fname}': параметр 'loss_ceiling' должен быть словарём")
     loss_ceiling = {str(k): v for k, v in loss_ceiling.items()}
 
+    # Расширенное поле scenario_parameters (решение D3.4): словарь как есть;
+    # предметную семантику проверяет адаптер apply_scenario_parameters.
+    scenario_parameters = raw.get("scenario_parameters") or {}
+    if not isinstance(scenario_parameters, dict):
+        raise CaseLoadError(
+            f"Файл '{fname}': параметр 'scenario_parameters' должен быть словарём"
+        )
+
     return Scenario(
         scenario_id=str(raw["scenario_id"]).strip(),
         status=status,
@@ -339,6 +347,7 @@ def load_scenario(config_path: str) -> Scenario:
         ),
         loss_ceiling=loss_ceiling,
         notes=[str(n) for n in (raw.get("notes") or [])],
+        scenario_parameters=dict(scenario_parameters),
     )
 
 

@@ -70,15 +70,48 @@ def storage_mode_for_period(case: CaseData, idx: int, zbo_from: int | None) -> t
     """Действующий режим хранения в месяце idx.
 
     Возвращает (storage_mode, capacity_t, loss_rate).
+    loss_rate учитывает сценарный override периода (case.storage_loss_override,
+    адаптер D3.4 — TEAM_MLI_DEGRADATION / TEAM_ZBO_FAILURE).
     """
+    period = month_period(idx)
     if zbo_from is not None and idx >= zbo_from:
         try:
             zbo = case.storage("ZBO")
-            return "ZBO", zbo.capacity_t, zbo.loss_rate_on_throughput
+            return "ZBO", zbo.capacity_t, _loss_rate_with_override(
+                case, "ZBO", period, zbo.loss_rate_on_throughput
+            )
         except Exception:
             pass
     base = case.storage("BASE")
-    return "BASE", base.capacity_t, base.loss_rate_on_throughput
+    return "BASE", base.capacity_t, _loss_rate_with_override(
+        case, "BASE", period, base.loss_rate_on_throughput
+    )
+
+
+def _loss_rate_with_override(
+    case: CaseData, storage_id: str, period: str, base_rate: float
+) -> float:
+    """Ставка потерь режима с учётом override периода (storage_loss_override).
+
+    Если для storage_id задан интервал (period_start ≤ period ≤ period_end) —
+    действует переопределённая ставка, иначе исходная.
+    """
+    for p_start, p_end, rate in case.storage_loss_override.get(storage_id, []):
+        if p_start <= period <= p_end:
+            return rate
+    return base_rate
+
+
+def _inventory_shock_lost(case: CaseData, period: str, i_start: float) -> float:
+    """Разовая потеря запаса в периоде (inventory_shocks, адаптер D3.4, В7 MMOD).
+
+    base='inventory_start_before_deliveries': потеря = share × I_start месяца.
+    """
+    lost = 0.0
+    for shock in case.inventory_shocks:
+        if shock.get("period") == period:
+            lost += float(shock.get("share", 0.0)) * i_start
+    return lost
 
 
 def reserve_required_t(demand_total_year_t: float) -> float:
@@ -116,8 +149,26 @@ def calculate_inventory(
         throughput = delivered
         losses = throughput * loss_rate
 
+        # Разовый шок запаса (MMOD и аналоги, адаптер D3.4): отдельный физический
+        # механизм потери — НЕ повторный начёт ставок хранения (CR §3).
+        shock_lost = _inventory_shock_lost(case, period, i_start)
+        if shock_lost > 0.0:
+            result.violations.append(
+                Violation(
+                    rule_id="INVENTORY_SHOCK_APPLIED",
+                    period=period,
+                    actual=shock_lost,
+                    limit=0.0,
+                    excess=shock_lost,
+                    message_ru=(
+                        f"Сценарный шок запаса в период {period}: потеряно "
+                        f"{shock_lost:.4f} т (информационная запись применения override)"
+                    ),
+                )
+            )
+
         # Аллокация при дефиците: сначала критический спрос (§5 конвенций).
-        available = i_start + delivered - losses
+        available = i_start + delivered - losses - shock_lost
         available = max(0.0, available)
         served_critical = min(demand_crit_m, available)
         served_total = min(demand_total_m, available)

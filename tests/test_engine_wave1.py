@@ -621,6 +621,15 @@ def test_b_only_plan_manual_balance():
         )
         for d in case.demand
     ]
+    # Волна 3: run_plan выполняет статическую проверку reserved ≤ capacity
+    # (CAPACITY_EXCEEDED). План теста резервирует B 120 т/год при каталожной
+    # мощности 110 — для изоляции ручной сверки баланса увеличиваем мощность
+    # B в СИНТЕТИЧЕСКОЙ копии кейса до 120 (CASE_INPUT не меняется).
+    case.supply_sources = [
+        dataclasses.replace(s, capacity_t_per_year=120.0)
+        if s.source_id == "B" else s
+        for s in case.supply_sources
+    ]
 
     plan = make_plan(
         orders=[("B", "2035", 120.0)],
