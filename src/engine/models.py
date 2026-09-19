@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 # Версия ядра и версия контракта (фиксируются в meta результата).
-ENGINE_VERSION = "0.1.0-wave1"
+ENGINE_VERSION = "0.2.0-wave2"
 CONTRACT_VERSION = "1.0"
 
 # Горизонт планирования: 72 месячных периода 2035-01 … 2040-12.
@@ -425,7 +425,11 @@ class ServiceResult:
 
 @dataclass
 class FinancialRow:
-    """Годовая строка financial_breakdown (заполняется в волне 2)."""
+    """Годовая строка financial_breakdown (волна 2).
+
+    cost_per_served_t_mln = None при served_total_t = 0 (деление на ноль
+    запрещено; prompt_wave2.md п.7 — None, не 0).
+    """
 
     year: int
     capex_mln: float = 0.0
@@ -437,7 +441,7 @@ class FinancialRow:
     fixed_opex_mln: float = 0.0
     total_mln: float = 0.0
     discounted_mln: float = 0.0
-    cost_per_served_t_mln: float = 0.0
+    cost_per_served_t_mln: Optional[float] = None
 
 
 @dataclass

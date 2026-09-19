@@ -134,15 +134,17 @@ def run_plan(case: CaseData, plan: Plan, scenario: Scenario) -> RunResult:
 
     Используется UI (WP4), тестами и экспортом ЕДИНООБРАЗНО.
 
-    Волна 1: финансовый блок (costs) и полное ограничение (check_constraints)
-    ещё не реализованы — в результат включаются нарушения расчётного контура
-    (CAPACITY_EXCEEDED, LEAD_TIME_VIOLATION, STORAGE_OVERFLOW), costs пуст.
+    Волна 2: подключён финансовый блок (costs). Ограничения
+    (check_constraints), риски, сравнение, экспорт — волна 3; в результат
+    включаются нарушения расчётного контура (CAPACITY_EXCEEDED,
+    LEAD_TIME_VIOLATION, STORAGE_OVERFLOW).
     """
     effective_case = apply_scenario(case, scenario)
 
     deliveries = calculate_deliveries(effective_case, plan)
     inventory = calculate_inventory(effective_case, plan, deliveries)
     service = calculate_service(effective_case, inventory)
+    costs = calculate_costs(effective_case, plan, deliveries, inventory)
 
     violations: list[Violation] = []
     violations.extend(deliveries.violations)
@@ -158,7 +160,7 @@ def run_plan(case: CaseData, plan: Plan, scenario: Scenario) -> RunResult:
         deliveries=deliveries,
         inventory=inventory,
         service=service,
-        costs=CostResult(),
+        costs=costs,
         violations=violations,
         meta=meta,
     )
