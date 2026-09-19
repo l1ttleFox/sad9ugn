@@ -135,7 +135,9 @@ python -m pytest tests/test_engine_wave3.py -q -k extensibility
 
 ## Команда / контакты
 
-(заполнит оркестратор)
+- Сычев Алексей
+- Асанди Максим
+- Юрийчук Михаил
 
 ---
 
