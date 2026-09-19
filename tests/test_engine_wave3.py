@@ -225,8 +225,8 @@ def test_stress_decomposition_four_factors():
 # constraint_checks: полный список (D4.2), формат нарушений (README §26)
 # ---------------------------------------------------------------------------
 
-def test_checks_contain_passed_and_failed():
-    """Полный passed-список: пройдённые и нарушенные проверки вместе."""
+def test_checks_contain_full_passed_registry():
+    """Полный passed-список содержит все проверки выполнимого BASE-плана."""
     case = load_case(DATA_DIR)
     plan = load_plan(os.path.join(WP2_DIR, "plans", "S10.json"))
     result = run_plan(case, plan, Scenario.base())
@@ -235,8 +235,8 @@ def test_checks_contain_passed_and_failed():
     # S10 BASE: CAPEX проходит, резерв 45д проходит
     assert "CAPEX_2037" in rules_passed and "CAPEX_2040" in rules_passed
     assert "RESERVE_45D" in rules_passed
-    # месячный отбор A сверх доли резерва — нарушение (конвенция волны 1)
-    assert "CAPACITY_EXCEEDED" in rules_failed
+    # После согласования мощности по году поставки S10 проходит весь BASE.
+    assert not rules_failed
     # violations = только нарушения; каждое попало и в checks
     for v in result.violations:
         assert any(c.rule_id == v.rule_id and c.period == v.period

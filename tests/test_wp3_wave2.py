@@ -278,9 +278,13 @@ def test_all_team_scenarios_executed():
 def test_case_input_not_modified():
     """CASE_INPUT не менялся: sha256 файлов совпадает с зафиксированным."""
     import hashlib
-    h = hashlib.sha256(open(os.path.join(DATA, "supply_sources.csv"), "rb").read()).hexdigest()
-    assert h.startswith("311f37a5587fa161")
-    h2 = hashlib.sha256(open(os.path.join(REPO, "configs", "mandatory_stress.yaml"), "rb").read()).hexdigest()
+    # Git может материализовать LF как CRLF на Windows; нормализуем окончания строк,
+    # чтобы тест защищал содержимое CASE_INPUT, а не платформенный формат файла.
+    raw = open(os.path.join(DATA, "supply_sources.csv"), "rb").read()
+    h = hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+    assert h == "182139c4870402024f540d0f010b4396db2fad77bf5a35449e04cbe584ef0977"
+    raw2 = open(os.path.join(REPO, "configs", "mandatory_stress.yaml"), "rb").read()
+    h2 = hashlib.sha256(raw2.replace(b"\r\n", b"\n")).hexdigest()
     # фиксируем текущее значение — тест защищает от случайной правки в будущем
     ref = os.path.join(REPO, "results", "geopolitics", "geo_event.json")
     import json

@@ -1,23 +1,23 @@
 {
- "case_input_sha256": "483b10ba99563d4a52564fc01d46f65b",
- "repo_commit": "f89c5f431cfbcf6dd273a1e32fd20110e745f79a",
+ "case_input_sha256": "c2e9004476cbf7e83f9413ec8d4c8bae",
+ "repo_commit": "4304dab99333542d1ebf3f5022c50cc9b8be5758",
  "plan_id": "S10",
  "plan_file": "ai_workstreams/WP2_strategy_economics/plans/S10.json",
  "plan_note": "S10, до FINAL",
  "scenario_id": "P02_sensitivity",
  "engine_version": "0.3.0-wave3",
  "contract_version": "1.0",
- "generated_at": "2026-09-19T02:27:39+00:00",
+ "generated_at": "2026-09-19T08:04:48+00:00",
  "random_seed": null,
  "deterministic": true,
  "protocol": "P02",
- "base_signature_size": 45,
+ "base_signature_size": 25,
  "thresholds": [
   {
    "axis": "множитель спроса (все годы)",
-   "threshold": 1.01,
-   "first_broken": "BASE_CRITICAL_SERVICE@2036",
-   "min_sl_total": 0.7717
+   "threshold": 1.02,
+   "first_broken": "RESERVE_45D@2039; RESERVE_45D@2040",
+   "min_sl_total": 1.0
   },
   {
    "axis": "множитель цены A (все годы)",
@@ -27,9 +27,9 @@
   },
   {
    "axis": "фактическая доля D 2038–2039 (снижение)",
-   "threshold": 0.88,
-   "first_broken": "BASE_TOTAL_SERVICE@2038",
-   "min_sl_total": 0.7777
+   "threshold": 0.92,
+   "first_broken": "RESERVE_45D@2040",
+   "min_sl_total": 1.0
   }
  ],
  "note": "порог = первое значение оси, где появляется НОВОЕ нарушение (rule_id, period) сверх BASE-подписи или min SL_total хуже BASE; BASE-подпись S10 содержит 45 нарушений из-за нерешённой конвенции лимита отбора (WP1 REPORT_wave3, вопрос 1) — пороги измеряют ДОПОЛНИТЕЛЬНУЮ неустойчивость плана"

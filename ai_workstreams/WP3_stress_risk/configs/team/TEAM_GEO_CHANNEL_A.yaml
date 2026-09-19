@@ -11,6 +11,3 @@ variable_price_multiplier:
     2039: 1.2
 scenario_parameters:
   event: geo_channel_a_tariff
-  source_id: A
-  original_price_mln_per_t: 6.2
-  new_price_mln_per_t: 7.44

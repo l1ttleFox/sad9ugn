@@ -2,14 +2,6 @@
  "series_BASE": {
   "base_signature": [
    [
-    "BASE_TOTAL_SERVICE",
-    "2036"
-   ],
-   [
-    "BASE_TOTAL_SERVICE",
-    "2037"
-   ],
-   [
     "CAPACITY_EXCEEDED",
     "2035-01"
    ],
@@ -56,54 +48,6 @@
    [
     "CAPACITY_EXCEEDED",
     "2035-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-08"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-12"
    ],
    [
     "CAPACITY_EXCEEDED",
@@ -156,47 +100,47 @@
    [
     "CAPACITY_EXCEEDED",
     "2040-08"
-   ],
-   [
-    "LEAD_TIME_VIOLATION",
-    "2037-11"
-   ],
-   [
-    "LEAD_TIME_VIOLATION",
-    "2037-12"
-   ],
-   [
-    "RESERVE_45D",
-    "2037"
-   ],
-   [
-    "RESERVE_45D",
-    "2038"
-   ],
-   [
-    "RESERVE_45D",
-    "2039"
-   ],
-   [
-    "RESERVE_45D",
-    "2040"
    ]
   ],
-  "broken_nodes": 1309,
+  "broken_nodes": 1320,
   "total_nodes": 1331,
   "min_norm": 1.0,
   "min_nodes": [
    {
     "series": "BASE",
+    "demand_mult": 1.0,
+    "priceA_mult": 1.0,
+    "shareD": 0.9,
+    "norm": 1.0,
+    "broken": "true",
+    "new_violations": 1,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 1.0,
+    "shortage_t": 0.0
+   },
+   {
+    "series": "BASE",
+    "demand_mult": 1.0,
+    "priceA_mult": 1.05,
+    "shareD": 0.9,
+    "norm": 1.0,
+    "broken": "true",
+    "new_violations": 1,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 1.0,
+    "shortage_t": 0.0
+   },
+   {
+    "series": "BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 3,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 110.42
+    "new_violations": 4,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.9709,
+    "shortage_t": 11.91
    },
    {
     "series": "BASE",
@@ -205,10 +149,10 @@
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 4,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 131.5
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.9293,
+    "shortage_t": 34.01
    },
    {
     "series": "BASE",
@@ -217,10 +161,10 @@
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 3,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 110.42
+    "new_violations": 4,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.9709,
+    "shortage_t": 11.91
    },
    {
     "series": "BASE",
@@ -229,48 +173,48 @@
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 4,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 131.5
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.9293,
+    "shortage_t": 34.01
    }
   ],
   "first_by_rule": {
-   "BASE_CRITICAL_SERVICE": {
+   "RESERVE_45D": {
     "series": "BASE",
-    "demand_mult": 1.05,
+    "demand_mult": 1.0,
     "priceA_mult": 1.0,
-    "shareD": 1.0,
+    "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 3,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 110.42
+    "new_violations": 1,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 1.0,
+    "shortage_t": 0.0
    },
    "BASE_TOTAL_SERVICE": {
     "series": "BASE",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
-    "shareD": 1.0,
+    "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 3,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 110.42
+    "new_violations": 5,
+    "first_new_rules": "BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.9293,
+    "shortage_t": 34.01
    },
-   "RESERVE_45D": {
+   "BASE_CRITICAL_SERVICE": {
     "series": "BASE",
-    "demand_mult": 1.1,
+    "demand_mult": 1.3,
     "priceA_mult": 1.0,
-    "shareD": 1.0,
-    "norm": 2.0,
+    "shareD": 0.4,
+    "norm": 6.0,
     "broken": "true",
-    "new_violations": 6,
+    "new_violations": 13,
     "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
-    "min_sl_total": 0.707,
-    "shortage_t": 179.92
+    "min_sl_total": 0.6582,
+    "shortage_t": 492.03
    }
   }
  },
@@ -278,14 +222,6 @@
   "base_signature": [
    [
     "BASE_TOTAL_SERVICE",
-    "2036"
-   ],
-   [
-    "BASE_TOTAL_SERVICE",
-    "2037"
-   ],
-   [
-    "BASE_TOTAL_SERVICE",
     "2038"
    ],
    [
@@ -346,54 +282,6 @@
    ],
    [
     "CAPACITY_EXCEEDED",
-    "2036-01"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-02"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-03"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-04"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-05"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-06"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-07"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-08"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-09"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-10"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-11"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
-    "2036-12"
-   ],
-   [
-    "CAPACITY_EXCEEDED",
     "2038-09"
    ],
    [
@@ -445,22 +333,6 @@
     "2040-08"
    ],
    [
-    "LEAD_TIME_VIOLATION",
-    "2037-11"
-   ],
-   [
-    "LEAD_TIME_VIOLATION",
-    "2037-12"
-   ],
-   [
-    "RESERVE_45D",
-    "2037"
-   ],
-   [
-    "RESERVE_45D",
-    "2038"
-   ],
-   [
     "RESERVE_45D",
     "2039"
    ],
@@ -469,21 +341,45 @@
     "2040"
    ]
   ],
-  "broken_nodes": 1276,
+  "broken_nodes": 1320,
   "total_nodes": 1331,
   "min_norm": 1.0,
   "min_nodes": [
    {
     "series": "MANDATORY_STRESS",
+    "demand_mult": 1.0,
+    "priceA_mult": 1.0,
+    "shareD": 0.9,
+    "norm": 1.0,
+    "broken": "true",
+    "new_violations": 0,
+    "first_new_rules": "",
+    "min_sl_total": 0.8485,
+    "shortage_t": 140.07
+   },
+   {
+    "series": "MANDATORY_STRESS",
+    "demand_mult": 1.0,
+    "priceA_mult": 1.05,
+    "shareD": 0.9,
+    "norm": 1.0,
+    "broken": "true",
+    "new_violations": 0,
+    "first_new_rules": "",
+    "min_sl_total": 0.8485,
+    "shortage_t": 140.07
+   },
+   {
+    "series": "MANDATORY_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 1,
-    "first_new_rules": "BASE_CRITICAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 301.3
+    "new_violations": 2,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.8082,
+    "shortage_t": 207.4
    },
    {
     "series": "MANDATORY_STRESS",
@@ -492,10 +388,10 @@
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 1,
-    "first_new_rules": "BASE_CRITICAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 310.67
+    "new_violations": 2,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.8081,
+    "shortage_t": 216.77
    },
    {
     "series": "MANDATORY_STRESS",
@@ -504,10 +400,10 @@
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 1,
-    "first_new_rules": "BASE_CRITICAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 301.3
+    "new_violations": 2,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.8082,
+    "shortage_t": 207.4
    },
    {
     "series": "MANDATORY_STRESS",
@@ -516,48 +412,48 @@
     "shareD": 0.9,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 1,
-    "first_new_rules": "BASE_CRITICAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 310.67
+    "new_violations": 2,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.8081,
+    "shortage_t": 216.77
    }
   ],
   "first_by_rule": {
-   "BASE_CRITICAL_SERVICE": {
+   "RESERVE_45D": {
     "series": "MANDATORY_STRESS",
     "demand_mult": 1.05,
     "priceA_mult": 1.0,
     "shareD": 1.0,
     "norm": 1.0,
     "broken": "true",
-    "new_violations": 1,
-    "first_new_rules": "BASE_CRITICAL_SERVICE",
-    "min_sl_total": 0.7406,
-    "shortage_t": 301.3
+    "new_violations": 2,
+    "first_new_rules": "RESERVE_45D",
+    "min_sl_total": 0.8082,
+    "shortage_t": 207.4
    },
-   "RESERVE_45D": {
+   "BASE_CRITICAL_SERVICE": {
     "series": "MANDATORY_STRESS",
-    "demand_mult": 1.1,
+    "demand_mult": 1.15,
     "priceA_mult": 1.0,
     "shareD": 1.0,
-    "norm": 2.0,
+    "norm": 3.0,
     "broken": "true",
-    "new_violations": 3,
-    "first_new_rules": "BASE_CRITICAL_SERVICE;RESERVE_45D",
-    "min_sl_total": 0.707,
-    "shortage_t": 378.0
+    "new_violations": 5,
+    "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
+    "min_sl_total": 0.6985,
+    "shortage_t": 360.8
    },
    "BASE_TOTAL_SERVICE": {
     "series": "MANDATORY_STRESS",
-    "demand_mult": 1.3,
+    "demand_mult": 1.15,
     "priceA_mult": 1.0,
     "shareD": 1.0,
-    "norm": 6.0,
+    "norm": 3.0,
     "broken": "true",
-    "new_violations": 6,
+    "new_violations": 5,
     "first_new_rules": "BASE_CRITICAL_SERVICE;BASE_TOTAL_SERVICE;RESERVE_45D",
-    "min_sl_total": 0.5942,
-    "shortage_t": 684.8
+    "min_sl_total": 0.6985,
+    "shortage_t": 360.8
    }
   }
  }

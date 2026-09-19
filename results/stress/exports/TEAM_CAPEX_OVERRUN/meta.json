@@ -16,7 +16,7 @@
   "timestep": "monthly",
   "discount_rate": 0.1,
   "discount_t0": 2035,
-  "generated_at": "2026-09-19T02:27:45+00:00",
+  "generated_at": "2026-09-19T08:07:09+00:00",
   "random_seed": null,
   "scenario_journal": [
     "[TEAM_CAPEX_OVERRUN] CAPEX опции 'LUNAR_ISRU': 1250.0 → 1437.5 млн у.е."

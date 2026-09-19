@@ -16,7 +16,7 @@
   "timestep": "monthly",
   "discount_rate": 0.1,
   "discount_t0": 2035,
-  "generated_at": "2026-09-19T02:27:45+00:00",
+  "generated_at": "2026-09-19T08:07:09+00:00",
   "random_seed": null,
   "scenario_journal": [
     "[TEAM_MLI_DEGRADATION] потери режима 'BASE' в 2036-01…2037-12: 0.045 → 0.06"

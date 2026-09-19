@@ -9,7 +9,3 @@ variable_price_multiplier:
   Emergency:
     2038: 1.25
     2039: 1.25
-scenario_parameters:
-  source_id: E
-  original_price_mln_per_t: 13.8
-  new_price_mln_per_t: 17.25

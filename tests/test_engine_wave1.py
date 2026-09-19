@@ -365,8 +365,8 @@ def test_lead_time_c_policy_24_months():
     assert row.lead_time_applied == "18-24 month (policy: 24)"
 
 
-def test_channel_c_unavailable_before_exercise_plus_24():
-    """C недоступен ранее 24 мес после exercise → LEAD_TIME_VIOLATION."""
+def test_channel_c_order_before_delivery_availability_is_valid():
+    """Заказ C допустим заранее, если физическая поставка идёт после ввода."""
     case = make_synthetic_case()
     plan = make_plan(
         orders=[("C", "2037-05", 10.0)],
@@ -375,8 +375,8 @@ def test_channel_c_unavailable_before_exercise_plus_24():
     )
     res = calculate_deliveries(case, plan)
     lead = [v for v in res.violations if v.rule_id == "LEAD_TIME_VIOLATION"]
-    assert lead and lead[0].period == "2037-05"
-    assert "недоступен" in lead[0].message_ru
+    assert not lead
+    assert res.planned_by_source_period[("C", "2039-05")] == pytest.approx(10.0)
 
 
 def test_channel_d_requires_isru_financed_before_2038():

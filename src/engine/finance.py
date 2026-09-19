@@ -38,13 +38,11 @@
    оплата переменного платежа включается в год paid_in (2035); объём
    учитывается в Q_order года оплаты для take-or-pay max().
 
-Принятые трактовки (раскрыты в REPORT_wave2.md):
-- Q_order года = фактически принятый к исполнению отбор заказов года
-  (логика deliveries.py): заказы недоступного канала (LEAD_TIME_VIOLATION)
-  и излишек сверх месячной доли резерва (CAPACITY_EXCEEDED) не оплачиваются —
-  физический отбор невозможен; заказ, размещённый в году, оплачивается
-  в этом году, даже если поставка по lead time выходит за горизонт 2040-12
-  (обязательство принято — консервативная трактовка, раскрыта в отчёте).
+Принятые трактовки:
+- резерв мощности ограничивает физическую отгрузку в году поставки;
+- Q_order и переменный платёж относятся к году размещения заказа;
+- заказы с поставкой за горизонтом не включаются в физический результат,
+  но договорные обязательства внутри горизонта задаются планом отдельно.
 """
 
 from __future__ import annotations
@@ -53,6 +51,7 @@ import re
 
 from .deliveries import (
     channel_available_from,
+    lead_time_months,
     month_index,
 )
 from .inventory import zbo_start_index
@@ -136,11 +135,9 @@ def _ordered_by_year(case: CaseData, plan: Plan) -> dict[tuple[str, int], float]
     """Q_order по (source_id, год) — фактически принятый к исполнению отбор.
 
     Логика повторяет deliveries.py: годовой заказ ('YYYY') распределяется
-    равномерно по 12 месяцам; заказ недоступного канала (LEAD_TIME_VIOLATION)
-    и излишек сверх месячной доли резерва (CAPACITY_EXCEEDED) физически не
-    отбираются и не оплачиваются. Заказ, размещённый в году, относится
-    к Q_order этого года, даже если поставка по lead time выходит за
-    горизонт 2040-12 (обязательство принято).
+    равномерно по 12 месяцам; доступность и резерв мощности проверяются в
+    периоде физической поставки. Оплачиваемый Q_order относится к году
+    размещения заказа (контрольный период обязательства).
 
     Объём подготовительного заказа (initial_inventory_source, units §3)
     добавляется к Q_order канала в год оплаты paid_in (2035).
@@ -157,20 +154,40 @@ def _ordered_by_year(case: CaseData, plan: Plan) -> dict[tuple[str, int], float]
     def _add(source_id: str, idx: int, volume: float) -> None:
         if idx < 0 or idx >= n_months or volume <= 0:
             return
+        lag, _ = lead_time_months(case, source_id)
+        delivery_idx = idx + lag
+        if delivery_idx < 0 or delivery_idx >= n_months:
+            # Физическая поставка лежит за горизонтом, но заказ уже размещён
+            # и образует договорное обязательство текущего года.
+            order_year = HORIZON_START_YEAR + idx // 12
+            rsv = reserved.get((source_id, order_year), 0.0)
+            sm = start_months.get((source_id, order_year), 1)
+            month_no = idx % 12 + 1
+            limit = (rsv / 12.0) if month_no >= sm else 0.0
+            key = (source_id, order_year)
+            ordered[key] = ordered.get(key, 0.0) + min(volume, limit)
+            return
         avail = available_from.get(source_id)
-        if avail is None or idx < avail:
-            return  # канал недоступен — заказ не исполняется (нарушение зафиксировано в deliveries)
-        year = HORIZON_START_YEAR + idx // 12
-        month_no = idx % 12 + 1
-        rsv = reserved.get((source_id, year), 0.0)
+        if avail is None or delivery_idx < avail:
+            return  # канал недоступен к поставке (нарушение зафиксировано в deliveries)
+        order_year = HORIZON_START_YEAR + idx // 12
+        delivery_year = HORIZON_START_YEAR + delivery_idx // 12
+        month_no = delivery_idx % 12 + 1
+        rsv = reserved.get(
+            (source_id, delivery_year),
+            reserved.get((source_id, order_year), 0.0),
+        )
         # Сценарное снижение мощности (адаптер D3.4) — как в deliveries.py.
-        cap_ov = case.capacity_override.get((source_id, year))
+        cap_ov = case.capacity_override.get((source_id, delivery_year))
         if cap_ov is not None:
             rsv = min(rsv, cap_ov)
-        sm = start_months.get((source_id, year), 1)
+        sm = start_months.get(
+            (source_id, delivery_year),
+            start_months.get((source_id, order_year), 1),
+        )
         limit = (rsv / 12.0) if month_no >= sm else 0.0
         effective = min(volume, limit)  # излишек CAPACITY_EXCEEDED не отбирается
-        key = (source_id, year)
+        key = (source_id, order_year)
         ordered[key] = ordered.get(key, 0.0) + effective
 
     for o in plan.decisions.supply_orders:

@@ -18,9 +18,9 @@
  "capex_changed": false,
  "other_channels_changed": false,
  "case_input_version_sha256": {
-  "data\\supply_sources.csv": "311f37a5587fa1617d61681d678ead52f119fbc78a06746029054132961ac8e5",
-  "configs\\base.yaml": "993aa5f878daf6437e6905d74d0649a82b580030ef3a008677b8a33b8f59b04a",
-  "configs\\mandatory_stress.yaml": "60f3f1d3241828b1d34c0583b4b1b38006e9ba42e45119d1010031151a59508b"
+  "data\\supply_sources.csv": "182139c4870402024f540d0f010b4396db2fad77bf5a35449e04cbe584ef0977",
+  "configs\\base.yaml": "f16f46e3b291365051543f7ef9874f4ed5a295beb589af1c095e78b706bcac3a",
+  "configs\\mandatory_stress.yaml": "312b097486d7940c92f70f9180b5d32141d27f1a9a7294f166f6bfeb5ca6a7f7"
  },
  "input_diff": {
   "effective_price_mln_per_t": {

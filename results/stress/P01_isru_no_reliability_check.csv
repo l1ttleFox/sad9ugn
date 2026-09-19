@@ -1,4 +1,4 @@
 year,planned_t,actual_t,ratio_actual_planned,expected_share,share_times_reliability,verdict
-2038,52.639,28.9515,0.55,0.55,0.429,OK: ratio == share (без reliability)
+2038,63.024,34.6632,0.55,0.55,0.429,OK: ratio == share (без reliability)
 2039,65.88,49.41,0.75,0.75,0.675,OK: ratio == share (без reliability)
 2040,94.81,94.81,1,1,0.93,OK: ratio == share (без reliability)

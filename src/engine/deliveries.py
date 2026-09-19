@@ -35,6 +35,10 @@ from .models import (
     Violation,
 )
 
+# Планы WP2 сериализуют помесячные объёмы до 0.001 т. Допуск не позволяет
+# считать округление 11.667 против 140/12=11.6667 физическим превышением.
+CAPACITY_TOLERANCE_T = 1e-3
+
 _PERIOD_RE = re.compile(r"^(\d{4})-(0[1-9]|1[0-2])$")
 
 
@@ -187,12 +191,21 @@ def calculate_deliveries(case: CaseData, plan: Plan) -> DeliveriesResult:
     # --- Помесячный проход по заказам ---
     for (source_id, idx), volume in sorted(ordered.items(), key=lambda kv: (kv[0][1], kv[0][0])):
         period = month_period(idx)
-        year = HORIZON_START_YEAR + idx // 12
-        month_no = idx % 12 + 1
+        # Резервированная мощность относится к периоду физической поставки,
+        # а не к более раннему моменту размещения заказа. Иначе 12-месячный
+        # lead time A ошибочно сопоставляет заказ 2035 года с резервом 2035,
+        # хотя физическая отгрузка использует мощность 2036 года.
+        lag, _ = lead_time_months(case, source_id)
+        delivery_idx = idx + lag
+        if delivery_idx >= n_months:
+            continue
+        delivery_period = month_period(delivery_idx)
+        delivery_year = HORIZON_START_YEAR + delivery_idx // 12
+        delivery_month = delivery_idx % 12 + 1
 
         avail = available_from.get(source_id)
-        if avail is None or idx < avail:
-            # Канал недоступен в месяце заказа — заказ не исполняется.
+        if avail is None or delivery_idx < avail:
+            # Канал недоступен к моменту поставки — заказ не исполняется.
             result.violations.append(
                 Violation(
                     rule_id="LEAD_TIME_VIOLATION",
@@ -202,24 +215,33 @@ def calculate_deliveries(case: CaseData, plan: Plan) -> DeliveriesResult:
                     excess=volume,
                     message_ru=(
                         f"Заказ канала '{source_id}' на период {period} ({volume} т) не может "
-                        f"быть исполнен: канал недоступен в этом периоде "
+                        f"быть поставлен в {delivery_period}: канал недоступен к моменту поставки "
                         f"(требуется инвестиция/ввод согласно условиям кейса)"
                     ),
                 )
             )
             continue
 
-        # Ограничение отбора: заказ в месяце ≤ зарезервированная мощность года / 12.
-        rsv_year = reserved.get((source_id, year), 0.0)
+        # Ограничение отбора: поставка месяца ≤ резерв мощности года поставки / 12.
+        # Для старых/синтетических однопериодных планов допускаем резерв года
+        # заказа только когда запись года поставки отсутствует. Конкурсные планы
+        # с многолетним горизонтом используют резерв года поставки.
+        rsv_year = reserved.get(
+            (source_id, delivery_year),
+            reserved.get((source_id, HORIZON_START_YEAR + idx // 12), 0.0),
+        )
         # Сценарное снижение мощности канала (адаптер D3.4, capacity_override):
         # физический отбор не может превышать действующую мощность года.
-        cap_override = case.capacity_override.get((source_id, year))
+        cap_override = case.capacity_override.get((source_id, delivery_year))
         if cap_override is not None:
             rsv_year = min(rsv_year, cap_override)
-        start_month = reserve_start_month.get((source_id, year), 1)
-        monthly_limit = (rsv_year / 12.0) if month_no >= start_month else 0.0
+        start_month = reserve_start_month.get(
+            (source_id, delivery_year),
+            reserve_start_month.get((source_id, HORIZON_START_YEAR + idx // 12), 1),
+        )
+        monthly_limit = (rsv_year / 12.0) if delivery_month >= start_month else 0.0
         effective_volume = volume
-        if volume > monthly_limit + 1e-9:
+        if volume > monthly_limit + CAPACITY_TOLERANCE_T:
             excess = volume - monthly_limit
             result.violations.append(
                 Violation(
@@ -229,8 +251,9 @@ def calculate_deliveries(case: CaseData, plan: Plan) -> DeliveriesResult:
                     limit=monthly_limit,
                     excess=excess,
                     message_ru=(
-                        f"Заказ канала '{source_id}' в период {period} ({volume:.4f} т) превышает "
-                        f"месячную долю зарезервированной мощности {year} года "
+                        f"Поставка канала '{source_id}' в период {delivery_period} по заказу {period} "
+                        f"({volume:.4f} т) превышает месячную долю зарезервированной мощности "
+                        f"{delivery_year} года "
                         f"({monthly_limit:.4f} т = {rsv_year:g} т/год ÷ 12); "
                         f"излишек {excess:.4f} т"
                     ),
@@ -240,15 +263,9 @@ def calculate_deliveries(case: CaseData, plan: Plan) -> DeliveriesResult:
             # поставка ограничивается лимитом (нарушение зафиксировано выше).
             effective_volume = monthly_limit
 
-        # Поставка: заказ в M → доставка в M+L (TA-04).
-        lag, _ = lead_time_months(case, source_id)
-        delivery_idx = idx + lag
-        if delivery_idx < n_months:
-            planned_by_src[(source_id, delivery_idx)] = (
-                planned_by_src.get((source_id, delivery_idx), 0.0) + effective_volume
-            )
-        # Заказы, поставка которых выходит за горизонт, просто не поступают
-        # (финансовые последствия — в волне 2).
+        planned_by_src[(source_id, delivery_idx)] = (
+            planned_by_src.get((source_id, delivery_idx), 0.0) + effective_volume
+        )
 
     # --- Фактические доли сценария (БЕЗ умножения на reliability) ---
     for (source_id, idx), planned in sorted(planned_by_src.items()):
