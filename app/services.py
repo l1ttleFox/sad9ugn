@@ -26,6 +26,8 @@ TEAM_SCENARIO_DIRS = (
     ROOT / "configs" / "team",
     ROOT / "ai_workstreams" / "WP3_stress_risk" / "configs" / "team",
 )
+# D8.3: информационные проверки ядра — не hard-нарушения (показываются отдельно).
+INFORMATIONAL_RULES = frozenset({"INVENTORY_SHOCK_APPLIED"})
 
 
 def available_scenarios() -> tuple[str, ...]:
@@ -273,6 +275,7 @@ def geo_effect(base: dict, geo: dict) -> dict:
 
 def clear_result_cache() -> None:
     _run_core_cached.cache_clear()
+    _core_risk_register_cached.cache_clear()
 
 
 def list_saved_plans() -> list[dict]:
@@ -417,7 +420,7 @@ def final_plan_files() -> list[dict]:
             "plan_id": plan["plan_id"],
             "scenario_id": plan["scenario_id"],
             "label": (
-                f"{plan['plan_id']} (до публикации FINAL)"
+                f"{plan['plan_id']} — предварительный план (FINAL не опубликован)"
                 if fallback
                 else (
                     f"FINAL STRESS — {plan['plan_id']}"
@@ -564,7 +567,16 @@ def chart_thresholds() -> dict:
             "sl_critical": values["BASE_CRITICAL_SERVICE"]}
 
 
+def _core_result(scenario_id: str, plan: dict):
+    """RunResult ядра (кэшированный) для публичных функций сравнения/рисков."""
+    if not engine_available():
+        raise ValueError("Функции ядра недоступен: публичный API WP1 ещё не завершён.")
+    prepared = {**plan, "scenario_id": scenario_id}
+    return _run_core_cached(scenario_id, json.dumps(prepared, ensure_ascii=False, sort_keys=True))
+
+
 def scenario_deltas(base: dict, stress: dict) -> list[dict]:
+    """Годовые дельты STRESS−BASE из уже рассчитанных RunResult (только разница полей ядра)."""
     return [{"Год": b["year"],
              "Изменение спроса, т": round(s["demand_total_t"] - b["demand_total_t"], 3),
              "Изменение дефицита, т": round(s["shortage_t"] - b["shortage_t"], 3),
@@ -574,19 +586,94 @@ def scenario_deltas(base: dict, stress: dict) -> list[dict]:
                                      base["financial_breakdown"], stress["financial_breakdown"])]
 
 
-def scenario_comparison(base: dict, stress: dict) -> list[dict]:
-    rows = []
-    for title, item in (("Базовый", base), ("Обязательный стресс", stress)):
-        years = item["yearly_balance"]
-        rows.append({"Сценарий": title,
-                     "Расходы, млн у.е.": round(sum(x["total_mln"] for x in item["financial_breakdown"]), 2),
-                     "SL общий, доля": round(sum(x["served_total_t"] for x in years) / sum(x["demand_total_t"] for x in years), 4),
-                     "SL критический, доля": round(sum(x["served_critical_t"] for x in years) / sum(x["demand_critical_t"] for x in years), 4),
-                     "Запас на конец 2040, т": years[-1]["i_end_t"],
-                     "Дефицит, т": round(sum(x["shortage_t"] for x in years), 2),
-                     "Нарушения, шт.": sum(not x["passed"] for x in item["constraint_checks"])})
-    return rows
+def compare_core_scenarios(plan: dict, scenario_ids: tuple[str, ...]) -> list[dict]:
+    """Сравнение сценариев через ядро: compare_scenarios (core_api.md), а не формулы UI."""
+    engine = importlib.import_module("src.engine")
+    results = {sid: _core_result(sid, plan) for sid in scenario_ids}
+    comparison = engine.compare_scenarios(results)
+    rows = comparison.rows if not isinstance(comparison, dict) else comparison["rows"]
+    return [dict(row) for row in rows]
+
+
+def comparison_tables(plan: dict, scenario_ids: tuple[str, ...]) -> tuple[list[dict], list[dict]]:
+    """Строки summary и delta из compare_scenarios ядра в виде экранных таблиц."""
+    rows = compare_core_scenarios(plan, scenario_ids)
+    summary, deltas = [], []
+    for row in rows:
+        kind = row.get("row_type")
+        if kind == "scenario":
+            summary.append({
+                "Сценарий": row["scenario_id"],
+                "План": row["plan_id"],
+                "Расходы, млн у.е.": row["total_mln"],
+                "PV, млн у.е.": row["discounted_mln"],
+                "CAPEX накопленный, млн у.е.": row["capex_cumulative_mln"],
+                "Дефицит, т": row["shortage_t"],
+                "Мин. SL общий, доля": min(row["sl_total_by_year"].values(), default=None),
+                "Мин. SL критический, доля": min(row["sl_critical_by_year"].values(), default=None),
+                "Резерв 45 дней во все годы": "да" if row["reserve_ok_all_years"] else "нет",
+                "Нарушения, шт.": row["violations_count"],
+            })
+        elif kind == "delta":
+            deltas.append({
+                "Сценарий (относительно BASE)": row["scenario_id"],
+                "Δ расходов, млн у.е.": row["delta_total_mln"],
+                "Δ PV, млн у.е.": row["delta_discounted_mln"],
+                "Δ дефицита, т": row["delta_shortage_t"],
+                "Δ нарушений, шт.": row["delta_violations"],
+            })
+    return summary, deltas
+
+
+def team_scenario_files() -> list[Path]:
+    """Автообнаружение всех TEAM_*.yaml (основной каталог приоритетнее резервного)."""
+    found: dict[str, Path] = {}
+    for directory in TEAM_SCENARIO_DIRS:
+        for path in sorted(directory.glob("TEAM_*.yaml")):
+            found.setdefault(path.stem, path)
+    return [found[key] for key in sorted(found)]
+
+
+@lru_cache(maxsize=8)
+def _core_risk_register_cached(base_scenario_id: str, plan_json: str) -> list[dict]:
+    """Реестр рисков текущего плана: evaluate_risks ядра прогоняет TEAM_* живьём."""
+    engine = importlib.import_module("src.engine")
+    base_result = _core_result(base_scenario_id, json.loads(plan_json))
+    with tempfile.TemporaryDirectory() as folder:
+        path = Path(folder) / "plan.json"
+        path.write_text(plan_json, encoding="utf-8")
+        core_plan = engine.load_plan(str(path))
+        scenarios = [engine.load_scenario(str(p)) for p in team_scenario_files()]
+        report = engine.evaluate_risks(_load_case_cached(), core_plan, base_result, scenarios)
+    entries = report.risk_register if not isinstance(report, dict) else report["risk_register"]
+    return [asdict(entry) if is_dataclass(entry) else dict(entry) for entry in entries]
+
+
+def core_risk_register(base_scenario_id: str, plan: dict) -> list[dict]:
+    """Риски TEAM_* для текущего плана — считаются ядром, без статических цифр WP3."""
+    if not engine_available():
+        return []
+    return _core_risk_register_cached(
+        base_scenario_id, json.dumps({**plan, "scenario_id": base_scenario_id},
+                                     ensure_ascii=False, sort_keys=True))
+
+
+def wp3_published_risk_register() -> list[dict]:
+    """Опубликованный реестр рисков WP3 (results/risk_register.csv), если доступен."""
+    path = ROOT / "results" / "risk_register.csv"
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8-sig", newline="") as file:
+        return list(csv.DictReader(file))
 
 
 def violation_count(result: dict) -> int:
-    return sum(not item["passed"] for item in result["constraint_checks"])
+    """Hard-нарушения: информационные записи (D8.3) не считаются."""
+    return sum(not item["passed"] and item["rule_id"] not in INFORMATIONAL_RULES
+               for item in result["constraint_checks"])
+
+
+def informational_checks(result: dict) -> list[dict]:
+    """Информационные записи ядра (например INVENTORY_SHOCK_APPLIED)."""
+    return [item for item in result["constraint_checks"]
+            if not item["passed"] and item["rule_id"] in INFORMATIONAL_RULES]

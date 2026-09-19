@@ -8,13 +8,14 @@ import pandas as pd
 import streamlit as st
 
 from app.services import (apply_decision_rows, available_scenarios, chart_thresholds, clear_result_cache,
-                           constraint_catalog, contracts_json, default_plan, engine_available, final_plan_files,
+                           comparison_tables, constraint_catalog, contracts_json, core_risk_register,
+                           default_plan, engine_available, final_plan_files, informational_checks,
                            list_saved_plans, load_contracts_from_catalog, load_plan_from_catalog,
                            save_plan_to_catalog,
-                           export_core_archive, geo_effect, run_geo_scenario,
+                           export_core_archive, geo_effect, run_geo_scenario, wp3_published_risk_register,
                       export_csv_zip, get_run_result, load_plan_json,
                       save_plan_json, source_catalog, storage_catalog, validate_plan,
-                      overview_summary, scenario_comparison, scenario_deltas, violation_count)
+                      overview_summary, scenario_deltas, violation_count)
 
 
 st.set_page_config(page_title="Топливный космоконтур 2035", page_icon="🚀", layout="wide")
@@ -256,11 +257,18 @@ def plan_page(plan: dict) -> None:
 def constraints(result: dict) -> None:
     st.header("Ограничения")
     checks = result["constraint_checks"]
-    failed = [x for x in checks if not x["passed"]]
-    st.metric("Нарушений", violation_count(result))
-    st.caption("Каждая запись содержит правило, период, факт, лимит и причину. Цвет дополнен значком и текстом.")
+    informational = informational_checks(result)
+    st.metric("Hard-нарушений", violation_count(result))
+    st.caption("Полный реестр проверок ядра: passed и failed. Информационные записи "
+               "(INVENTORY_SHOCK_APPLIED) не считаются hard-нарушениями (решение D8.3). "
+               "Каждая запись содержит правило, период, факт, лимит и причину. Цвет дополнен значком и текстом.")
     for item in checks:
-        label = "❌ НАРУШЕНО" if not item["passed"] else "✅ ВЫПОЛНЕНО"
+        if not item["passed"] and item["rule_id"] in {info["rule_id"] for info in informational}:
+            label = "ℹ️ ИНФОРМАЦИЯ"
+        elif not item["passed"]:
+            label = "❌ НАРУШЕНО"
+        else:
+            label = "✅ ВЫПОЛНЕНО"
         with st.expander(f"{label} · {item['rule_id']} · {item['period']}", expanded=not item["passed"]):
             st.write(f"Факт: **{item['actual']}** · лимит: **{item['limit']}** · отклонение: **{item.get('excess', 0)}**")
             st.write(item["message_ru"])
@@ -269,7 +277,7 @@ def constraints(result: dict) -> None:
             "Сценарий": c["scenario"], "Период": c["period"]} for c in constraint_catalog()])
 
 
-def scenarios(result: dict, base: dict, stress: dict) -> None:
+def scenarios(result: dict, base: dict, stress: dict, plan: dict) -> None:
     st.header("Сценарии")
     st.write(f"Выбран: **{SCENARIO_LABELS.get(result['scenario_id'], result['scenario_id'])}**. Переключатель находится слева.")
     if st.button("Пересчитать"):
@@ -281,7 +289,14 @@ def scenarios(result: dict, base: dict, stress: dict) -> None:
             st.success("Расчёт обновлён." if engine_available() else "Демо-мок обновлён; решения плана не меняют синтетические показатели.")
             st.rerun()
     st.subheader("BASE и MANDATORY_STRESS на общей базе")
-    table(scenario_comparison(base, stress))
+    st.caption("Сравнение выполняет compare_scenarios ядра; один и тот же план прогоняется в обоих сценариях.")
+    if engine_available():
+        summary_rows, delta_rows = comparison_tables(plan, ("BASE", "MANDATORY_STRESS"))
+        table(summary_rows)
+        if delta_rows:
+            table(delta_rows)
+    else:
+        st.info("Сравнение сценариев станет доступно после завершения ядра WP1.")
     st.subheader("Геополитический исследовательский сценарий")
     st.caption("Событие меняет только переменную цену выбранного канала в указанные годы; вероятность не задаётся.")
     with st.form("geo_form"):
@@ -319,17 +334,32 @@ def scenarios(result: dict, base: dict, stress: dict) -> None:
         st.info("Расчёт геополитического сценария станет доступен после завершения ядра WP1.")
 
 
-def risks(result: dict) -> None:
+def risks(result: dict, plan: dict) -> None:
     st.header("Риски")
     if result["meta"]["engine_version"] == "MOCK":
         st.warning("Реестр ниже — синтетическая заглушка. Вероятности не оценены.")
+    st.caption("TEAM_*-сценарии для текущего плана пересчитываются ядром (evaluate_risks) — "
+               "статические цифры прошлых прогонов не используются. Информационные записи "
+               "(INVENTORY_SHOCK_APPLIED) не считаются hard-нарушениями.")
+    core_rows = core_risk_register("BASE", plan) if engine_available() else []
+    if core_rows:
+        st.subheader("Реестр рисков текущего плана (расчёт ядра, TEAM_* живьём)")
+        table(core_rows, {"risk_id": "Риск", "scenario_id": "Сценарий",
+            "consequence_t": "Последствие, т", "consequence_mln": "Последствие, млн у.е.",
+            "consequence_sl": "Изменение SL, доля", "probability_basis_ru": "Основание вероятности"})
+    wp3_rows = wp3_published_risk_register()
+    if wp3_rows:
+        st.subheader("Опубликованный реестр рисков WP3")
+        st.caption("results/risk_register.csv (обнаруживается автоматически при публикации WP3).")
+        table(wp3_rows)
     rows = result.get("risk_register", [])
     if rows:
+        st.subheader("Реестр рисков текущего результата")
         table(rows, {"risk_id": "Риск", "scenario_id": "Сценарий",
             "consequence_t": "Последствие, т", "consequence_mln": "Последствие, млн у.е.",
             "consequence_sl": "Изменение SL, доля", "probability_basis_ru": "Основание вероятности"})
-    else:
-        st.info("В текущем результате реестр рисков пуст. TEAM_*-сценарии доступны для отдельных прогонов.")
+    if not core_rows and not wp3_rows and not rows:
+        st.info("Реестры рисков пока пусты. TEAM_*-сценарии доступны для отдельных прогонов слева.")
 
 
 def persistence(result: dict, plan: dict) -> None:
@@ -441,7 +471,8 @@ except ValueError as exc:
     base = get_run_result("BASE", default_plan("BASE"))
     stress = get_run_result("MANDATORY_STRESS", default_plan("MANDATORY_STRESS"))
 
-st.caption(f"Сценарий: {SCENARIO_LABELS.get(scenario_id, scenario_id)} · период: 2035–2040 · версия: {result['meta']['engine_version']}")
+st.caption(f"Сценарий: {SCENARIO_LABELS.get(scenario_id, scenario_id)} · план: {plan['plan_id']} · "
+           f"период: 2035–2040 · версия: {result['meta']['engine_version']}")
 
 if page == "Обзор":
     overview(result)
@@ -452,9 +483,9 @@ elif page == "План и контракты":
 elif page == "Ограничения":
     constraints(result)
 elif page == "Сценарии":
-    scenarios(result, base, stress)
+    scenarios(result, base, stress, plan)
 elif page == "Риски":
-    risks(result)
+    risks(result, plan)
 else:
     persistence(result, plan)
 
