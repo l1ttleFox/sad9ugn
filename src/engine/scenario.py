@@ -163,6 +163,10 @@ def apply_scenario_parameters(
         if key.startswith("sensitivity"):
             journal.append(f"[{scenario.scenario_id}] '{key}': параметр чувствительности — не override, проигнорирован адаптером")
             continue
+        if not isinstance(block, dict):
+            # Скалярная метадата события (event: <id>, label и т.п.) — не override.
+            journal.append(f"[{scenario.scenario_id}] '{key}={block}': метаданные сценария — не override, проигнорированы адаптером")
+            continue
 
         # --- переопределение цены канала (плоский блок или вложенный) ---
         blocks: list[tuple[str, dict[str, Any]]] = []

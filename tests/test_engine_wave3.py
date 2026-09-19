@@ -719,12 +719,17 @@ def test_adapter_plan_investment_shift():
 
 
 def test_adapter_price_override_geo():
-    """TEAM_GEO_CHANNEL_A: цена A 6.2 → 7.44 во всех годах (effective пересчитаны)."""
+    """TEAM_GEO_CHANNEL_A (D8.4): цена меняется только через variable_price_multiplier
+    (×1.2 в 2038–2039), скалярный 'event' — метаданные, адаптер их журналирует.
+    В остальные годы цена контрольная 6.2."""
     case = load_case(DATA_DIR)
     sc = load_scenario(os.path.join(TEAM_DIR, "TEAM_GEO_CHANNEL_A.yaml"))
     c2, _ = apply_scenario_parameters(case, sc)
-    for year in range(2035, 2041):
-        assert c2.effective_price_mln_per_t[("A", year)] == pytest.approx(7.44)
+    eff = apply_scenario(c2, sc)
+    assert eff.effective_price_mln_per_t[("A", 2038)] == pytest.approx(6.2 * 1.2)
+    assert eff.effective_price_mln_per_t[("A", 2039)] == pytest.approx(6.2 * 1.2)
+    assert eff.effective_price_mln_per_t[("A", 2035)] == pytest.approx(6.2)
+    assert any("event" in j for j in c2.scenario_journal)
     assert case.effective_price_mln_per_t[("A", 2035)] == pytest.approx(6.2)
 
 
