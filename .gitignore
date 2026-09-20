@@ -9,3 +9,4 @@ Thumbs.db
 .pytest_cache/
 .pytest_tmp/
 .ipynb_checkpoints/
+~$*.pptx
